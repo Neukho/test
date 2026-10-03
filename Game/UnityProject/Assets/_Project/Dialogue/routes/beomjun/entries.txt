@@ -1,0 +1,27 @@
+# 범준 진입 노드
+Beomjun_Talk_01
+Beomjun_Talk_02
+Beomjun_Talk_03
+Beomjun_Talk_04
+Beomjun_Talk_05
+Beomjun_Talk_06
+Beomjun_Talk_07
+Beomjun_Talk_08
+Beomjun_Talk_09
+Beomjun_Gift_Like
+Beomjun_Gift_Neutral
+Beomjun_Gift_Dislike
+Beomjun_Date_Dojo
+Beomjun_Date_Beach
+Beomjun_Date_FishMarket
+Beomjun_Date_Generic
+Beomjun_E1
+Beomjun_E2
+Beomjun_E3
+Beomjun_E4
+Beomjun_E5
+Beomjun_End_Normal
+Beomjun_End_Good
+Beomjun_End_True
+Beomjun_Harem_Consent
+Beomjun_Harem_Epilogue

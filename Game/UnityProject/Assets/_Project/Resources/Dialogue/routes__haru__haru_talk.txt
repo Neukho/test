@@ -1,0 +1,355 @@
+// 하루 일상 대화(밤 행동 '대화'). 호스트가 $aff_haru(읽기 전용)를 제공한다.
+// 선택지 보상: 정답 aff +5 trust +1.5 / 오답 aff -1 trust -1 / 무난한 답은 변화 없음(balance/actions.csv).
+// 하루는 논바이너리: 서술·타인 대사에서 성별 대명사/호칭을 쓰지 않는다. 하루를 가리킬 때는 '하루', '하루 씨'만 쓴다.
+// 진입 노드: Haru_Talk_01 ~ Haru_Talk_06
+title: Haru_Talk_01
+tags: haru talk
+---
+<<bg cafe night>>
+<<show_standing haru neutral uniform>>
+<<if $aff_haru < 30>>
+    마감이 끝난 주방. 오븐 앞에 쪼그려 앉은 하루가 문을 열었다 닫았다 하고 있다. #line:haru_talk_001
+    haru: 아, 저, 저기… 오븐 온도, 이게 맞는지 한 번만 봐 주실 수 있을까요? #line:haru_talk_002
+    player: 어디 볼게요. 설정이 몇 도예요? #line:haru_talk_003
+    haru: 180도로 맞췄는데요, 안에 넣어 둔 온도계는 165도 근처를 가리켜요. …제가 잘못 읽은 걸 수도 있고요. #line:haru_talk_004
+<<elseif $aff_haru < 60>>
+    haru: {calls_player("haru")}, 마침 오셨네요. 오븐 얘기인데요… 앞쪽이 뒤쪽보다 차가운 것 같아요. #line:haru_talk_005
+    player: 쿠키 굽던 중이었어요? #line:haru_talk_006
+    haru: 네. 같은 반죽인데 앞줄은 하얗고 뒷줄은 갈색이에요. 온도계를 세 군데에 놔 봤어요. #line:haru_talk_007
+<<else>>
+    haru: {calls_player("haru")}, 오셨네요. 사실 오븐 앞에서 서성이고 있었어요. 오븐 얘기가 반이고, 나머지 반은… 누가 와 주려나, 하는 거였고요. #line:haru_talk_008
+    player: 그럼 오븐 얘기부터 들을게요. 나머지 반은 그다음에요. #line:haru_talk_009
+    haru: 아, 네. 네! 그럼… 앞쪽이 뒤쪽보다 차가워요. 세 군데 온도계가 전부 다른 숫자를 말해요. #line:haru_talk_010
+<<endif>>
+haru: 오븐에 편차가 있으면 같은 팬 안에서도 구워지는 정도가 달라져요. 팬 위치를 돌려 가며 구워야 하는데, 어디가 몇 도인지는 제가 아직 정확히 몰라서요. #line:haru_talk_011
+-> 같은 반죽을 위치만 바꿔서 구워 보고 기록해 봐요. 저는 타이머를 맡을게요. #line:haru_talk_012
+    <<aff haru 5>>
+    <<trust haru 1.5>>
+    <<flag haru_talk_oven_check>>
+    <<show_standing haru smile>>
+    haru: …기록. 네, 그거 좋아요. 칸을 아홉 개로 나눠서 칸마다 색을 적어 볼게요. #line:haru_talk_013
+    haru: 타이머를 맡아 주신다니 훨씬 덜 불안해요. 불안했던 건 숫자가 아니라 혼자 보는 거였나 봐요. #line:haru_talk_014
+-> 제가 한번 해 볼게요. 하루 씨는 쉬고 계세요. #line:haru_talk_015
+    <<aff haru -1>>
+    <<trust haru -1>>
+    <<show_standing haru sad>>
+    haru: …아, 네. 알겠어요. #line:haru_talk_016
+    haru: 아니, 괜찮아요. 하던 일을 넘기게 된 것 같아서 잠깐 멍해졌을 뿐이에요. 제 오븐인데, 제가 해 봐야 하는데… 하고요. #line:haru_talk_017
+-> 곰석 셰프님께 여쭤보면 금방 알 거예요. #line:haru_talk_018
+    haru: 맞아요. 먼저 제가 확인해 본 다음에 말씀드릴게요. 아무것도 모르는 채로 가면 질문도 제대로 못 하니까요. #line:haru_talk_019
+haru: 일하다 보면 이런 숫자 하나가 무서워질 때가 있어요. 하나가 틀리면 전부 틀린 것 같아서요. #line:haru_talk_020
+-> 틀린 숫자를 찾아낸 거니까 벌써 한 걸음이에요. 적어 두면 다음 사람도 쓸 수 있고요. #line:haru_talk_021
+    <<aff haru 5>>
+    <<trust haru 1.5>>
+    <<show_standing haru surprised>>
+    haru: 다음 사람…. 그 생각은 못 했어요. 제가 만든 기록이 누군가에게 쓸모가 있을 수도 있겠네요. #line:haru_talk_022
+-> 숫자 하나에 그렇게까지 긴장할 필요 없어요. #line:haru_talk_023
+    <<aff haru -1>>
+    <<trust haru -1>>
+    <<show_standing haru neutral>>
+    haru: …네. 그렇게 보일 수도 있겠네요. #line:haru_talk_024
+    haru: 그래도 저한테는 그 숫자가 꽤 커요. 작게 만드는 법을 아직 모르는 것뿐이에요. #line:haru_talk_025
+-> 저도 처음엔 그랬어요. 천천히 해요. #line:haru_talk_026
+    haru: 감사해요. 천천히… 네. 속도는 제가 정할 수 있으니까요. #line:haru_talk_027
+<<show_standing haru neutral>>
+<<if $aff_haru < 30>>
+    haru: 내일 아침에 오븐 지도를 한 장 그려 올게요. 이상하면 알려 주세요, 아니, 이상한 건 제가 먼저 말씀드릴게요. #line:haru_talk_028
+<<elseif $aff_haru < 60>>
+    haru: 내일 아침 첫 판은 위치를 돌려서 구워 볼게요. 결과가 나오면 제일 먼저 보여 드릴게요. #line:haru_talk_029
+<<else>>
+    haru: 오늘 와 줘서 좋았어요. 나머지 반 얘기는… 내일, 오븐이 식고 나서 해도 될까요? #line:haru_talk_030
+<<endif>>
+===
+
+title: Haru_Talk_02
+tags: haru talk
+---
+<<bg cafe night>>
+<<show_standing haru neutral uniform>>
+<<if $aff_haru < 30>>
+    파이핑 백을 내려놓은 하루가 손등으로 이마를 눌렀다. 작업대 위에는 짜다 만 슈가 한 줄로 늘어서 있다. #line:haru_talk_031
+    haru: 저, 오늘 죄송하다고 열한 번 말했어요. 세어 봤어요. 열두 번째가 지금이 될 뻔했고요. #line:haru_talk_032
+    player: 열한 번이요? 사과할 일이 그렇게 많았어요? #line:haru_talk_033
+    haru: 아니요. 한 번도 없었어요. …그게 문제예요. #line:haru_talk_034
+<<elseif $aff_haru < 60>>
+    haru: {calls_player("haru")}, 오늘도 죄송하다는 말을 많이 했어요. 슈가 한 판 퍼졌거든요. 제 잘못인 건 맞는데, 열 번은 너무 많았어요. #line:haru_talk_035
+    player: 퍼진 건 반죽이 식어서 아니었어요? #line:haru_talk_036
+    haru: 맞아요. 식은 반죽에 짜서 그래요. 그런데 사과가 먼저 나왔어요. 이유를 말하기 전에요. #line:haru_talk_037
+<<else>>
+    haru: {calls_player("haru")}, 저 오늘 죄송하다는 말을 아홉 번만 했어요. 지난주엔 열다섯 번이었으니까 줄었죠? #line:haru_talk_038
+    player: 줄었네요. 세고 있었어요? #line:haru_talk_039
+    haru: 네, 손가락으로요. 아직 입에 안 붙었는데, 숫자는 내려가고 있어요. #line:haru_talk_040
+<<endif>>
+haru: 죄송하다고 하면 마음이 먼저 가벼워져요. 그런데 일은 하나도 안 풀려요. 다음에 뭘 할지가 비어 있으니까요. #line:haru_talk_041
+-> 죄송 대신 하고 싶었던 말이 있었어요? 하나만 골라 봐요. #line:haru_talk_042
+    <<aff haru 5>>
+    <<trust haru 1.5>>
+    <<flag haru_talk_retry_phrase>>
+    <<show_standing haru surprised>>
+    haru: …‘다시 해 볼게요’요. 곰석 셰프님이 그렇게 말하라고 하셨어요. #line:haru_talk_043
+    haru: 사과는 말하는 사람이 편해지려고 하는 거고, ‘다시’는 일을 앞으로 보내는 말이라고요. 맞는 말인데… 입으로는 어렵더라고요. #line:haru_talk_044
+-> 그만 말해요. 계속 듣다 보니 좀 불편해요. #line:haru_talk_045
+    <<aff haru -1>>
+    <<trust haru -1>>
+    <<show_standing haru sad>>
+    haru: …아. 죄, 아니, 네. 알겠어요. #line:haru_talk_046
+    haru: 알겠는데요, 말을 막으면 그 말이 사라지는 게 아니라 안으로 들어가요. 그게 더 무거워요. #line:haru_talk_047
+-> 사과할 일은 아니었어요. 그건 분명해요. #line:haru_talk_048
+    haru: 네. 그건 저도 알아요. 알고 있는데도 먼저 나오는 거예요. #line:haru_talk_049
+haru: 이번 주 안에 하나만 바꿔 보고 싶어요. 틀렸을 때 첫마디를요. #line:haru_talk_050
+-> 오늘 남은 시간 동안만 해 봐요. 틀리면 ‘다시 해 볼게요’를 먼저 떠올려 보는 거예요. #line:haru_talk_051
+    <<aff haru 5>>
+    <<trust haru 1.5>>
+    <<show_standing haru smile>>
+    haru: 오늘 남은 시간이면 할 수 있을 것 같아요. 해 보고, 어땠는지 말씀드릴게요. #line:haru_talk_052
+    haru: 못 하면… 그건 못 한 대로 적어 둘게요. 그것도 기록이니까요. #line:haru_talk_053
+-> 저도 세어 볼게요. 죄송이 나올 때마다 벌금이에요, 하하. #line:haru_talk_054
+    <<aff haru -1>>
+    <<trust haru -1>>
+    <<show_standing haru neutral>>
+    haru: 벌금… 이요. 하하, 네. 농담이죠. #line:haru_talk_055
+    haru: 근데 그렇게 하면 말을 아끼느라 정작 해야 할 말까지 삼킬 것 같아요. 그건 제가 원하는 방향이 아니에요. #line:haru_talk_056
+-> 필요하면 말해요. 옆에서 듣고 있을게요. #line:haru_talk_057
+    haru: 네. 그 정도가 딱 좋아요. 고쳐 주는 사람이 아니라 들어 주는 사람이 있다는 느낌이요. #line:haru_talk_058
+<<show_standing haru neutral>>
+<<if $aff_haru < 30>>
+    haru: 오늘 슈는 다시 짤게요. 반죽이 따뜻할 때 바로요. #line:haru_talk_059
+<<elseif $aff_haru < 60>>
+    haru: 슈 한 판 더 짜 볼게요. 이번엔 반죽 온도부터 재고요. 끝나면 보여 드릴게요. #line:haru_talk_060
+<<else>>
+    haru: 슈가 부풀면 제일 먼저 보여 드릴게요. 안 부풀면… 그건 그때 얘기하고요. #line:haru_talk_061
+<<endif>>
+===
+
+title: Haru_Talk_03
+tags: haru talk
+---
+<<bg cafe night>>
+<<show_standing haru shy uniform>>
+<<if $aff_haru < 30>>
+    작업대 위에 마카롱 한 판이 놓여 있다. 하루는 두 손을 앞치마에 문질러 닦으며 판을 내려다보고 있다. #line:haru_talk_062
+    haru: 오늘은 처음으로 마카롱이 갈라지지 않았어요! 이, 이거 보세요! #line:haru_talk_063
+    player: 정말이네요. 껍질이 매끈해요. #line:haru_talk_064
+    haru: 아침에 세 판 중에 한 판만 성공했지만요. …그래도 한 판은 한 판이에요. #line:haru_talk_065
+<<elseif $aff_haru < 60>>
+    haru: {calls_player("haru")}, 이거 보세요. 오늘은 갈라진 게 하나도 없어요. 한 판 전체가요. #line:haru_talk_066
+    player: 한 판 전체요? 비결이 있었어요? #line:haru_talk_067
+    haru: 머랭을 조금 덜 휘핑하고, 반죽을 말리는 시간을 십 분 늘렸어요. 이유는 아직 확실히 모르겠고요. #line:haru_talk_068
+<<else>>
+    haru: {calls_player("haru")}, 마카롱 보세요. 한 판 전부 갈라지지 않았어요. 이번엔 우연이 아니라, 두 번째예요. #line:haru_talk_069
+    player: 두 번째면 이제 실력이라고 불러도 되겠네요. #line:haru_talk_070
+    haru: 그렇게 말하면… 아직은 입이 조금 간지러워요. 하지만 노트에는 ‘두 번째’라고 적었어요. #line:haru_talk_071
+<<endif>>
+haru: 평가해 주세요. 솔직하게요. 칭찬만 들으면 어디를 고쳐야 할지 모르게 되니까요. #line:haru_talk_072
+-> 크기가 거의 같고, 윗면 광택이 고르고, 옆에 주름도 일정하게 올라왔어요. 맛은 하나 먹어 보고 말할게요. #line:haru_talk_073
+    <<aff haru 5>>
+    <<trust haru 1.5>>
+    <<flag haru_talk_specific_praise>>
+    <<show_standing haru smile>>
+    haru: …구체적으로 말해 주시면 믿어져요. 주름이 일정하다는 거, 저는 몰랐어요. #line:haru_talk_074
+    haru: 하나 드세요. 필링은 아직 연습 중이라 너무 달 수도 있어요. #line:haru_talk_075
+-> 와, 완벽해요! 세상에서 제일 잘 만드시네요! #line:haru_talk_076
+    <<aff haru -1>>
+    <<trust haru -1>>
+    <<show_standing haru shy>>
+    haru: …제일은 아니에요. 정말로요. 아직 가운데가 비어 있는 것도 있어요. #line:haru_talk_077
+    haru: 마음은 감사한데, 그렇게 말씀하시면 어디가 부족한지 오히려 못 물어보게 돼요. #line:haru_talk_078
+-> 일단 하나 먹어 봐도 될까요? #line:haru_talk_079
+    haru: 아, 그럼요. 드세요! 필링은 가운데에 조금만 넣었어요. #line:haru_talk_080
+haru: 칭찬 들으면 귀가 먼저 빨개져요. 숨기려고 해도 안 돼요. #line:haru_talk_081
+-> 숨기지 않아도 돼요. 칭찬이 제대로 닿았다는 표시니까요. #line:haru_talk_082
+    <<aff haru 5>>
+    <<trust haru 1.5>>
+    <<show_standing haru smile>>
+    haru: 닿았다는 표시…. 그렇게 생각해 본 적은 없어요. 귀가 하는 말이라고 생각하면 덜 부끄럽겠네요. #line:haru_talk_083
+-> 귀 빨개진 것 좀 봐요. 완전 귀여워요! #line:haru_talk_084
+    <<aff haru -1>>
+    <<trust haru -1>>
+    <<show_standing haru neutral>>
+    haru: …귀엽다는 말은, 지금은 괜찮아요. 아니, 괜찮지 않은 것도 아니고요. #line:haru_talk_085
+    haru: 다만 저는 오븐 앞에서는 일하는 사람으로 얘기하고 싶어요. 그걸 기억해 주시면 좋겠어요. #line:haru_talk_086
+-> 그럼 앞으로도 칭찬할 일을 자주 만들어 봐요. #line:haru_talk_087
+    haru: 네. 만들어 볼게요. 저도 노력하고요. #line:haru_talk_088
+<<show_standing haru neutral>>
+<<if $aff_haru < 30>>
+    haru: 남은 마카롱은 아침에 가게 쇼케이스에 넣어도 될까요? 곰석 셰프님께 먼저 허락받고요. #line:haru_talk_089
+<<elseif $aff_haru < 60>>
+    haru: 남은 건 내일 쇼케이스에 올릴게요. 이름표는… 아직 못 쓰겠어요. 이름표는 나중에요. #line:haru_talk_090
+<<else>>
+    haru: 남은 것 중에 제일 예쁜 걸 하나 남겨 둘게요. 마감 끝나고 같이 먹어요. #line:haru_talk_091
+<<endif>>
+===
+
+title: Haru_Talk_04
+tags: haru talk
+---
+<<bg cafe night>>
+<<show_standing haru neutral uniform>>
+창가에 놓인 작은 화분. 민트 잎이 두 장 시들어 있고, 하루는 그 앞에 앉아 잎을 하나하나 들여다보고 있다. #line:haru_talk_092
+<<if $aff_haru < 30>>
+    haru: 아, 이거… 가게에 놓으려고 사 왔는데요. 잎이 떨어져서 어떻게 해야 할지 모르겠어요. #line:haru_talk_093
+    player: 물은 주고 있어요? #line:haru_talk_094
+    haru: 이틀에 한 번이요. 아니, 어제는 깜빡해서 오늘 두 번 줬어요. …그게 문제일까요? #line:haru_talk_095
+<<elseif $aff_haru < 60>>
+    haru: {calls_player("haru")}, 이 민트가 또 잎을 떨궜어요. 마들렌에 넣을 건데요. #line:haru_talk_096
+    player: 물 주는 간격이 불규칙했던 건 아니에요? #line:haru_talk_097
+    haru: 맞을 거예요. 바쁜 날은 잊어버려서요. 물을 많이 준다고 빨리 크는 것도 아닌데 말이에요. #line:haru_talk_098
+<<else>>
+    haru: {calls_player("haru")}, 마침 잘 오셨어요. 이 민트 좀 같이 봐 주세요. 새 순이 하나 나왔는데, 시든 잎도 두 개예요. #line:haru_talk_099
+    player: 새 순이 나온 게 더 중요한 거 아니에요? #line:haru_talk_100
+    haru: …그렇죠. 저는 시든 잎부터 보는 버릇이 있어서요. 그 버릇이 제일 고치기 힘들어요. #line:haru_talk_101
+<<endif>>
+-> 물 준 날이랑 햇빛 드는 시간을 같이 기록해 봐요. 원인을 보면 어디를 바꿔야 할지 알 수 있어요. #line:haru_talk_102
+    <<aff haru 5>>
+    <<trust haru 1.5>>
+    <<show_standing haru smile>>
+    haru: 기록… 또 기록이네요. 그런데 이건 설레는 기록이에요. 화분 이름표 뒤에 표를 만들어 볼게요. #line:haru_talk_103
+-> 죽으면 새로 사면 되죠. 별거 아니에요. #line:haru_talk_104
+    <<aff haru -1>>
+    <<trust haru -1>>
+    <<show_standing haru sad>>
+    haru: …네, 그럴 수 있겠죠. 새로 사면 되니까요. #line:haru_talk_105
+    haru: 근데 저는 이 잎이 어디서부터 시들었는지 보고 싶어요. 그걸 알아야 다음에 안 시들게 하니까요. #line:haru_talk_106
+-> 창가 말고 주방 안쪽으로 옮겨 볼까요? #line:haru_talk_107
+    haru: 아, 그것도 방법이에요. 일단 이틀만 옮겨 보고 달라지는지 볼게요. 바꾸는 건 한 번에 하나씩만 하고요. #line:haru_talk_108
+haru: 식물은 물을 줬다고 바로 크지 않아요. 잎이 나올 때까지 아무 일도 안 일어나는 것처럼 보여요. #line:haru_talk_109
+haru: 그래서 이 화분 앞에 있으면 마음이 좀 놓여요. …저한테도 누가 그렇게 해 주는 중이라는 걸 알아서요. #line:haru_talk_110
+-> 저도 서두르지 않아요. 하루 씨의 속도가 기준이에요. #line:haru_talk_111
+    <<aff haru 5>>
+    <<trust haru 1.5>>
+    <<show_standing haru shy>>
+    haru: …그 말씀, 오래 기억할 것 같아요. 서두르지 않는다는 말이 저한테는 제일 큰 격려예요. #line:haru_talk_112
+-> 그래도 빨리 자라 줘야 가게에도 도움이 되겠죠? #line:haru_talk_113
+    <<aff haru -1>>
+    <<trust haru -1>>
+    <<show_standing haru neutral>>
+    haru: …네. 맞는 말이죠. 가게에 도움이 되어야 하니까요. #line:haru_talk_114
+    haru: 그래도 방금 그 말은, 물을 한꺼번에 많이 붓는 거랑 비슷하게 들렸어요. #line:haru_talk_115
+-> 물 주는 건 제가 도울게요. 키우는 건 하루 씨가 하는 거고요. #line:haru_talk_116
+    haru: 네. 그 구분이 좋아요. 도움은 받고, 키우는 건 제가요. #line:haru_talk_117
+<<show_standing haru neutral>>
+<<if $aff_haru < 30>>
+    haru: 내일부터는 아침에 제일 먼저 물을 줄게요. 시간도 적고요. #line:haru_talk_118
+<<elseif $aff_haru < 60>>
+    haru: 이 민트가 마들렌에 들어가는 날이 오면, 제일 먼저 말씀드릴게요. #line:haru_talk_119
+<<else>>
+    haru: 새 순이 자라면 이름을 붙여 줘도 될까요? 아니, 이름은 너무 앞서가는 거죠. 일단 잎 번호부터요. #line:haru_talk_120
+<<endif>>
+===
+
+title: Haru_Talk_05
+tags: haru talk
+---
+<<bg cafe night>>
+<<show_standing haru neutral uniform>>
+<<if $aff_haru < 30>>
+    카운터 구석에서 하루가 손바닥만 한 노트를 펼쳐 놓고 있다. 페이지마다 취소선과 화살표가 빼곡하다. #line:haru_talk_121
+    haru: 아, 이거요? 레시피 노트예요. 지저분해서… 보여 드릴 건 아닌데요. #line:haru_talk_122
+    player: 보여 주기 싫으면 안 봐도 돼요. 그냥 두꺼워서 궁금했어요. #line:haru_talk_123
+    haru: 두껍기만 하죠. 틀린 걸 지우지 않고 선만 그어서요. 나중에 왜 틀렸는지 알아야 하니까요. #line:haru_talk_124
+<<elseif $aff_haru < 60>>
+    haru: {calls_player("haru")}, 이 노트 보실래요? 오늘 새로 쓴 장이 있어요. 아니, 보시라는 건 아니고요, 어… 그래도 보시면 좋겠어요. #line:haru_talk_125
+    player: 그럼 보고 싶어요. 어디부터 볼까요? #line:haru_talk_126
+    haru: 이 장이요. 취소선이 세 겹이에요. 파랑은 첫 시도, 초록은 두 번째, 빨강은 어제요. #line:haru_talk_127
+<<else>>
+    haru: {calls_player("haru")}, 노트 가져왔어요. 오늘은 빨간 줄이 제일 적은 날이에요. 빨강이 세 줄밖에 없어요. #line:haru_talk_128
+    player: 그럼 빨강 세 줄부터 읽을래요. 하루 씨 설명으로요. #line:haru_talk_129
+    haru: 설명을 하라고 하시면 갑자기 떨리네요. 그래도 해 볼게요. 이 줄은 설탕이 아니라 온도 문제였어요. #line:haru_talk_130
+<<endif>>
+-> 보여 줘도 괜찮은 만큼만 볼게요. 틀렸다가 고친 줄 하나만 설명해 줄래요? #line:haru_talk_131
+    <<aff haru 5>>
+    <<trust haru 1.5>>
+    <<show_standing haru smile>>
+    haru: 하나만… 그럼 이거요. 버터를 차갑게 쓰라고 적혀 있었는데, 저는 실온에 두는 편이 안정적이었어요. 틀린 게 아니라 제 오븐이 달랐던 거예요. #line:haru_talk_132
+    haru: 설명하다 보니 틀린 줄이 아니라 배운 줄처럼 보여요. 신기하네요. #line:haru_talk_133
+-> 여기 설탕 양이 틀렸네요. 이거 고쳐야겠어요. #line:haru_talk_134
+    <<aff haru -1>>
+    <<trust haru -1>>
+    <<show_standing haru sad>>
+    haru: …네, 맞아요. 이미 고쳤는데 아직 취소선을 못 그은 줄이에요. #line:haru_talk_135
+    haru: 그런데 먼저 발견하신 게 저는 조금 아팠어요. 제가 직접 말씀드리고 싶었거든요. #line:haru_talk_136
+-> 글씨가 정말 빼곡하네요. 이 노트에 얼마나 걸렸어요? #line:haru_talk_137
+    haru: 전에 일하던 곳에서부터 쓴 거라 석 달 넘게요. 여기까지 오는 데. 앞쪽 장은 이제 읽으면 좀 웃겨요, 제가 그렇게 자신 없어 했나 싶어서요. #line:haru_talk_138
+haru: 노트 마지막 장은 비워 두는 버릇이 있어요. 첫 장만큼 마지막 장이 무서워서요. 끝을 쓰면 다음이 없을 것 같거든요. #line:haru_talk_139
+-> 빈 장도 노트의 일부예요. 채우고 싶을 때 채우면 돼요. #line:haru_talk_140
+    <<aff haru 5>>
+    <<trust haru 1.5>>
+    <<flag haru_talk_blank_respect>>
+    <<show_standing haru shy>>
+    haru: …그 말씀을 들으니까 마지막 장이 갑자기 덜 무서워졌어요. 아직 안 써도 되는 장이라고 생각하면요. #line:haru_talk_141
+    haru: 언젠가 누군가를 위한 장으로 쓰고 싶다는 생각은 하고 있어요. 그게 누구일지는 아직 말씀드리기 이르지만요. #line:haru_talk_142
+-> 그 마지막 장에는 제 레시피를 써 주세요! #line:haru_talk_143
+    <<aff haru -1>>
+    <<trust haru -1>>
+    <<show_standing haru surprised>>
+    haru: 아, 저, 그건… 부탁받아서 쓰는 장이 되면 그 장은 제 장이 아니게 돼요. #line:haru_talk_144
+    haru: 죄송… 아니, 이건 사과할 일이 아니죠. 그냥 그 장은 제가 정하고 싶어요. #line:haru_talk_145
+-> 어떻게 채워질지 궁금하지만, 기다릴게요. #line:haru_talk_146
+    haru: 기다려 주신다니 감사해요. 기다린다는 말도, 저한테는 큰 선물이에요. #line:haru_talk_147
+<<show_standing haru neutral>>
+<<if $aff_haru < 30>>
+    haru: 보여 드려서 이상하게 가벼워졌어요. 오늘은 이만 정리할게요. #line:haru_talk_148
+<<elseif $aff_haru < 60>>
+    haru: 노트를 누군가에게 보여 준 건 처음이에요. 생각보다 괜찮았어요. #line:haru_talk_149
+<<else>>
+    haru: 앞으로 노트가 다 차면, 그때 새 노트 첫 장을 같이 열어 주실래요? #line:haru_talk_150
+<<endif>>
+===
+
+title: Haru_Talk_06
+tags: haru talk
+---
+<<bg cafe day>>
+<<show_standing haru neutral uniform>>
+점심 손님이 한꺼번에 빠져나간 홀. 쟁반을 든 채 주방 쪽으로 향하는 하루를 불러 세우려다, 손에 익은 호칭이 먼저 입 밖으로 나갔다. 하루에게 쓰면 안 되는 말이었다. #line:haru_talk_151
+<<show_standing haru surprised>>
+하루가 걸음을 멈췄다. 쟁반을 가만히 내려놓고, 숨을 한 번 고르는 게 보인다. #line:haru_talk_152
+haru: …저, 잠깐만요. 그 호칭은 저한테 맞지 않아요. #line:haru_talk_153
+haru: ‘하루 씨’라고 불러 주시면 좋겠어요. 그게 제일 편해요. #line:haru_talk_154
+-> 방금은 제가 잘못 불렀어요. 미안해요. 하루 씨라고 부를게요. 또 틀리면 바로 알려 주세요. #line:haru_talk_155
+    <<aff haru 5>>
+    <<trust haru 1.5>>
+    <<flag haru_talk_call_fixed>>
+    <<show_standing haru smile>>
+    haru: …고마워요. 이렇게 말하는 거, 아직 떨려요. 심장이 먼저 뛰고요. #line:haru_talk_156
+    haru: 그런데 바로 받아 주시니까, 다음엔 덜 떨릴 것 같아요. #line:haru_talk_157
+-> 아, 입에 붙어서 그랬어요. 뭐, 별일 아니잖아요. #line:haru_talk_158
+    <<aff haru -1>>
+    <<trust haru -1>>
+    <<show_standing haru sad>>
+    haru: …별일이 아니면 좋겠는데요. 저한테는 작은 일이 아니에요. #line:haru_talk_159
+    haru: 괜찮아요. 다음엔 안 틀리게만 해 주세요. 그 정도면 돼요. #line:haru_talk_160
+-> 정말 죄송해요! 제가 어떻게 이런 실수를… 정말 면목이 없어요! #line:haru_talk_161
+    <<show_standing haru neutral>>
+    사과가 길어질수록 하루가 위로하는 쪽이 되어 갔다. #line:haru_talk_162
+    haru: 괜찮아요, 정말요. …아니, 괜찮다기보다는, 한 번 알아 주셨으면 충분해요. #line:haru_talk_163
+    haru: 사과는 한 번이면 돼요. 나머지는 앞으로 부르는 걸로 해 주세요. #line:haru_talk_164
+<<show_standing haru neutral>>
+haru: 이 가게에서는 아무도 이름을 다시 묻지 않았어요. 이력서에 이름 쓰는 칸이 제일 오래 걸렸는데, 여기선 첫날부터 그냥 ‘하루 씨’였어요. #line:haru_talk_165
+haru: 그게 얼마나 편한지… 말로 하니까 좀 우습네요. 편한 건 편한 거예요. #line:haru_talk_166
+haru: 앞으로 손님이 저를 잘못 부를 때도 있을 거예요. 그럴 때 어떻게 하면 좋을지, 제가 아직 정하지 못했어요. #line:haru_talk_167
+-> 그럴 때 어떻게 하는 게 편한지 미리 정해 둘까요? 제가 대신 말하길 원하면 그렇게 할게요. #line:haru_talk_168
+    <<aff haru 5>>
+    <<trust haru 1.5>>
+    <<show_standing haru smile>>
+    haru: 정해 둘 수 있다는 것만으로도 숨이 쉬어져요. 음… 손님 앞에서는 제가 직접 말하고 싶어요. #line:haru_talk_169
+    haru: 말이 막힐 때만 옆에서 ‘하루 씨는요,’ 하고 이어 주세요. 그럼 제가 끝까지 말할게요. #line:haru_talk_170
+-> 제가 다 알아서 정정할게요. 신경 쓰지 마세요. #line:haru_talk_171
+    <<show_standing haru neutral>>
+    haru: 마음은 정말 고마워요. 그런데 그건… 제가 말할 기회를 가져가는 일이기도 해요. #line:haru_talk_172
+    haru: 일단은 제가 먼저 해 볼게요. 옆에 계시기만 하면 돼요. #line:haru_talk_173
+-> 그건 하루 씨가 직접 해야 하는 일이죠. #line:haru_talk_174
+    <<aff haru -1>>
+    <<trust haru -1>>
+    <<show_standing haru sad>>
+    haru: …네. 제가 해야 하는 일이긴 해요. #line:haru_talk_175
+    haru: 다만 혼자 하는 것과 혼자 남겨지는 건 달라서요. 그건 구분해 주셨으면 좋겠어요. #line:haru_talk_176
+<<show_standing haru neutral>>
+<<if $aff_haru < 30>>
+    haru: 오후 준비 들어갈게요. 말씀해 주셔서, 아니, 제가 말씀드릴 수 있게 해 주셔서 감사해요. #line:haru_talk_177
+<<elseif $aff_haru < 60>>
+    haru: 오후에는 타르트 반죽을 쉬게 해 둘게요. …오늘은 이상하게 속이 시원해요. #line:haru_talk_178
+<<else>>
+    haru: 이제 쟁반 가져다 놓을게요. 그리고, 있잖아요. 이름을 제대로 불러 주는 사람이 곁에 있다는 거, 큰 힘이 돼요. #line:haru_talk_179
+<<endif>>
+===

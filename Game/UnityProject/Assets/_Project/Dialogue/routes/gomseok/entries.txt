@@ -1,0 +1,26 @@
+# 곰석 진입 노드
+Gomseok_Talk_01
+Gomseok_Talk_02
+Gomseok_Talk_03
+Gomseok_Talk_04
+Gomseok_Talk_05
+Gomseok_Talk_06
+Gomseok_Talk_07
+Gomseok_Talk_08
+Gomseok_Gift_Like
+Gomseok_Gift_Neutral
+Gomseok_Gift_Dislike
+Gomseok_Date_FishMarket
+Gomseok_Date_BookStreet
+Gomseok_Date_Beach
+Gomseok_Date_Generic
+Gomseok_E1
+Gomseok_E2
+Gomseok_E3
+Gomseok_E4
+Gomseok_E5
+Gomseok_End_Normal
+Gomseok_End_Good
+Gomseok_End_True
+Gomseok_Harem_Consent
+Gomseok_Harem_Epilogue

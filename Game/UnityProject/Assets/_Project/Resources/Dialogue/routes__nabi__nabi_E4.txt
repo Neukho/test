@@ -1,0 +1,94 @@
+// 나비 개인 이벤트 4 「떠날 이유」(7장, 체인점 개점 직후 밤). 진입 노드 Nabi_E4
+// 비트: 블루하버 쪽 음반사 연계 제안서(전속 3년/곡 양도/일정 상시 공유) -> 나비의 흔들림 -> 선택 1(떠날 수도 있다) -> 선택 2(서로의 꿈) -> 쇼케이스 3일 외출을 스스로 결정 -> 새벽 배웅.
+// 플래그: nabi_e4_blessed(막지 않고 응원) / nabi_e4_read(조건을 같이 읽음) / nabi_e4_guilt(가게를 이유로 붙잡음),
+//        nabi_e4_chosen(내 자리를 스스로 고름) / nabi_e4_unsure(모르겠다고 함) / nabi_e4_follow(함께 떠나겠다고 함),
+//        nabi_e4_away(나비가 쇼케이스로 떠남, 8장 E5에서 돌아옴)
+// 의존: 공통 7장 '블루하버 카페' 개점. 칠판의 약속(E2)을 회수한다.
+title: Nabi_E4
+tags: nabi event e4 chapter7
+---
+<<bg cafe night>>
+<<show_standing nabi neutral>>
+블루하버 카페 개점식이 있었던 날 밤. 가게 홀은 평소보다 일찍 비었고, 나비는 가장 안쪽 테이블에서 봉투를 들여다보고 있었다. #line:nabi_e4_001
+테이블 위에는 반듯하게 접힌 흰 종이 두 장. 인쇄된 로고는 우리 가게 맞은편 체인점의 것과 같은 파란색이었다. #line:nabi_e4_002
+nabi: 오늘 개점식에서 어떤 사람이 명함을 줬어. 음반사 쪽 사람이라고 했고, 블루하버가 후원하는 신인 프로젝트래. #line:nabi_e4_003
+nabi: 쇼케이스, 스튜디오, 투어 지원. 내 곡을 제대로 녹음해 준대. 세 번째 줄까진 진짜 좋았어. #line:nabi_e4_004
+player: 네 번째 줄부터는요? #line:nabi_e4_005
+nabi: 전속 삼 년. 곡 권리 양도. 일정과 위치는 앱으로 항상 공유. #line:nabi_e4_006
+나비는 웃었다. 입꼬리만, 눈은 웃지 않았다. #line:nabi_e4_007
+nabi: 똑같은 문장이야. 이름만 바뀌었지. ‘어디야, 누구랑 있어, 몇 시에 와’가 ‘위치 공유’가 된 거. #line:nabi_e4_008
+<<show_standing nabi sad>>
+nabi: 웃기게도 가고 싶어. 스튜디오가 있다잖아. 내 곡이 처음으로 제대로 된 소리를 낼 수 있는 곳. #line:nabi_e4_009
+nabi: 자유라고 말하고 다닌 사람이 이렇게 흔들려. 우습지. #line:nabi_e4_010
+nabi: 이 가게가 지금 힘든 것도 알아. 체인점이 열었고, 내 무대가 손님을 모으는 것도 알고. #line:nabi_e4_011
+nabi: 그래서 보여 주기 싫었어. 보여 주면 네가 뭐라고 할지 알아서. #line:nabi_e4_012
+-> 가고 싶으면 가요. 막지 않아요. 가게는 제가 지킬게요. #line:nabi_e4_013
+    <<flag nabi_e4_blessed>>
+    <<aff nabi 4>>
+    <<trust nabi 1.5>>
+    <<show_standing nabi surprised>>
+    nabi: …정말? 나 없으면 손님이 줄 텐데도? #line:nabi_e4_014
+    player: 줄 수도 있어요. 그래도 나비 씨 곡이 제대로 된 소리를 내는 건 더 중요한 일이에요. #line:nabi_e4_015
+    <<show_standing nabi shy>>
+    nabi: 그 말 듣고 싶었는데, 들으니까 가슴이 이상하게 먹먹하네. #line:nabi_e4_016
+-> 그 종이, 같이 읽어 봐요. 바꿀 수 있는 조건이 있을지도 몰라요. 나비 씨가 원하면요. #line:nabi_e4_017
+    <<flag nabi_e4_read>>
+    <<aff nabi 3>>
+    <<trust nabi 1.5>>
+    <<show_standing nabi smile>>
+    nabi: 원하면. 그 단서가 붙었네. …원해. 같이 읽어 줘. #line:nabi_e4_018
+    nabi: 혼자 읽으면 밑줄 긋다가 지칠 것 같았거든. #line:nabi_e4_019
+-> 나비 씨가 가면 이 가게 무대는 어떡해요? 공연이 없으면 손님이 많이 줄 텐데요. #line:nabi_e4_020
+    <<flag nabi_e4_guilt>>
+    <<aff nabi -1>>
+    <<trust nabi -1>>
+    <<show_standing nabi sad>>
+    nabi: 그래서 안 보여 주려 했어. …가게가 이유가 되면 내가 선택하는 게 아니게 되잖아. #line:nabi_e4_021
+    nabi: 나를 붙잡으려던 말은 아니라는 거, 알아. 그래도 그렇게 들려. #line:nabi_e4_022
+나비는 종이를 한 장씩 천천히 폈다. 줄마다 연필 자국이 남아 있었다. 몇 번이나 읽었는지 알 수 있었다. #line:nabi_e4_023
+<<show_standing nabi neutral>>
+nabi: 한 가지만 같이 정리하자. 내가 가고 싶은 건 스튜디오지 전속이 아니야. #line:nabi_e4_024
+nabi: 쇼케이스는 사흘이래. 거기까지는 가 볼래. 계약서엔 안 쓰고. #line:nabi_e4_025
+player: 사흘이면 갔다 올 수 있겠네요. 서명은 안 하고요. #line:nabi_e4_026
+nabi: 서명 안 하고 갔다 오는 사람, 흔하진 않대. 근데 나는 그렇게 갈 거야. #line:nabi_e4_027
+나비가 고개를 들었다. 눈이 곧게 나를 보았다. #line:nabi_e4_028
+nabi: 근데 너는? 이 가게에 계속 있는 거. 못 떠나서야, 안 떠나서야? #line:nabi_e4_029
+-> 여기가 제가 고른 자리예요. 못 떠나는 게 아니라 안 떠나는 거예요. #line:nabi_e4_030
+    <<flag nabi_e4_chosen>>
+    <<aff nabi 4>>
+    <<trust nabi 1.5>>
+    <<show_standing nabi smile>>
+    nabi: 그 말이 같은 말이어서 좋다. 나는 갔다 올 거고, 너는 있을 거고. #line:nabi_e4_031
+    nabi: 둘 다 선택이라서 서로 부담이 아니야. #line:nabi_e4_032
+-> 모르겠어요. 삼촌 때문에 남은 걸지도 몰라요. 그래도 지금은 여기가 좋아요. #line:nabi_e4_033
+    <<flag nabi_e4_unsure>>
+    <<show_standing nabi neutral>>
+    nabi: 그럼 알 때까지 같이 헷갈리자. 헷갈리는 건 나쁜 게 아니야. #line:nabi_e4_034
+    nabi: 알게 되면 말해 줘. 나는 사흘 동안 내 쪽을 정리하고 올게. #line:nabi_e4_035
+-> 나비 씨가 떠나면 저도 같이 가요. 가게는 어떻게든 하고요. #line:nabi_e4_036
+    <<flag nabi_e4_follow>>
+    <<aff nabi -1>>
+    <<trust nabi -1>>
+    <<show_standing nabi sad>>
+    nabi: 안 돼. 네 꿈을 내 꿈에 얹으면 둘 다 무거워져. #line:nabi_e4_037
+    nabi: 고마운 말인 건 알아. 그래도 이 가게는 네 자리야. 나한텐 돌아올 자리고. #line:nabi_e4_038
+나비가 종이를 다시 접어 봉투에 넣었다. 그리고 가방에서 분필을 하나 꺼냈다. #line:nabi_e4_039
+nabi: 칠판 좀 빌릴게. #line:nabi_e4_040
+홀 한쪽 칠판에는 지난 약속이 아직 남아 있었다. 내 곡만. 영상은 허락 후. 날짜는 나비가. 그 밑의 작은 글씨. 이 약속은 둘 다 지울 수 있음. #line:nabi_e4_041
+나비는 맨 아래 칸에 한 줄을 더 적었다. #line:nabi_e4_042
+nabi: 나비 외출 중. 사흘 뒤 돌아올 수도 있음. #line:nabi_e4_043
+nabi: ‘수도 있음’이야. 약속이 아니라서. 그래도 지우진 마. 지우는 건 내가 돌아온 다음에 해. #line:nabi_e4_044
+player: 안 지울게요. 문도 안 잠그고요. #line:nabi_e4_045
+nabi: 안 잠근다고 한 사람은 많았어. 근데 나는 네 말이 믿겨. 이유는 몰라. 불이 켜져 있어서일지도. #line:nabi_e4_046
+<<bg harbor dawn>>
+새벽 다섯 시. 가게 문 앞에서 나비는 기타 케이스를 메고 서 있었다. 하늘이 막 밝아지는 시간. #line:nabi_e4_047
+<<show_cg NABI_E4>>
+nabi: 배웅은 안 해도 되는데, 문은 열어 줄래. 나가는 길이 열려 있는 게 좋아서. #line:nabi_e4_048
+나는 문을 끝까지 열고 의자로 괴어 두었다. 이른 아침 공기가 가게 안으로 들어왔다. #line:nabi_e4_049
+nabi: 갔다 올게. 아니, 다녀올게. 이 단어가 더 낫네. 갔다는 끝이고 다녀온다는 이어지는 말이야. #line:nabi_e4_050
+player: 다녀와요. 불은 켜 둘게요. #line:nabi_e4_051
+나비는 한 번 돌아보았다가, 곧 앞을 보며 걸어갔다. 기타 케이스가 아침빛에 길게 반짝였다. #line:nabi_e4_052
+<<hide_cg>>
+<<flag nabi_e4_away>>
+<<end_event nabi 4>>
+===

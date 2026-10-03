@@ -1,0 +1,134 @@
+// 하울 개인 이벤트 3 「귀 끝의 상처」(5장, 호감 50/신뢰 16). 진입 노드 Howl_E3
+// 노드: Howl_E3 -> Howl_E3_Confide(선택: 위로 / 곁에 있기 / 캐묻기) -> Howl_E3_End(동의 후 접촉, 마감)
+// 플래그: howl_e3_comfort / howl_e3_stay / howl_e3_pressed(캐묻기, 오답) , howl_guilt_shared(셋 모두 설정)
+// 접촉은 반드시 말로 동의를 구한 뒤. 스킨십은 손끝까지.
+title: Howl_E3
+tags: howl event e3 chapter5
+---
+<<bg cafe night>>
+<<show_standing howl neutral>>
+공연이 끝나고 한 시간쯤 지났다. 의자를 올리고 무대 배선을 걷고 나니, 홀에는 우리 둘만 남았다. #line:howl_e3_001
+공연 중에 기타 줄이 끊어지던 소리가 아직도 귓가에 남아 있다. 그 순간 하울이 오른쪽 귀를 누르던 모습도. #line:howl_e3_002
+player: (그때부터 말수가 줄었어. 괜찮은 척하고 있는 것 같은데.) #line:howl_e3_003
+<<if $aff_howl >= 60>>
+    howl: …{name()}. #line:howl_e3_004
+    player: 네, 여기 있어요. 부르기만 해도 돼요. #line:howl_e3_005
+    howl: 그냥 불러 봤다. 이름이 입에 붙는 중이라. #line:howl_e3_006
+<<else>>
+    howl: …{calls_player("howl")}. 정리는 거의 끝났어. 들어가서 쉬어도 돼. #line:howl_e3_007
+    player: {player_calls("howl")}도 같이 쉬어야죠. 아까 귀, 많이 아팠죠? #line:howl_e3_008
+    howl: …봤구나. #line:howl_e3_009
+<<endif>>
+하울은 잔 하나를 집어 들었다가 내려놓았다. 닦을 잔이 이미 하나도 남아 있지 않았다. #line:howl_e3_010
+howl: 큰 소리가 갑자기 나면 몸이 먼저 굳어. 이건 늑대라서가 아니라, 내 습관이야. #line:howl_e3_011
+howl: 오래된 습관이지. 고치려고 해 본 적도 없고. #line:howl_e3_012
+<<show_standing howl sad>>
+howl: 귀 끝에 흉터가 있는 거, 알고 있었나. #line:howl_e3_013
+player: 머리카락 사이로 한 번 본 적 있어요. 물어봐도 되는 건지 몰라서 말 안 했어요. #line:howl_e3_014
+howl: 물어보지 않은 게 고마웠다. …한 번이면 돼, 이건. #line:howl_e3_015
+howl: 얘기해도 되겠나. 길지는 않아. #line:howl_e3_016
+player: 얼마든지요. 서두르지 않아도 돼요. #line:howl_e3_017
+<<jump Howl_E3_Confide>>
+===
+
+title: Howl_E3_Confide
+tags: howl event e3 chapter5
+---
+howl: 항만에서 경호 일을 할 때였어. 부두 크레인 아래에서 화물을 점검하던 날이다. #line:howl_e3_018
+howl: 같이 일하던 동료가 있었어. 나는 위쪽 신호를 맡았고. #line:howl_e3_019
+howl: 크레인 와이어가 끊기기 전에 소리가 났어. 아주 작은 소리. 나는 그걸 한 박자 늦게 알아챘다. #line:howl_e3_020
+howl: 동료는 크게 다쳤고, 나는 귀 끝이 찢어졌어. 다친 건 귀인데, 오래 남은 건 다른 거야. #line:howl_e3_021
+howl: 늦었다는 거. 들었는데, 늦었다는 거. #line:howl_e3_022
+<<show_standing howl sad>>
+howl: 지키는 일이 내 일이었는데. 그날은 못 지켰어. #line:howl_e3_023
+하울의 목소리는 낮았고, 끝이 조금 갈라져 있었다. 처음으로 이 말을 소리 내어 하는 사람의 목소리였다. #line:howl_e3_024
+player: (끼어들지 말자. 지금은 끝까지 듣는 게 맞아.) #line:howl_e3_067
+하울은 손가락으로 카운터 가장자리를 천천히 훑었다. 말을 고르는 사람의 버릇이었다. #line:howl_e3_068
+howl: 다들 괜찮냐고 물었어. 나는 괜찮다고 했고. 한 번도 괜찮았던 적은 없는데. #line:howl_e3_069
+howl: 이렇게 말하고 나니, 괜찮지 않다는 말이 생각보다 가벼워. 무거운 건 말하지 않고 있던 시간이었나 봐. #line:howl_e3_070
+-> {player_calls("howl")}, 그건 잘못이 아니에요. 한 박자 늦은 건 아무도 막을 수 없었어요. #line:howl_e3_025
+    <<flag howl_e3_comfort>>
+    <<flag howl_guilt_shared>>
+    <<aff howl 4>>
+    <<trust howl 1>>
+    <<show_standing howl surprised>>
+    howl: …. #line:howl_e3_026
+    <<show_standing howl neutral>>
+    howl: …알아. 머리로는 알아. 사고 보고서에도 그렇게 적혀 있었고. #line:howl_e3_027
+    howl: 근데 그 말을 들어도 귀가 기억해. 소리가 나던 순간을. #line:howl_e3_028
+    howl: 그래도 틀린 말은 아니야. 처음으로, 틀린 말이 아니라고 들렸다. #line:howl_e3_029
+    <<show_standing howl smile>>
+    howl: 고맙다. 한 번만 말할게. #line:howl_e3_030
+    player: 두 번 들어도 되는데요. #line:howl_e3_031
+    howl: …그건 아직 이르고. #line:howl_e3_032
+    <<jump Howl_E3_End>>
+-> (아무 말 없이 얼음 한 조각을 넣은 잔을 건넨다) #line:howl_e3_033
+    <<flag howl_e3_stay>>
+    <<flag howl_guilt_shared>>
+    <<aff howl 3>>
+    <<trust howl 3>>
+    카운터 아래 얼음통에서 얼음을 한 조각 집어 빈 잔에 넣고, 하울 앞에 조용히 내려놓았다. 그리고 옆 의자에 앉았다. #line:howl_e3_034
+    <<show_standing howl surprised>>
+    howl: …. #line:howl_e3_035
+    howl: 그거, 기억하고 있었나. #line:howl_e3_036
+    <<if flag("howl_e1_trust")>>
+        howl: 알아듣는군. 처음부터 그랬어. 설명이 필요 없는 사람이라는 게 가끔 무서울 만큼. #line:howl_e3_037
+    <<else>>
+        howl: 말로는 서툴러서 얼음으로 하던 거야. 돌려받은 건 처음이다. #line:howl_e3_038
+    <<endif>>
+    <<show_standing howl smile>>
+    howl: …이게 제일 낫다. 아무 말도 안 하는 게. #line:howl_e3_039
+    howl: 옆에 앉아 있는 걸로 충분해. 오늘은. #line:howl_e3_040
+    howl: 고맙다. 한 번만 말한다. #line:howl_e3_041
+    <<jump Howl_E3_End>>
+-> 그때 정확히 어떤 사고였어요? 어디서 어떻게 와이어가 끊어졌는지 더 알고 싶어요. #line:howl_e3_042
+    <<flag howl_e3_pressed>>
+    <<flag howl_guilt_shared>>
+    <<aff howl -1>>
+    <<trust howl -1>>
+    <<show_standing howl neutral>>
+    howl: …. #line:howl_e3_043
+    howl: 거기까지는 나도 아직 말로 못 꺼내. 미안하다. #line:howl_e3_044
+    player: (아차, 사고 경위부터 캐물었네. 듣고 싶은 건 그게 아니었는데.) #line:howl_e3_045
+    player: 아니에요, 제가 서둘렀어요. 말하고 싶은 데까지만 해도 돼요. 아니, 안 해도 돼요. #line:howl_e3_046
+    howl: …화난 건 아니야. 그냥 조금 조용해졌을 뿐이지. #line:howl_e3_047
+    howl: 옆에 있는 건, 괜찮다. #line:howl_e3_048
+    <<jump Howl_E3_End>>
+===
+
+title: Howl_E3_End
+tags: howl event e3 chapter5
+---
+<<bg cafe night>>
+한참 동안 둘 다 말이 없었다. 홀의 시계 소리와 얼음이 천천히 녹는 소리뿐이었다. #line:howl_e3_049
+<<if flag("howl_e3_pressed")>>
+    howl: 오늘은 여기까지다. 얘기를 꺼낸 것만으로도, 오늘은 꽤 멀리 왔어. #line:howl_e3_050
+    player: 네. 오늘은 여기까지. 아까는 죄송했어요. #line:howl_e3_051
+    howl: 사과는 받았어. 귀는 아직 닫혀 있지만, 문이 잠긴 건 아니야. #line:howl_e3_052
+player: 다음에 이야기하고 싶어지면, 그때 해요. 제가 먼저 묻지 않을게요. #line:howl_e3_071
+howl: 그 약속이면 충분하다. 약속은 어기지 않는 쪽이 이쪽이니까. #line:howl_e3_072
+<<show_standing howl shy>>
+howl: 옆 의자에는 그냥 앉아 있어 줘. 그것만으로 오늘은 충분히 길었다. #line:howl_e3_073
+나는 대답 대신 옆 의자를 당겨 앉았다. 얼음은 천천히 녹았고, 홀의 시계 소리가 조금 더 느려졌다. #line:howl_e3_074
+<<else>>
+    howl: 귀는 말이야. 소리를 잘 듣는 대신, 기억도 잘해. #line:howl_e3_053
+    player: 그 흉터, 만져 봐도 돼요? 싫으면 싫다고 해요. 정말로요. #line:howl_e3_054
+    howl: …. #line:howl_e3_055
+    howl: 아무한테도 허락한 적 없다. 다친 뒤로는. #line:howl_e3_056
+    <<show_standing howl shy>>
+    하울은 한참 고민하다가 천천히 고개를 끄덕였다. 눈은 피한 채로. #line:howl_e3_057
+    player: 그럼 손끝으로만, 천천히 할게요. 아프면 바로 말해요. #line:howl_e3_058
+    <<show_cg HOWL_E3>>
+    손끝이 귀 끝의 흉터에 닿았다. 오래된 선이었고, 하울의 귀가 한 번 움찔했다가 이내 가만히 멈췄다. #line:howl_e3_059
+    howl: …괜찮아. 생각보다. #line:howl_e3_060
+    howl: 감추려고 머리를 눕히고 다녔는데. 이제 와서 그럴 필요가 있나 싶네. #line:howl_e3_061
+    하울은 눈을 반쯤 감았다. 푸른 밤빛 아래, 귀가 천천히 곧게 섰다. 흉터가 그대로 드러났다. #line:howl_e3_062
+    <<hide_cg>>
+    <<show_standing howl smile>>
+    howl: …이상하지. 숨기지 않으니까 귀가 가볍다. #line:howl_e3_063
+<<endif>>
+howl: 불은 내가 끌게. 오늘은 네가 먼저 올라가. #line:howl_e3_064
+player: 같이 끄고 같이 올라가요. 그게 더 빠르잖아요. #line:howl_e3_065
+howl: …그럼 그렇게 하지. #line:howl_e3_066
+<<end_event howl 3>>
+===

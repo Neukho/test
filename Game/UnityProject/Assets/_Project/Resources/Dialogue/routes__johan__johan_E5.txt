@@ -1,0 +1,88 @@
+// 요한 개인 이벤트 5 「달빛 아래의 약속」(8장, 결판 이후). 굿 엔딩 CG(JOHAN_E5) 겸용. 진입 노드 Johan_E5
+// 비트: 달 뜬 부두 -> 말이 없는 요한 -> 농담 한 번만 하고 ‘농담 끝’ -> 동의 확인(속도 선택) -> 농담 없는 고백 + 약속(이익을 위해 쓰지 않는다) -> 선택(응답) -> 접촉은 동의 후 -> 마감.
+// 숨은 선택지(트루 열쇠): flag("johan_e1_draft_noticed") 또는 flag("johan_e4_asked_first_page") 일 때만 활성. 선택 시 johan_key 획득
+//   = 요한이 간직한 ‘처음 쓴 리뷰 원고’(E1의 구겨진 초고). 원고 여백: 남은 별 두 개는 방문으로 갚는다.
+// 플래그: johan_e5_pace_slow(한 문장씩; 선택지 1·2는 플래그 없음) / johan_e5_promise(+4/+2) / johan_e5_slow(+3/+2, 시간이 필요) / johan_key(숨은 선택, +5/+2)
+title: Johan_E5
+tags: johan event e5 chapter8
+---
+<<bg harbor night>>
+<<show_standing johan neutral>>
+결판이 난 다음 날 밤. 손님도 이웃도 모두 돌아가고, 부두의 가로등만 남았다. 가게 문을 잠그고 나서니, 난간 옆에 요한이 서 있다. #line:johan_e5_001
+수첩은 가방 안에 들어 있고, 손에는 아무것도 없다. 달이 수면에 길게 늘어져 있다. #line:johan_e5_002
+player: {player_calls("johan")}, 아직 안 가셨어요? 오늘은 말이 없네요. #line:johan_e5_003
+johan: …응. 오늘은 문장이 안 나와. 서론도 본론도. 처음 있는 일이라 나도 당황스러워. #line:johan_e5_004
+johan: 농담 하나만 하고 시작할게. 내 혀는 평생 별점을 매겼는데, 너 앞에서는 늘 채점표를 놓쳐. …자, 이제 끝. 농담 없음. #line:johan_e5_005
+요한이 안경을 천천히 벗어 가슴 주머니에 넣는다. 안경을 올릴 때와는 다른 동작이다. #line:johan_e5_006
+johan: 하고 싶은 말이 있어. 길지 않아. 중간에 그만하라고 하면 바로 그만둘게. 대답은 안 해도 되고, 못 들은 걸로 해도 돼. 들어 줄 수 있어? #line:johan_e5_007
+-> 네, 들을게요. #line:johan_e5_008
+    johan: 고마워. 이 말은 한 번만. #line:johan_e5_009
+-> 숨 좀 고르고요. …네, 들을게요. #line:johan_e5_010
+    johan: 천천히 해. 나는 오늘 밤 아무 데도 안 가. #line:johan_e5_011
+-> 한 문장씩 말해 줘요. 사이마다 숨 쉬면서요. #line:johan_e5_012
+    <<flag johan_e5_pace_slow>>
+    <<show_standing johan smile>>
+    johan: 한 문장씩. 제일 잘하는 포맷이네. 문장 사이에는 달을 한 번씩 보자. #line:johan_e5_013
+<<show_cg JOHAN_E5>>
+달빛 아래에서 요한의 눈은 평소보다 훨씬 맑게 보인다. 장난기가 사라진 얼굴은 낯설고, 이상하게 편안하다. #line:johan_e5_014
+johan: 좋아해. 점수도 칭찬도 없는 채로, 그냥 내가. #line:johan_e5_015
+johan: 나는 말이 많은 사람이야. 이유는 늘 알고 있었는데 말하진 않았어. 조용해지는 게 무서웠거든. 말이 많으면 조용한 순간이 안 오니까. #line:johan_e5_016
+johan: 근데 이 가게에서는, 네 옆에서는, 조용해도 무섭지 않았어. 냉장고 소리가 안 들렸어. 그게 제일 큰 이유야. #line:johan_e5_017
+johan: 사귀고 싶다는 말이야. 부탁이 아니라 내 마음이고, 거절당해도 이 마음이 틀린 건 아니라는 걸 알아. 대답은 오늘 안 줘도 돼. #line:johan_e5_018
+johan: 그리고 약속 하나 할게. 이 가게에 대해서는 내 이득이 될 글은 쓰지 않아. 쓰고 싶은 글이 생기면, 쓰기 전에 먼저 알릴게. 허락받으려는 게 아니라 인사하려고. #line:johan_e5_019
+<<show_standing johan shy>>
+johan: …이게 다야. 말하고 나니까 할 일이 없어졌네. 손을 어디 둘지 모르겠다. 이런 건 칼럼으로 배우질 못해서. #line:johan_e5_020
+-> 저도 좋아요. 농담이 없는 모습도요. #line:johan_e5_021
+    <<flag johan_e5_promise>>
+    <<aff johan 4>>
+    <<trust johan 2>>
+    <<show_standing johan surprised>>
+    johan: …농담 없는 나도. 그 항목은 내가 제일 자신 없던 칸인데. #line:johan_e5_022
+    <<show_standing johan smile>>
+    johan: 고마워. 이번엔 진짜 두 번째 고맙다야. 그만큼 크다는 뜻이야. #line:johan_e5_023
+-> 같은 마음이에요. 천천히, 같이 걸어요. #line:johan_e5_024
+    <<flag johan_e5_promise>>
+    <<aff johan 4>>
+    <<trust johan 2>>
+    <<show_standing johan smile>>
+    johan: 천천히, 같이. 내가 제일 안 해 본 두 가지 조합이네. 해 볼게. #line:johan_e5_025
+    johan: 천천히 가는 건 자신 있어. 숙성은 내 전문이거든. #line:johan_e5_026
+-> 고마워요. 마음은 있는데, 시간이 조금 필요해요. #line:johan_e5_027
+    <<flag johan_e5_slow>>
+    <<aff johan 3>>
+    <<trust johan 2>>
+    <<show_standing johan smile>>
+    johan: 시간. 얼마든지. 내가 가진 게 시간이야. 나이는 아직 젊은데 기다림 경력은 꽤 길어. #line:johan_e5_028
+    johan: 기다리는 동안 옆에 있어도 돼? 그것만 물어볼게. #line:johan_e5_029
+-> 그 코트 안주머니에 있는 거, 아직 가지고 있죠? 첫 리뷰 날 구겨서 넣던 종이요. #line:johan_e5_030 <<if flag("johan_e1_draft_noticed") or flag("johan_e4_asked_first_page")>>
+    <<flag johan_key>>
+    <<flag johan_e5_promise>>
+    <<aff johan 5>>
+    <<trust johan 2>>
+    <<show_standing johan surprised>>
+    johan: …봤어? 아니, 알면서 지금까지 한마디도 안 했던 거야? #line:johan_e5_031
+    요한이 한참 말이 없다가, 코트 안주머니에서 접힌 종이를 꺼낸다. 접힌 선마다 닳아 있고, 가장자리는 몇 번이나 펴졌다가 다시 접힌 흔적이 있다. #line:johan_e5_032
+    johan: 버리려고 했어. 진짜로. 그날 나가다 쓰레기통을 못 찾았다고 했지. 사실은 찾았어. 못 버린 거야. #line:johan_e5_033
+    요한이 종이를 펼쳐 내 쪽으로 돌려 준다. ★★★★★ 위에 줄이 그어지고, 그 옆에 ★★★이 다시 적혀 있다. 여백에는 작은 글씨가 있다. #line:johan_e5_034
+    johan: 여백. 읽어 봐. 내가 읽으면 목소리가 흔들릴 것 같아서. #line:johan_e5_035
+    player: "남은 별 두 개는 방문으로 갚는다. 다 갚을 때까지 이 가게를 떠나지 않는다." #line:johan_e5_036
+    <<show_standing johan shy>>
+    johan: 그날 쓴 거야. 그때는 몰랐어. 고백을 이미 오래전에 문장으로 해 두고, 나는 지금 와서 말로 하는 거야. #line:johan_e5_037
+    johan: 아직 두 개 못 갚았어. 평생 할부로 하면 안 될까. 농담이면서 농담 아니야. 이번엔 안경 안 썼으니까 믿어. #line:johan_e5_038
+<<hide_cg>>
+<<if flag("johan_e5_slow")>>
+    johan: 오늘은 안지도 않고 손을 잡지도 않을게. 같이 걷기만 하자. 부두 끝까지, 달이 지나갈 때까지. #line:johan_e5_039
+    player: 좋아요. 걸어요. #line:johan_e5_040
+    <<show_cg JOHAN_E5>>
+    요한은 한 걸음 옆에서, 닿지 않을 만큼의 거리를 지키며 걷는다. 달빛이 두 사람의 그림자를 나란히 늘어뜨린다. #line:johan_e5_041
+<<else>>
+    johan: …손, 잡아도 돼? 아니, 더 정확하게 말할게. 안아도 돼? 싫으면 싫다고 해. 정말 괜찮아. #line:johan_e5_042
+    player: 네, 괜찮아요. 안아요. #line:johan_e5_043
+    <<show_cg JOHAN_E5>>
+    요한의 팔이 조심스럽게 어깨를 감싼다. 귀가 먼저 붉어지고, 꼬리 끝이 천천히 흔들린다. 달빛이 두 사람 위로 한 겹씩 내려앉는다. #line:johan_e5_044
+<<endif>>
+johan: 이 순간에는 점수 안 줄래. 점수 칸이 모자라니까. …내일 첫 잔은 내가 내릴게. 맛은 보장 못 하는데, 마음은 보장해. #line:johan_e5_045
+<<hide_cg>>
+<<show_standing johan smile>>
+<<end_event johan 5>>
+===

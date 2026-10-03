@@ -1,0 +1,115 @@
+// 1장 프롤로그: 도착, 상속, 하울과 곰석과의 첫 만남. 진입 노드 Ch1_Intro
+title: Ch1_Intro
+tags: chapter1 prologue
+---
+<<bg harbor dusk>>
+기차가 멈추자 짠 바람이 먼저 문틈으로 들어왔다. 모레나 항구. 마지막으로 온 게 몇 해 전이었는지 헤아리다가 그만두었다. #line:pro_001
+손에는 낡은 봉투가 하나 있다. 삼촌의 부고와 함께 도착한, 열쇠가 든 봉투. #line:pro_002
+player: (삼촌이 서른 해 가까이 지킨 가게. 이제 내 이름으로 된 열쇠 하나가 전부네.) #line:pro_003
+<<bg cafe dusk>>
+골목 끝, 달빛 모퉁이. 간판의 글씨는 바래 있었지만 창문은 환했다. 닫힌 가게 안에 불이 켜져 있다. #line:pro_004
+player: (분명 아무도 없어야 하는데.) #line:pro_005
+문을 밀자 종이 낮게 울렸다. 카운터 너머에서 회색 털의 늑대 한 명이 고개를 들었다. #line:pro_006
+<<show_standing howl neutral>>
+howl: …왔어? #line:pro_007
+howl: 열쇠, 받은 거 맞지. 그럼 들어와도 돼. 여긴 이제 당신 가게니까. #line:pro_008
+player: 불은… 계속 켜 두신 거예요? #line:pro_009
+howl: 습관이야. 이 골목은 해가 지면 금방 어두워지거든. 불 켜 놓으면, 지나가는 사람이 덜 서둘러. #line:pro_010
+howl: 하울이다. 위층 바 쪽에서 일했어. 삼촌 밑에서. #line:pro_011
+player: {player_calls("howl")}… 반가워요. 이름은 들어 본 적 있어요. 삼촌 편지에서요. #line:pro_012
+howl: …편지에 내 이름이 있었어? #line:pro_013
+<<show_standing howl surprised>>
+howl: 그런 건 안 알려 줘도 되는데. 그 양반은 참. #line:pro_014
+<<show_standing howl neutral>>
+howl: 그런데, 뭐라고 부르면 되지. 이름? 편한 호칭 같은 게 있으면 말해 줘. #line:pro_015
+-> 이름으로 불러 주세요. #line:pro_016
+    <<flag call_pref_name>>
+    howl: 알겠다. 그럼 이름으로 하지. #line:pro_017
+-> '~ 씨'가 편해요. #line:pro_018
+    <<flag call_pref_honorific>>
+    howl: 알겠다. 그렇게 부를게요. 나도 ‘씨’를 붙이는 쪽이 입에 익어서 편해. #line:pro_019
+-> 아직 잘 모르겠어요. 친해지면 바꿔도 돼요? #line:pro_020
+    <<flag call_pref_later>>
+    howl: 바꿔도 돼. 호칭 같은 건 처음부터 정해진 게 아니라, 쓰다 보면 정해지는 거니까. #line:pro_021
+    howl: 바꾸고 싶어지면 말해. 한 번이면 돼. #line:pro_022
+<<show_standing howl smile>>
+<<if flag("call_pref_name")>>
+    howl: {name()}. …좋아. 불렀으니 이제 내 쪽도 기억해 두지. #line:pro_054
+<<else>>
+    howl: {calls_player("howl")}. …좋아. 불렀으니 이제 내 쪽도 기억해 두지. #line:pro_055
+<<endif>>
+서로 부르는 말은 가까워질수록 달라진다. 바꾸고 싶은 호칭이 있다면 언제든 이야기해서 바꿀 수 있다. #line:pro_024
+<<jump Ch1_Kitchen>>
+===
+title: Ch1_Kitchen
+---
+주방 쪽에서 은은한 국물 냄새가 번져 왔다. 누가 냄비를 젓고 있는 소리도. #line:pro_025
+<<show_standing howl neutral>>
+howl: 곰석이야. 오래 기다렸어. 도착한다는 소식 듣고 아침부터 불 앞에 서 있었다. #line:pro_026
+<<show_standing gomseok smile>>
+gomseok: 허허, 왔구나. 배고프지? 일단 앉아. 국물부터 데워 줄게. #line:pro_027
+player: 처음 뵙겠습니다. 저는… #line:pro_028
+gomseok: 알아, 알아. 얼굴에 네 삼촌이 조금 있어. 고집 센 눈매하고. #line:pro_029
+player: 그 말은 칭찬으로 들어도 될까요? #line:pro_030
+gomseok: 허허, 반은 칭찬이야. 나머지 반은 앞으로 알게 될 거고. #line:pro_031
+gomseok: 가게는 말이야, 서두르면 불이 세. 천천히 데워야 속까지 간다. #line:pro_032
+player: 삼촌이 이 주방에서 쓰던 노트가 있다고 들었어요. 레시피 노트요. #line:pro_033
+<<show_standing gomseok neutral>>
+gomseok: …그래, 있지. 있긴 한데. #line:pro_034
+gomseok: 그건 내일 이야기하자. 오늘은 먹는 날이야. 먹고, 자고. 그게 첫날의 순서야. #line:pro_035
+카운터에 앉자 김이 오르는 그릇이 앞에 놓였다. 한 숟갈 뜨자 몸 안쪽의 매듭이 하나 풀리는 것 같았다. #line:pro_036
+player: 맛있어요. 정말로요. #line:pro_037
+<<show_standing gomseok smile>>
+gomseok: 그럼 됐어. 그게 이 가게가 하는 일의 전부야. #line:pro_038
+<<show_standing howl neutral>>
+howl: 내일부터 할 일이 많아. 청소, 수리, 메뉴 정리. 열두 가지는 추려야 문을 열 수 있어. #line:pro_039
+howl: 필요하면 말해. 안 해도 필요한 건 챙겨 둘 테니까. #line:pro_040
+player: 같이 해 주실 거예요? #line:pro_041
+howl: …그러려고 불 켜 놨지. #line:pro_042
+<<show_standing howl smile>>
+<<bg cafe night>>
+낡은 가게, 낯선 둘, 따뜻한 국물. 이어받을지 말지는 아직 정하지 못했지만, 오늘 밤만큼은 이곳이 그렇게 낯설지 않았다. #line:pro_043
+player: (이 가게를 어떻게 하고 싶은지, 오늘 정해야 할까.) #line:pro_044
+-> 열어 볼게요. 제대로. #line:pro_045
+    <<flag prologue_resolve_open>>
+    player: 열어 볼게요. 제대로요. 아직 서툴지만요. #line:pro_046
+    howl: …그래. 그럼 서툰 쪽부터 같이 배우면 되겠네. #line:pro_047
+    gomseok: 허허, 문 여는 날엔 내가 제일 큰 냄비를 쓰지. #line:pro_048
+-> 아직은 모르겠어요. 며칠만 지켜볼게요. #line:pro_049
+    <<flag prologue_resolve_unsure>>
+    player: 솔직히 아직 모르겠어요. 며칠만 지켜보고 싶어요. #line:pro_050
+    howl: 그게 정직한 대답이야. 급할 거 없어. #line:pro_051
+    gomseok: 그래그래, 아침이 오면 가게가 알려 줄 거다. #line:pro_052
+모레나의 첫날 밤이 깊어 간다. 창밖에서는 배의 고동이 한 번, 낮게 울렸다. #line:pro_053
+<<flag ch1_prologue_done>>
+===
+
+// 1장 마무리. 개업 전날 저녁(6일차 마감 뒤). 하울 E1(개업 전날 밤, 칵테일 연습)은 이 장면 직후의 개인 이벤트이므로 여기서는 칵테일·얼음을 말하지 않는다.
+// 프롤로그 선택(prologue_resolve_open|unsure) 어느 쪽이든 성립한다. 다음 노드 Ch2_Intro 가 개업 날 아침으로 시작한다.
+title: Ch1_Outro
+tags: common chapter1 outro
+---
+<<bg cafe night>>
+엿새째 밤. 청소를 마친 홀의 의자는 전부 바로 놓였고, 창틀의 먼지 대신 레몬 향 세제 냄새가 남았다. #line:pro_056
+player: 열두 가지예요. 메뉴판에 적을 이름까지 정해졌어요. #line:pro_057
+howl: …열두 가지면 문을 열 수 있다. 처음에 말한 대로. #line:pro_058
+<<show_standing howl neutral>>
+gomseok: 허허, 냄비도 큰 걸로 닦아 놨구먼. 이 솥은 삼촌 때부터 한 번도 비어 본 적이 없어. #line:pro_059
+player: 내일이 개업이라니, 실감이 안 나요. #line:pro_060
+<<if flag("prologue_resolve_unsure")>>
+    player: 며칠만 지켜보겠다고 했는데, 지켜보다 보니 어느새 여기까지 왔네요. #line:pro_061
+    howl: …지켜보는 것도 일이다. 그리고 그 일은 끝났다. #line:pro_062
+<<else>>
+    player: 열어 보겠다고 말은 했는데, 막상 내일이라니 손이 먼저 떨려요. #line:pro_063
+    howl: …떨려도 된다. 떨리는 사람이 문 앞에 불을 켜 둔다. #line:pro_064
+<<endif>>
+<<show_standing gomseok smile>>
+gomseok: 그려, 손님이 안 와도 괜찮다. 오늘 끓인 국물은 어차피 우리가 먹는다. #line:pro_065
+player: 안 와도 괜찮다고 생각하면 오히려 오실 것 같아요. #line:pro_066
+howl: …그건 모르지. 그래도 불은 켜 둘 거다. 내일도. #line:pro_067
+<<show_standing howl neutral>>
+칠판 맨 위에는 곰석의 삐뚤삐뚤한 글씨로 ‘내일 개업’이라고 적혔다. 그 아래에 내 손으로 열두 가지 메뉴를 한 줄씩 옮겨 적었다. #line:pro_068
+gomseok: 자, 오늘은 여기까지. 설거지는 내가 한다. 먼저 쉬어라. #line:pro_069
+창밖에서 배의 고동이 한 번, 낮게 울렸다. 내일 아침에는 이 문의 종이 처음으로 손님을 향해 울릴 것이다. #line:pro_070
+<<flag ch1_cleared>>
+===

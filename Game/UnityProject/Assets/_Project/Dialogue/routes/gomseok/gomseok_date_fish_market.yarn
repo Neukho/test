@@ -1,0 +1,44 @@
+// 곰석 데이트 「새벽 어시장」. 수치는 호스트가 적용. 진입 노드 Gomseok_Date_FishMarket
+title: Gomseok_Date_FishMarket
+tags: gomseok date
+---
+<<bg fish_market dawn>>
+<<show_standing gomseok neutral>>
+<<if $aff_gomseok < 30>>
+    새벽 어시장. 얼음과 물비린내 사이로 상인들의 목소리가 오간다. #line:gomseok_dfm_001
+    gomseok: 오늘은 장 보러 온 게 아니라 쉬는 날이라 하셔서 따라왔는데, 결국 시장이네요. 허허. #line:gomseok_dfm_002
+    player: 곰석 씨가 제일 편한 곳이 어디인가 궁금했어요. #line:gomseok_dfm_003
+    gomseok: 그럼 여기가 맞습니다. 일단 한 바퀴 돌죠. #line:gomseok_dfm_004
+<<elseif $aff_gomseok < 60>>
+    gomseok: 쉬는 날에 시장이라니. 직업병이여, 이건. #line:gomseok_dfm_005
+    player: {player_calls("gomseok")}, 저도 좋아요. 곰석 씨가 눈 반짝이는 거 보는 게 좋거든요. #line:gomseok_dfm_006
+    gomseok: 허허, 내 눈이 반짝이는 거야 생선 보면 그렇지. #line:gomseok_dfm_007
+<<else>>
+    gomseok: {calls_player("gomseok")}, 오늘은 장바구니 안 들 거여. 그냥 걷자고. #line:gomseok_dfm_008
+    player: 그래도 눈은 이미 생선 보고 있죠? #line:gomseok_dfm_009
+    gomseok: …들켰네. 눈은 못 속이지. #line:gomseok_dfm_010
+<<endif>>
+한 상인이 곰석을 알아보고는 오징어 한 마리를 덤으로 얹어 준다. 곰석은 손사래를 치면서도 결국 받아 든다. #line:gomseok_dfm_011
+gomseok: 저 양반 가게에서 처음 장 볼 때, 삼촌이 같이 갔었어. 한마디도 안 하더니 그날 처음 웃었지. #line:gomseok_dfm_012
+-> 삼촌 얘기, 곰석 씨한테 다른 모양으로 남아 있는 것 같아요. 듣고 싶어요. #line:gomseok_dfm_013
+    <<flag gomseok_market_listen>>
+    <<show_standing gomseok smile>>
+    gomseok: 허허, 그려. 삼촌은 생선 눈을 하도 오래 들여다봐서, 상인이 먼저 눈을 피했어. 그게 그 양반 방식이었어. #line:gomseok_dfm_014
+-> 삼촌은 장 보는 건 잘하셨나 봐요. 곰석 씨는 어때요? #line:gomseok_dfm_015
+    <<flag gomseok_market_compare>>
+    gomseok: 나는 흥정을 못 해. 눈 마주치면 바로 사 버리거든. 삼촌은 달랐지. #line:gomseok_dfm_016
+-> 곰석 씨는 곰석 씨 방식대로 사시면 되죠. 오늘은 제가 흥정할게요. #line:gomseok_dfm_017
+    <<flag gomseok_market_haggle>>
+    <<show_standing gomseok surprised>>
+    gomseok: 어이쿠, 대신 해 준다고? 한번 해 봐. 너무 깎진 말고. #line:gomseok_dfm_018
+시장을 한 바퀴 돌고 나니 장바구니 대신 따뜻한 어묵 국물 두 잔이 손에 들려 있다. #line:gomseok_dfm_019
+gomseok: 오늘은 월급날도 아니고 업무일도 아니여. 직원도 사장도 아닌 날이야. 그러니 우리 둘이 반반으로 사자고. #line:gomseok_dfm_020
+-> 좋아요. 저도 반 내고, 곰석 씨도 반 내요. 그게 편해요. #line:gomseok_dfm_021
+    <<show_standing gomseok smile>>
+    gomseok: 그려. 이렇게 하면 마음이 가볍지. #line:gomseok_dfm_022
+-> 오늘은 제가 낼게요. 쉬는 날이니 제가 대접하고 싶어요. #line:gomseok_dfm_023
+    gomseok: 허허, 고마운데 다음엔 내가 살게. 서로 번갈아 사는 거여. #line:gomseok_dfm_024
+해가 올라올 무렵, 곰석은 국물을 한 모금 마시고 짧게 숨을 내쉬었다. #line:gomseok_dfm_025
+gomseok: 이 시간이 제일 좋아. 가게 문 열기 전의 바다 냄새, 그리고 누가 옆에 있다는 거. #line:gomseok_dfm_026
+<<show_standing gomseok neutral>>
+===

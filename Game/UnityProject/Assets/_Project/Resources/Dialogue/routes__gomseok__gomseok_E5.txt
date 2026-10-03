@@ -1,0 +1,98 @@
+// 곰석 개인 이벤트 5 「달빛 아래의 약속」(8장, 호감 84/신뢰 32). 굿 엔딩 CG 겸용. 진입 노드 Gomseok_E5
+// 비트: 체인점 위기가 지나간 밤 -> 삼촌의 '첫 주인 자리'(주방 중앙 도마)를 곰석이 건넴 -> 주인공은 그 자리를 비워 두고 둘이 나란히 서자고 함 -> 고백(삼촌과 무관함을 분명히) -> 동의 확인 -> 편지.
+// 플래그: gomseok_e5_together(같이 서자 +5/+1.5) / gomseok_e5_apart(홀을 맡겠다, +1) / gomseok_e5_inherit(삼촌 자리를 잇겠다, 보너스 없음)
+//        gomseok_e5_vow(고백을 받아들임) / gomseok_e5_slow(천천히)
+//        gomseok_key(트루 열쇠: 삼촌의 마지막 편지를 곰석과 함께 읽겠다고 함. 숨은 조건: gomseok_e2_waited AND gomseok_e4_together)
+//        gomseok_e5_letter_later(편지는 나중에: 열쇠 없음)
+title: Gomseok_E5
+tags: gomseok event e5 chapter8
+---
+<<bg cafe night>>
+<<show_standing gomseok neutral>>
+체인점 위기가 지나간 밤. 손님이 모두 떠난 가게는 이상하리만큼 조용하다. 주방 창문으로 달빛이 들어와 스테인리스 작업대 위에 길게 늘어졌다. #line:gomseok_e5_001
+gomseok: 아직 안 올라갔구먼. 오늘은 내 주방에서 마지막 정리 좀 하고 있었어. #line:gomseok_e5_002
+player: 저도 잠이 안 와서요. 정리하는 거 구경해도 될까요? #line:gomseok_e5_003
+gomseok: 허허, 구경하는 사람 있으면 손이 더 곱게 가. 앉아. #line:gomseok_e5_004
+작업대 한가운데에 반질반질 닳은 오래된 도마가 놓여 있다. 곰석이 그 도마 위에 손을 얹었다. #line:gomseok_e5_005
+gomseok: 이 도마 알지? 삼촌이 가게를 열던 날, 이 위에서 첫 스튜 재료를 썰었어. 주방의 첫 주인 자리여. #line:gomseok_e5_006
+gomseok: 나는 십이 년 동안 이 자리에 서 본 적이 없어. 청소는 해도 거기서 칼은 안 잡았지. #line:gomseok_e5_007
+player: 한 번도요? 곰석 씨는 주방장이잖아요. #line:gomseok_e5_008
+gomseok: 주방장이긴 한데 그 자리는 내 자리가 아니라고 생각했어. 삼촌 자리를 대신하는 사람이 되는 게 겁났거든. #line:gomseok_e5_009
+<<show_standing gomseok smile>>
+gomseok: 근데 이제 가게 주인은 네가 됐고, 이 자리를 네게 넘기고 싶어. 이 도마 앞에서 가게의 다음 이야기를 시작해 줬으면 해서. #line:gomseok_e5_010
+<<show_cg GOMSEOK_E5>>
+달빛 아래, 작업대 위에 놓인 도마와 그 옆 빈 자리. 곰석의 큰 손이 도마 위에서 천천히 내 쪽으로 밀려 나온다. 벽에는 나란히 걸린 앞치마 두 벌, 모서리에는 삼촌이 쓰던 낡은 국자가 걸려 있다. #line:gomseok_e5_011
+gomseok: 넘긴다는 말이 반만 맞는 거여. 이 자리에 너만 세워 놓고 나는 뒤로 빠지려는 게 아니고. #line:gomseok_e5_012
+gomseok: 옆에 도마를 하나 더 놓을 거여. 두 개가 나란히 있으면 어느 쪽이 첫 자리인지 아무도 모르게. #line:gomseok_e5_013
+-> 이 자리는 비워 둬요. 삼촌 자리도 곰석 씨 자리도 아니고, 우리 둘이 새로 서는 자리로요. #line:gomseok_e5_014
+    <<flag gomseok_e5_together>>
+    <<aff gomseok 5>>
+    <<trust gomseok 1.5>>
+    <<show_standing gomseok surprised>>
+    gomseok: …허허. 비워 두고 둘이 서자고? 그 생각은 못 했구먼. #line:gomseok_e5_015
+    <<show_standing gomseok smile>>
+    gomseok: 그려, 그게 좋겠어. 삼촌 자리는 삼촌 자리로 두고, 우리는 옆에서 새로 시작하자고. #line:gomseok_e5_016
+-> 그 자리는 곰석 씨 몫이에요. 저는 홀을 맡을게요. 주방은 곰석 씨가 지켜 주세요. #line:gomseok_e5_017
+    <<flag gomseok_e5_apart>>
+    <<aff gomseok 1>>
+    gomseok: 그것도 한 방법이지. 근데 내가 바라는 건 등을 맞대고 서는 게 아니라 나란히 서는 거여. 조금만 더 생각해 줘. #line:gomseok_e5_018
+-> 삼촌 자리라면 제가 이어야죠. 도마는 제가 쓸게요. #line:gomseok_e5_019
+    <<flag gomseok_e5_inherit>>
+    <<show_standing gomseok neutral>>
+    gomseok: 그 마음은 알겠어. 근데 말이여, 너는 네 삼촌이 아니라니까. 이어받는다는 말 말고 시작한다는 말이 어울려. #line:gomseok_e5_020
+    gomseok: 그래서 옆에 도마를 하나 더 놓는 거여. 이 자리에 앉는 순간부터는 네 자리가 되도록. #line:gomseok_e5_021
+<<hide_cg>>
+<<show_standing gomseok shy>>
+곰석이 낡은 수건으로 손을 천천히 닦았다. 말을 꺼내기 전의 버릇이라는 걸 이제는 안다. #line:gomseok_e5_022
+gomseok: 하나만 더 말할게. 지금 말 안 하면 계속 못 할 것 같아서. #line:gomseok_e5_023
+gomseok: 나는 너를 좋아해. 삼촌이 보여서가 아니여. 삼촌 닮은 눈매는 첫날 이후로 한 번도 떠올린 적 없어. #line:gomseok_e5_024
+gomseok: 네 국은 짜고, 네 칼질은 아직 서툴러. 근데 네 손에서 나오는 건 이 가게에서 처음 먹어 보는 맛이어서, 그게 좋았어. #line:gomseok_e5_025
+player: 저도요. 곰석 씨가 제 곁에서 국을 데워 주는 시간이, 가게 일 중에 제일 좋았어요. #line:gomseok_e5_026
+gomseok: 그런 말은 앞치마 매기 전에 해 줘야 하는 거 아니여? 허허. #line:gomseok_e5_027
+gomseok: 하나만 물어볼게. 손 잡아도 되겠어? 싫으면 싫다고 해. 우리 사이는 변하지 않을 거니까. #line:gomseok_e5_028
+-> 잡아 줘요. 저도 잡고 싶었어요. #line:gomseok_e5_029
+    <<flag gomseok_e5_vow>>
+    <<aff gomseok 3>>
+    <<show_standing gomseok smile>>
+    곰석의 큼직하고 따뜻한 손이 내 손을 감쌌다. 도마 위의 달빛이 두 사람의 손 사이로 번졌다. #line:gomseok_e5_030
+    gomseok: 따뜻하구먼. 국물 데운 손이어서 그런가. #line:gomseok_e5_031
+-> 좋아요. 근데 천천히 가고 싶어요. 손부터요. #line:gomseok_e5_032
+    <<flag gomseok_e5_slow>>
+    <<aff gomseok 1>>
+    <<show_standing gomseok smile>>
+    gomseok: 천천히 가는 건 내 전문이여. 손부터, 그다음은 네가 정해. #line:gomseok_e5_033
+-> 곰석 씨 먼저, 제 마음은 아직 정리 중이에요. 기다려 줄 수 있어요? #line:gomseok_e5_034
+    <<show_standing gomseok neutral>>
+    gomseok: 기다리는 건 십이 년 해 봤어. 며칠은 아무것도 아니여. #line:gomseok_e5_035
+<<show_standing gomseok neutral>>
+gomseok: 그리고 말이여, 이건 네가 정할 일이지만 하나만 알아 둬. 나는 이 자리에서 누구의 자리도 안 채울 거여. 삼촌의 친구가 아니라 곰석으로 네 옆에 설 거야. #line:gomseok_e5_036
+<<if $gomseok_e2_waited and $gomseok_e4_together>>
+    <<show_standing gomseok shy>>
+    gomseok: 마지막으로 하나 있어. 삼촌이 나한테 맡긴 게 있었는데, 내 것이 아니라 네 앞으로 온 편지여. #line:gomseok_e5_037
+    gomseok: 장례 직후에 받았어. 수십 번 건네려다 못 했지. 읽고 나면 네가 가게를 떠날까 봐, 아니면 내가 더 이상 필요 없어질까 봐. #line:gomseok_e5_038
+    gomseok: 이제는 건네야겠어. 그것도 혼자가 아니라 같이 읽고 싶고. #line:gomseok_e5_039
+    곰석이 앞치마 안주머니에서 낡은 편지 봉투를 꺼냈다. 겉에는 삼촌의 삐뚤빼뚤한 글씨로 내 이름이 적혀 있다. #line:gomseok_e5_040
+<<else>>
+    <<show_standing gomseok neutral>>
+    gomseok: 사실 하나 더 있는데, 아직은 내가 못 꺼내겠어. 때가 되면 줄게. 그게 언제가 될지는 나도 몰라. #line:gomseok_e5_041
+    <<flag gomseok_e5_letter_later>>
+<<endif>>
+-> 지금 같이 읽어요. 곰석 씨가 지켜 온 만큼, 곁에서 같이 읽고 싶어요. #line:gomseok_e5_042 <<if $gomseok_e2_waited and $gomseok_e4_together>>
+    <<flag gomseok_key>>
+    <<aff gomseok 3>>
+    <<trust gomseok 1>>
+    <<show_standing gomseok smile>>
+    gomseok: …그려. 같이 읽자고. 나도 한 번도 안 열어 봤어. 네 앞으로 온 거니까. #line:gomseok_e5_043
+    곰석이 봉투를 내 손에 놓고, 그 위에 자기 손을 가만히 포갰다. 봉투는 아직 봉해져 있다. #line:gomseok_e5_044
+    gomseok: 오늘은 열지 말고 날이 밝으면 열자고. 새벽 국물 올려 놓고. #line:gomseok_e5_045
+-> 오늘은 둘이 서는 자리만으로 충분해요. 편지는 나중에요. #line:gomseok_e5_046
+    <<flag gomseok_e5_letter_later>>
+    gomseok: 그려. 편지는 어디 안 가. 필요할 때 줄게. #line:gomseok_e5_047
+<<show_standing gomseok neutral>>
+창밖 달이 조금 더 올라왔다. 곰석이 작업대 옆에 새 도마를 하나 내려놓았다. 두 도마가 달빛 아래 나란히 놓였다. #line:gomseok_e5_048
+gomseok: 내일 아침엔 이 두 도마로 스튜 재료를 같이 썰자고. 네가 왼쪽, 내가 오른쪽. #line:gomseok_e5_049
+player: 네. 간은 곰석 씨가 봐 주시고요. #line:gomseok_e5_050
+gomseok: 허허, 그건 내 전문이여. #line:gomseok_e5_051
+<<show_standing gomseok smile>>
+<<end_event gomseok 5>>
+===

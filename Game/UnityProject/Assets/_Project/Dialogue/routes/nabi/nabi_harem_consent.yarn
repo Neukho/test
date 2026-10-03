@@ -1,0 +1,61 @@
+// 나비 다자 조각 「동의」(호스트 순서: Harem_Table 먼저, 그다음 각 Consent. 대사는 어느 순서여도 성립하게 쓴다. 가게 옥상 밤). 진입 노드 Nabi_Harem_Consent
+// 가드레일(docs/10_Route_Structure.md §3): 자발적 동의 확인, 통보 금지, 질투는 말로(통제 금지), 나비의 키워드 '자유'를 명시적 조건으로 보장.
+// 끝에 harem_ok_nabi 플래그. 질문을 통보처럼 하거나 질투를 통제로 풀려 하면 나비가 짚고, 주인공이 직접 철회한 뒤에만 진행한다.
+// 의존: 호스트가 Harem_Table 을 먼저 재생(나비는 거기서 한 명씩 직접 묻는다, shr_012~). 이 노드는 그 사실에 기대지 않고 '직접 묻고 직접 듣는다'는 조건 셋만 확인한다.
+title: Nabi_Harem_Consent
+tags: nabi harem consent
+---
+<<bg rooftop night>>
+<<show_standing nabi neutral>>
+옥상에 나비가 먼저 올라와 있었다. 난간 위의 향초가 바람에 기울었고, 기타는 케이스 속에 얌전히 눕혀 있었다. #line:nabi_hc_001
+nabi: 할 얘기 있다고 했지. 앉아. 아니, 서 있어도 돼. 이 얘기는 서서 해도 앉아서 해도 무거우니까. #line:nabi_hc_002
+player: 한 가지 물어보고 싶어요. 제가 다른 사람들도 마음에 두고 있어요. 서로 알고, 서로 괜찮다고 할 때만 같이 가고 싶고요. #line:nabi_hc_003
+nabi: 알고 있었어. 네가 가게에서 누구랑 있었는지 내가 못 볼 만큼 눈이 나쁘진 않거든. #line:nabi_hc_004
+-> 나비 씨 생각이 먼저 듣고 싶어요. 싫다고 해도 괜찮고, 그래도 달라지는 건 없어요. #line:nabi_hc_005
+    <<aff nabi 5>>
+    <<trust nabi 1.5>>
+    <<show_standing nabi smile>>
+    nabi: 싫다고 해도 괜찮다는 말부터 해 주네. 그 순서가 제일 중요한 거야. #line:nabi_hc_006
+-> 다른 사람들은 이미 받아들였어요. 나비 씨도 받아들이면 돼요. #line:nabi_hc_007
+    <<aff nabi -1>>
+    <<trust nabi -1>>
+    <<show_standing nabi angry>>
+    nabi: 그건 부탁이 아니라 통보야. 받아들이라는 말은 문 안쪽에서 잠그는 소리랑 같아. #line:nabi_hc_008
+    nabi: 다시 물어봐. 물음표로. 아니면 오늘은 대답 안 해. #line:nabi_hc_009
+    <<show_standing nabi neutral>>
+    player: …맞아요. 다시 물어볼게요. 나비 씨는 어떻게 생각해요? 싫다면 말해 줘요. #line:nabi_hc_010
+    nabi: 그래. 그렇게. 이제 대답할 수 있겠다. #line:nabi_hc_011
+nabi: 나는 너를 좋아해. 이거 먼저. 다른 사람이 있다고 이 마음이 바뀌진 않아. #line:nabi_hc_012
+nabi: 그리고 내가 같이해도 된다고 하는 건, 조건이 있어서야. 들어 줘. 넷이야. #line:nabi_hc_013
+nabi: 하나, 나는 언제든 떠날 수 있어. 며칠이든 몇 달이든, 이유는 안 말해도 돼. 돌아올 때만 알려 줘. #line:nabi_hc_014
+nabi: 둘, 어디냐고 묻지 마. 누구랑 있냐고도, 몇 시에 오냐고도. 말하고 싶은 건 내가 말할게. #line:nabi_hc_015
+nabi: 셋, 나는 다른 사람들이랑 같이 있어도 된다고 내 입으로 직접 들을 거야. 네가 전해 주는 말은 안 믿어. 한 명씩 내가 직접 물어서 들을 거야. #line:nabi_hc_016
+nabi: 넷, 이 모든 걸 언제든 철회할 수 있어. 칠판에 쓴 약속처럼. 나도, 너도, 다른 사람도. #line:nabi_hc_017
+nabi: 이 중에 하나라도 못 지킨다면 지금 말해. 지금이 제일 덜 아프니까. #line:nabi_hc_018
+player: 나비 씨, 질문 하나만요. 제가 질투가 나면 어떻게 하면 좋아요? #line:nabi_hc_019
+nabi: 질투는 나도 날 거야. 그 감정은 존중받아도 돼. 문제는 그다음에 뭘 하느냐지. 네 대답이 궁금해. #line:nabi_hc_020
+-> 질투가 나면 말로 할게요. 나비 씨를 붙잡거나 줄여 달라는 데에는 안 쓸게요. #line:nabi_hc_021
+    <<aff nabi 5>>
+    <<trust nabi 1.5>>
+    <<show_standing nabi smile>>
+    nabi: 말로 한다. 붙잡는 데 안 쓴다. 그 두 줄이면 충분해. #line:nabi_hc_022
+-> 저는 질투 같은 거 안 해요. 아무렇지 않을 거예요. #line:nabi_hc_023
+    <<show_standing nabi neutral>>
+    nabi: 그건 거짓말이야. 날 땐 난다고 해. 안 나는 척하다 터지면 그게 더 무서워. #line:nabi_hc_024
+    nabi: 나지 않는다는 약속보단, 나면 말하겠다는 약속이 더 믿을 만해. #line:nabi_hc_025
+-> 질투가 나면 나비 씨가 다른 사람을 만나는 시간을 줄여 줘요. #line:nabi_hc_026
+    <<aff nabi -1>>
+    <<trust nabi -1>>
+    <<show_standing nabi angry>>
+    nabi: 그건 통제야. 조건 둘이랑 정면으로 부딪혀. 그 대답이면 오늘은 동의 못 해. #line:nabi_hc_027
+    <<show_standing nabi neutral>>
+    player: 맞아요. 방금 말은 취소할게요. 질투는 제 몫이에요. 나비 씨 시간을 깎아서 풀 일이 아니에요. #line:nabi_hc_028
+    nabi: 취소해 줘서 고마워. 계속하자. #line:nabi_hc_029
+nabi: 마지막으로 확인할게. 나는 동의해. 지금 이 순간 내 마음으로, 이 조건 안에서. 너도 같은 마음이야? #line:nabi_hc_030
+player: 네, 동의해요. 그리고 나비 씨가 마음을 바꾸면 말해 줘요. 그때도 문은 열려 있어요. #line:nabi_hc_031
+<<show_standing nabi smile>>
+nabi: 그 말 들으려고 올라왔어. 자유라는 말 있잖아. 갈 수 있다는 뜻이 아니라, 있고 싶어서 있다는 뜻이야. #line:nabi_hc_032
+nabi: 나는 동의했어. 다른 사람들 대답은 내가 직접 묻고 내 귀로 들은 만큼만 믿을 거야. 그건 내 몫이니까. 노래는 다음에. #line:nabi_hc_033
+<<flag harem_ok_nabi>>
+<<show_standing nabi neutral>>
+===

@@ -1,0 +1,77 @@
+// 하울 개인 이벤트 1 「첫 잔」(1장, 개업 전날 밤). 진입 노드 Howl_E1
+// 비트: 서툰 칵테일 -> 말없이 끝까지 마심 -> 평가 대신 남은 얼음 한 조각 -> 선택(플래그) -> 마감.
+// 플래그: howl_e1_trust(제스처의 뜻을 읽음) / howl_e1_asked(말로 듣고 싶다고 함) / howl_e1_doubt(자기 비하로 받음)
+title: Howl_E1
+tags: howl event e1 chapter1
+---
+<<bg cafe night>>
+<<show_standing howl neutral>>
+개업 전날 밤. 홀의 불은 반쯤 꺼 두었고, 카운터 위 작은 등만 주황빛으로 켜져 있다. #line:howl_e1_001
+삼촌이 남긴 칵테일 레시피 카드를 앞에 두고, 아까부터 셰이커만 만지작거리고 있었다. #line:howl_e1_002
+howl: …아직 안 올라갔어? 내일이 개업인데. #line:howl_e1_003
+player: 연습이 안 끝났어요. 삼촌 카드대로 해 봤는데, 계속 이상한 맛이 나서요. #line:howl_e1_004
+howl: 위층 불이 안 켜져서 와 봤다. 카운터 등이 켜져 있으면, 대개 누가 혼자 고민하는 중이거든. #line:howl_e1_005
+player: 들켰네요. 맞아요, 고민 중이었어요. #line:howl_e1_006
+howl: 나한테 줘 봐. 마시는 건 잘해. #line:howl_e1_007
+player: 정말요? 아직 맛이 이상할 텐데요. #line:howl_e1_008
+howl: 이상한 맛을 마시는 건, 싫어하지 않아. 연습이면 더더욱. #line:howl_e1_009
+howl: 잔은 내가 닦을 테니 신경 쓰지 마. 만드는 데만 집중해. #line:howl_e1_010
+레몬을 짜고, 시럽을 따르고, 얼음을 넣었다. 셰이커를 흔드는 손이 어색해서 얼음이 홀 바닥으로 한 조각 튀었다. #line:howl_e1_011
+player: 앗, 얼음이… 죄송해요, 처음부터 다시 할게요. #line:howl_e1_012
+howl: 그대로 해. 이미 반은 만들었잖아. #line:howl_e1_013
+player: 레시피 카드에 ‘시럽은 취향껏’이라고 적혀 있어요. 취향이라니, 삼촌도 참. #line:howl_e1_014
+howl: 그 양반다운 말이야. 정답을 안 알려 주는 게 정답이라고 믿었거든. #line:howl_e1_015
+howl: 취향껏이면, 네 취향대로 해. 틀려도 내가 마시니까. #line:howl_e1_016
+잔에 따른 칵테일은 색이 약간 탁했다. 레몬이 너무 많았고, 시럽은 조금 모자랐다. 잔을 내밀자 하울은 두 손으로 받았다. #line:howl_e1_017
+howl: …. #line:howl_e1_018
+하울은 한 모금 마시고, 말없이 잔을 내려놓지 않았다. 두 모금, 세 모금. 표정은 거의 변하지 않았다. #line:howl_e1_019
+player: (아무 말도 없네. 못 마시겠으면 말해도 되는데.) #line:howl_e1_020
+잔이 비어 갈수록 내 손이 먼저 식은땀으로 젖었다. 하울은 천천히 잔을 기울이며 눈을 감았다. #line:howl_e1_021
+마시는 동안만큼은 가게의 모든 소리가 멈춘 것처럼 조용했다. 하울은 마지막 한 방울까지 마시고 나서야 잔을 내려놓았다. #line:howl_e1_022
+howl: …잘 마셨다. #line:howl_e1_023
+player: 그, 그게 다예요? 맛은 어땠어요? #line:howl_e1_024
+하울은 대답 대신 얼음통에서 집게로 얼음을 한 조각 집었다. 그리고 빈 잔 속에 조용히 올려 놓았다. #line:howl_e1_025
+<<show_cg HOWL_E1>>
+카운터 등불 아래, 투명한 얼음 한 조각이 빈 잔 안에서 천천히 반짝이고 있었다. #line:howl_e1_026
+howl: 남은 얼음이다. #line:howl_e1_027
+<<show_standing howl shy>>
+howl: …이게 내가 하는 말이야. 말로는 서툴러서. #line:howl_e1_028
+-> 한 잔 더 만들어 보라는 뜻이죠? 이번엔 레몬을 줄일게요. #line:howl_e1_029
+    <<flag howl_e1_trust>>
+    <<aff howl 3>>
+    <<trust howl 1>>
+    howl: …맞아. 이번엔 덜 시게. 시럽은 두 숟갈 반. #line:howl_e1_030
+    <<show_standing howl smile>>
+    howl: 알아듣는군. 설명 안 해도 되겠네. 그건 꽤 큰일이야. #line:howl_e1_031
+    howl: 평가는 못 해. 틀렸다고 하면 포기할 것 같고, 맞았다고 하면 멈출 것 같아서. 그래서 얼음 한 조각이야. #line:howl_e1_032
+-> 솔직히 말해 줘요. 못 마시겠으면 못 마시겠다고 해도 돼요. #line:howl_e1_033
+    <<flag howl_e1_asked>>
+    <<aff howl 1>>
+    howl: …솔직하게. 어려운 주문이지만, 해 볼게. #line:howl_e1_034
+    howl: 시었다. 레몬이 많아. 근데 끝까지 마신 건, 마시고 싶었기 때문이다. #line:howl_e1_035
+    <<show_standing howl neutral>>
+    howl: 말로 하니까 어색하군. 얼음 쪽이 편해. #line:howl_e1_036
+-> 맛없었죠? 그럴 줄 알았어요. 처음이니까요. #line:howl_e1_037
+    <<flag howl_e1_doubt>>
+    <<show_standing howl neutral>>
+    howl: …다 마셨잖아. #line:howl_e1_038
+    howl: 맛없는 걸 끝까지 마시는 사람은 없어. 적어도 나는 그래. #line:howl_e1_039
+    howl: 스스로 깎아내리지 마. 처음에 이 정도면, 두 번째는 훨씬 나아질 거야. #line:howl_e1_040
+    howl: 얼음 한 조각은 ‘한 잔 더’라는 뜻이었다. 다음엔 말로 해야겠네. #line:howl_e1_041
+<<hide_cg>>
+빈 잔을 닦던 하울의 귀가 잠깐, 아주 잠깐 붉어진 것처럼 보였다. 등불 때문일지도 모르겠다. #line:howl_e1_042
+<<show_standing howl neutral>>
+빈 잔을 헹구고 얼음을 하나씩 정리하는 동안, 하울이 가게 안쪽을 한 번 둘러봤다. #line:howl_e1_043
+player: 아까 얼음 얹어 준 거요. 삼촌한테도 그렇게 했어요? #line:howl_e1_044
+howl: …아니. 그건 내 방식이야. 삼촌은 늘 ‘괜찮네’ 한마디였지. 나는 그 말이 서툴러서. #line:howl_e1_045
+howl: 내일부터 이 홀에 사람이 찰 거야. 소란스러워지겠지. …좀 낯설겠다. #line:howl_e1_046
+player: 소란이 싫으세요? #line:howl_e1_047
+howl: 싫진 않아. 다만 이 가게가 이렇게 조용한 건 오늘이 마지막이라서. #line:howl_e1_048
+howl: 불은 계속 켜 둘게. 첫 손님이 오기 전까지. 그리고 그 이후에도. #line:howl_e1_049
+player: 고마워요, {player_calls("howl")}. 그럼 내일 첫 잔은 레몬을 반만 넣을게요. #line:howl_e1_050
+<<show_standing howl smile>>
+howl: 그래. 내일 첫 잔은 손님 몫이야. 두 번째 잔은, 내가 마시지. #line:howl_e1_051
+howl: 올라가서 쉬어, {calls_player("howl")}. 의자는 내가 닦아 두고 갈게. #line:howl_e1_052
+<<show_standing howl neutral>>
+<<end_event howl 1>>
+===

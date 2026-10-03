@@ -1,0 +1,59 @@
+// 요한 엔딩 — 굿「다시 올 이유」. 조건: 호감 85+/신뢰 40+/개인 이벤트 5개. CG 는 E5(JOHAN_E5) 겸용.
+// E5 의 johan_e5_slow(시간이 필요) 플래그가 있으면 ‘먼저 말하는 쪽’이 주인공이 된다(속도는 주인공이 정한다).
+title: Johan_End_Good
+tags: johan ending good
+---
+<<bg harbor dusk>>
+<<show_standing johan smile>>
+<<show_cg JOHAN_E5>>
+일 년 뒤, 달빛 모퉁이의 개업 기념일. 오후 늦게 영업을 마치고, 부두 쪽으로 나란히 걸어 나온다. 노을이 수면을 주황에서 보라로 천천히 바꾼다. #line:johan_eg_001
+johan: 일 년이네. 숫자로 말하면 간단한데, 막상 입으로 하니까 길다. 길게 한 것 치고는 하나도 안 지루했어. #line:johan_eg_002
+player: 곁에서 계속 떠들어서 그런 거 아니에요? #line:johan_eg_003
+johan: 그럴지도. 칭찬이야, 그거? #line:johan_eg_004
+player: 칭찬이에요. #line:johan_eg_005
+장마와 체인점과 눈 오던 새벽이, 지나온 길 위에 겹겹이 쌓여 있는 것 같다. #line:johan_eg_033
+johan: 일 년 동안 칼럼 마감을 한 번도 안 어긴 달이 없었어. 네가 문 앞에 불을 켜 두고 있으면 마감 끝나자마자 뛰어오게 되거든. #line:johan_eg_034
+player: 뛰지 말고 걸어와요. 넘어지면 안 되잖아요. #line:johan_eg_035
+johan: 걷는 쪽으로 할게. 느려져도 그만큼 오래 있을 수 있으니까. #line:johan_eg_036
+johan: 칭찬을 칭찬이라고 말해 주면 받을 수 있게 되더라. 일 년 전의 나는 못 받았을 텐데. 많이 컸지. #line:johan_eg_006
+요한이 가방에서 신문 스크랩 한 장을 꺼낸다. 「혀끝의 항구」 마지막 문단에 굵은 글씨가 있다. #line:johan_eg_007
+johan: 이번 달 칼럼. 달빛 모퉁이 얘기는 한 줄도 없어. 대신 이 골목의 이웃들 얘기를 썼어. 빵집, 꽃집, 새벽에 생선 나르는 분들. 쓰기 전에 한 분씩 찾아가서 읽어 드렸어. #line:johan_eg_008
+johan: 이게 내가 약속한 방식이야. 이 가게로 이득을 보는 글은 안 쓴다. 쓰고 싶은 글은 쓰기 전에 먼저 알린다. …지켰지? #line:johan_eg_009
+-> 네, 지켰어요. 이제 첫 독자는 늘 제가 할게요. 발행 전에, 직접 읽어 주는 걸로요. #line:johan_eg_010
+    <<flag johan_good_first_reader>>
+    <<show_standing johan surprised>>
+    johan: 발행 전 낭독 서비스. 내가 하는 쪽이 되는 건데, 그건 내 수익 구조가 완전히 달라지는 일인데. …좋아. 수익 없이 하는 게 제일 즐거운 일이야. #line:johan_eg_011
+-> 지켜 줘서 고마워요. 그런데 가끔은 쓰지 않아도 돼요. 쉬어도 되는 거예요. #line:johan_eg_012
+    <<flag johan_good_rest>>
+    <<show_standing johan shy>>
+    johan: …쉬어도 된다고. 쓰는 사람한테 그 말은, 쓰는 일의 허락이 아니라 쓰는 사람의 허락이야. #line:johan_eg_013
+    johan: 알았어. 못 쓰는 달에는 못 쓴다고 쓸게. 그것도 칼럼이니까. #line:johan_eg_014
+-> 오늘은 칼럼 말고, 당신 얘기를 듣고 싶어요. #line:johan_eg_015
+    johan: 나의 이야기. 그건 서론이 길어서, 평생 걸릴 텐데. #line:johan_eg_016
+    johan: 평생 걸려도 되는 거지? 이건 질문이야. 대답은 천천히 해도 돼. #line:johan_eg_017
+노을이 마지막 빛을 거둬 간다. 요한이 안경을 벗어 주머니에 넣는다. 그 동작이 이제는 낯설지 않다. #line:johan_eg_018
+<<if flag("johan_e5_slow")>>
+    <<show_standing johan neutral>>
+    johan: 일 년 전에 시간이 필요하다고 했지. 나는 그 시간 동안 하나도 안 급했어. 급하지 않은 게 이렇게 좋을 줄 몰랐어. #line:johan_eg_019
+    player: {player_calls("johan")}, 이제 시간이 충분했어요. 제가 먼저 말해도 될까요? #line:johan_eg_020
+    <<show_standing johan surprised>>
+    johan: …네가 먼저. 그럼 나는 듣는 쪽이네. 안경을 벗고 있어서 다행이야. 눈물 닦을 때 안 쓰는 편이 편하거든. #line:johan_eg_021
+    player: 사귀고 싶어요. 함께, 오래요. #line:johan_eg_022
+    johan: 사귀는 거, 오래. 그 두 단어를 한 문장에 넣어 주면 제일 안전한 문장이 되네. 응, 오래. #line:johan_eg_023
+<<else>>
+    johan: 하나만 물어볼게. 키스해도 돼? 싫으면 싫다고 해. 정말 괜찮아. 오늘이 아니어도 되고. #line:johan_eg_024
+    player: 지금 괜찮아요. #line:johan_eg_025
+<<endif>>
+<<show_standing johan smile>>
+요한의 손이 조심스럽게 뺨에 닿는다. 눈이 마주치고, 둘 다 웃는다. 입술이 닿는 순간, 부두의 가로등이 하나씩 켜진다. #line:johan_eg_026
+바다는 말이 없고, 달은 아직 떠오르지 않았다. #line:johan_eg_027
+<<hide_cg>>
+<<bg cafe night>>
+그날 밤, 달빛 모퉁이의 창가 두 번째 자리 이름표 옆에 별 세 개 아래로 작은 글씨가 하나 늘었다. 요한의 필체다. #line:johan_eg_028
+"남은 별 두 개는 방문으로 갚는 중." #line:johan_eg_029
+<<show_standing johan smile>>
+johan: 잊지 마. 평생 할부야. 이자는 수프 한 그릇이고. #line:johan_eg_030
+player: 이자가 너무 싸네요. #line:johan_eg_031
+johan: 싼 게 아니라 내가 아직 평가를 보류 중인 거야. 평가는 매일 새로 쓰고 있거든. 오늘 점수는, 비밀. #line:johan_eg_032
+<<show_standing johan neutral>>
+===

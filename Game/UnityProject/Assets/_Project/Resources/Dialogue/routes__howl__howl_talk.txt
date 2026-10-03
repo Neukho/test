@@ -1,0 +1,327 @@
+// 하울 일상 대화(밤 행동 '대화'). 호스트가 $aff_howl(읽기 전용)를 제공한다.
+// 선택지 보상: 정답 aff +5 trust +1.5 / 오답 aff -1 trust -1 / 무난한 답은 변화 없음(balance/actions.csv).
+// 진입 노드: Howl_Talk_01 ~ Howl_Talk_06
+title: Howl_Talk_01
+tags: howl talk
+---
+<<bg cafe night>>
+<<show_standing howl neutral>>
+<<if $aff_howl < 30>>
+    마감 시간이 지난 홀. 하울이 의자를 하나씩 뒤집어 올리며 다리를 닦고 있다. #line:howl_talk_001
+    howl: …아직 안 갔어? 마감은 내가 해도 되는데. #line:howl_talk_002
+    player: 구경해도 될까요? 이 가게 마감이 어떤지 알아 두고 싶어서요. #line:howl_talk_003
+    howl: 구경할 만한 건 없어. …앉아 있는 건 괜찮고. #line:howl_talk_004
+<<elseif $aff_howl < 60>>
+    howl: …왔어? 의자, 닦아놨다. #line:howl_talk_005
+    player: 오늘도 마감 중이었네요. {player_calls("howl")}, 제가 방해한 건 아니죠? #line:howl_talk_006
+    howl: 방해 아니야. 말 걸 사람이 있으면 손이 더 빨라지는 편이야. 이상하게. #line:howl_talk_007
+<<else>>
+    howl: {calls_player("howl")}. 늦었네. 그래도 이 자리는 비워 뒀어. #line:howl_talk_008
+    player: 마감 끝나길 기다렸어요. 오늘은 제가 곁에서 구경할래요. #line:howl_talk_009
+    howl: …구경하라고 비워 둔 건 아닌데. 뭐, 좋아. #line:howl_talk_010
+<<endif>>
+howl: 의자는 말이야, 손님이 가게에서 제일 먼저 만지는 거야. 삐걱대면 마음이 먼저 삐걱대. 그래서 다리 쪽을 닦아. #line:howl_talk_011
+-> 저도 닦아 볼래요. 어떻게 하는지 알려 주세요. #line:howl_talk_012
+    <<aff howl 5>>
+    <<trust howl 1.5>>
+    <<show_standing howl smile>>
+    howl: …천을 이렇게 접어. 먼지는 안쪽으로 모으고. 그래, 그렇게. #line:howl_talk_013
+    howl: 손이 빠르네. 처음치고는. #line:howl_talk_014
+-> 와, 정말 대단하세요! 이렇게 세심한 분은 처음 봐요! #line:howl_talk_015
+    <<aff howl -1>>
+    <<trust howl -1>>
+    <<show_standing howl shy>>
+    howl: …과해. 그냥 의자 닦는 거야. #line:howl_talk_016
+    howl: 칭찬은 한 번이면 돼. 두 번 들으면 어색해. #line:howl_talk_017
+-> 그럼 오늘은 맡길게요. 내일은 같이 해요. #line:howl_talk_018
+    howl: …그래. 내일은 같이 하지. #line:howl_talk_019
+howl: 마감을 혼자 하는 이유가 있다면, 이런 건 말이 필요 없어서야. 조용히 끝내면 하루가 정리돼. #line:howl_talk_020
+-> 말없이 같이 닦는 건 괜찮아요? #line:howl_talk_021
+    <<aff howl 5>>
+    <<trust howl 1.5>>
+    <<show_standing howl smile>>
+    howl: …그건 괜찮아. 말 안 해도 되는 사람이 옆에 있는 건, 싫지 않다. #line:howl_talk_022
+-> 혼자서만 하면 외롭지 않아요? 사람들하고 더 어울려 봐요. #line:howl_talk_023
+    <<aff howl -1>>
+    <<trust howl -1>>
+    <<show_standing howl neutral>>
+    howl: …외롭다고 한 적 없어. #line:howl_talk_024
+    howl: 조용한 거랑 외로운 건 달라. 가끔은 구분해 줬으면 한다. #line:howl_talk_025
+<<if $aff_howl < 30>>
+    howl: 늦기 전에 들어가. 내일 아침 첫 손님 준비도 있으니까. #line:howl_talk_026
+<<elseif $aff_howl < 60>>
+    howl: 오늘은 여기까지. …내일도 의자는 닦아 둘 테니까. #line:howl_talk_027
+<<else>>
+    howl: 같이 닦으니까 마감이 금방 끝났네. …고맙다는 말은 한 번만 할게. 고마워. #line:howl_talk_028
+<<endif>>
+<<show_standing howl neutral>>
+===
+
+title: Howl_Talk_02
+tags: howl talk
+---
+<<bg cafe night>>
+<<show_standing howl neutral>>
+<<if $aff_howl < 30>>
+    howl: 내일 새벽에 어시장에 가. 생선 상태를 직접 봐야 해서. #line:howl_talk_029
+    player: 새벽이면 몇 시쯤이에요? #line:howl_talk_030
+    howl: 다섯 시. …물어본 거면, 올 생각이 있다는 건가. #line:howl_talk_031
+<<elseif $aff_howl < 60>>
+    howl: 내일 새벽 어시장이다. 가고 싶으면 다섯 시에 문 앞에서 봐. #line:howl_talk_032
+    player: 가고 싶어요. {player_calls("howl")}, 고르는 걸 옆에서 보고 배우고 싶어요. #line:howl_talk_033
+    howl: 배울 건 별로 없어. 눈이랑 코로 하는 일이야. #line:howl_talk_034
+<<else>>
+    howl: {calls_player("howl")}, 내일 새벽에 어시장 갈 건데. …같이 갈래? #line:howl_talk_035
+    player: 갈래요. 먼저 물어봐 주는 거, 오랜만이에요. #line:howl_talk_036
+    howl: …그랬나. 몰랐다. #line:howl_talk_037
+<<endif>>
+howl: 새벽 시장은 시간이 전부야. 다섯 시에 가면 제일 좋은 놈이 남아 있고, 여섯 시에 가면 다 팔려 있어. #line:howl_talk_038
+-> 다섯 시 정각에 문 앞이죠. 시간은 꼭 지킬게요. #line:howl_talk_039
+    <<aff howl 5>>
+    <<trust howl 1.5>>
+    <<show_standing howl smile>>
+    howl: …그래. 약속이다. 늦으면 말고, 안 늦으면 내가 커피 사지. #line:howl_talk_040
+-> 가능하면 갈게요! 늦을 수도 있지만요. #line:howl_talk_041
+    <<aff howl -1>>
+    <<trust howl -1>>
+    <<show_standing howl neutral>>
+    howl: …가능하면, 이라. 그럼 기다리진 않을게. #line:howl_talk_042
+    howl: 올 건지 안 올 건지만 정해 줘. 그게 서로 편해. #line:howl_talk_043
+-> 이번엔 구경만 할게요. 일찍 일어나는 건 자신이 없어서요. #line:howl_talk_044
+    howl: 솔직하네. 다음에는 올 수 있을 때 말해. #line:howl_talk_045
+howl: 요즘 구운 생선 메뉴를 생각 중이야. 소금이랑 레몬만 쓰고 싶은데. #line:howl_talk_046
+-> 간이 약하다고 할 손님도 있겠지만, 저는 {player_calls("howl")} 방식 그대로 해 보고 싶어요. #line:howl_talk_047
+    <<aff howl 5>>
+    <<trust howl 1.5>>
+    howl: …그렇게 말해 주면 해 볼 만하다. #line:howl_talk_048
+-> 고르신 거면 뭐든 최고일 거예요. 믿고 있어요! #line:howl_talk_049
+    <<aff howl -1>>
+    <<trust howl -1>>
+    <<show_standing howl shy>>
+    howl: 믿는 것과 맛은 별개야. 그 말은 맛보고 나서 해 줘. #line:howl_talk_050
+-> 맛은 저도 보고 싶어요. 시식은 언제 해요? #line:howl_talk_051
+    howl: 내일 새벽 장 다녀온 다음. …그때 보자. #line:howl_talk_052
+<<show_standing howl neutral>>
+<<if $aff_howl >= 60>>
+    howl: 그럼 자라. 알람 맞추는 거 잊지 말고. 깨우러 가는 건 반칙이라서. #line:howl_talk_053
+<<else>>
+    howl: 일찍 자. 알람은 맞춰 두고. #line:howl_talk_054
+<<endif>>
+===
+
+title: Howl_Talk_03
+tags: howl talk
+---
+<<bg cafe night>>
+<<show_standing howl neutral>>
+카운터 위에는 씻은 잔이 줄지어 엎어져 있다. 하울은 그중 한 개를 불빛에 비춰 보고 있다. #line:howl_talk_055
+<<if $aff_howl < 30>>
+    howl: 그 잔 만지지 마. 가장자리에 이가 나갔을지도 몰라. #line:howl_talk_056
+    player: 제가 닦으면 안 될까요? 설거지는 자신 있는데. #line:howl_talk_057
+    howl: …자신 있는 것과 다치지 않는 건 달라. 잠깐 기다려. #line:howl_talk_058
+<<elseif $aff_howl < 60>>
+    howl: 그 잔은 내가 닦지. 손 다친다. #line:howl_talk_059
+    player: 저도 도울 수 있는데요. {player_calls("howl")}, 한 번만 맡겨 봐요. #line:howl_talk_060
+    howl: …맡기는 게 서툴러서 그래. 알고는 있어. #line:howl_talk_061
+<<else>>
+    howl: {calls_player("howl")}, 그 잔 이리 줘. 내가 닦을게. #line:howl_talk_062
+    player: 또 그러신다. 저도 같이 닦을 수 있다니까요. #line:howl_talk_063
+    howl: …습관이야. 알면서도 안 고쳐지는 거. 이해해 줘. #line:howl_talk_064
+<<endif>>
+-> 그럼 닦는 건 맡길게요. 저는 옆에서 물기를 닦을게요. 같이 하면 빨리 끝나잖아요. #line:howl_talk_065
+    <<aff howl 5>>
+    <<trust howl 1.5>>
+    <<show_standing howl smile>>
+    howl: …그게 좋겠다. 천은 저 서랍에 있어. #line:howl_talk_066
+-> 제가 알아서 할게요. 신경 쓰지 않으셔도 돼요. #line:howl_talk_067
+    <<aff howl -1>>
+    <<trust howl -1>>
+    <<show_standing howl sad>>
+    howl: …그래. 알겠다. #line:howl_talk_068
+    howl: 신경 쓰지 말라는 말은, 이상하게 오래 남는다. 아니야, 잊어. #line:howl_talk_069
+-> 그럼 이번엔 닦아 주세요. 다음엔 제가 할게요. #line:howl_talk_070
+    howl: 그래. 다음엔 네 차례다. #line:howl_talk_071
+<<show_standing howl neutral>>
+howl: 이건 이가 나갔네. 입술 닿는 자리야. 손님 다치기 전에 치우는 게 맞아. #line:howl_talk_072
+howl: 삼촌이 아끼던 잔이긴 한데. …네가 정해. #line:howl_talk_073
+-> 위험한 건 숨기지 말고 치워요. 대신 사진으로 한 장 남겨 둘게요. #line:howl_talk_074
+    <<aff howl 5>>
+    <<trust howl 1.5>>
+    <<show_standing howl smile>>
+    howl: …기억을 남기는 쪽이 맞겠네. 그렇게 하자. #line:howl_talk_075
+-> 한 번쯤은 괜찮지 않을까요? 아끼던 건데 버리기엔 아쉬워서요. #line:howl_talk_076
+    <<aff howl -1>>
+    <<trust howl -1>>
+    <<show_standing howl angry>>
+    howl: 안 돼. 누가 다치면 그때는 늦어. #line:howl_talk_077
+    howl: …미안, 목소리가 컸다. 그래도 그건 양보 못 해. #line:howl_talk_078
+    <<show_standing howl neutral>>
+<<if $aff_howl < 30>>
+    howl: 잔은 내가 정리하고 갈게. 먼저 들어가. #line:howl_talk_079
+<<elseif $aff_howl < 60>>
+    howl: 고마워. 옆에서 닦아 준 거. …좋았다. #line:howl_talk_080
+<<else>>
+    howl: 이런 밤이면 마감이 안 끝났으면 싶어. 방금 한 말은 못 들은 걸로 해. #line:howl_talk_081
+<<endif>>
+===
+
+title: Howl_Talk_04
+tags: howl talk
+---
+<<bg cafe night>>
+<<show_standing howl neutral>>
+<<if $aff_howl < 30>>
+    howl: 요한이 그러더군. 가게에서 기념 파티를 하자고. 음악도, 사람도 가득 채우자고. #line:howl_talk_082
+    player: {player_calls("howl")}, 그런 자리 좋아하세요? #line:howl_talk_083
+    howl: …소리가 큰 건 딱히. 그냥 알아 두라고 한 말이야. #line:howl_talk_084
+<<elseif $aff_howl < 60>>
+    howl: 요한이 파티 얘기를 꺼냈어. 가게 기념으로 시끌벅적하게. #line:howl_talk_085
+    player: 그 얘기 저도 들었어요. {player_calls("howl")}, 어떻게 하고 싶어요? #line:howl_talk_086
+    howl: 하고 싶지 않다는 게 아니라… 소리가 크면 귀가 먼저 지쳐. #line:howl_talk_087
+<<else>>
+    howl: {calls_player("howl")}. 요한이 파티 얘기를 했는데. …아직 못 정했다. #line:howl_talk_088
+    player: 정해야 하는 거예요? 제가 거절해도 되는데요. #line:howl_talk_089
+    howl: 거절하는 건 네 몫이 아니라 내 몫이야. 근데 말이 안 나와서. #line:howl_talk_090
+<<endif>>
+howl: 가게는 네 거니까, 네가 하자고 하면 나도 서 있을 거야. 다만 귀가 좀 아플 뿐이지. #line:howl_talk_091
+-> 시끄러운 걸 힘들어하는 건 알고 있어요. 조용한 자리로 바꿀 수 있는지 {player_calls("johan")}하고 얘기해 볼게요. #line:howl_talk_092
+    <<aff howl 5>>
+    <<trust howl 1.5>>
+    <<show_standing howl smile>>
+    howl: …그렇게까지 해 줄 필요는 없는데. 고맙다. #line:howl_talk_093
+-> 한 번쯤 어울려 봐요. 막상 해 보면 재밌을 거예요. #line:howl_talk_094
+    <<aff howl -1>>
+    <<trust howl -1>>
+    <<show_standing howl neutral>>
+    howl: …그럴지도 모르지. #line:howl_talk_095
+    howl: 그런데 ‘해 보면 좋아진다’는 말은 내가 이미 여러 번 들었어. 이번엔 안 해도 되는 날로 쳐 줘. #line:howl_talk_096
+howl: 대신 이건 말할게. 소리가 큰 날엔 카운터 안쪽에 있고 싶어. 거기서는 다 들리고, 다 보이니까. #line:howl_talk_097
+-> 그 자리는 {player_calls("howl")} 자리로 해 둘게요. 그날은 바 뒤를 맡아 주세요. #line:howl_talk_098
+    <<aff howl 5>>
+    <<trust howl 1.5>>
+    <<flag howl_party_bar_seat>>
+    howl: …그거라면 할 수 있어. 약속하지. #line:howl_talk_099
+-> 그럼 파티 날엔 다 같이 홀에서 건배해요. 한 잔은 같이 해요. #line:howl_talk_100
+    <<aff howl -1>>
+    <<trust howl -1>>
+    <<show_standing howl sad>>
+    howl: …알겠다. 한 잔 정도는. #line:howl_talk_101
+    howl: 아니야, 괜찮아. 그 얘기는 거기까지 하자. #line:howl_talk_102
+    <<show_standing howl neutral>>
+-> 조용히 지낼 수 있는 방법이 있다면, 직접 골라 주세요. #line:howl_talk_103
+    howl: …직접 고르는 건 오랜만이다. 생각해 볼게. #line:howl_talk_104
+<<if $aff_howl >= 60>>
+    howl: 그래, 이런 걸 물어봐 줘서 고마워. …나도 {calls_player("howl")} 얘기라면 듣는 편이니까. #line:howl_talk_105
+<<else>>
+    howl: 이 얘기는 여기까지. 마감이나 마저 하자. #line:howl_talk_106
+<<endif>>
+===
+
+title: Howl_Talk_05
+tags: howl talk
+---
+<<bg cafe night>>
+<<show_standing howl neutral>>
+납품 서류가 카운터 위에 펼쳐져 있다. 하울이 한 장을 집어 들더니 날짜를 한참 들여다본다. #line:howl_talk_107
+<<if $aff_howl < 30>>
+    howl: 이거, 재료 납품이 늦어지고 있지. 말은 없었는데 장부가 말해 주더라. #line:howl_talk_108
+    player: 아, 그게… #line:howl_talk_109
+<<elseif $aff_howl < 60>>
+    howl: 납품 날짜가 밀렸더군. 내가 먼저 알아챈 게, 좀 신경 쓰이네. #line:howl_talk_110
+    player: 그게, 말하려고 했는데요. #line:howl_talk_111
+<<else>>
+    howl: {calls_player("howl")}. 이 서류, 이미 알고 있었지. 얼굴에 써 있었어. #line:howl_talk_112
+    player: 들켰네요. #line:howl_talk_113
+<<endif>>
+howl: 이 일은 위험하다 싶으면 숨기지 마. 말해 주면 같이 짊어질 수 있어. #line:howl_talk_114
+-> 사실 납품이 사흘째 밀리고 있어요. 혼자 해결해 보려 했는데, 도와 달라고 할게요. #line:howl_talk_115
+    <<aff howl 5>>
+    <<trust howl 1.5>>
+    <<show_standing howl smile>>
+    howl: …그래. 그 말이 듣고 싶었어. 거래처 연락처는 내가 알아. #line:howl_talk_116
+-> 별일 아니에요. 제가 알아서 할게요. #line:howl_talk_117
+    <<aff howl -1>>
+    <<trust howl -1>>
+    <<show_standing howl sad>>
+    howl: …별일 아니라는 얼굴은 아닌데. #line:howl_talk_118
+    howl: 혼자 감당하겠다는 말은, 나한텐 ‘안 믿는다’로 들려. 그런 뜻은 아니겠지만. #line:howl_talk_119
+-> 걱정 끼치는 게 싫어서요. 오늘은 말씀드렸으니 조금만 기다려 줄래요? #line:howl_talk_120
+    howl: 기다리는 건 잘해. …대신 사흘은 넘기지 마. #line:howl_talk_121
+howl: 숨기지 않는 것도 연습이야. 나도 서툴러서, 잘 못 가르쳐 주지만. #line:howl_talk_122
+-> 다음부터는 문제가 생기면 바로 말할게요. 약속해요. #line:howl_talk_123
+    <<aff howl 5>>
+    <<trust howl 1.5>>
+    <<flag howl_promised_to_tell>>
+    <<show_standing howl smile>>
+    howl: …약속은 어기지 않아. 나도, 너도. #line:howl_talk_124
+-> 걱정 끼치기 싫어서 앞으로도 말 안 할 수도 있어요. #line:howl_talk_125
+    <<aff howl -1>>
+    <<trust howl -1>>
+    <<show_standing howl neutral>>
+    howl: …그건 걱정이 아니라 거리야. #line:howl_talk_126
+    howl: 아니, 화난 건 아니야. 그냥 그 말은 오래 남을 거 같아서. #line:howl_talk_127
+<<if $aff_howl < 30>>
+    howl: 서류는 내가 복사해 둘게. 필요하면 가져가. #line:howl_talk_128
+<<elseif $aff_howl < 60>>
+    howl: 서류 정리는 내일 같이 하자. 오늘은 여기까지. #line:howl_talk_129
+<<else>>
+    howl: 고맙다. 숨김없이 말해 줘서. …이런 게 이렇게 따뜻할 줄은 몰랐네. #line:howl_talk_130
+<<endif>>
+<<show_standing howl neutral>>
+===
+
+title: Howl_Talk_06
+tags: howl talk
+---
+<<bg cafe night>>
+<<show_standing howl neutral>>
+벽 한쪽에는 오래된 항구 사진이 한 장 걸려 있다. 흑백이고, 등대가 작게 찍혀 있다. #line:howl_talk_131
+<<if $aff_howl < 30>>
+    howl: 그 사진, 눈여겨보고 있었나. #line:howl_talk_132
+    player: 네. 이 가게에 어울리는 사진이라서요. 조용하고요. #line:howl_talk_133
+    howl: …그렇게 봐 주는 사람은 드물어. #line:howl_talk_134
+<<elseif $aff_howl < 60>>
+    howl: 그 사진 좋아해? 등대 있는 거. #line:howl_talk_135
+    player: 좋아요. 직접 걸어 두신 건가요? #line:howl_talk_136
+    howl: 삼촌이 걸어 뒀어. 나는 가끔 닦기만 하고. #line:howl_talk_137
+<<else>>
+    howl: {calls_player("howl")}. 그 사진 앞에 서 있으면, 말을 걸고 싶어지는 얼굴이 되더라. #line:howl_talk_138
+    player: 들켰네요. 사진이 마음에 들어서요. #line:howl_talk_139
+    howl: …나도. 오래전부터. #line:howl_talk_140
+<<endif>>
+howl: 저 사진은 나랑 같이 일하던 사람이 찍었어. 항만 경호를 할 때. …그 이야기는 여기까지만 할게. #line:howl_talk_141
+-> 말하고 싶을 때가 오면 그때 들을게요. 급하지 않아요. #line:howl_talk_142
+    <<aff howl 5>>
+    <<trust howl 1.5>>
+    <<show_standing howl smile>>
+    howl: …고맙다. 그 말만으로도 한 걸음은 간 것 같다. #line:howl_talk_143
+-> 무슨 일이 있었는지 궁금해요. 지금 말해 줄 수 없어요? #line:howl_talk_144
+    <<aff howl -1>>
+    <<trust howl -1>>
+    <<show_standing howl sad>>
+    howl: …오늘은 못 해. 미안. #line:howl_talk_145
+    howl: 억지로 꺼내고 싶진 않아. 시간이 필요하다는 것만 알아 줘. #line:howl_talk_146
+-> 그럼 다른 사진 얘기를 해 줘요. 이 등대는 어디에 있어요? #line:howl_talk_147
+    howl: 도시 북쪽 언덕. 새벽에 올라가면 항구 전체가 보여. #line:howl_talk_148
+howl: 사진으로는 반의반도 안 담겨. 해 뜨기 직전에 바다 색이 변하는데, 그게 좋았지. #line:howl_talk_149
+-> 저는 이 사진이 좋아요. 조용해서요. 언젠가 진짜 등대도 보고 싶어요. #line:howl_talk_150
+    <<aff howl 5>>
+    <<trust howl 1.5>>
+    <<flag howl_wants_lighthouse>>
+    <<show_standing howl smile>>
+    howl: …좋아. 시간 되는 날 말해. 같이 가지. #line:howl_talk_151
+-> 진짜 예술이에요! 인생이 영화 같아요! #line:howl_talk_152
+    <<aff howl -1>>
+    <<trust howl -1>>
+    <<show_standing howl shy>>
+    howl: …영화는 아니야. 그냥 일하던 사람이 찍은 사진이야. #line:howl_talk_153
+    howl: 과한 말은 어디다 놓아야 할지 모르겠어서 곤란하다. #line:howl_talk_154
+<<show_standing howl neutral>>
+<<if $aff_howl < 30>>
+    howl: 사진은 계속 걸어 둘 거야. 보고 싶으면 언제든 봐. #line:howl_talk_155
+<<elseif $aff_howl < 60>>
+    howl: 다음에 사진집도 보여 줄게. 낡은 거지만 볼 만해. #line:howl_talk_156
+<<else>>
+    howl: 언젠간 그날 있었던 일도 말할게. …꼭 {calls_player("howl")}한테 먼저. #line:howl_talk_157
+<<endif>>
+===

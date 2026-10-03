@@ -1,0 +1,66 @@
+// 하울 다자(공동) 루트 조각. 가드레일: docs/10_Route_Structure.md §3 (전원 인지·동의, 독점 미화 금지, 키워드 ‘신뢰’ 유지, 수위 암시까지)
+// Howl_Harem_Consent: 이 인물과 ‘함께 사랑해도 되는지’ 서로 동의 확인, 끝에 flag harem_ok_howl / Howl_Harem_Epilogue: 공통 장면 뒤의 짧은 조각
+// 의존: 호스트가 Harem_Table 이후(루트 확정 뒤) 호출. 공통 스크립트가 구성원 이름을 직접 언급하므로 여기서는 ‘다른 사람들’로만 지칭.
+title: Howl_Harem_Consent
+tags: howl harem consent
+---
+<<bg cafe night>>
+<<show_standing howl neutral>>
+마감 후의 홀. 하울이 의자를 모두 올려놓고도 가지 않고 카운터 앞에 서 있다. 나는 할 말이 있다고 이미 말해 둔 터였다. #line:howl_harem_001
+howl: …말하려던 게 뭐야. 천천히 해도 돼. 마감은 끝났으니까. #line:howl_harem_002
+player: 저한테는 {player_calls("howl")}뿐 아니라 마음이 가는 사람들이 더 있어요. 그 사람들도 이 얘기를 알고 있고요. #line:howl_harem_003
+player: 속이는 건 싫어서 먼저 말해요. 함께 사랑하는 걸 {player_calls("howl")}도 원하는지 듣고 싶어요. #line:howl_harem_004
+<<show_standing howl surprised>>
+howl: …. #line:howl_harem_005
+하울은 잔 하나를 집었다가 내려놓았다. 닦을 잔은 하나도 남아 있지 않았다. #line:howl_harem_006
+howl: 솔직히 말해도 되나. 듣기 좋은 말은 못 해. #line:howl_harem_007
+player: 듣기 좋은 말은 필요 없어요. 정직한 말이면 돼요. #line:howl_harem_008
+<<show_standing howl sad>>
+howl: 처음에는 귀가 눕더라. 그건 거부가 아니라, 낯선 걸 만났을 때 하는 반응이야. #line:howl_harem_009
+howl: 나는 누군가를 혼자 지키는 쪽에 익숙했어. 같이 지키는 건 해 본 적이 없고. #line:howl_harem_010
+howl: 질투가 없다고는 안 할게. 있을 거다. 근데 그걸로 네 시간을 묶거나 네 선택을 바꾸려는 건 안 해. #line:howl_harem_011
+howl: 질투는 내 몫이야. 내가 알아서 다룰 감정이지, 네가 풀어 줄 문제가 아니라. #line:howl_harem_012
+-> 질투가 나면 말해 줘요. 숨기지 않아도 돼요. #line:howl_harem_013
+    <<aff howl 3>>
+    <<trust howl 1.5>>
+    <<show_standing howl smile>>
+    howl: …말해도 된다니, 그게 제일 필요한 말이었다. #line:howl_harem_014
+    howl: 숨기지 않기로 했으니까. 나는 약속을 어기지 않는다. 그건 이쪽에서도 마찬가지고. #line:howl_harem_015
+-> 다른 사람들한텐 굳이 말 안 해도 되죠? 모르는 게 편할 수도 있잖아요. #line:howl_harem_016
+    <<aff howl -1>>
+    <<trust howl -1>>
+    <<show_standing howl neutral>>
+    howl: …안 돼. 모르는 사람이 있는 관계는 못 해. #line:howl_harem_017
+    howl: 비밀이 되는 순간 그건 신뢰가 아니라 거래야. 이 얘기는 끝까지 다 알고 있는 사람들 사이에서만 한다. #line:howl_harem_018
+    player: 맞아요. 제가 틀렸어요. 모두에게 직접 말했고, 앞으로도 그럴게요. #line:howl_harem_019
+    <<show_standing howl smile>>
+    howl: 알았다. 그렇게 말해 주면 됐어. #line:howl_harem_020
+howl: 조건이 하나 있다. 아니, 부탁이다. 내가 불편해지는 날이 오면 말하게 해 줘. 그리고 그날은 네 쪽에서 속도를 늦춰 주면 좋겠어. #line:howl_harem_021
+player: 약속해요. 그리고 제가 부담스러운 날도 말할게요. 서로 멈출 수 있어야 하니까요. #line:howl_harem_022
+howl: 멈출 수 있어야 계속할 수 있는 거지. 그래, 그 방식이면 해 볼 수 있다. #line:howl_harem_023
+howl: 마지막으로 확인할게. 이건 네 부탁이라서 받아들이는 게 아니라, 내가 같이 해 보고 싶어서 하는 거야. #line:howl_harem_024
+howl: 네가 한 번이라도 마지못해서 받아들이는 듯 보이면, 나도 바로 말할 거고. 그것도 서로 같아야 해. #line:howl_harem_025
+player: 같아야 해요. 저도 {player_calls("howl")}, 당신이 마지못해 하는 거라면 원하지 않아요. #line:howl_harem_026
+howl: 그러면 됐다. 같이 사랑하자. 서툴러도, 숨기지 않고. #line:howl_harem_027
+<<show_standing howl smile>>
+하울이 얼음 한 조각을 집어 빈 잔에 올렸다. 이번에는 내 쪽으로 밀지 않고, 카운터 한가운데에 놓았다. #line:howl_harem_028
+howl: 이건 둘 다 마시자는 거야. 같이. #line:howl_harem_029
+<<flag harem_ok_howl>>
+player: 그럼 같이 마셔요. 오늘은 한 잔을 둘이서요. #line:howl_harem_030
+===
+
+title: Howl_Harem_Epilogue
+tags: howl harem epilogue
+---
+<<bg cafe night>>
+<<show_standing howl smile>>
+달빛 모퉁이의 홀은 오늘도 시끌벅적했다. 테이블마다 사람이 앉아 있고, 카운터 안쪽에서 하울이 조용히 잔을 닦았다. #line:howl_harem_031
+하울은 소란의 한가운데에서도 귀를 눕히지 않았다. 둘러앉은 사람들의 웃음소리를 하나씩 구분해 듣고 있었다. #line:howl_harem_032
+player: {player_calls("howl")}, 괜찮아요? 오늘은 평소보다 시끄러워서요. #line:howl_harem_033
+howl: …괜찮다. 시끄러운 거랑 외로운 건 달라. 이건 시끄러운 쪽이다. #line:howl_harem_034
+howl: 누가 어디 앉았는지 다 보여. 그게 마음 편하더라. #line:howl_harem_035
+하울이 내 앞에 얼음 한 조각이 든 잔을 내려놓았다. 곁에 있겠다는 뜻이었다. 나는 다른 쪽 손을 들어 사람들에게도 눈짓을 했다. #line:howl_harem_036
+howl: 불은 내가 켜 뒀어. 돌아올 사람이 여럿이면, 불이 좀 더 밝아야 하니까. #line:howl_harem_037
+player: 그래서 오늘 홀이 유난히 환했군요. #line:howl_harem_038
+howl: …그런 셈이지. #line:howl_harem_039
+===

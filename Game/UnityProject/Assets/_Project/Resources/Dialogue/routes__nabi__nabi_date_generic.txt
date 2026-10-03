@@ -1,0 +1,34 @@
+// 나비 데이트 공통(특정 스팟 대사가 없을 때). 수치는 호스트가 적용. 진입 노드 Nabi_Date_Generic
+// 플래그: nabi_generic_walk / nabi_generic_talk
+title: Nabi_Date_Generic
+tags: nabi date
+---
+<<show_standing nabi neutral>>
+<<if $aff_nabi < 30>>
+    nabi: 같이 걷는 건 오랜만이라 걸음이 안 맞을지도 몰라. 맞추려고 하지는 마. #line:nabi_dg_001
+    player: 맞는 대로 걸어요. 안 맞으면 쉬어 가고요. #line:nabi_dg_002
+    nabi: 쉼표 좋아. 그 방식으로 가자. #line:nabi_dg_003
+<<elseif $aff_nabi < 60>>
+    nabi: 어디든 괜찮다고 했지. 그럼 내가 아는 길로 갈게. #line:nabi_dg_004
+    player: {player_calls("nabi")}, 아는 길이 궁금해요. #line:nabi_dg_005
+    nabi: 별거 없어. 조용하고, 발소리가 잘 들려. #line:nabi_dg_006
+<<else>>
+    nabi: {calls_player("nabi")}, 오늘은 어디 갈래? 정하는 건 내가 해도 되는데, 네 의견이 먼저 듣고 싶네. #line:nabi_dg_007
+    player: 나비 씨가 정해 줘요. 어디든 좋을 것 같아요. #line:nabi_dg_008
+    nabi: 그 말이 제일 어려운 숙제인데. 알겠어, 해 볼게. #line:nabi_dg_009
+<<endif>>
+한참 걷다 보니 둘의 걸음이 어느새 비슷해졌다. 나비가 박자를 세는 것처럼 발끝을 가볍게 움직인다. #line:nabi_dg_010
+nabi: 걸음이 맞는 건 박자가 맞는 거랑 비슷해. 억지로 맞추면 안 되고, 어느 순간 맞아 있어야 해. #line:nabi_dg_011
+-> 지금 맞는 것 같아요. 편해요. #line:nabi_dg_012
+    <<flag nabi_generic_walk>>
+    <<show_standing nabi smile>>
+    nabi: 나도. 이거 기록해 둬야겠다. 아니, 기록은 안 하고 기억해 둘게. #line:nabi_dg_013
+-> 나비 씨 이야기를 더 듣고 싶어요. 하고 싶은 만큼만요. #line:nabi_dg_014
+    <<flag nabi_generic_talk>>
+    nabi: 하고 싶은 만큼. 그 단서가 늘 붙으니까 말할 마음이 생겨. 좋은 습관이야. #line:nabi_dg_015
+-> 다음엔 제가 장소를 정해 볼게요. #line:nabi_dg_016
+    nabi: 기대할게. 아니, 기대 안 하는 척하고 기대할게. #line:nabi_dg_017
+해가 기울 무렵, 가게로 돌아오는 길에 나비가 조금 앞서 걸었다. 뒤를 돌아보지는 않았지만 걸음은 늦춰 주었다. #line:nabi_dg_018
+nabi: 오늘 같이 있어서 좋았어. 이 말은 한 번만 할게. 부끄러우니까. #line:nabi_dg_019
+<<show_standing nabi neutral>>
+===

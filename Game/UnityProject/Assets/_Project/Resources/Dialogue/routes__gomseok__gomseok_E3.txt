@@ -1,0 +1,75 @@
+// 곰석 개인 이벤트 3 「호텔의 이유」(5장, 호감 50/신뢰 16). 진입 노드 Gomseok_E3
+// 비트: 수상한 납품 제안을 곰석이 거절 -> 마감 후 곰석이 호텔을 떠난 이유를 털어놓음 -> 삼촌이 거래를 접고 곰석을 들인 일(삼촌은 20년 넘게 가게 운영, 곰석은 12년째 주방), '빚' 이야기 -> 선택 2회 -> 마감.
+// 플래그: gomseok_e3_heard(곁에서 들음 +3/+1) / gomseok_e3_pushed(캐물음 -1/-1) / gomseok_e3_quiet(침묵으로 곁에 있음)
+//        gomseok_e3_nodebt(삼촌의 선택은 삼촌의 것, +3/+1 선택지) / gomseok_e3_debt(지키는 것이 갚음이라고 받아들임, 보너스 없음)
+title: Gomseok_E3
+tags: gomseok event e3 chapter5
+---
+<<bg cafe night>>
+<<show_standing gomseok neutral>>
+오후에 다녀간 납품업자의 상자가 뒷문 앞에 그대로 놓여 있다. 라벨이 벗겨진 냉동 생선 상자다. 곰석은 그 상자를 말없이 바라보고 있었다. #line:gomseok_e3_001
+player: 업자분 가시고 나서 계속 저 상자 보고 계시네요. 받지 않기로 하셨죠? #line:gomseok_e3_002
+gomseok: 그려, 돌려보냈어. 값은 반값인데 날짜 라벨이 없어서. 이런 건 안 쓰는 게 맞아. #line:gomseok_e3_003
+player: 저는 곰석 씨가 거절하는 걸 옆에서 봤어요. 단호하셨어요. #line:gomseok_e3_004
+gomseok: 단호하다기보단… 손이 먼저 움직인 거여. 예전부터 그랬어. #line:gomseok_e3_005
+곰석이 앞치마를 풀어 접어 놓더니, 의자를 하나 끌어와 앉았다. 평소엔 서 있는 사람이 앉아 있는 모습은 어딘가 작아 보였다. #line:gomseok_e3_006
+gomseok: 오늘은 그 얘기를 해도 될 것 같구먼. 내가 호텔을 왜 나왔는지. #line:gomseok_e3_007
+gomseok: 듣고 싶지 않으면 그만둬도 돼. 듣는 것도 부담일 수 있으니까. #line:gomseok_e3_008
+-> 듣고 싶어요. 곰석 씨가 말하고 싶은 만큼만 말해 주세요. #line:gomseok_e3_009
+    <<flag gomseok_e3_heard>>
+    <<aff gomseok 3>>
+    <<trust gomseok 1>>
+    <<show_standing gomseok smile>>
+    gomseok: …고맙구먼. 말 꺼내는 데만 십이 년 걸렸어. 한 번에 다 못 해도 이해해 줘. #line:gomseok_e3_010
+-> 그 얘기, 이유가 뭐였어요? 호텔을 떠나게 된 정확한 이유요. #line:gomseok_e3_011
+    <<flag gomseok_e3_pushed>>
+    <<aff gomseok -1>>
+    <<trust gomseok -1>>
+    <<show_standing gomseok sad>>
+    gomseok: …정확히 알고 싶은 마음은 알겠어. 근데 캐묻는 방식은 내가 조금 힘들어. #line:gomseok_e3_012
+    gomseok: 그래도 오늘은 얘기할 거니까, 순서대로 들어 줘. #line:gomseok_e3_013
+-> 아무 말 없이 옆에 있을게요. 편할 때 시작하세요. #line:gomseok_e3_014
+    <<flag gomseok_e3_quiet>>
+    <<show_standing gomseok shy>>
+    gomseok: …그려. 그렇게 있어 주는 것만으로 한결 낫구먼. #line:gomseok_e3_015
+<<show_standing gomseok neutral>>
+gomseok: 호텔 연회 주방에서 육 년 일했어. 거기 윗사람들이 큰 연회 때 유통기한 지난 재료를 라벨만 새로 붙여서 내라고 시켰지. #line:gomseok_e3_016
+gomseok: 처음엔 한 번이었어. 두 번째는 관행이라고 했고, 세 번째는 지시였지. 나는 세 번째에 거절했어. #line:gomseok_e3_017
+gomseok: 접시에 올라가는 건 손님 입으로 들어가는 건데, 내가 알면서 그걸 내보낼 수는 없었어. 그래서 못 한다고 했지. #line:gomseok_e3_018
+gomseok: 결과는 뻔했지. 징계 받고, 소문 나고, 다른 호텔 주방 어디도 나를 받아 주질 않았어. #line:gomseok_e3_019
+player: …그건 곰석 씨가 잘못한 게 아니잖아요. #line:gomseok_e3_020
+gomseok: 잘못은 아니었지. 근데 대가는 치러야 했어. 그게 세상 이치인 모양이여. #line:gomseok_e3_021
+<<show_cg GOMSEOK_E3>>
+작업대 옆, 곰석의 낡은 흰 조리복이 접혀 있다. 소매에는 지워지지 않는 얼룩이 남아 있다. 곰석의 큰 어깨가 천천히 가라앉았다. #line:gomseok_e3_022
+gomseok: 그때 네 삼촌은 이미 이 가게를 이십 년 넘게 하던 양반이었고, 호텔 바에 술이랑 얼음을 대던 사이였어. 내가 쫓겨나던 날, 그 양반이 제일 먼저 찾아왔지. #line:gomseok_e3_023
+gomseok: "자네 혼자 억울해하면 그 호텔은 아무것도 안 배워. 우리 주방으로 와. 같이 뭐라도 배우지." 그 양반이 한 말이여. #line:gomseok_e3_024
+gomseok: 그 양반은 호텔 거래를 접고 나를 이 주방에 앉혔어. 가게는 삼촌이 이십 년 넘게 지킨 곳이고, 나는 그 뒤로 십이 년째 이 주방에 있었고. #line:gomseok_e3_025
+gomseok: 그래서 나는 늘 삼촌한테 빚진 기분이었어. 내가 아니었으면 호텔 거래를 안 잃었을 사람인데. #line:gomseok_e3_026
+-> 삼촌이 저를 들인 건 삼촌의 선택이에요. 곰석 씨가 갚아야 할 빚이 아니에요. #line:gomseok_e3_027
+    <<flag gomseok_e3_nodebt>>
+    <<aff gomseok 3>>
+    <<trust gomseok 1>>
+    <<show_standing gomseok surprised>>
+    gomseok: …선택. 그렇게는 생각 안 해 봤구먼. #line:gomseok_e3_028
+    <<show_standing gomseok smile>>
+    gomseok: 그려, 그 양반은 자기가 하고 싶은 걸 한 사람이지. 누구 때문에 한 적 없었어. #line:gomseok_e3_029
+    gomseok: 십이 년 걸려서 처음 듣는 말이네. 고맙구먼. #line:gomseok_e3_030
+-> 그럼 이 가게를 지키는 게 곰석 씨 방식의 갚음이네요. #line:gomseok_e3_031
+    <<flag gomseok_e3_debt>>
+    <<show_standing gomseok neutral>>
+    gomseok: …그렇게 보일 수도 있겠지. 나도 그렇게 생각하며 살았고. #line:gomseok_e3_032
+    gomseok: 근데 네 입으로 들으니 좀 이상하구먼. 갚음이라고 하면, 갚고 나면 떠나야 하는 것처럼 들려서. #line:gomseok_e3_033
+-> 그 얘기 해 준 것만으로 충분해요. 오늘 정리할 필요는 없어요. #line:gomseok_e3_034
+    gomseok: 허허, 그려. 정리는 천천히 해도 되겠지. #line:gomseok_e3_035
+<<hide_cg>>
+<<show_standing gomseok neutral>>
+곰석이 접힌 조리복을 한 번 쓰다듬고, 천천히 의자에서 일어섰다. #line:gomseok_e3_036
+gomseok: 내가 이 얘기를 안 한 이유가 하나 더 있어. 네가 삼촌이랑 나를 한 묶음으로 볼까 봐서. #line:gomseok_e3_037
+gomseok: 나는 삼촌의 친구이긴 하지만, 삼촌의 연장은 아니여. 그건 나한테 중요해. #line:gomseok_e3_038
+player: 알고 있어요. 곰석 씨는 곰석 씨예요. 오늘 들은 건 곰석 씨의 이야기고요. #line:gomseok_e3_039
+<<show_standing gomseok smile>>
+gomseok: …그 말 하나로 얹혀 있던 게 조금 내려갔구먼. #line:gomseok_e3_040
+gomseok: 가서 쉬어. 상자는 내일 아침에 내가 치울게. 혼자 할 수 있는 일이여. #line:gomseok_e3_041
+<<show_standing gomseok neutral>>
+<<end_event gomseok 3>>
+===

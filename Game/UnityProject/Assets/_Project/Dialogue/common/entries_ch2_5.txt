@@ -1,0 +1,15 @@
+# 공통 2~5장 진입 노드
+Ch2_Intro
+CE02_Tasting
+Ch2_Outro
+Ch3_Intro
+CE03_RentMeeting
+Ch3_Outro
+Ch4_Intro
+CE04_StaffWelcome
+Ch4_Outro
+Ch5_Intro
+CE05_FestivalPrep
+Ch5_Show
+Ch5_Show_After
+Ch5_Outro

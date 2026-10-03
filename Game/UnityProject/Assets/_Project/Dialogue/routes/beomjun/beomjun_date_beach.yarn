@@ -1,0 +1,56 @@
+// 범준 데이트: 해변 산책로(낮). 수치는 호스트(RomanceService.Date)가 적용. 진입 노드 Beomjun_Date_Beach
+// 주제: 책임과 ‘조용히 치우는 사람’. 삼촌에 대한 빚(특약 복선, 직접 언급하지 않음).
+// 플래그: beomjun_beach_trash / beomjun_beach_walk / beomjun_beach_uncle, 재방문 beomjun_date_beach_done
+title: Beomjun_Date_Beach
+tags: beomjun date beach
+---
+<<bg beach day>>
+<<show_standing beomjun smile>>
+<<if flag("beomjun_date_beach_done")>>
+    beomjun: 또 바다네! 질리지도 않아? 나는 안 질려! 파도는 올 때마다 다른 말을 하거든! #line:beomjun_db_001
+<<else>>
+    beomjun: 바다는 말이야, 아무 데서나 보여도 여기서 보는 게 제일 커! #line:beomjun_db_002
+    player: 정말 시원하네요. 도장에서 가까워서 자주 오세요? #line:beomjun_db_003
+    beomjun: 아침 수련 끝나면 항상 와. 걷다 보면 머리가 맑아져! #line:beomjun_db_004
+<<endif>>
+<<if $aff_beomjun < 30>>
+    beomjun: 같이 걷는 건 처음인가? 걸음 속도 안 맞으면 말해요! 내가 큰 보폭이라! #line:beomjun_db_005
+<<elseif $aff_beomjun < 60>>
+    beomjun: 걸음 느리면 말해. 내가 맞출게. 보폭 맞추는 거, 요즘 연습 중이거든! #line:beomjun_db_006
+<<else>>
+    beomjun: 오늘은 네 걸음에 내가 맞출게. 앞서가는 건 이제 질렸어. #line:beomjun_db_007
+<<endif>>
+모래사장 가장자리에 페트병과 낚싯줄이 밀려와 있었다. 범준이 말없이 허리를 숙여 하나씩 주웠다. #line:beomjun_db_008
+beomjun: 이런 건 눈에 띄면 바로 줍는 게 맞지. 누가 치우겠지 하고 지나가면 결국 아무도 안 치우거든. #line:beomjun_db_009
+-> 저도 같이 주울게요. 봉투 하나 더 있어요? #line:beomjun_db_010
+    <<flag beomjun_beach_trash>>
+    <<show_standing beomjun smile>>
+    beomjun: 있지! 호주머니마다 하나씩 넣고 다녀. 하하, 사탕 다음으로 많아! #line:beomjun_db_011
+    beomjun: 같이 하니까 금방이네. 책임이라는 건 나눠 들면 줄어드는 게 아니라, 같이 들 수 있게 되는 거야. #line:beomjun_db_012
+-> 그런 건 사람 시켜서 하면 되잖아요. {player_calls("beomjun")} 시간이 더 귀한데요. #line:beomjun_db_013
+    <<show_standing beomjun neutral>>
+    beomjun: 시간 귀한 사람이 시키는 일이 아니라, 눈 있는 사람이 하는 일이야. 아, 잔소리 같았지? 미안! #line:beomjun_db_014
+    beomjun: 근데 이게 좀 후련해. 해 보면 알아. #line:beomjun_db_015
+-> 줍는 건 나중에 하고 먼저 걸어요. 오늘은 같이 걷고 싶어서요. #line:beomjun_db_016
+    <<flag beomjun_beach_walk>>
+    <<show_standing beomjun surprised>>
+    beomjun: …그렇네. 나는 일부터 먼저 해서 걷는 건 늘 마지막이었네. #line:beomjun_db_017
+    beomjun: 좋아, 오늘은 걷는 게 먼저야! 쓰레기는 돌아오는 길에 같이 줍자! #line:beomjun_db_018
+방파제 끝에 나란히 앉자 바람이 소금 냄새를 싣고 지나갔다. 범준이 주머니에서 사탕을 하나 꺼내 반으로 쪼갰다. #line:beomjun_db_019
+beomjun: 반 쪽 줄게. 사탕은 쪼개 먹어야 두 배로 맛있어. #line:beomjun_db_020
+beomjun: 저기 골목 끝에 달빛 모퉁이 있잖아. 어릴 때 그 집 앞이 내 단골 자리였어. #line:beomjun_db_021
+beomjun: 아버지 가게가 망해서 밥 먹을 곳이 없던 시절에, 가게 삼촌이 아무 말 없이 따뜻한 국물을 내줬어. 값도 안 받고. #line:beomjun_db_022
+beomjun: 그때 정했어. 이 빚은 반드시 갚는다고. 아직도 못 갚았지만. #line:beomjun_db_023
+-> 그 마음, 삼촌이 알고 계셨을 거예요. 이미 갚고 있는 중인지도 몰라요. #line:beomjun_db_024
+    <<flag beomjun_beach_uncle>>
+    <<show_standing beomjun shy>>
+    beomjun: …이미 갚고 있는 중이라고? 하하, 그렇게 말해 주는 사람은 처음이다. #line:beomjun_db_025
+    beomjun: 갚는 게 끝이 있는 일인 줄 알았는데, 그냥 계속 하는 일일 수도 있겠네. #line:beomjun_db_026
+-> 삼촌 이야기는 더 듣고 싶어요. 천천히 해도 돼요. #line:beomjun_db_027
+    <<show_standing beomjun smile>>
+    beomjun: 천천히! 그래, 이 얘긴 한 번에 하면 목이 막혀서. 다음에 또 하자. #line:beomjun_db_028
+<<flag beomjun_date_beach_done>>
+<<show_standing beomjun smile>>
+돌아오는 길에 둘은 약속대로 봉투 가득 쓰레기를 주웠다. 범준은 끝까지 무거운 쪽을 들었고, 나는 끝까지 모른 척했다. #line:beomjun_db_029
+beomjun: 오늘은 걷길 잘했다! 다음엔 네가 코스 정해! #line:beomjun_db_030
+===

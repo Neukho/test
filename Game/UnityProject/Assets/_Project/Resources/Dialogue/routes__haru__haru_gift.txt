@@ -1,0 +1,86 @@
+// 하루 선물 반응. 호스트가 문자열 변수 $gift_name 을 설정한 뒤 진입한다.
+// 수치(+8/+3/-5)는 호스트(RomanceService.Gift)가 적용하므로 이 파일에서는 aff/trust 를 바꾸지 않는다.
+// 좋아하는 선물: 제과 도구, 작은 식물, 손글씨 레시피 노트 / 싫어하는 선물: 실수 점수표(틀린 것만 세는 물건).
+// 진입 노드: Haru_Gift_Like, Haru_Gift_Neutral, Haru_Gift_Dislike
+title: Haru_Gift_Like
+tags: haru gift
+---
+<<show_standing haru surprised>>
+player: {player_calls("haru")}, 이거 받아 주세요. {$gift_name}, 드리고 싶어서 골랐어요. #line:haru_gift_001
+haru: 저한테요? 정말요? #line:haru_gift_002
+<<if $aff_haru < 30>>
+    <<show_standing haru shy>>
+    haru: 아, 저, 감사합니다. 열어 봐도 될까요? …이거, 제가 필요한 거였어요. 어떻게 아셨어요? #line:haru_gift_003
+    player: 가게에서 일하시는 걸 보다가요. 필요해 보이는 게 보이더라고요. #line:haru_gift_004
+    haru: 제가 일하는 걸 보고 계셨다는 게… 조금 놀라워요. 소중히 쓸게요. #line:haru_gift_005
+<<elseif $aff_haru < 60>>
+    <<show_standing haru smile>>
+    haru: {$gift_name}. 이거, 제가 사고 싶었는데 가격 때문에 미뤄 둔 거예요. 정말로요. #line:haru_gift_006
+    haru: 감사하다는 말이 모자라서 어떡하죠. …내일 이걸로 만든 걸 제일 먼저 드릴게요. #line:haru_gift_007
+    player: 내일 기대할게요. 하루 씨 손맛이니까요. #line:haru_gift_008
+    haru: 기대는… 조금만 해 주세요. 부담이 되면 손이 굳어서요. #line:haru_gift_009
+<<else>>
+    <<show_standing haru smile>>
+    haru: {calls_player("haru")}. 이건… 포장을 풀기 전부터 이미 마음이 가득 찼어요. #line:haru_gift_010
+    haru: 제가 뭘 좋아하는지 기억해 주는 사람이 있다는 게, 이렇게 든든한 일이었네요. #line:haru_gift_011
+    player: 쓰는 모습이 보고 싶었어요. 그래서 골랐어요. #line:haru_gift_012
+    haru: 그럼 오늘 밤에 바로 써 볼게요. 귀가 빨개져도 놀리지 말아 주세요. …아니, 놀리셔도 돼요. 오늘은 괜찮아요. #line:haru_gift_013
+<<endif>>
+<<show_standing haru neutral>>
+===
+
+title: Haru_Gift_Neutral
+tags: haru gift
+---
+<<show_standing haru neutral>>
+player: {player_calls("haru")}, 이거요. {$gift_name}. 별건 아니지만요. #line:haru_gift_014
+<<if $aff_haru < 30>>
+    haru: 아, 네. 받아도 되는 건가요. 감사합니다. 쓸 데를 찾아볼게요. #line:haru_gift_015
+    haru: 부담 갖지 마시라고 말씀하시는 거죠? 부담은 안 돼요. 정말요. 마음이 쓰이긴 해요. #line:haru_gift_016
+    player: 마음 쓰라고 드린 건 아니에요. 그냥 드리고 싶어서요. #line:haru_gift_017
+    haru: 그렇다면, 잘 받겠습니다. #line:haru_gift_018
+<<elseif $aff_haru < 60>>
+    <<show_standing haru smile>>
+    haru: {$gift_name}, 고맙습니다. 딱 취향은 아니지만, 이런 걸 챙겨 주셨다는 게 좋아요. #line:haru_gift_019
+    haru: 쓸모는 제가 찾을게요. 찾다 보면 의외로 잘 어울리는 일이 생기더라고요. #line:haru_gift_020
+    player: 다음엔 취향에 맞게 찾아볼게요. #line:haru_gift_021
+    haru: 아, 제 취향은 천천히 알아 가도 돼요. 저도 아직 잘 모르는 부분이 있어서요. #line:haru_gift_022
+<<else>>
+    <<show_standing haru smile>>
+    haru: {calls_player("haru")}, 고마워요. 솔직하게 말하면 지금 제가 쓰는 쪽은 아니에요. #line:haru_gift_023
+    haru: 그래도 이건 선반에 두고 가끔 볼게요. 누가 저를 떠올리며 골랐다는 게 중요하니까요. #line:haru_gift_024
+    player: 솔직해서 좋아요. 다음엔 꼭 맞는 걸로 찾아볼게요. #line:haru_gift_025
+    haru: 기대해도 될까요? 아니, 기대는 조금만… 아, 기대할게요. 조금 많이요. #line:haru_gift_026
+<<endif>>
+<<show_standing haru neutral>>
+===
+
+title: Haru_Gift_Dislike
+tags: haru gift
+---
+<<show_standing haru neutral>>
+player: {player_calls("haru")}, 이거 받아 주세요. {$gift_name}, 드리고 싶어서 골랐어요. #line:haru_gift_027
+<<show_standing haru surprised>>
+<<if $aff_haru < 30>>
+    haru: …이거요? #line:haru_gift_028
+    haru: 아, 죄, 아니에요. 감사한 마음은 정말인데요. 이런 건 제가 받으면 온종일 눈앞에서 저를 세고 있을 것 같아서요. #line:haru_gift_029
+    <<show_standing haru neutral>>
+    player: 아니에요, 제가 잘 몰랐어요. 어떤 건 불편한지 알려 주실 수 있어요? #line:haru_gift_030
+    haru: 알려 드릴게요. 틀린 걸 세는 물건이나 점수를 매기는 물건은 제가 이미 마음속에 하나씩 갖고 있어서요. 더는 필요 없어요. #line:haru_gift_031
+<<elseif $aff_haru < 60>>
+    haru: …{$gift_name}. 마음은 정말 감사한데요, 이건 좀. #line:haru_gift_032
+    <<show_standing haru sad>>
+    haru: 저는 이미 제 실수를 너무 잘 세요. 그걸 눈에 보이게 해 주는 물건은 도움이 안 되고, 오히려 숨이 막혀요. #line:haru_gift_033
+    <<show_standing haru neutral>>
+    player: 죄송해요. 다음엔 취향부터 물어볼게요. #line:haru_gift_034
+    haru: 물어봐 주시면 좋아요. 사과는 받았으니까 그만 풀어도 돼요. 저는 괜찮아요. #line:haru_gift_035
+<<else>>
+    <<show_standing haru sad>>
+    haru: {calls_player("haru")}. 이건 제가 받기엔 조금 어려운 종류예요. #line:haru_gift_036
+    haru: 마음은 받았어요. 물건은… 선반에 올려 둘 수가 없어요. 구분해서 들어 주세요. #line:haru_gift_037
+    <<show_standing haru neutral>>
+    player: 알겠어요. 마음만 받아 줘서 고마워요. 다음에는 꼭 맞는 걸 찾아볼게요. #line:haru_gift_038
+    haru: 그 말이면 충분해요. 정말로요. 그리고… 제 얘기를 이렇게 끝까지 들어 주셔서 고마워요. #line:haru_gift_039
+<<endif>>
+<<show_standing haru neutral>>
+===

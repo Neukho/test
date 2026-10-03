@@ -1,0 +1,152 @@
+// 하울 엔딩 3종. 호스트가 8장 종료 시 판정 후 진입 노드를 호출한다(스크립트는 판정하지 않음). 엔딩은 end_event 를 쓰지 않는다.
+// Howl_End_Normal: 곁에 남는 결말(CG 없음, 공통 엔딩 일러스트 재사용) / Howl_End_Good: CG HOWL_E5 재사용(굿 겸용) / Howl_End_True: CG HOWL_E6
+// 플래그: end_howl_normal / end_howl_good / end_howl_true. True 는 howl_key + ledger_truth 전제(호스트 판정), 열쇠 장면은 E5 의 howl_key_given 과 이어짐.
+title: Howl_End_Normal
+tags: howl ending normal
+---
+<<bg cafe night>>
+<<show_standing howl neutral>>
+가게를 연 지 반년이 지났다. 체인점은 여전히 길 건너에 있고, 우리 가게의 손님은 숫자로는 그 절반이다. #line:howl_end_001
+하지만 단골들의 이름을 외웠고, 그들이 앉는 자리도 외웠다. 그 정도면 장사라기보다는 살림에 가깝다. #line:howl_end_002
+마감 후의 홀은 조용하다. 의자를 올리는 소리, 잔이 부딪히는 소리, 그리고 하울이 천을 짜는 소리. #line:howl_end_003
+howl: …수고했다. 오늘은 늦게까지 있는 손님이 없었으니, 일찍 끝났네. #line:howl_end_004
+player: {player_calls("howl")}도 수고했어요. 의자는 제가 닦을게요. #line:howl_end_005
+howl: 그건 내 몫이야. 처음부터 그랬잖아. #line:howl_end_006
+player: 처음엔 그랬죠. 이제는 둘이 하면 반으로 줄어들어요. #line:howl_end_007
+<<show_standing howl surprised>>
+howl: …반으로. #line:howl_end_008
+<<show_standing howl smile>>
+howl: 그 계산은 틀리지 않았네. 천은 저기 있어. #line:howl_end_009
+나는 천을 집어 하울 옆 의자를 닦기 시작했다. 어색할 만큼 조용하지만, 불편하지 않은 조용함이다. #line:howl_end_010
+howl: 조용한 거랑 외로운 건 다르다고 했었지. 지금 이 조용함은 전자야. #line:howl_end_011
+player: 알아요. 구분해 달라고 하셨잖아요. 지금은 구분이 돼요. #line:howl_end_012
+<<if $aff_howl >= 60>>
+    howl: {name()}. 이 가게에서 일하는 게, 나쁘지 않아. 아니, 좋아. #line:howl_end_013
+    player: 저도요. 그 말, 꽤 오래 기다렸어요. #line:howl_end_014
+<<else>>
+    howl: {calls_player("howl")}. 이 가게에서 일하는 게, 나쁘지 않아. #line:howl_end_015
+    player: 저도요. 좋은 사람들이 많은 곳이라서요. #line:howl_end_016
+<<endif>>
+카운터 위 작은 등만 켜 둔 채, 우리는 마지막 의자를 닦았다. #line:howl_end_017
+howl: 고백 같은 건 못 해. 말로 하는 건 서툴러서. #line:howl_end_018
+player: 알고 있어요. 그래서 기다리는 중이에요. 급하지 않아요. #line:howl_end_019
+howl: …기다리지 않아도 돼. 얼음이 있으니까. #line:howl_end_020
+하울이 얼음통에서 얼음 한 조각을 집어 두 개의 잔에 한 조각씩 넣었다. 둘 다 빈 잔이었다. #line:howl_end_021
+player: 한 잔 더 하자는 뜻이에요? 곁에 있겠다는 뜻이에요? #line:howl_end_022
+howl: 둘 다. 뜻은 날마다 달라질 수 있지만. #line:howl_end_023
+player: 그럼 내일은 어떤 뜻이 될지 기대되네요. #line:howl_end_024
+howl: 내일도 의자는 닦아 둘게. 네가 닦은 자리는 다시 닦지 않을 거고. #line:howl_end_025
+player: 그건 신뢰의 표시인가요? 다시 닦지 않는다는 거. #line:howl_end_105
+howl: …그런 셈이지. 믿는 사람이 닦은 자리는 믿는다는 거야. #line:howl_end_106
+player: 약속이에요? #line:howl_end_026
+howl: …약속이다. 어기지 않는 쪽으로. #line:howl_end_027
+카운터 등을 끄는 사람은 오늘도 하울이었다. 하지만 스위치를 내리기 전에, 하울이 나를 한 번 돌아보았다. #line:howl_end_028
+howl: 끌까. #line:howl_end_029
+player: 같이 꺼요. 한 번에. #line:howl_end_030
+<<flag end_howl_normal>>
+달빛 모퉁이의 불이 꺼졌다. 내일 아침이면 다시 켜질 불이었다. #line:howl_end_031
+howl: 잘 자. 내일 새벽 장에서 보자. #line:howl_end_032
+player: 네. 내일 새벽에요. #line:howl_end_033
+달빛이 창으로 들어와 닦인 의자 위에 한참 머물렀다. 두 사람의 하루가 그렇게 끝났다. #line:howl_end_034
+howl: …고맙다는 말은 한 번이면 돼. 오늘은 그 한 번을 쓸게. #line:howl_end_035
+player: 저도 한 번 쓸게요. 고마워요. #line:howl_end_036
+===
+
+title: Howl_End_Good
+tags: howl ending good
+---
+<<bg cafe day>>
+<<show_standing howl smile>>
+몇 달이 흘렀다. 달빛 모퉁이의 낮 시간에 하울이 나와 있는 날이 늘었다. #line:howl_end_037
+원래는 해가 지면 출근하던 사람이다. 지금은 점심 손님이 오는 시간에 카운터 안쪽에서 컵을 닦고 있다. #line:howl_end_038
+player: 낮에도 가게에 있으니까 이상해요. 아직 낯설어요. #line:howl_end_039
+howl: 나도다. 해가 있는 시간에 이렇게 오래 서 있는 건 처음이야. #line:howl_end_040
+한 단골이 카운터 앞에서 고개를 갸웃했다. 낮 바텐더라니, 하고 웃으며 커피를 주문했다. #line:howl_end_093
+howl: 블랙으로. 진하게 내릴게. 싫으면 말해. #line:howl_end_094
+단골은 한 모금 마시더니 엄지를 세워 보였다. 하울의 귀가 아주 조금 올라갔다. #line:howl_end_095
+player: 방금 귀가 움직였어요. 좋았죠? #line:howl_end_096
+howl: …귀가 먼저 알려 주는 건 반칙이야. #line:howl_end_097
+howl: 근데 눈이 부신 것 말고는 나쁘지 않네. #line:howl_end_041
+<<show_standing howl shy>>
+howl: 심야 바는 같이 열기로 했으니까. 낮에 익숙해져 두는 것도 준비다. #line:howl_end_042
+player: 저는 처음 심야에 서는 날, 조금 무서울 것 같아요. #line:howl_end_043
+howl: 무서울 땐 얼음을 줘. 네가 줘도 되고, 내가 줘도 되고. #line:howl_end_044
+player: 얼음 한 조각이 뜻이 많아졌어요. 처음엔 한 잔 더였는데. #line:howl_end_098
+howl: 그때부터 뜻이 하나씩 늘었지. 앞으로도 늘어날 거다. #line:howl_end_099
+howl: 내가 지켜 줄 거라고는 안 할게. 같이 서 있을 거라고만 할게. #line:howl_end_045
+<<bg cafe night>>
+저녁이 되고 홀의 불이 켜졌다. 하울이 켜는 불과 내가 켜는 불이 이제는 두 개다. #line:howl_end_046
+카운터 등 하나, 창가 등 하나. 켜는 순서는 날마다 바뀐다. #line:howl_end_047
+player: 오늘은 제가 창가 쪽을 켤게요. 카운터는 {player_calls("howl")}, 당신이 켜요. #line:howl_end_048
+howl: 그래. 돌아올 자리라는 건, 둘이 같이 만드는 거였네. #line:howl_end_049
+howl: 지켜 주는 사람과 지켜지는 사람이 따로 있는 게 아니라. #line:howl_end_050
+player: 돌아올 사람이 둘이니까, 불도 두 개인 거예요. #line:howl_end_051
+<<show_standing howl smile>>
+howl: …맞다. 그게 맞는 계산이야. #line:howl_end_052
+단골 몇이 문을 열고 들어왔다. 하울은 평소처럼 의자를 한 번 쓸어 보이고, 나는 평소처럼 인사를 건넸다. #line:howl_end_053
+창가 자리의 단골이 말했다. 불이 두 개가 되니 가게가 더 오래 열려 있는 것 같다고. #line:howl_end_100
+player: 정말 오래 열려 있을 거예요. 우리가 같이 있는 동안은요. #line:howl_end_101
+howl: …그 말은 약속으로 들린다. 그렇게 들어도 되지. #line:howl_end_102
+하울의 귀가 천천히 곧게 서 있었다. 이제는 감추려고 눕히지 않는다. #line:howl_end_054
+마감 후, 카운터 위에 두 개의 잔이 놓였다. 각각 얼음이 한 조각씩 들어 있었다. #line:howl_end_055
+<<show_cg HOWL_E5>>
+howl: 한 잔 더 하자는 뜻이야. 그리고, 곁에 있겠다는 뜻이고. #line:howl_end_056
+howl: 그리고 오늘은 하나 더. 돌아와 줘서, 라는 뜻. #line:howl_end_107
+player: 저도 같은 뜻이에요. 오늘도, 내일도요. #line:howl_end_057
+얼음이 잔 안에서 천천히 녹으며 달빛을 받았다. 하울은 잔을 들었고, 나도 잔을 들었다. #line:howl_end_058
+<<hide_cg>>
+<<flag end_howl_good>>
+howl: 약속은 지켰다. 이번에도. #line:howl_end_059
+player: 저도요. 앞으로도 쭉이요. #line:howl_end_060
+===
+
+title: Howl_End_True
+tags: howl ending true
+---
+<<bg cafe dawn>>
+<<show_standing howl neutral>>
+이른 새벽, 가게의 첫 불을 켜기 전이었다. 장부를 정리하던 나는 그동안 알게 된 사실을 하울과 마주 앉아 이야기했다. #line:howl_end_061
+가게는 삼촌 혼자의 것이 아니었다. 이웃들이 매달 조금씩 모은 공동의 기금이 이 가게를 지탱해 왔다. #line:howl_end_062
+player: 이 가게는 이웃들의 안식처였어요. 삼촌은 그걸 지키려고 하셨던 거고요. #line:howl_end_063
+howl: 대충은 알고 있었어. 삼촌이 한 번 흘린 적이 있거든. 확인은 네가 하게 두자고 생각했다. #line:howl_end_064
+howl: 남이 알려 주는 것과 직접 알게 되는 건 무게가 다르니까. 삼촌답지. #line:howl_end_065
+player: 그래서 서랍 얘기를 할 때마다 말을 아끼셨던 거네요. #line:howl_end_066
+howl: …그래. 네가 알고도 이 가게를 잇는다면, 그때 같이 열어도 늦지 않다고 생각했다. #line:howl_end_067
+카운터 위에는 두 개의 열쇠가 놓여 있었다. 하나는 가게 문 열쇠, 하나는 서랍의 초승달 열쇠였다. #line:howl_end_068
+그때 문이 열렸다. 지팡이를 짚은 낯선 사람이 문 앞에 서 있었다. 하울이 얼어붙었다. #line:howl_end_069
+<<show_standing howl surprised>>
+howl: …. #line:howl_end_070
+부두에서 함께 일하던 동료였다. 사진 속에서 안전모를 쓰고 웃던 사람. 오랜 재활 끝에 걷게 되었다고 했다. #line:howl_end_071
+동료가 낮은 목소리로 말했다. “귀는 어때. 흉터, 아직 있어? 보고 싶었다.” #line:howl_end_072
+<<show_standing howl sad>>
+howl: 미안하다. 그날 내가 한 박자 늦어서. 수없이 말하고 싶었는데, 얼굴이 떠오를 때마다 못 했어. #line:howl_end_073
+동료는 고개를 저었다. “늦은 건 소리였지 네가 아니었어. 그날 네가 신호를 보내서 내가 살았다. 한 박자 늦게라도.” #line:howl_end_074
+하울은 한참 말이 없다가, 천천히 귀를 세웠다. 흉터가 새벽빛에 드러났다. #line:howl_end_075
+동료가 손을 내밀어 하울의 귀 끝을 가리켰다. “나도 같은 자리에 흉터가 있어. 이제 짝이 맞네.” #line:howl_end_108
+howl: 살아 줘서, 와 줘서. …다행이다. 정말로. #line:howl_end_076
+동료는 웃었고, 둘은 한동안 서로의 어깨에 손을 얹고 있었다. 나는 조용히 자리를 비켜 주었다. #line:howl_end_077
+문 밖에서 기다리는 동안, 가게 안에서 오래 닫혀 있던 웃음소리가 흘러나왔다. #line:howl_end_103
+얼마 뒤 하울이 문을 열고 나와 말했다. 한 잔 더 하자고. 얼음 두 조각이 든 잔을 동료 쪽에 먼저 내밀면서. #line:howl_end_104
+<<bg cafe day>>
+그날 오후, 서랍 속 사진을 꺼내 가게 벽의 등대 사진 옆에 걸었다. 삼촌과 젊은 하울, 그리고 동료가 모두 웃고 있다. #line:howl_end_078
+<<show_standing howl smile>>
+howl: 이 벽은 이제 우리 얘기를 하겠군. 방문한 손님들이 한 번씩 물어볼 거야. #line:howl_end_079
+player: 물어보면 대답해 주면 돼요. 길게 하지 않아도 되고요. #line:howl_end_080
+howl: 그래. 짧게. 한 줄이면 충분해. 불을 켜 두는 사람이 길을 만든다. #line:howl_end_081
+<<bg cafe dawn>>
+이튿날 새벽, 문을 열기 전에 우리는 카운터 앞에 나란히 섰다. #line:howl_end_082
+<<show_cg HOWL_E6>>
+카운터 위에는 두 개의 열쇠가 놓여 있었다. 하울의 털이 난 손과 내 손이 각각 하나씩 쥐고 있었다. #line:howl_end_083
+howl: 한쪽은 가게의 문, 다른 쪽은 서랍. 문은 네가 열고, 서랍은 같이 열자. #line:howl_end_084
+player: 서랍 속은 이미 열렸잖아요. 이제 채우는 일이 남았어요. #line:howl_end_085
+howl: 채우는 건 오래 걸릴 거야. 천천히 하자. #line:howl_end_086
+<<hide_cg>>
+<<flag end_howl_true>>
+<<show_standing howl shy>>
+howl: …고맙다. #line:howl_end_087
+player: 한 번이면 된다고 하셨는데요? #line:howl_end_088
+howl: 두 번째는, 작게 했어. 못 들었으면 그걸로 괜찮다. #line:howl_end_089
+howl: …고맙다. #line:howl_end_090
+player: 이번엔 들었어요. 저도 고마워요. 여기 있어 줘서요. #line:howl_end_091
+달빛 모퉁이의 불이 오늘도 켜졌다. 두 사람의 손에 두 개의 열쇠가 놓인 채로. #line:howl_end_092
+===

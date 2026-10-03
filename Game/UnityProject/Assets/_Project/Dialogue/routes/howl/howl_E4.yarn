@@ -1,0 +1,165 @@
+// 하울 개인 이벤트 4 「폭풍 전날」(7장, 호감 68/신뢰 25). 진입 노드 Howl_E4, 호스트 진입 Howl_E4_Retry(실패 분기 만회용)
+// CG: HOWL_E4(서랍 속 사진, 서랍을 함께 연 경우에만). 노드: Howl_E4 -> Howl_E4_Offer(선택: 함께 / 혼자 해결) -> Howl_E4_Drawer(수락 시, 서랍 플래그 조건부) -> Howl_E4_End
+//       혼자 해결 -> Howl_E4_End 로 바로 이동(얼음 제스처 없이 퇴장). 이후 하루 안에 호스트가 Howl_E4_Retry 를 열 수 있다.
+// 플래그: howl_e4_trust / howl_e4_fail / howl_e4_trust_late(Retry, 보너스 절반; 스크립트에 flag 해제 커맨드가 없어 fail 은 남고 late 가 같이 설정됨)
+//        howl_key_photo + howl_key(별칭, 트루 열쇠 계약명) — 서랍을 함께 열어 사진을 본 경우. 의존: drawer_key_clue(6장 CE06, 다른 작가)
+title: Howl_E4
+tags: howl event e4 chapter7
+---
+<<bg cafe night>>
+<<show_standing howl neutral>>
+빗소리가 창을 두드린다. 개점한 체인점의 불빛이 길 건너편에서 번쩍이고, 우리 가게 홀은 평소보다 한산하다. #line:howl_e4_001
+장부를 닫았다. 이번 주 손님은 지난달보다 열여덟 퍼센트나 줄었다. #line:howl_e4_002
+howl: …아직 안 갔어? 비가 심해지고 있다. #line:howl_e4_003
+player: 숫자를 한 번 더 확인했어요. 아무리 봐도 같아요. 체인점이 열고 나서 확 줄었어요. #line:howl_e4_004
+howl: 나도 봤다. 그래서 며칠 알아보고 있었어. #line:howl_e4_005
+<<if flag("howl_promised_to_tell")>>
+    howl: 문제가 생기면 바로 말하기로 했었지. 약속은 내가 먼저 지킬게. #line:howl_e4_006
+    player: 그 약속, 기억해요. 제가 말하기 전에 먼저 꺼내실 줄은 몰랐어요. #line:howl_e4_007
+<<else>>
+    howl: 숨기고 해결하는 건 하지 않기로 했다. 이건 가게 일이니까, 말하고 시작하는 게 맞아. #line:howl_e4_008
+<<endif>>
+<<show_standing howl sad>>
+howl: 항만 상인 조합에 아는 사람이 있어. 예전 경호 일 때 알던 사이야. #line:howl_e4_009
+howl: 체인점의 납품 쪽 사정과 건물 쪽 사정을 알아봤어. 그쪽 사람들은 내 얼굴을 보면 이야기해 줄 거다. #line:howl_e4_010
+howl: 그런데 그 인맥은 쓰고 싶지 않았어. 그 시절하고 다시 마주쳐야 하거든. #line:howl_e4_011
+player: 얼굴 보는 것만으로도 힘든 사람들이에요? 그때 일 때문에요? #line:howl_e4_012
+howl: …이름만 들어도 귀가 눕는 사람들이야. 그래도 가게가 걸린 일이라면 얘기가 달라. #line:howl_e4_013
+howl: 내가 힘들다는 말을 먼저 하는 건, 숨기지 않기로 해서야. 부탁하는 거지, 시키는 게 아니고. #line:howl_e4_014
+player: 시키는 거라고는 생각 안 해요. 그래도 그 인맥이 {player_calls("howl")}한테 어떤 무게인지는 알겠어요. #line:howl_e4_071
+howl: 알아줘서 다행이다. 모르고 부탁하는 사람이 대부분이거든. #line:howl_e4_072
+howl: 하나 더. 이 일이 잘 안 풀릴 수도 있어. 그래도 숨기고 가는 것보다는 낫다. #line:howl_e4_073
+창밖에서 천둥이 한 번 울렸다. 하울의 귀가 그쪽으로 기울었다가, 곧 다시 나를 향했다. #line:howl_e4_074
+<<jump Howl_E4_Offer>>
+===
+
+title: Howl_E4_Offer
+tags: howl event e4 chapter7
+---
+howl: 어떻게 할래. 네가 정해. #line:howl_e4_015
+-> 같이 해요. {player_calls("howl")}, 당신이 필요해요. #line:howl_e4_016
+    <<flag howl_e4_trust>>
+    <<aff howl 5>>
+    <<trust howl 2>>
+    <<show_standing howl surprised>>
+    howl: …필요하다고. #line:howl_e4_017
+    <<show_standing howl smile>>
+    howl: 지켜 달라는 게 아니라, 같이 서자는 말이구나. #line:howl_e4_018
+    howl: 그 말은 처음 들어 본다. 경호 일 할 때는 다들 뒤에 서 있으라고 했거든. #line:howl_e4_019
+    player: 이번엔 나란히 서요. 제 가게이고, 제 사람이기도 하니까요. #line:howl_e4_020
+    howl: 제 사람, 이라는 말은 조금 무겁다. …근데 싫지 않네. #line:howl_e4_021
+    howl: 내일 아침에 조합 사무실에 같이 가자. 네가 얘기하고, 나는 옆에 있을게. #line:howl_e4_022
+    howl: 얼음, 한 조각 줄까. #line:howl_e4_023
+    player: 이번엔 반대로 제가 줄게요. 한 잔 더 하자는 뜻으로요. #line:howl_e4_024
+    <<jump Howl_E4_Drawer>>
+-> 이건 제 일이에요. {player_calls("howl")}, 당신까지 끌어들일 수 없어요. 혼자 해결할게요. #line:howl_e4_025
+    <<flag howl_e4_fail>>
+    <<aff howl -2>>
+    <<trust howl -2>>
+    <<show_standing howl neutral>>
+    howl: …끌어들인다는 말이구나. #line:howl_e4_026
+    howl: 알았다. 네가 정한 일이니까. 화나지는 않았어. #line:howl_e4_027
+    <<show_standing howl sad>>
+    howl: 다만 내가 한 말은 뭐였나 싶네. 숨기지 않기로 했는데, 그건 나만 했던 건가. #line:howl_e4_028
+    player: 그런 뜻이 아니라, 위험한 일에 {player_calls("howl")}, 당신을 세우고 싶지 않아서… #line:howl_e4_029
+    howl: 그게 나한테는 믿지 않는다는 말로 들려. 네 마음이 그게 아닌 건 알아. #line:howl_e4_030
+    하울은 잔을 닦던 천을 개켜 놓고 코트를 집어 들었다. 얼음통은 건드리지 않았다. #line:howl_e4_031
+    howl: 내일 새벽 장은 내가 볼게. 가게 일은 가게 일이니까. #line:howl_e4_032
+    howl: 우산, 챙겨. 비가 오래 올 거다. #line:howl_e4_033
+player: 잠깐만요. 얘기 더 해요. 이대로 보내고 싶지 않아요. #line:howl_e4_075
+howl: …지금은 아니야. 서운한 건 아닌데, 네 말이 아직 머릿속에서 정리가 안 돼. #line:howl_e4_076
+howl: 내일 보자. 의자는 닦아 놓고 갈게. #line:howl_e4_077
+하울이 문을 열자 비바람이 홀 안으로 밀려들었다. 문이 닫히고 난 뒤에도 한참 동안 빗소리가 남았다. #line:howl_e4_078
+    <<jump Howl_E4_End>>
+===
+
+title: Howl_E4_Drawer
+tags: howl event e4 chapter7
+---
+<<if flag("howl_drawer_together")>>
+    <<show_standing howl neutral>>
+    howl: 그 서랍 말인데. 같이 열기로 했었지. #line:howl_e4_034
+    <<if flag("drawer_key_clue")>>
+        player: 낡은 사진 단서에서 찾은 열쇠, 맞는 것 같아요. 지금 열어 봐요. #line:howl_e4_035
+        howl: 그래. 내가 먼저 열어 보라고 하진 않을게. 네 손으로 열어. #line:howl_e4_036
+        <<flag howl_key_photo>>
+        <<flag howl_key>>
+        <<show_cg HOWL_E4>>
+        놋쇠 자물쇠가 한 번 짤깍하고 풀렸다. 서랍 안에는 부두에서 찍은 사진 한 장이 들어 있었다. #line:howl_e4_037
+        사진 속에는 삼촌과 젊은 하울, 그리고 안전모를 쓴 동료가 어깨를 맞대고 웃고 있었다. #line:howl_e4_038
+        사진 뒷면에는 삼촌의 글씨로 한 줄이 적혀 있었다. ‘불을 켜 두는 사람이 길을 만든다.’ #line:howl_e4_039
+        <<hide_cg>>
+        <<show_standing howl sad>>
+        howl: …삼촌이 갖고 있었구나. 이 사진을. #line:howl_e4_040
+        howl: 내가 끝까지 안 본 얼굴이야. 사고 뒤에는 쳐다보지도 못했는데. #line:howl_e4_041
+        player: 같이 봤으니까 괜찮아요. 가져가고 싶으면 가져가요. #line:howl_e4_042
+        howl: 아니. 이 사진은 여기 있어야 해. 불이 켜져 있는 이 가게에. #line:howl_e4_043
+    <<else>>
+        howl: 열쇠는 아직 못 찾았지. 그래도 서두를 일은 아니야. #line:howl_e4_044
+        player: 단서가 나오면 제일 먼저 말할게요. 약속이에요. #line:howl_e4_045
+        howl: 그 약속, 기억해 두지. #line:howl_e4_046
+    <<endif>>
+<<elseif flag("howl_drawer_waiting")>>
+    howl: 기다려 보자고 했던 서랍 말이야. …열어 볼까. #line:howl_e4_047
+    -> 열어 봐요. 지금이라면 괜찮을 것 같아요. #line:howl_e4_048
+        <<if flag("drawer_key_clue")>>
+            <<flag howl_key_photo>>
+            <<flag howl_key>>
+            <<show_cg HOWL_E4>>
+            서랍 안에는 부두에서 찍은 사진 한 장이 들어 있었다. 삼촌과 젊은 하울, 그리고 동료. 뒷면에는 ‘불을 켜 두는 사람이 길을 만든다.’ #line:howl_e4_049
+            <<hide_cg>>
+            howl: …기다린 보람이 있네. 이 얼굴, 오랜만이다. #line:howl_e4_050
+        <<else>>
+            howl: 열쇠가 아직 없어. 그래도 열어 보겠다는 마음이 생긴 건 다행이다. #line:howl_e4_051
+        <<endif>>
+    -> 아직은 아니에요. 오늘은 가게 일에 집중하고 싶어요. #line:howl_e4_052
+        howl: 그래. 서랍은 여전히 여기 있으니까. #line:howl_e4_053
+<<elseif flag("howl_drawer_forced")>>
+    howl: 서랍은 네가 열었던 그 방식 그대로야. 사진은 안 볼 거다. #line:howl_e4_054
+    howl: 화난 게 아니라, 아직 못 보겠어. 봐야 할 때가 오면 내가 말할게. #line:howl_e4_055
+<<else>>
+    howl: 서랍은 그대로다. 열쇠를 찾으면 그때 다시 얘기하자. #line:howl_e4_056
+<<endif>>
+<<jump Howl_E4_End>>
+===
+
+title: Howl_E4_End
+tags: howl event e4 chapter7
+---
+<<bg cafe night>>
+<<if flag("howl_e4_trust")>>
+    <<show_standing howl smile>>
+    비는 여전히 거셌지만 홀의 불은 그 어느 때보다 환했다. 하울이 카운터 위 등을 하나 더 켰다. #line:howl_e4_057
+    howl: 폭풍이 오기 전날은 오히려 조용하더라. 내일부터는 네 옆에서 같이 맞을 거야. #line:howl_e4_058
+    player: 같이 맞는 비라면 덜 차가울 것 같아요. #line:howl_e4_059
+    howl: …그럴지도. 오늘은 일찍 자. 내일은 길 테니까. #line:howl_e4_060
+player: 조합 사무실에서는 제가 먼저 인사할게요. 어색하면 옆에서 헛기침이라도 해 주세요. #line:howl_e4_079
+howl: 헛기침은 안 해. 대신 귀로 알려 줄게. #line:howl_e4_080
+<<show_standing howl shy>>
+howl: …그리고 말이야. 오늘 같은 날 혼자가 아니라서, 나쁘지 않네. #line:howl_e4_081
+<<else>>
+    창밖에서 빗줄기가 굵어졌다. 하울이 나간 자리에는 닦아 놓은 의자 하나가 반듯하게 놓여 있었다. #line:howl_e4_061
+    player: (화내지는 않았는데, 그게 더 오래 남네.) #line:howl_e4_062
+    player: (내일 아침에 제대로 말해 보자. 혼자 하겠다는 말이 누구를 밀어냈는지, 이번엔 알겠어.) #line:howl_e4_063
+<<endif>>
+<<end_event howl 4>>
+===
+
+title: Howl_E4_Retry
+tags: howl event e4 chapter7
+---
+// 호스트가 E4 실패 분기(howl_e4_fail) 다음 날 안에 호출하는 만회 장면. 신뢰 보너스는 정식 수락의 절반(+3/+1).
+<<bg cafe dawn>>
+<<show_standing howl neutral>>
+새벽 장을 다녀온 하울이 생선 상자를 내려놓고 있었다. 나는 어젯밤 하던 말을 다시 꺼내려고 문 앞에서 기다렸다. #line:howl_e4_064
+player: {player_calls("howl")}, 어제는 제가 틀렸어요. 혼자 하겠다는 말이 믿지 않는다는 말로 들릴 수 있다는 걸 몰랐어요. #line:howl_e4_065
+howl: …밤새 생각했나. #line:howl_e4_066
+player: 네. 같이 해 주세요. 조합 사무실에도 같이 가고 싶어요. #line:howl_e4_067
+howl: 사과는 받았다. 이미 해 둔 일은 돌릴 수 없지만, 앞으로는 아직 정해지지 않았어. #line:howl_e4_068
+<<show_standing howl smile>>
+<<flag howl_e4_trust_late>>
+<<aff howl 3>>
+<<trust howl 1>>
+howl: 얼음 한 조각은 어제 못 줬으니까 오늘 치까지 두 조각이다. #line:howl_e4_069
+player: 저도 두 조각 드릴게요. #line:howl_e4_070
+===

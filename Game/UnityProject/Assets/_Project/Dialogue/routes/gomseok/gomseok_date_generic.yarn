@@ -1,0 +1,33 @@
+// 곰석 데이트 공통(특정 스팟 대사가 없을 때). 수치는 호스트가 적용. 진입 노드 Gomseok_Date_Generic
+title: Gomseok_Date_Generic
+tags: gomseok date
+---
+<<show_standing gomseok neutral>>
+<<if $aff_gomseok < 30>>
+    gomseok: 오늘은 쉬는 날이니까 가게 얘기는 접어 두죠. 걷다가 배고프면 말씀하세요. #line:gomseok_dg_001
+    player: 네, 천천히 걸어요. 곰석 씨 속도에 맞출게요. #line:gomseok_dg_002
+    gomseok: 허허, 저 느린 거 아시잖아요. #line:gomseok_dg_003
+<<elseif $aff_gomseok < 60>>
+    gomseok: 어디든 좋다고 했지? 그럼 내가 아는 길로 갈게. 느릿느릿 걸을 건데. #line:gomseok_dg_004
+    player: {player_calls("gomseok")}, 느린 걸음이 좋아요. 풍경이 더 잘 보이거든요. #line:gomseok_dg_005
+    gomseok: 그렇게 말해 주면 걸음이 더 느려지는구먼. #line:gomseok_dg_006
+<<else>>
+    gomseok: {calls_player("gomseok")}, 오늘은 어디 갈까? 네가 정해도 좋고, 내가 정해도 좋은데. #line:gomseok_dg_007
+    player: 곰석 씨가 정해 줘요. 어디든 따라갈게요. #line:gomseok_dg_008
+    gomseok: 그 말이 제일 어려운 숙제여. 한번 해 볼게. #line:gomseok_dg_009
+<<endif>>
+한참을 걷다 보니 둘의 걸음이 어느새 같은 박자가 되었다. #line:gomseok_dg_010
+gomseok: 사람 둘이 걸음 맞추는 게 국물 간 맞추는 거랑 비슷하더라고. 한쪽이 서두르면 짜고, 한쪽이 늦으면 싱거워. #line:gomseok_dg_011
+-> 지금은 간이 딱 맞는 것 같아요. #line:gomseok_dg_012
+    <<flag gomseok_generic_comfy>>
+    <<show_standing gomseok smile>>
+    gomseok: 허허, 그러면 됐지. 간 맞는 날은 흔치 않으니까. #line:gomseok_dg_013
+-> 가끔은 제가 앞서가도 괜찮을까요? 곰석 씨는 따라와 줄래요? #line:gomseok_dg_014
+    <<flag gomseok_generic_lead>>
+    gomseok: 그럼. 돌아보면 내가 뒤에서 걷고 있을 거여. 걱정 말고 가. #line:gomseok_dg_015
+-> 다음엔 제가 계획 세울게요. 곰석 씨는 아무것도 안 하셔도 돼요. #line:gomseok_dg_016
+    gomseok: 기대할게. 근데 도시락은 내가 싸 갈 거여. 그건 못 참아. #line:gomseok_dg_017
+돌아오는 길, 곰석은 말없이 차도 쪽에서 반 걸음 앞서 걸었다. 그러다 슬쩍 걸음을 늦춰 나란히 섰다. #line:gomseok_dg_018
+gomseok: 오늘 같이 걸어서 좋았어. 이 말은 길게 안 할게. 오래 두고 쓸 말이니까. #line:gomseok_dg_019
+<<show_standing gomseok neutral>>
+===

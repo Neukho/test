@@ -1,0 +1,95 @@
+// 나비 개인 이벤트 5 「달빛 아래의 약속」(8장, 달밤 가게 문 앞). 굿 엔딩 CG 겸용. 진입 노드 Nabi_E5
+// 비트: 사흘이 넘어 돌아온 나비가 문 앞 계단에 앉음(E1 대칭) -> 쇼케이스 결과 -> 돌아올 곳을 정함(선택 1) -> 가사 조각 C -> 가사 노트 맡기기(선택 2, 숨은 조건) -> 칠판을 함께 지움 -> 마무리.
+// 플래그: nabi_e5_door(고르는 건 나비라고 함) / nabi_e5_missed(보고 싶었다고 함) / nabi_e5_asked_stay(안 떠나겠다는 약속을 요구),
+//        nabi_key = 트루 열쇠 '가사 노트'(조건: nabi_notebook_respected(E3 읽지 않고 돌려줌) 또는 nabi_wait_song(Talk_06 기다리겠다고 함))
+// 의존: E4 의 칠판 문구 ‘나비 외출 중’. 열쇠 선택지는 숨은 조건이 없으면 비활성(Available=false)으로 표시된다.
+title: Nabi_E5
+tags: nabi event e5 chapter8
+---
+<<bg cafe night>>
+<<show_standing nabi neutral>>
+연합 영업이 끝난 날 밤. 마지막 손님이 돌아가고, 홀의 불은 반쯤 꺼 두었다. 문은 열어 둔 채였다. 오늘도. #line:nabi_e5_001
+계단 쪽에서 기타 소리가 났다. 아주 작게, 튕기다 말다 하는 소리. 처음 들었을 때와 같은 소리. #line:nabi_e5_002
+문을 열고 나서자 계단 맨 위에 나비가 앉아 있었다. 무릎에는 기타, 발치에는 열린 케이스. 달빛이 털 위에 은빛으로 얹혀 있었다. #line:nabi_e5_003
+nabi: 사흘이라고 했는데, 나흘 반 걸렸네. 늦었지. #line:nabi_e5_004
+player: 늦은 게 아니라 다녀온 거예요. 어서 와요. #line:nabi_e5_005
+나비는 웃지 않으려는 얼굴로, 결국 웃었다. #line:nabi_e5_006
+<<show_standing nabi smile>>
+nabi: 한 곳은 안 한대. 전속이 아니면 못 한다고 했어. 한 곳은 ‘생각해 보겠다’래. #line:nabi_e5_007
+nabi: 어느 쪽이든 내 곡은 내 거야. 그 말을 하러 거기까지 갔다 온 셈이지. #line:nabi_e5_008
+player: 말하고 오니까 어땠어요? #line:nabi_e5_009
+nabi: 시원했어. 그리고 무서웠어. 그리고 계속 이 문 생각이 났어. #line:nabi_e5_010
+나비는 기타를 케이스 위에 올려놓고 일어섰다. 열려 있는 가게 문 쪽을 한참 바라보았다. #line:nabi_e5_011
+nabi: 쇼케이스 끝나고 밤 열차 탔는데, 창밖 보다가 알았어. 갈 곳은 많은데 돌아올 곳은 하나라는 거. #line:nabi_e5_012
+nabi: 도망이 아니라 선택이라고 네가 말했지. 그 말대로 해 보려고. 돌아올 곳으로 이 가게를 정했어. #line:nabi_e5_013
+<<show_cg NABI_E5>>
+달빛이 문턱을 넘어 홀 바닥에 길게 누웠다. 나비의 그림자와 열린 문의 빛이 한 줄로 이어졌다. #line:nabi_e5_014
+-> 고르는 건 나비 씨예요. 저는 문만 열어 둘게요. 매일요. #line:nabi_e5_015
+    <<flag nabi_e5_door>>
+    <<aff nabi 4>>
+    <<trust nabi 1.5>>
+    <<show_standing nabi shy>>
+    nabi: 문만 열어 둔다고. 그 문장이 이 가게 전부 같네. #line:nabi_e5_016
+    nabi: 매일 열려 있어서, 매일 내가 고를 수 있는 거지. 그게 자유야. #line:nabi_e5_017
+-> 이제 안 떠나는 거죠? 약속해 줘요. #line:nabi_e5_018
+    <<flag nabi_e5_asked_stay>>
+    <<aff nabi -1>>
+    <<trust nabi -1>>
+    <<show_standing nabi neutral>>
+    nabi: 약속은 못 해. 떠나는 날도 있을 거야. 연주하러, 쉬러, 노래 쓰러. #line:nabi_e5_019
+    nabi: 대신 매번 돌아올게. 그건 약속이 아니라 선택이야. …이 차이, 알아줘. #line:nabi_e5_020
+-> 고마워요. 사실 많이 보고 싶었어요. #line:nabi_e5_021
+    <<flag nabi_e5_missed>>
+    <<aff nabi 2>>
+    <<trust nabi 1>>
+    <<show_standing nabi shy>>
+    nabi: …나도. 아니, 조금이 아니라 많이. #line:nabi_e5_022
+    nabi: 보고 싶다는 말, 부담 안 되게 하는 방법이 있네. 그냥 말만 하는 거. #line:nabi_e5_023
+나비는 계단에 다시 앉아 기타를 무릎 위로 끌어당겼다. 옆자리를 손바닥으로 가볍게 툭 쳤다. #line:nabi_e5_024
+nabi: 앉아. 한 곡만. 이 곡은 가게에서 썼어. 마감하고, 불 끄고, 의자 올리는 소리 들으면서. #line:nabi_e5_025
+나는 나비 옆, 팔 하나쯤의 거리에 앉았다. 나비가 숨을 고르고 줄을 튕겼다. 다섯 줄이 아니라 이제는 여섯 줄이었다. #line:nabi_e5_026
+nabi: ♪ 불 꺼진 가게에 #line:nabi_e5_027
+nabi: ♪ 의자 하나 남겨 둔 사람 #line:nabi_e5_028
+nabi: ♪ 나는 떠나도 되는 사람이라서 #line:nabi_e5_029
+nabi: ♪ 돌아오는 사람이 될래 #line:nabi_e5_030
+노래는 길지 않았다. 마지막 코드가 열린 문 사이로 빠져나가 밤하늘로 흩어졌다. #line:nabi_e5_031
+nabi: 제목은 ‘마감 후’야. 가게 이름 붙일까 하다가, 가게는 제목에 안 들어가는 편이 좋겠더라. #line:nabi_e5_032
+nabi: 노트에 이 곡이 있어. 가게에서 쓴 곡이 이거 하나야. 나머지는 다 어디선가 도망 다니면서 쓴 거고. #line:nabi_e5_033
+나비는 케이스 주머니에서 검은 표지의 노트를 꺼냈다. 모서리가 닳아 있었다. 손이 한 번 망설이는 것이 보였다. #line:nabi_e5_034
+nabi: 이걸 어쩔지는 아직 못 정했어. 말해 봐. 네가 하고 싶은 말. #line:nabi_e5_035
+-> 그 노트, 제가 보관해도 될까요? 돌려 달라고 하면 언제든 바로 돌려줄게요. #line:nabi_e5_036 <<if flag("nabi_notebook_respected") or flag("nabi_wait_song")>>
+    <<flag nabi_key>>
+    <<aff nabi 3>>
+    <<trust nabi 1.5>>
+    <<show_standing nabi surprised>>
+    nabi: …묻는 거네. 열어 보자고 안 하고, 맡겠다고 하는 거. #line:nabi_e5_037
+    nabi: 그래서 줄 수 있어. 보여 달라고 조르지 않은 사람이잖아, 너는. 그때부터 알았어. #line:nabi_e5_038
+    <<show_standing nabi smile>>
+    nabi: 맡기는 거야. 줬다는 게 아니라. 가져가고 싶을 땐 내가 와서 가져갈 거야. 그래서 돌아올 이유 하나 생기는 거고. #line:nabi_e5_039
+    nabi: 이건 열쇠 같은 거야. 가두는 열쇠가 아니라 드나드는 열쇠. #line:nabi_e5_040
+    player: 열쇠 잘 맡아 둘게요. 읽는 건 나비 씨가 펼쳐 줄 때만요. #line:nabi_e5_041
+    nabi: 그래. 그 조건이면 돼. #line:nabi_e5_042
+-> 노래만 들을게요. 노트는 나비 씨가 갖고 있어요. 그게 맞는 것 같아요. #line:nabi_e5_043
+    nabi: 그것도 맞는 말이야. 노트는 내 거니까. #line:nabi_e5_044
+    nabi: 근데 기억해 둬. 맡길 수 있는 날이 오면 내가 먼저 말할게. #line:nabi_e5_045
+    <<show_standing nabi smile>>
+    nabi: 오늘은 노래만 하고 갈래. 노래는 어디든 가져갈 수 있어서 편해. #line:nabi_e5_046
+<<show_standing nabi neutral>>
+나비가 케이스를 닫으려다 말고 손을 멈췄다. 홀 안쪽 칠판이 열린 문 사이로 보였다. 나비 외출 중. 사흘 뒤 돌아올 수도 있음. #line:nabi_e5_047
+nabi: 칠판, 지워도 돼? #line:nabi_e5_048
+player: 지워요. 둘 다 지울 수 있는 약속이잖아요. #line:nabi_e5_049
+나비는 홀로 들어가 분필 지우개를 들었다. 외출 중이라는 줄만 천천히 지우고, 맨 위의 세 줄은 그대로 두었다. #line:nabi_e5_050
+nabi: 이 줄 하나는 남겨 놓자. 이 약속은 둘 다 지울 수 있음. 이건 아직 유효해. #line:nabi_e5_051
+nabi: 오늘부터는 떠나는 날도 지우지 말고 적어 놓자. 외출 중, 이라고. 돌아오는 날은 지우고. #line:nabi_e5_052
+player: 그렇게 해요. 문도 계속 열어 두고요. #line:nabi_e5_053
+나비가 한 걸음 가까이 섰다. 거리는 팔 하나보다 조금 짧았다. #line:nabi_e5_054
+nabi: 하나 부탁할게. 안아 봐도 돼? 싫으면 싫다고 해. 나도 싫으면 말할게. #line:nabi_e5_055
+player: 좋아요. 저도 그러고 싶었어요. #line:nabi_e5_056
+나비의 이마가 어깨 쪽으로 가만히 닿았다. 기타 줄 냄새와 향초 냄새, 밤공기가 섞여 있었다. #line:nabi_e5_057
+nabi: 이거 하나만 기억해 줘. 나는 도망쳐 온 사람이 아니라 돌아온 사람이야. #line:nabi_e5_058
+<<hide_cg>>
+<<show_standing nabi smile>>
+nabi: 달이 높네. 불 꺼도 되겠다. 아니, 켜 둬. 오늘은 문도 불도 켜 둔 채 있자. #line:nabi_e5_059
+<<show_standing nabi neutral>>
+<<end_event nabi 5>>
+===

@@ -1,0 +1,45 @@
+// 요한 데이트: 헌책방 거리(낮). 수치는 호스트(RomanceService.Date)가 적용. 진입 노드 Johan_Date_BookStreet
+// 플래그: johan_date_book_street_done / johan_bookstreet_margin(여백 낙서 읽기) / johan_bookstreet_gift(낙서 남기기) / johan_bookstreet_wander(각자 구경)
+title: Johan_Date_BookStreet
+tags: johan date book_street
+---
+<<bg book_street day>>
+<<show_standing johan smile>>
+좁은 골목 양쪽으로 헌책방이 이어져 있다. 먼지와 종이 냄새가 섞인 오후 공기. 요한은 입구마다 간판을 훑으며 코를 킁킁거린다. #line:johan_dbs_001
+<<if flag("johan_date_book_street_done")>>
+    johan: 또 왔네. 이 골목은 갈 때마다 책 순서가 바뀌어 있어. 책들이 밤에 자리 바꾸기 놀이를 하는 게 틀림없어. #line:johan_dbs_002
+    player: 그럼 오늘은 어떤 책이 이사 왔는지 같이 찾아봐요. #line:johan_dbs_003
+<<else>>
+    johan: 여기야. 나의 비밀 서재, 이라고 하기엔 공용이지만. 책방 주인들은 나를 "또 그 사람"이라고 부르지. #line:johan_dbs_004
+    player: 단골이네요. {player_calls("johan")}, 오늘은 어떤 걸 찾아요? #line:johan_dbs_005
+    johan: 오래된 요리책. 가격표보다 낙서가 더 많이 붙은 놈으로. #line:johan_dbs_006
+<<endif>>
+어느 책방 안쪽, 손때 묻은 요리책이 쌓인 선반 앞에서 요한이 걸음을 멈춘다. 책 한 권을 꺼내 조심스레 펼친다. #line:johan_dbs_007
+johan: 이 책 봐. 레시피 옆 여백에 연필로 적혀 있어. "소금은 손님 오기 전에 한 줌 더. 오늘은 아버지 생신." …이런 게 책의 진짜 문장이야. #line:johan_dbs_008
+<<if $aff_johan >= 60>>
+    johan: 레시피는 같아도 낙서는 책마다 달라. 사람은 이렇게 책에 몰래 남아 있어. 나도 어딘가에 그렇게 남아 있을까 하고, 가끔 생각해. #line:johan_dbs_009
+<<else>>
+    johan: 레시피는 누구나 쓸 수 있는데, 낙서는 한 사람만 쓸 수 있잖아. 그게 좋아서 헌책을 사. #line:johan_dbs_010
+<<endif>>
+-> 그 낙서, 소리 내서 읽어 줘요. 직접 읽어 주는 목소리로 들으면 더 좋을 것 같아요. #line:johan_dbs_011
+    <<flag johan_bookstreet_margin>>
+    <<show_standing johan shy>>
+    johan: 내 목소리로? 이건 청탁이 아니라 주문이네. 주문은 받는 쪽이 기뻐야 하는데, 지금 내가 그래서 문제야. #line:johan_dbs_012
+    johan: 좋아, 읽을게. "소금은 손님 오기 전에 한 줌 더." …이 문장 앞에서는 말을 줄이게 되네. 줄인 채로 한 번 더 읽을까? #line:johan_dbs_013
+-> 저도 낙서 하나 남겨 볼래요. 이 책 사서 여백에요. #line:johan_dbs_014
+    <<flag johan_bookstreet_gift>>
+    <<show_standing johan surprised>>
+    johan: 헌책에 낙서를 한다고? 그건 내 입장에서는 거의 프러포즈급인데. 아니, 그렇게까지는 아니고. 반 정도만. #line:johan_dbs_015
+    johan: 그럼 내가 계산할게. 낙서의 첫 줄은 네가 써. 두 번째 줄은 내가 쓸게. #line:johan_dbs_016
+-> 이 골목에서는 각자 구경하다가 만나요. 한 시간 뒤에 책방 앞에서요. #line:johan_dbs_017
+    <<flag johan_bookstreet_wander>>
+    johan: 각자 구경. 좋은 방식이야. 혼자 있는 시간이 있어야 같이 있는 시간이 돋보이니까. #line:johan_dbs_018
+    johan: 한 시간 뒤 책방 앞. 늦으면 내가 기다리는 쪽이 될게. 기다리는 건 내 장기라서. #line:johan_dbs_019
+골목 끝에서 오후 햇살이 비스듬히 들어온다. 요한은 샀거나 사지 않은 책 몇 권을 팔에 끼고 나란히 걷는다. #line:johan_dbs_020
+johan: 오늘은 책방 세 군데에서 책 다섯 권을 들었다 놓았고, 두 권을 샀어. 성적으로는 합격이지. #line:johan_dbs_021
+johan: 근데 알아? 수첩은 한 번도 안 꺼냈어. 오늘은 쓰는 사람 말고 그냥 읽는 사람이었어. #line:johan_dbs_022
+player: 그럼 오늘은 몇 점 줄 거예요? #line:johan_dbs_023
+johan: 점수는 안 줘. 대신 오늘 이 날짜에 각주 하나만 달아 둘게. 아무한테도 안 보여 줄 각주로. #line:johan_dbs_024
+<<flag johan_date_book_street_done>>
+<<show_standing johan smile>>
+===

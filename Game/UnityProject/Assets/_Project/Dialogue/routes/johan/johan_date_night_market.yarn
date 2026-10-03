@@ -1,0 +1,45 @@
+// 요한 데이트: 야시장 부두(밤). 수치는 호스트가 적용. 진입 노드 Johan_Date_NightMarket
+// 플래그: johan_date_night_market_done / johan_market_share(나눠 먹기) / johan_market_order(주문 맡기기) / johan_market_notes(수첩 이야기)
+title: Johan_Date_NightMarket
+tags: johan date night_market
+---
+<<bg night_market night>>
+<<show_standing johan smile>>
+부두를 따라 포장마차 불빛이 길게 이어진다. 기름 냄새, 설탕 냄새, 사람들의 웃음소리가 한꺼번에 밀려온다. #line:johan_dnm_001
+<<if flag("johan_date_night_market_done")>>
+    johan: 또 왔어. 이 시장은 내 위장의 고향이야. 아니, 제2의 고향. 제1의 고향은 냉장고 앞이고. #line:johan_dnm_002
+    player: 오늘은 몇 군데까지 도전할까요? #line:johan_dnm_003
+<<else>>
+    johan: 자, 여기가 야시장 부두. 모레나의 밤을 먹여 살리는 곳이야. 여기선 별점 같은 거 없어. 줄이 길면 맛있는 거고, 줄이 짧으면 내가 먹어 봐야 하는 거고. #line:johan_dnm_004
+    player: 먹어 봐야 하는 가게부터 가요. #line:johan_dnm_005
+<<endif>>
+요한은 첫 포장마차 앞에서 꼬치 두 개를 주문한다. 주문 수첩을 꺼내려다 손이 허공에서 멈춘다. 그러고는 주머니에 다시 넣는다. #line:johan_dnm_006
+johan: …습관이야. 맛있는 거 앞에서 수첩부터 꺼내는 거. 오늘은 안 꺼낼래. 비번이야. 칼럼니스트가 아니라 그냥 배고픈 사람. #line:johan_dnm_007
+<<if $aff_johan >= 60>>
+    johan: 신기하게도 네 앞에서는 수첩이 필요 없어. 맛을 적는 대신 네 표정을 기억하게 되거든. #line:johan_dnm_008
+<<else>>
+    johan: 오늘의 목표는 배부르게 먹기. 쓰는 건 내일 걱정. #line:johan_dnm_009
+<<endif>>
+요한은 꼬치 하나를 내민다. 설탕을 입힌 딸기가 반짝인다. #line:johan_dnm_010
+johan: 먹어 봐. 반 이상은 네 몫이야. 나는 이런 때 혼자 오면 두 개 이상 못 시켜. 같이 오면 열 개를 시켜도 되는 구실이 생겨서. #line:johan_dnm_011
+-> 반씩 나눠 먹어요. 열 개는 무리지만 다섯 개까지는 도전해 볼게요. #line:johan_dnm_012
+    <<flag johan_market_share>>
+    <<show_standing johan smile>>
+    johan: 다섯 개! 좋은 목표야. 우리 팀 이름은 "다섯 개 위원회"로 하자. 위원은 둘, 안건은 먹기. #line:johan_dnm_013
+    johan: 이건 진담인데, 나눠 먹는 걸 제안해 줘서 고마워. 같이 먹는다는 건 반을 포기하는 일인데, 그 반이 이상하게 더 맛있어지더라. #line:johan_dnm_014
+-> 주문은 전부 맡길게요. 맛 보는 눈이 제일 좋잖아요. #line:johan_dnm_015
+    <<flag johan_market_order>>
+    <<show_standing johan surprised>>
+    johan: 주문 전권 위임? 그건 영광이자 위험인데. 내 입맛이 틀리면 책임은 반반이야. #line:johan_dnm_016
+    johan: 좋아, 맡아 줄게. 대신 못 먹는 건 바로 말해. 못 먹는 걸 억지로 먹는 건 맛을 배신하는 일이거든. #line:johan_dnm_017
+-> 수첩을 안 꺼내는 이유, 조금 궁금해요. 물어봐도 돼요? #line:johan_dnm_018
+    <<flag johan_market_notes>>
+    johan: 물어봐도 되지. 안 말해도 되는 질문은 없어. 말하기 싫으면 싫다고 하면 되는 거니까. #line:johan_dnm_019
+    johan: 이유는, 맛을 적으면 맛이 끝나 버리는 것 같아서. 적는 순간 과거가 되거든. 오늘은 현재로 먹고 싶어. #line:johan_dnm_020
+부두 끝 난간에 나란히 기대어 선다. 멀리 등대 불빛이 깜빡이고, 가까이에는 포장마차 연기가 달빛 속으로 올라간다. #line:johan_dnm_021
+johan: 사람 많은 곳에서 이렇게 조용히 서 있는 거, 의외로 좋네. 보통은 사람이 많을수록 더 시끄러운 게 혼자거든. 오늘은 반대야. #line:johan_dnm_022
+player: 옆에 사람이 있으니까 그런 걸까요? #line:johan_dnm_023
+johan: …그럴지도. 확실하게 말하면 증거가 될 것 같아서, 일단 "그럴지도"로 둘게. #line:johan_dnm_024
+<<flag johan_date_night_market_done>>
+<<show_standing johan smile>>
+===

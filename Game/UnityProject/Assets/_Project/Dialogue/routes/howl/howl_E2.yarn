@@ -1,0 +1,97 @@
+// 하울 개인 이벤트 2 「잠긴 서랍」(3장, 임대료 갈등 중). 진입 노드 Howl_E2
+// 비트: 통지서로 흔들리는 주인공 -> 밤새 고쳐진 배선 -> 도움을 받는 법(선택1) -> 잠긴 서랍(선택2) -> 마감.
+// 플래그: howl_e2_accepted / howl_e2_refused / howl_e2_debt, howl_drawer_together / howl_drawer_forced / howl_drawer_waiting,
+//        howl_drawer_seen(항상). 트루 엔딩 열쇠 플래그 ‘서랍 속 사진’은 E5(아웃라인 참조).
+title: Howl_E2
+tags: howl event e2 chapter3
+---
+<<bg cafe dawn>>
+<<show_standing howl neutral>>
+임대료 인상 통지서를 받은 지 사흘째. 숫자를 맞춰 보느라 한숨도 자지 못하고, 새벽에 가게로 내려왔다. #line:howl_e2_001
+평소 같으면 깜빡이던 카운터 조명이 오늘은 한 번도 떨리지 않는다. 낯설 만큼 고르게 켜져 있다. #line:howl_e2_002
+player: (불이… 이렇게 안정적이었던 적이 있었나.) #line:howl_e2_003
+카운터 아래 낡은 배전함 앞에 하울이 웅크려 앉아 있었다. 소매는 걷어 올렸고, 손에는 드라이버가 들려 있다. #line:howl_e2_004
+howl: …일찍 일어났네. 아직 새벽인데. #line:howl_e2_005
+player: {player_calls("howl")}, 안 주무셨어요? 설마 밤새… #line:howl_e2_006
+howl: 배선이 오래됐어. 어젯밤에 퓨즈가 두 번 나갔고. 그냥 둘 수가 없더라고. #line:howl_e2_007
+player: 퓨즈가 나갔다고요? 저는 전혀 몰랐어요. 어젯밤엔 숫자만 보고 있었거든요. #line:howl_e2_053
+howl: 알아. 위층 불이 새벽까지 켜져 있더라. 그래서 소리 안 나게 했다. #line:howl_e2_054
+howl: 통지서 얘기는 들었다. …내가 해 줄 수 있는 건 이 정도라서. #line:howl_e2_008
+player: {player_calls("beomjun")}한테 직접 들으셨어요? #line:howl_e2_055
+howl: …소문은 빠른 법이지. 내가 직접 물어본 건 아니고. 괜히 끼어드는 것 같아서. #line:howl_e2_056
+<<show_standing howl shy>>
+howl: 도움이라고 생각 안 해도 돼. 그냥 내 일이었다고 쳐. #line:howl_e2_009
+-> 고마워요. …오늘은 기대도 될까요? #line:howl_e2_010
+    <<flag howl_e2_accepted>>
+    <<aff howl 3>>
+    <<trust howl 1>>
+    <<show_standing howl surprised>>
+    howl: …기대? #line:howl_e2_011
+    <<show_standing howl smile>>
+    howl: 그래. 기대도 돼. 그렇게 말해 주는 게 수리비보다 훨씬 많이 받는 거야. #line:howl_e2_012
+-> 이렇게까지 해 주셔도 되는지 모르겠어요. 갚을 방법도 없는데요. #line:howl_e2_013
+    <<flag howl_e2_debt>>
+    howl: 갚으라고 한 적 없어. #line:howl_e2_014
+    howl: 도움은 장부에 안 적어. …적어 두면 무거워지니까. #line:howl_e2_015
+-> 괜찮아요. 이건 제 가게니까 제가 혼자 할 수 있어요. #line:howl_e2_016
+    <<flag howl_e2_refused>>
+    <<aff howl -1>>
+    <<trust howl -1>>
+    <<show_standing howl sad>>
+    howl: …혼자 할 수 있다는 말. #line:howl_e2_017
+    howl: 나도 자주 해서 알아. 그 말이 얼마나 무거운지, 그리고 소용없다는 것도. #line:howl_e2_018
+    <<show_standing howl neutral>>
+    howl: 이미 고쳐진 건 돌려놓을 수 없어. 그러니까, 오늘은 그냥 받아 둬. #line:howl_e2_019
+    방금 한 말이 누구를 밀어냈는지, 그제야 알 것 같았다. #line:howl_e2_020
+howl: 사실 배선이 이렇게 된 이유가 있어. 저기, 계산대 옆에 서랍 보이지. #line:howl_e2_021
+카운터 한쪽 구석에 낡은 서랍장이 있었다. 놋쇠 자물쇠에는 초승달 모양이 새겨져 있고, 오래 열린 적 없는 듯 윤기가 죽어 있다. #line:howl_e2_022
+<<flag howl_drawer_seen>>
+player: 이 서랍, 삼촌은 열쇠를 어디에 두었을까요. 늘 목에 걸고 다닌 것 같지는 않았는데. #line:howl_e2_060
+howl: 배선이 저 안쪽을 지나가. 서랍을 들어내야 고칠 수 있었는데, 잠긴 건 건드리지 않았어. #line:howl_e2_023
+howl: 남의 서랍이니까. 삼촌 거였고, 이제는 네 거고. #line:howl_e2_024
+howl: 그래도 한 가지는 알아. 저 서랍 앞에서 삼촌은 한 번도 웃지 않았어. 그런 물건은 서두를 일이 아니야. #line:howl_e2_061
+player: 열쇠가 어디 있는지 저는 몰라요. 편지에도 서랍 얘기는 없었어요. #line:howl_e2_025
+howl: 이름이 새겨진 열쇠 같은 건 없었어. 삼촌이 어디에 숨겼는지, 아니면 처음부터 안 만들었는지 모르겠고. #line:howl_e2_057
+howl: 나도 몰라. 다만 삼촌이 가끔 저 서랍 앞에 오래 서 있었어. 뭘 보는지는 말 안 하고. #line:howl_e2_026
+howl: …뭔가 있을 거야. 열쇠가 어딘가에 있다는 뜻이고. #line:howl_e2_027
+-> 열쇠를 찾으면 같이 열어요. 혼자 열기엔 조금 무서워서요. #line:howl_e2_028
+    <<flag howl_drawer_together>>
+    <<aff howl 5>>
+    <<trust howl 1.5>>
+    <<show_standing howl smile>>
+    howl: …같이. 그래. 그 말이 좋네. #line:howl_e2_029
+    howl: 열쇠 찾는 건 내가 도울게. 잠긴 건 열지 않아도, 찾는 건 할 수 있어. #line:howl_e2_030
+-> 지금 열어 봐요. 자물쇠야 어떻게든 풀 수 있잖아요. #line:howl_e2_031
+    <<flag howl_drawer_forced>>
+    <<aff howl -1>>
+    <<trust howl -1>>
+    <<show_standing howl neutral>>
+    howl: …부수는 건 쉬워. 근데 부순 뒤에는 돌려놓을 수 없어. #line:howl_e2_032
+    howl: 열쇠가 없는 데에도 이유가 있을 거야. 그걸 먼저 찾아도 늦지 않아. #line:howl_e2_048
+-> 일단 두죠. 때가 되면 열릴 것 같아요. #line:howl_e2_034
+    <<flag howl_drawer_waiting>>
+    howl: 기다리는 건 잘해. 그럼 그렇게 하자. #line:howl_e2_035
+howl: 서랍도, 사람도. 기다리다 보면 열쇠는 제 발로 오더라. #line:howl_e2_062
+<<show_standing howl neutral>>
+howl: 퓨즈 상자, 새것으로 갈아 놨어. 이제 에스프레소 머신이랑 오븐을 동시에 켜도 안 나가. #line:howl_e2_049
+howl: 나머지는 알아서 돌아갈 거야. 기계는 사람보다 솔직하거든. 고장 나면 고장 났다고 말하고. #line:howl_e2_058
+player: 오븐이랑 머신을요? 그럼 주말 주문 폭주도 괜찮겠네요. #line:howl_e2_050
+howl: 괜찮아. …적어도 전기 때문에 가게가 멈추는 일은 없을 거야. #line:howl_e2_038
+<<show_cg HOWL_E2>>
+어느새 창가에 아침 햇살이 들었다. 카운터 위에는 두 개의 머그잔이 놓였고, 안정된 조명 아래 드라이버를 쥔 손과 머그를 감싼 손이 나란히 있다. #line:howl_e2_039
+howl: 커피 마셔. 새벽에 일어났으면 몸이 먼저 추워지니까. #line:howl_e2_040
+player: …고마워요. 이 커피, 평소보다 따뜻하게 느껴져요. #line:howl_e2_059
+player: {player_calls("howl")}, 안 마셔요? 밤새 일했는데. #line:howl_e2_051
+howl: 마실 거야. 근데 네가 먼저 마시는 걸 보고 싶어서. #line:howl_e2_042
+<<if $aff_howl >= 60>>
+    howl: {calls_player("howl")}. 임대료 일, 혼자 짊어지지 마. 이번엔 정말로. #line:howl_e2_043
+<<else>>
+    howl: {calls_player("howl")}. 임대료 일은 같이 생각해 보자. 도울 수 있는 만큼은 도울게. #line:howl_e2_044
+<<endif>>
+<<hide_cg>>
+<<show_standing howl smile>>
+howl: …잠깐 눈 좀 붙일게. 한 시간만. 오픈 전에 모든 게 제대로 돌아가는지 보고 싶거든. #line:howl_e2_052
+player: 코 골면 깨워 드릴게요. #line:howl_e2_046
+howl: …골지 않아. 아마도. #line:howl_e2_047
+<<end_event howl 2>>
+===

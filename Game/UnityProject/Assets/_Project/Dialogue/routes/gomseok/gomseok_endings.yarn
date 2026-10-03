@@ -1,0 +1,154 @@
+// 곰석 엔딩 3종. 호스트가 8장 종료 시 진입한다.
+// Normal: 호감/신뢰 기준 미달(연애 없이 동료·친구) / Good: 연인, CG GOMSEOK_E5 재사용 / True: gomseok_key + ledger_truth 전제, CG GOMSEOK_E6
+// 진입 노드: Gomseok_End_Normal, Gomseok_End_Good, Gomseok_End_True
+title: Gomseok_End_Normal
+tags: gomseok ending normal
+---
+<<bg cafe morning>>
+<<show_standing gomseok neutral>>
+체인점 위기가 지나가고 맞은 첫 평범한 아침. 홀에는 빵 굽는 냄새와 국물 끓는 냄새가 섞여 있다. #line:gomseok_en_001
+gomseok: 일어났구먼. 오늘은 불 올려 놨어. 손님 오기 전에 한술 뜨고 가. #line:gomseok_en_002
+player: 곰석 씨는 벌써 나와 계셨네요. 쉬는 날 아니에요? #line:gomseok_en_003
+gomseok: 쉬는 날인데 손이 먼저 주방으로 오더라고. 이게 직업병이여. #line:gomseok_en_004
+국물을 한 숟갈 뜨자 익숙한 온도가 입안에 퍼졌다. 처음 이 가게에 온 날의 맛과 같고, 어딘가 조금 다르다. #line:gomseok_en_005
+player: 맛이 처음과 조금 달라요. 더 둥글어진 느낌이랄까요. #line:gomseok_en_006
+gomseok: 소금을 아주 조금 더 늦게 넣었어. 네가 간 보는 습관이 들었는지, 내 손도 따라가더라고. #line:gomseok_en_007
+player: 제 입맛에 맞춰 주셨어요? #line:gomseok_en_008
+gomseok: 아니, 우리 둘이 먹는 입맛에 맞춘 거여. 이 가게 입맛이 이제 둘이니까. #line:gomseok_en_009
+gomseok: 위기가 지나가고 나니 속이 다 시원해. 이웃들이 얼마나 많이 도와줬는지도 새삼 알았고. #line:gomseok_en_010
+player: 장부 속 이웃분들 이름을 하나씩 떠올리면서 일했어요. 가게가 혼자가 아니라는 게 든든했어요. #line:gomseok_en_091
+gomseok: 그랴. 그 이름들 덕에 버틴 거여. 우리 둘만의 공이 아니지. #line:gomseok_en_092
+player: 곰석 씨가 없었으면 이 가게는 첫 주를 못 넘겼을 거예요. 진심이에요. #line:gomseok_en_011
+<<show_standing gomseok smile>>
+gomseok: 허허, 과찬이구먼. 근데 그 말은 오래 담아 둘게. #line:gomseok_en_012
+gomseok: 나는 이 주방에서 네 동료로 남을 거여. 사장이든 직원이든 우리는 같은 불 앞에 서 있으니까. #line:gomseok_en_013
+player: 저는 곰석 씨를 제 동료이자 친구라고 생각해요. 그건 변하지 않아요. #line:gomseok_en_014
+gomseok: …친구라. 좋은 말이여. 가게 하나로 이어진 친구라니, 나쁘지 않지. #line:gomseok_en_015
+player: 앞으로 가게가 커져도 주방 일은 곰석 씨 판단을 먼저 들을게요. 업무 얘기와 마음 얘기는 따로 두고요. #line:gomseok_en_102
+gomseok: 허허, 그렇게 선을 그어 주니 내가 편하구먼. 일은 일대로, 사람은 사람대로. #line:gomseok_en_103
+player: 그리고 삼촌 노트는 이제 우리 둘의 여백으로 채워 가요. #line:gomseok_en_104
+gomseok: 그려, 세 사람 글씨가 있는 노트라니 든든하지. #line:gomseok_en_105
+gomseok: 가끔은 말이야, 마음이 더 가까웠으면 하는 날도 있어. 근데 그것도 나쁘지 않아. 서두르지 않는 사람이니까. #line:gomseok_en_016
+-> 저도 곰석 씨랑 지내는 시간이 제일 좋아요. 천천히 더 알아 가요. #line:gomseok_en_017
+    <<show_standing gomseok shy>>
+    gomseok: …허허. 그 말은 오늘 국물보다 따뜻하구먼. #line:gomseok_en_018
+    gomseok: 그려, 천천히 가자고. 아직 끓는 중이니까. #line:gomseok_en_019
+-> 앞으로도 곁에서 같이 일해 주세요. 그걸로 충분해요. #line:gomseok_en_020
+    gomseok: 그러면 되지. 그렇게 하자고. #line:gomseok_en_021
+    gomseok: 그래도 말이여, 내가 먼저 문 열어 놓을 일은 없을 거야. 그건 네가 정해야 하는 거니까. #line:gomseok_en_022
+창밖으로 첫 손님이 걸어오는 게 보인다. 곰석이 앞치마를 매고 허리를 폈다. #line:gomseok_en_023
+gomseok: 자, 오늘 첫 손님이여. 네가 홀을 맡아. 나는 주방에서 받쳐 줄 테니. #line:gomseok_en_024
+player: 네, 오늘도 잘 부탁해요. #line:gomseok_en_025
+gomseok: 나야말로. 이 주방은 우리 가게니까. #line:gomseok_en_026
+문을 여는 종소리가 울리고, 홀 안으로 아침 햇살과 함께 단골의 인사가 들어왔다. #line:gomseok_en_093
+gomseok: 어서 오세요. 오늘 국은 간이 딱 맞아요. 허허. #line:gomseok_en_094
+<<show_standing gomseok smile>>
+둘이 같이 문을 열었다. 가게의 하루가 시작되었다. #line:gomseok_en_027
+===
+
+title: Gomseok_End_Good
+tags: gomseok ending good
+---
+<<bg cafe morning>>
+<<show_standing gomseok smile>>
+새벽 다섯 시. 모두가 잠든 골목에서 가게의 주방만 불이 켜져 있다. #line:gomseok_en_028
+<<show_cg GOMSEOK_E5>>
+작업대 위에 나란히 놓인 두 개의 도마. 오른쪽 도마 위에서 곰석이 무를 썰고 있다. 왼쪽 도마 위에서는 내가 파를 썬다. 두 사람의 어깨가 가깝다. #line:gomseok_en_029
+gomseok: 허허, 칼질이 많이 늘었구먼. 이제 소리가 달라. #line:gomseok_en_030
+player: 곰석 씨가 옆에서 지켜봐 줘서요. 혼자였으면 아직 손가락 걱정했을 거예요. #line:gomseok_en_031
+gomseok: 걱정은 해도 돼. 다치지만 않으면. #line:gomseok_en_032
+player: 칼 잡는 자세 아직 어색하죠? 곰석 씨 눈에는 다 보일 텐데요. #line:gomseok_en_095
+gomseok: 어색한 채로 계속하는 게 느는 거여. 걱정 마. #line:gomseok_en_096
+<<hide_cg>>
+<<show_standing gomseok shy>>
+곰석이 칼을 내려놓고 수건에 손을 닦는다. 말을 꺼내기 전의 버릇이다. #line:gomseok_en_033
+gomseok: 있잖여, 오늘 메뉴판에 한 줄 새로 넣었어. 아직 아무한테도 안 보여 줬고. #line:gomseok_en_034
+player: 새 메뉴요? 곰석 씨 이름으로 낸 거예요? #line:gomseok_en_035
+gomseok: …그려. 내 이름 석 자 붙은 첫 메뉴여. 십이 년 만에 처음이지. 겁도 났는데, 네가 옆에 있으니까 낼 수 있겠더라고. #line:gomseok_en_036
+player: 이름이 뭐예요? 먼저 알고 싶어요. #line:gomseok_en_037
+gomseok: "새벽 스튜, 곰석." 한 줄밖에 없어. 설명은 먹어 본 사람이 적는 거니까. #line:gomseok_en_038
+player: 제가 첫 번째로 먹어도 돼요? #line:gomseok_en_039
+gomseok: 네 그릇이 제일 먼저여. 그건 이미 정해 놨어. #line:gomseok_en_040
+player: 이름 옆에 작게 적어도 돼요? 삼촌 노트 여백에서 시작한 맛이라고요. #line:gomseok_en_097
+gomseok: 허허, 노트 이야기는 아껴 둬. 이름 옆에는 내 이름 석 자만 있어도 충분해. #line:gomseok_en_098
+<<show_standing gomseok smile>>
+스튜가 담긴 그릇에서 김이 천천히 피어오른다. 한 숟갈 뜨자 짠맛과 단맛 사이로 오래 우린 뼈 국물의 깊은 맛이 입안을 채운다. #line:gomseok_en_041
+player: 맛있어요. 곰석 씨 맛이에요. 삼촌 노트에도 없고, 제 입맛도 아닌, 곰석 씨 맛. #line:gomseok_en_042
+gomseok: …허허. 그 말 한마디로 십이 년이 정리되는구먼. #line:gomseok_en_043
+gomseok: 하나 물어봐도 되겠어? 이번엔 대답이 안 돼도 괜찮은 질문이여. #line:gomseok_en_044
+player: 뭐든 물어봐요. #line:gomseok_en_045
+gomseok: 이 아침을 앞으로도 같이 시작하고 싶은데, 내 곁에서 계속 불을 지켜 줄 수 있겠어? #line:gomseok_en_046
+-> 네. 매일 아침 같이 시작해요. 저도 곰석 씨랑 하고 싶어요. #line:gomseok_en_047
+    <<show_standing gomseok smile>>
+    gomseok: 그려, 그러면 됐구먼. 더 바랄 게 없어. #line:gomseok_en_048
+-> 같이 해요. 근데 가끔은 쉬는 날도 같이 쉬어야 해요. 약속해요. #line:gomseok_en_049
+    <<show_standing gomseok surprised>>
+    gomseok: 허허, 그건 내가 제일 약한 약속인데. 그려, 노력해 볼게. #line:gomseok_en_050
+곰석이 조심스레 손을 뻗어 내 손을 잡는다. 여전히 따뜻하다. 이마와 이마가 가볍게 맞닿는다. #line:gomseok_en_051
+gomseok: 입 맞춰도 되겠어? 싫으면 싫다고 해도 돼. #line:gomseok_en_052
+player: 네. 좋아요. #line:gomseok_en_053
+곰석의 수염이 뺨에 닿고, 입술이 부드럽게 겹친다. 솥에서 올라오는 김이 두 사람 사이를 천천히 감쌌다. #line:gomseok_en_054
+<<show_standing gomseok shy>>
+gomseok: …국물 넘치겠구먼. 불부터 줄이고. #line:gomseok_en_055
+player: 불은 제가 줄일게요. 곰석 씨는 거기 계세요. #line:gomseok_en_056
+gomseok: 허허, 사장 말은 들어야지. 아니, 네 말이니까 듣는 거여. #line:gomseok_en_057
+창밖이 밝아 온다. 새벽 국물 냄새가 골목 끝까지 퍼진다. 오늘도 달빛 모퉁이의 하루가 시작된다. #line:gomseok_en_058
+===
+
+title: Gomseok_End_True
+tags: gomseok ending true
+---
+// 트루 엔딩은 gomseok_key 와 ledger_truth 가 모두 있어야 한다. 아니면 굿 엔딩으로 보낸다.
+<<if $gomseok_key and $ledger_truth>>
+    <<jump Gomseok_End_True_Letter>>
+<<else>>
+    <<jump Gomseok_End_Good>>
+<<endif>>
+===
+
+title: Gomseok_End_True_Letter
+tags: gomseok ending true
+---
+<<bg cafe dawn>>
+<<show_standing gomseok neutral>>
+동이 트기 전, 주방. 새벽 국물이 솥에서 약하게 끓고 있다. 곰석과 나는 작업대 앞에 나란히 앉았다. 둘 사이에는 봉해진 편지 한 통. #line:gomseok_en_059
+gomseok: 뜯기 전에 말해 둘게. 내가 이 편지를 안 읽은 건 용기가 없어서였어. 네 삼촌이 내 얘기를 뭐라고 썼을지 몰라서. #line:gomseok_en_060
+player: 그럼 같이 읽어요. 곰석 씨 얘기가 나오면 곰석 씨가 먼저 들어요. #line:gomseok_en_061
+gomseok: 허허, 그건 네 편지잖여. #line:gomseok_en_062
+player: 제 편지지만 제 마음엔 곰석 씨도 같이 있으니까요. #line:gomseok_en_063
+player: 삼촌이 곰석 씨에게 못 한 말이 있다면, 저는 곁에서 같이 듣고 싶어요. #line:gomseok_en_099
+gomseok: …그 말이면 용기가 나는구먼. 그려, 뜯자고. #line:gomseok_en_100
+곰석이 낡은 봉투를 조심스레 뜯었다. 접힌 종이에서 오래된 잉크 냄새와 삼촌의 익숙한 글씨가 올라왔다. #line:gomseok_en_064
+<<show_cg GOMSEOK_E6>>
+새벽빛이 창으로 스며들어 편지지를 비춘다. 삼촌의 삐뚤빼뚤한 글씨 위에 곰석과 내 손이 나란히 놓여 있다. 곁에는 삼촌의 낡은 국자와 두 개의 도마. #line:gomseok_en_065
+편지에는 이렇게 적혀 있었다. "이 편지를 읽고 있다면 가게의 불은 아직 켜져 있겠지. 장부는 이미 봤을 것이다." #line:gomseok_en_066
+"이 가게는 내 것이 아니었다. 이웃들이 달마다 조금씩 얹어 준 것이고, 나는 맡아 두었을 뿐이다. 그러니 이어 준다는 건 소유한다는 뜻이 아니라 맡는다는 뜻이다. 부담이 되면 내려놓아도 된다. 그것도 너의 권리다." #line:gomseok_en_067
+"곰석에 대해서는 한 줄만 쓴다. 곰석이 이 가게에 남은 건 내 부탁이 아니었다. 나는 한 번도 부탁한 적이 없다. 그래서 더 미안했고, 그래서 더 고마웠다." #line:gomseok_en_068
+"너는 곰석을 내 연장선으로 보지 않았으면 한다. 곰석은 나보다 국을 잘 끓이고, 나보다 사람을 오래 기다린다. 곰석의 시간은 곰석의 것이다." #line:gomseok_en_069
+"그리고 너도 내가 아니다. 나처럼 고집부리지 마라. 소금은 늦게 넣어라. 곰석이 옳았다. 이 말은 내가 직접 한 번도 못 했다." #line:gomseok_en_070
+곰석은 한참 동안 말이 없었다. 큰 어깨가 천천히 내려앉았다. 편지지를 쥔 손가락 끝이 미세하게 떨렸다. #line:gomseok_en_071
+<<show_standing gomseok sad>>
+gomseok: …소금은 늦게. 이 양반이, 끝까지 인정 안 하더니 편지에다가. #line:gomseok_en_072
+<<show_standing gomseok smile>>
+gomseok: 내 시간은 내 것이라는 말. 십이 년을 들으려고 했는데, 이렇게 오네. #line:gomseok_en_073
+player: 곰석 씨는 누구의 그림자도 아니에요. 삼촌도, 저도, 그걸 알아요. #line:gomseok_en_074
+gomseok: 그려. 이제 알겠구먼. 그림자 아닌 사람이 되는 데 십이 년 걸렸네. 늦지는 않았지? #line:gomseok_en_075
+player: 늦지 않았어요. 오늘이 딱 맞는 시간이에요. #line:gomseok_en_076
+편지를 접어 곰석이 두 손으로 내게 건넨다. 나는 편지를 받아 곰석의 손바닥 위에 다시 한 번 포갰다. #line:gomseok_en_077
+player: 이건 곰석 씨와 같이 보관해요. 장부 서랍 옆에, 열쇠 둘로 잠가서요. #line:gomseok_en_078
+gomseok: 허허, 그러면 서랍이 세 개는 되어야겠구먼. #line:gomseok_en_079
+gomseok: 있잖여, 이제 하나 더 정해야 할 게 있어. 이 가게의 이름으로 나가는 이야기 말이여. #line:gomseok_en_080
+player: "모레나의 안식처 기금"을 이어 가요. 이웃분들과 함께 이름을 걸고요. 곰석 씨 이름도 같이요. #line:gomseok_en_081
+gomseok: …내 이름도? 허허. 그러면 이 가게가 진짜 이름이 둘이 되겠구먼. #line:gomseok_en_082
+player: 둘이면 좋죠. 삼촌 이름이 아니라, 우리 이름으로요. #line:gomseok_en_083
+곰석이 웃으며 내 이마에 이마를 가볍게 맞댔다. 수염이 살짝 간지럽다. #line:gomseok_en_084
+gomseok: 입 맞춰도 되겠어? #line:gomseok_en_085
+player: 네. #line:gomseok_en_086
+새벽빛 속에서 입술이 부드럽게 겹쳤다. 솥에서는 국물이 천천히, 알맞은 온도로 끓고 있었다. #line:gomseok_en_087
+<<hide_cg>>
+<<show_standing gomseok smile>>
+gomseok: 자, 해가 떴어. 첫 손님 전에 불 올리자고. 오늘은 도마 두 개로 썰 거여. #line:gomseok_en_088
+player: 네. 간은 곰석 씨가 봐 주세요. #line:gomseok_en_089
+gomseok: 그건 내 전문이여. 평생 해도 안 질려. #line:gomseok_en_090
+솥뚜껑 틈으로 김이 올라와 창가에 하얗게 맺혔다. 골목 저편에서 제빵사의 첫 수레 소리가 들려온다. #line:gomseok_en_101
+===

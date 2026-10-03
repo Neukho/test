@@ -1,0 +1,42 @@
+// 하울 데이트: 새벽 어시장(동틀 녘). 수치는 호스트가 적용. 진입 노드 Howl_Date_FishMarket
+title: Howl_Date_FishMarket
+tags: howl date fish_market
+---
+<<bg fish_market dawn>>
+<<show_standing howl neutral>>
+새벽 다섯 시, 어시장은 이미 깨어 있다. 얼음 부딪히는 소리와 상인들의 외침이 뒤섞였다. #line:howl_dfm_001
+<<if flag("howl_date_fish_market_done")>>
+    howl: 늦지 않았네. 이번에도. …나는 이런 걸 기억해. #line:howl_dfm_002
+    player: 이제는 알람 소리가 {player_calls("howl")} 목소리처럼 들려요. #line:howl_dfm_003
+    howl: 그건 곤란한데. 알람이 나보다 낫다는 뜻이잖아. #line:howl_dfm_004
+<<else>>
+    howl: 왔네. 다섯 시 정각. 시간 약속, 지킨 거네. #line:howl_dfm_005
+    player: 약속은 약속이니까요. 졸리긴 한데요. #line:howl_dfm_006
+    howl: 졸린 건 눈이 아니라 마음이 풀려서 그래. 곧 깬다. #line:howl_dfm_007
+<<endif>>
+하울은 생선 앞에 쪼그려 앉아 눈과 아가미 색을 차례로 살핀다. 말 한마디 없이, 손놀림만으로 가장 좋은 것을 골라낸다. #line:howl_dfm_008
+howl: 눈이 맑고, 살이 탱탱한 놈. 비늘은 번쩍이는 것보다 약간 차분한 쪽이 신선해. #line:howl_dfm_009
+-> 저도 골라 봐도 돼요? 알려 준 대로요. #line:howl_dfm_010
+    <<flag howl_market_try>>
+    howl: 해 봐. 틀려도 돼. 틀린 건 내가 맛으로 가르쳐 주지. #line:howl_dfm_011
+    <<show_standing howl smile>>
+    howl: …이거, 나쁘지 않아. 처음치고는 눈이 좋다. #line:howl_dfm_012
+-> 보는 법만 배우고 싶어요. 골라 주실래요? #line:howl_dfm_013
+    <<flag howl_market_watch>>
+    howl: 그래. 그럼 옆에서 보면서 따라 해. #line:howl_dfm_014
+-> 이 시장에 다니신 지 얼마나 되셨어요? 상인분들하고 아는 사이 같아서요. #line:howl_dfm_015
+    <<flag howl_market_ask>>
+    howl: 몇 해 됐지. 말은 잘 안 하지만, 서로 얼굴은 알아. #line:howl_dfm_016
+    howl: 그런 게 이 동네에서는 제일 큰 인사야. #line:howl_dfm_017
+구운 생선 냄새가 퍼지는 노점 앞에 나란히 앉았다. 하울이 소금만 뿌린 생선을 반으로 갈라 한쪽을 건넨다. #line:howl_dfm_018
+howl: 먹어 봐. 양념 없이 구워서 담백해. #line:howl_dfm_019
+player: 따뜻하고 간이 딱 맞아요. 이 맛을 가게 메뉴로 낼 수 있을까요? #line:howl_dfm_020
+<<show_standing howl smile>>
+howl: …네가 그렇게 말해 주면, 해 볼 마음이 생겨. #line:howl_dfm_021
+<<if $aff_howl >= 60>>
+    howl: 같이 먹는 아침, 나쁘지 않아. {calls_player("howl")}, 와 줘서 좋았다. #line:howl_dfm_022
+<<else>>
+    howl: 같이 와 줘서 고맙다. 혼자보다 낫네. #line:howl_dfm_023
+<<endif>>
+<<flag howl_date_fish_market_done>>
+===

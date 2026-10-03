@@ -1,0 +1,23 @@
+# 하루 진입 노드
+Haru_Talk_01
+Haru_Talk_02
+Haru_Talk_03
+Haru_Talk_04
+Haru_Talk_05
+Haru_Talk_06
+Haru_Gift_Like
+Haru_Gift_Neutral
+Haru_Gift_Dislike
+Haru_Date_Greenhouse
+Haru_Date_BookStreet
+Haru_Date_Generic
+Haru_E1
+Haru_E2
+Haru_E3
+Haru_E4
+Haru_E5
+Haru_End_Normal
+Haru_End_Good
+Haru_End_True
+Haru_Harem_Consent
+Haru_Harem_Epilogue

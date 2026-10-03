@@ -1,0 +1,40 @@
+// 하울 데이트: 등대 언덕(해 질 녘). 수치는 호스트(RomanceService.Date)가 적용. 진입 노드 Howl_Date_Lighthouse
+title: Howl_Date_Lighthouse
+tags: howl date lighthouse
+---
+<<bg lighthouse dusk>>
+<<show_standing howl neutral>>
+언덕 위로 이어진 길은 가파르지 않지만 길었다. 바람이 짠 냄새를 싣고 올라온다. #line:howl_dl_001
+<<if flag("howl_date_lighthouse_done")>>
+    howl: 또 왔네. …같은 자리인데도 올 때마다 색이 달라서, 질리지가 않아. #line:howl_dl_002
+    player: 저도요. 이 언덕은 갈 때마다 다른 얼굴인 것 같아요. #line:howl_dl_003
+<<else>>
+    howl: 여기야. 사진으로 본 것보다는, 작지. #line:howl_dl_004
+    player: 크기가 문제인가요. 저는 충분히 좋은데요. #line:howl_dl_005
+    howl: …그렇게 말하는 사람은 처음이야. #line:howl_dl_006
+<<endif>>
+등대는 오래되어 페인트가 군데군데 벗겨져 있었다. 하울은 난간에 팔을 걸치고 먼바다를 본다. #line:howl_dl_007
+howl: 항만 일을 하던 때, 일 끝나고 여기 올라오곤 했어. 혼자서. 아무 말도 안 하고. #line:howl_dl_008
+<<if $aff_howl >= 60>>
+    howl: 그런데 오늘은 말이 하고 싶네. 이상하지. {calls_player("howl")}, 옆에 있어서 그런가. #line:howl_dl_009
+<<else>>
+    howl: 말이 많아졌네. 평소엔 안 이러는데. #line:howl_dl_010
+<<endif>>
+-> 말이 많아져도 괜찮아요. 저는 듣는 걸 좋아해요. #line:howl_dl_011
+    <<flag howl_lighthouse_listen>>
+    <<show_standing howl smile>>
+    howl: …그래. 그럼 조금만 더 해도 되겠다. #line:howl_dl_012
+    howl: 저 아래 부두, 저기 불 켜진 데가 우리 가게 쪽 골목이야. 여기서 보면 작고 따뜻해. #line:howl_dl_013
+-> 저기 우리 가게 쪽이네요. 멀리서 보니까 불이 예뻐요. #line:howl_dl_014
+    <<flag howl_lighthouse_shop>>
+    <<show_standing howl smile>>
+    howl: 그렇지. 불 켜 두길 잘했다고 이럴 때 생각해. #line:howl_dl_015
+-> 말 안 해도 돼요. 같이 보고만 있어도 좋아요. #line:howl_dl_016
+    <<flag howl_lighthouse_quiet>>
+    howl: …그것도 좋다. 고마워. #line:howl_dl_017
+해가 수평선에 걸린다. 바다 색이 주황에서 보라로 천천히 바뀐다. #line:howl_dl_018
+howl: 이 시간이 제일 좋아. 낮도 밤도 아닌 시간. 숨 돌리기에 딱 좋아. #line:howl_dl_019
+player: 저도 이 시간이 제일 마음에 들어요. #line:howl_dl_020
+howl: …그래. 나중에 또 오자. 약속은 내가 먼저 하는 걸로 하지. #line:howl_dl_021
+<<flag howl_date_lighthouse_done>>
+===

@@ -1,0 +1,498 @@
+// 요한 일상 대화(밤 행동 '대화'). 호스트가 $aff_johan(읽기 전용)를 제공한다.
+// 선택지 보상: 정답 aff +5 trust +1.5 / 오답 aff -1 trust -1 / 무난한 답은 변화 없음(balance/actions.csv).
+// 진입 노드: Johan_Talk_01 ~ Johan_Talk_06
+// 흐름: 별점(01) -> 필명(02) -> 첫 모금과 선(03) -> 빈 냉장고(04) -> 약속된 리뷰(05) -> 각주(06). 장난이 점점 진심으로 바뀐다.
+title: Johan_Talk_01
+tags: johan talk
+---
+<<bg cafe night>>
+<<show_standing johan smile>>
+<<if $aff_johan < 30>>
+    창가 두 번째 자리에 은빛 귀가 보인다. 요한이 수첩 위에 만년필을 올려 둔 채 이쪽을 향해 손가락 두 개를 까딱한다. #line:johan_talk_001
+    johan: 어서 오세요, 점주님. 아니, 오늘은 내가 손님이니까 "어서 오세요"는 내 쪽에서 들어야 맞나? 순서가 헷갈리네. 나는 순서를 바꿔야 직성이 풀리는 사람이라서요. #line:johan_talk_002
+    player: 안녕하세요, {player_calls("johan")}. 오늘도 취재 중이세요? #line:johan_talk_003
+    johan: 취재라니, 천만에요. 오늘은 그냥 밥 먹는 사람. 수첩은 습관이라 들고 다니는 거고, 펜은 손이 심심해서 쥐고 있는 거고. #line:johan_talk_004
+<<elseif $aff_johan < 60>>
+    johan: {calls_player("johan")}, 마침 잘 왔다. 별점 하나 때문에 오후를 통째로 날린 사람이 지금 눈앞에 있거든. 구해 줘. #line:johan_talk_005
+    player: 별점 하나로 오후를 다 쓰셨다고요? {player_calls("johan")}, 이야기부터 들어 볼게요. #line:johan_talk_006
+    johan: 이렇게 쉽게 걸려 주다니. 걸린 김에 끝까지 들어 줘. 길어. 원래 길어. 내 이야기는 짧게 끝난 적이 없어. #line:johan_talk_007
+<<else>>
+    johan: {calls_player("johan")}. 이쪽 자리, 오늘도 비어 있더라. 내가 비워 둔 건 아니고 우연히. 정말 우연히. 매번 우연이긴 한데. #line:johan_talk_008
+    player: 우연이 성실하네요. {player_calls("johan")}, 앉아요. 오늘은 무슨 점수예요? #line:johan_talk_009
+    johan: 역시 눈치가 빨라. 점수가 아니라 점수 얘기야. 앉아 봐, 천천히 풀게. #line:johan_talk_010
+<<endif>>
+johan: 별점 해석표부터 알려 줄게. 3점은 "별로"가 아니야. 3점은 "다시 올 이유가 있다"는 점수야. 4점은 "다시 올 거다", 5점은 "말려도 온다". #line:johan_talk_011
+johan: 문제는 사람들이 3점을 받으면 상처받는다는 거지. 그래서 나는 3점 줄 때마다 변명을 준비해. 준비만 해. 한 번도 안 써먹었어. 변명 창고가 가득 찼어. #line:johan_talk_012
+-> 솔직한 별점이 오히려 고마워요. 제 가게 점수도 숨기지 말고 말해 줘요. #line:johan_talk_013
+    <<aff johan 5>>
+    <<trust johan 1.5>>
+    <<flag johan_wants_honest_score>>
+    <<show_standing johan surprised>>
+    johan: …숨기지 말라고? 보통은 "너무 심하게는 말하지 말아 주세요" 쪽이거든. 그 반대 주문은 오랜만에 받아 봐. #line:johan_talk_014
+    <<show_standing johan smile>>
+    johan: 좋아. 숨기는 건 안 해. 대신 깎는 말투도 안 쓸게. 솔직한 별점은 애정의 한 종류니까. #line:johan_talk_015
+-> 에이, 우리 사이에 후하게 쳐 주세요. 서비스로 한 개만 더요. #line:johan_talk_016
+    <<aff johan -1>>
+    <<trust johan -1>>
+    <<show_standing johan neutral>>
+    johan: …우리 사이라서 더 못 줘. 후한 별점은 말이야, 상대를 못 믿는 사람이 주는 거거든. #line:johan_talk_017
+    johan: 농담이야. 반은. 나머지 반은 내 직업병이라 눈감아 줘. #line:johan_talk_018
+-> 그럼 점수 말고 한 줄 평만 알려 주세요. #line:johan_talk_019
+    johan: 한 줄 평이라… 그건 점수보다 어려워. 점수는 숫자가 대신 말해 주는데, 한 줄은 내가 직접 책임져야 하잖아. 생각해 둘게. #line:johan_talk_020
+johan: 사실 별점보다 어려운 건 별점을 안 매기는 식사야. 혼자 먹을 땐 맛을 적고, 누가 앞에 있으면 맛을 못 적어. 그래서 내 수첩엔 맛있는 집은 많은데, 즐거웠던 식사는 별로 없어. #line:johan_talk_021
+johan: …방금 건 칼럼에 쓰기엔 너무 처량하네. 삭제. #line:johan_talk_022
+-> 오늘은 수첩 덮고 그냥 같이 먹어요. 맛은 제가 대신 기억해 둘게요. #line:johan_talk_023
+    <<aff johan 5>>
+    <<trust johan 1.5>>
+    <<show_standing johan shy>>
+    johan: …수첩을 덮는다. 이 문장이 나한테 이렇게 크게 들릴 줄은 몰랐네. #line:johan_talk_024
+    johan: 알았어, 덮을게. 대신 맛 기억하는 거, 진짜 맡긴다. 틀리게 기억하면 내가 정정할 거야. #line:johan_talk_025
+-> 팔로워가 만 명이 넘는데 같이 먹을 사람이 없을 리가요. #line:johan_talk_026
+    <<aff johan -1>>
+    <<trust johan -1>>
+    <<show_standing johan neutral>>
+    johan: 숫자랑 식탁은 별개야. 만 명이 있어도 의자는 하나일 수 있어. #line:johan_talk_027
+    johan: …아니, 그냥 해 본 소리야. 신경 쓰지 마. #line:johan_talk_028
+-> 그럼 오늘 메뉴는 뭘로 드릴까요? #line:johan_talk_029
+    johan: 메뉴판을 먼저 줘. 읽는 시간도 식사의 일부니까. 길게 읽을게. 방해하면 안 돼. #line:johan_talk_030
+<<if $aff_johan < 30>>
+    johan: 오늘 얘기는 여기까지. 별점은 내일 또 고민해야죠. #line:johan_talk_031
+<<elseif $aff_johan < 60>>
+    johan: 오늘은 여기서 끊자. 연재물은 늘 제일 궁금할 때 끊어야 다음 회차에 오게 되거든. #line:johan_talk_032
+<<else>>
+    johan: 오늘 식사엔 점수 안 줄래. 점수 칸에 뭘 쓰든 모자랄 것 같아서. #line:johan_talk_033
+<<endif>>
+<<show_standing johan smile>>
+===
+
+title: Johan_Talk_02
+tags: johan talk
+---
+<<bg cafe night>>
+<<show_standing johan neutral>>
+<<if $aff_johan < 30>>
+    요한이 휴대폰 화면을 한참 내려다보다가 이쪽과 눈이 마주치자 화면을 뒤집어 놓는다. #line:johan_talk_034
+    johan: 아, 점주님. 못 본 걸로 해 줘요. 알림이 몇 개 와서 보고 있었을 뿐이에요. 몇 개라고 하면 겸손한 표현이지만. #line:johan_talk_035
+    player: 인기가 많으신가 봐요. 칼럼 올리면 반응이 빨리 오죠? #line:johan_talk_036
+    johan: 반응은 빨라요. 반응이 오래가지 않는 게 문제지. 불꽃놀이 같달까. #line:johan_talk_037
+<<elseif $aff_johan < 60>>
+    johan: {calls_player("johan")}, 이거 봐. 어제 올린 글에 좋아요가 삼천 개 넘었어. 근데 이상하지. 눌러 준 사람 중에 오늘 나한테 밥 먹었냐고 물어본 사람은 없어. #line:johan_talk_038
+    player: {player_calls("johan")}, 밥은 드셨어요? #line:johan_talk_039
+    johan: 방금 물어봤으니까 먹은 걸로 칠래. 질문이 곧 한 끼야. #line:johan_talk_040
+<<else>>
+    johan: {calls_player("johan")}. 알림 소리는 시끄럽고 가게 소리는 조용한데, 이상하게 난 후자가 더 좋더라. 취향이 변한 건지 병이 난 건지. #line:johan_talk_041
+    player: 둘 다 좋은 쪽이면 괜찮지 않아요? {player_calls("johan")}, 오늘은 어때요? #line:johan_talk_042
+    johan: 오늘은 좀… 숫자 때문에 지친 날이야. 앉아도 돼? #line:johan_talk_043
+<<endif>>
+johan: 숫자 하나 알려 줄게. 팔로워 만 이천 명. 그중에서 내가 아프다고 하면 와 줄 사람이 몇 명일까 세어 봤는데, 계산이 안 되더라. 분모가 너무 커서. #line:johan_talk_044
+-> 오늘 여기 와 준 사람은 한 명이에요. 숫자로는 작아도 제게는 큰 거예요. #line:johan_talk_045
+    <<aff johan 5>>
+    <<trust johan 1.5>>
+    <<flag johan_shared_follower_worry>>
+    <<show_standing johan shy>>
+    johan: …한 명. 한 명이라. 분자가 1인데도 이렇게 무겁다니. #line:johan_talk_046
+    johan: 계산이 서네. 이 정도면 분모는 신경 안 써도 되겠어. #line:johan_talk_047
+-> 와, 만 이천 명이면 대박이네요. 우리 가게도 한 번만 소개해 주세요! #line:johan_talk_048
+    <<aff johan -1>>
+    <<trust johan -1>>
+    <<show_standing johan neutral>>
+    johan: …그래, 그런 말 많이 들어. 익숙해. 익숙한 거랑 아무렇지 않은 건 다른 거지만. #line:johan_talk_049
+    johan: 소개는 안 해. 내가 좋아서 쓰는 날은 있어도, 부탁받아서 쓰는 날은 없어. 이건 원칙이라서 네 탓은 아니야. #line:johan_talk_050
+-> 필명은 어떻게 정하셨어요? #line:johan_talk_051
+    johan: 오, 좋은 질문. 그건 이야기가 길어. 어, 방금 눈빛 봤어? 길다고 해도 듣겠다는 눈빛. #line:johan_talk_052
+johan: 칼럼 제목은 「혀끝의 항구」야. 항구는 맛이 닿고 사람이 닿는 곳이잖아. …근데 항구는 배가 떠나는 곳이기도 해서, 쓰고 나서 좀 찔렸어. #line:johan_talk_053
+-> 떠나는 배도 돌아올 곳이 있으니까 항구예요. 저는 그 제목 좋아요. #line:johan_talk_054
+    <<aff johan 5>>
+    <<trust johan 1.5>>
+    <<show_standing johan smile>>
+    johan: …돌아올 곳이 있으니까 항구. 그 문장, 내가 쓸 걸 그랬다. 아니, 내 거 하고 싶다. 인용해도 돼? #line:johan_talk_055
+    player: 출처만 밝히면요. #line:johan_talk_056
+    johan: 출처, 물론이지. 각주로 달게. 가장 작은 글씨로. 가장 소중한 건 늘 작은 글씨야. #line:johan_talk_057
+-> 제목이 너무 길고 말이 많네요. 칼럼 쓰는 사람답게요. #line:johan_talk_058
+    <<aff johan -1>>
+    <<trust johan -1>>
+    <<show_standing johan neutral>>
+    johan: …하하, 맞아. 길지. 나처럼. #line:johan_talk_059
+    johan: 줄이는 중이야. 줄이는 데 시간이 더 걸리는 사람이라서. #line:johan_talk_060
+-> 다음 칼럼 주제는 뭐예요? #line:johan_talk_061
+    johan: 비밀. 아니, 사실 아직 없어. 있는 척하는 건 직업의 일부야. #line:johan_talk_062
+<<if $aff_johan < 30>>
+    johan: 다음 호 마감이 코앞이라 가 볼게요. 점주님, 내일은 별점 얘기 말고 다른 얘기 하죠. #line:johan_talk_063
+<<elseif $aff_johan < 60>>
+    johan: 숫자 얘기를 했더니 속이 좀 가벼워졌어. 고마워. 이 말은 두 번 하면 칼럼이 되니까 한 번만. #line:johan_talk_064
+<<else>>
+    johan: 오늘 밤엔 알림을 꺼 둘게. 대신 {calls_player("johan")} 얼굴은 켜 둘 거야. 아, 이 표현은 좀 별로네. 삭제. #line:johan_talk_065
+<<endif>>
+<<show_standing johan smile>>
+===
+
+title: Johan_Talk_03
+tags: johan talk
+---
+<<bg cafe night>>
+<<show_standing johan smile>>
+테이블 위에 향이 은은한 차 세트가 놓여 있다. 요한은 찻잔을 코 가까이 가져가 눈을 감고 있다. #line:johan_talk_066
+<<if $aff_johan < 30>>
+    johan: 쉿. 지금은 향 맡는 중이에요. 대화는 세 박자 뒤에 다시 시작합니다. 하나, 둘, 셋. …자, 시작. #line:johan_talk_067
+    player: 차 마시는 데 규칙이 있나요? #line:johan_talk_068
+    johan: 내 규칙이에요. 남이 지키면 안 되는, 나만의 규칙. #line:johan_talk_069
+<<elseif $aff_johan < 60>>
+    johan: {calls_player("johan")}, 마침 잘 왔어. 이 차는 첫 모금이 중요하거든. 같이 마시자. 증인이 필요해. #line:johan_talk_070
+    player: 증인이요? {player_calls("johan")}, 무슨 사건이에요? #line:johan_talk_071
+    johan: 한 잔의 차가 한 사람의 기분을 뒤집는 사건. 흔한 일이지만 매번 새로 놀라. #line:johan_talk_072
+<<else>>
+    johan: {calls_player("johan")}, 이거 마시자. 네가 오면 맛이 바뀌는지 시험해 보고 싶었어. 혼자 마실 땐 늘 같은 맛이었거든. #line:johan_talk_073
+    player: 맛이 바뀌면 칼럼에 쓸 거예요? #line:johan_talk_074
+    johan: 아니. 이건 안 써. 쓰면 닳을 것 같아서. #line:johan_talk_075
+<<endif>>
+johan: 차 마시는 법. 첫 모금은 입에 넣고 삼키지 말고 세 박자 기다려. 그동안은 거짓말을 못 해. 사람도 비슷해서, 첫인상은 세 박자 안에 다 나오지. #line:johan_talk_076
+johan: 나는 {name()}의 첫인상을 아직 평가 보류 중이야. 이유? 매번 새로운 정보가 나와서 채점표가 모자라거든. #line:johan_talk_077
+johan: …참고로 하는 말인데, 내 농담이 선을 넘으면 "여기까지"라고 말해 줘. 접는 건 자신 있어. 접은 자리에 다시 안 펴는 것도. #line:johan_talk_078
+-> 부담은 아니에요. 다만 어디까지가 농담인지 가끔 헷갈려요. #line:johan_talk_079
+    <<aff johan 5>>
+    <<trust johan 1.5>>
+    <<flag johan_boundary_asked>>
+    <<show_standing johan surprised>>
+    johan: …정직한 리뷰네. 감점 사유는 전부 내 쪽에 있어. #line:johan_talk_080
+    <<show_standing johan shy>>
+    johan: 오늘 기준으로 말하면, 농담이 여섯이고 진심이 넷이야. 아니, 반대일지도. 헷갈리게 한 건 미안해. 앞으로 진심이면 안경을 올릴게. 그게 신호. #line:johan_talk_081
+-> 하하, 어차피 전부 농담이잖아요. #line:johan_talk_082
+    <<aff johan -1>>
+    <<trust johan -1>>
+    <<show_standing johan neutral>>
+    johan: …맞아. 전부 농담이지. #line:johan_talk_083
+    johan: 전부는 아닌데. 뭐, 괜찮아. 그렇게 보이게 하는 건 내 솜씨니까. #line:johan_talk_084
+-> 천천히 알아 가는 걸로 해요. 저는 서두르지 않는 쪽이라서요. #line:johan_talk_085
+    johan: 천천히가 좋아. 숙성이라는 단어가 괜히 있는 게 아니야. 서두른 맛은 서둘러 사라지지. #line:johan_talk_086
+johan: 자, 이제 시험이야. 한 문장으로 말해 봐. 이 차의 맛. 꾸미지 말고 진짜로. #line:johan_talk_087
+-> 비 오는 날 창가 자리처럼, 조용한데 따뜻해요. #line:johan_talk_088
+    <<aff johan 5>>
+    <<trust johan 1.5>>
+    <<show_standing johan smile>>
+    johan: …와. 그거, 내가 쓸 걸 그랬다. 아니, 이건 칭찬이야. 질투 아니고. 질투였으면 지금 표정이 달랐을 거야. #line:johan_talk_089
+    johan: 맛을 사람 말로 번역하는 재능이 있네. 직업 바꿀 생각 있어? 농담이야. 가게나 지켜. #line:johan_talk_090
+-> 맛은 모르겠고, 알아서 멋있게 써 주세요. #line:johan_talk_091
+    <<aff johan -1>>
+    <<trust johan -1>>
+    <<show_standing johan neutral>>
+    johan: …쓰는 건 내 일이지만, 느끼는 건 네 일이야. 그건 대신 못 해. #line:johan_talk_092
+    johan: 다음엔 틀려도 좋으니까 네 말로 해 줘. 틀린 문장이 제일 맛있어. #line:johan_talk_093
+-> 달고 따뜻해요. #line:johan_talk_094
+    johan: 짧고 정확한 리뷰네. 군더더기 없어서 마음에 들어. 나한테는 없는 재능이야. #line:johan_talk_095
+<<if $aff_johan < 30>>
+    johan: 이 차 세트 다 마시면 또 부를게요. 아껴 마실 거라 오래 걸릴 텐데. #line:johan_talk_096
+<<elseif $aff_johan < 60>>
+    johan: 세 박자 기다리는 법, 이제 알지? 다음에 누가 말을 걸어도 한 박자는 쉬어 줘. 내 말은 두 박자까지만 쉬어 줘도 돼. #line:johan_talk_097
+<<else>>
+    johan: 세 박자를 기다리고 나니까 알겠다. 너랑 있을 땐 박자를 안 세도 되네. #line:johan_talk_098
+<<endif>>
+<<show_standing johan smile>>
+===
+
+title: Johan_Talk_04
+tags: johan talk
+---
+<<bg cafe night>>
+<<show_standing johan neutral>>
+마감이 가까운 시간. 손님은 요한 하나뿐이다. 요한은 자꾸 시계를 보지 않는 척하며 시계를 보고 있다. #line:johan_talk_099
+<<if $aff_johan < 30>>
+    johan: 점주님, 마감 시간 몇 시죠? 알고 싶어서가 아니라, 그 시간까지 최대한 늦게 가는 방법을 계산하려고요. #line:johan_talk_100
+    player: 마감까지는 아직 여유 있어요. 천천히 드셔도 돼요. #line:johan_talk_101
+    johan: 천천히는 내 특기죠. 먹는 것도, 집에 가는 것도. #line:johan_talk_102
+<<elseif $aff_johan < 60>>
+    johan: {calls_player("johan")}, 오늘은 마감이 일찍 왔나 보네. 아니, 시간이 늘 이 속도인데 내가 오늘만 그렇게 느끼는 건가. #line:johan_talk_103
+    player: {player_calls("johan")}, 오늘은 어디 아쉬운 데라도 있어요? #line:johan_talk_104
+    johan: 아쉬운 건 없고, 서운한 건 있어. 마감이 서운해. 너한테 하는 말은 아니야. 마감한테 하는 말. #line:johan_talk_105
+<<else>>
+    johan: {calls_player("johan")}, 오늘은 먼저 말할게. 마감이 싫어. 이유는 묻지 마. …아니, 물어봐 줘. 사실은 물어봐 주는 게 좋아. #line:johan_talk_106
+    player: 왜 마감이 싫어요? #line:johan_talk_107
+    johan: 마감하면 내가 나가야 하잖아. 나가면 집이야. 집에는 말이 없어. #line:johan_talk_108
+<<endif>>
+johan: 내 자취방에는 가구가 세 개 있어. 책상, 침대, 그리고 냉장고. 근데 제일 말이 많은 건 냉장고야. 새벽 두 시에 혼자 웅웅거려. 나는 걔랑 대화가 잘 통해. 둘 다 안 자거든. #line:johan_talk_109
+-> 냉장고 말고 여기서 떠들어요. 마감까지는 이 가게가 열려 있으니까요. #line:johan_talk_110
+    <<aff johan 5>>
+    <<trust johan 1.5>>
+    <<flag johan_fridge_joke>>
+    <<show_standing johan shy>>
+    johan: …마감까지. 그 말, 기한이 있어서 오히려 안심되네. 영원이라고 했으면 의심했을 거야. 나는 의심이 직업이라. #line:johan_talk_111
+    johan: 그럼 마감까지는 쓸데없는 얘기 다 할게. 쓸데없는 얘기가 쓸모 있는 얘기보다 훨씬 오래 남더라. #line:johan_talk_112
+-> 사람 좀 만나 보세요. 친구도 많으실 텐데 왜 그러세요? #line:johan_talk_113
+    <<aff johan -1>>
+    <<trust johan -1>>
+    <<show_standing johan neutral>>
+    johan: …친구는 많지. 많은데, 새벽 두 시에 불러내는 건 다른 문제라서. #line:johan_talk_114
+    johan: 아니, 괜찮아. 조언은 고마워. 고맙다는 말은 그냥 예의상이 아니라 진짜로. #line:johan_talk_115
+-> 냉장고는 소리가 큰 게 오히려 신선하다던데요. #line:johan_talk_116
+    johan: 오, 업계 용어를 아는군. 내 냉장고는 신선도 만점이야. 외로움도 아주 신선하게 보관 중. #line:johan_talk_117
+johan: 사람이 조용해지면 냉장고 소리가 들리는 거야. 그래서 나는 말을 많이 하는 거고. 소리 위에 소리를 덮는 거지. …이건 진담이야. 아니, 농담으로 해 두자. 그게 편하겠다. #line:johan_talk_118
+-> 농담이든 진담이든 들었어요. 필요하면 언제든 다시 말해요. #line:johan_talk_119
+    <<aff johan 5>>
+    <<trust johan 1.5>>
+    <<show_standing johan surprised>>
+    johan: …들었다고 말해 주는 사람은 드물어. 보통은 웃어 주거나 못 들은 척해 주는데. #line:johan_talk_120
+    <<show_standing johan smile>>
+    johan: 알았어. 다시 말할 때는 안경을 올릴게. 그게 진담 신호. 방금은 안 올렸으니까, 이번엔 반만 진담. #line:johan_talk_121
+-> 에이, 또 농담이죠? #line:johan_talk_122
+    <<aff johan -1>>
+    <<trust johan -1>>
+    <<show_standing johan neutral>>
+    johan: …응, 농담. 맞아, 농담이야. 하하. #line:johan_talk_123
+    johan: 그 반응은 정답이긴 해. 내가 그렇게 말하게 만들었으니까. #line:johan_talk_124
+-> 조용해도 괜찮아요. 침묵도 같이 앉아 있을 수 있어요. #line:johan_talk_125
+    johan: 침묵과 동석이라. 나는 침묵이랑 합석은 많이 해 봤는데, 둘이서 같이 앉는 건 신선한 조합이네. #line:johan_talk_126
+<<if $aff_johan < 30>>
+    johan: 오늘은 이 정도로 하고 가야겠어요. 냉장고가 기다려서. #line:johan_talk_127
+<<elseif $aff_johan < 60>>
+    johan: 간다. 오늘은 냉장고 소리가 조금 덜 크게 들릴 것 같아. #line:johan_talk_128
+<<else>>
+    johan: 내일도 이 자리, 비워 둬 줘. 맡아 달라는 건 아니고, 그냥 비어 있으면 좋겠어. #line:johan_talk_129
+<<endif>>
+<<show_standing johan smile>>
+===
+
+title: Johan_Talk_05
+tags: johan talk
+---
+<<bg cafe night>>
+<<show_standing johan smile>>
+카운터 옆 칠판에는 오늘 새로 개발한 메뉴 이름이 적혀 있다. 요한은 그 앞에 서서 한참 읽고 있다. #line:johan_talk_130
+<<if $aff_johan < 30>>
+    johan: 새 메뉴네요. 이름이 좋아요. 이름이 좋은 메뉴는 대개 맛이 반은 먹고 들어가거든요. #line:johan_talk_131
+    player: 아직 완성은 아니에요. 보시려면 내일 이후가 좋을 거예요. #line:johan_talk_132
+    johan: 그럼 날짜를 정해요. 내가 가장 먼저 먹는 손님이 되고 싶어서요. 이건 취재 욕심이 아니라 식탐입니다. #line:johan_talk_133
+<<elseif $aff_johan < 60>>
+    johan: {calls_player("johan")}, 이 메뉴, 첫 손님 자리 나한테 줘. 이 자리는 예약 가능 맞지? #line:johan_talk_134
+    player: {player_calls("johan")}, 날짜만 정하면 돼요. 언제가 좋아요? #line:johan_talk_135
+    johan: 목요일. 목요일 오후 세 시. 한가한 시간이라 맛도 사람도 제대로 볼 수 있거든. #line:johan_talk_136
+<<else>>
+    johan: {calls_player("johan")}, 목요일 오후 세 시. 그날 새 메뉴 처음 내놓는다고 했지. 나, 그날 비워 놨어. 다른 약속은 다 거절했고. #line:johan_talk_137
+    player: 다 거절하셨다고요? 너무 무리하신 거 아니에요? #line:johan_talk_138
+    johan: 무리 아니야. 내 일정표에서 제일 중요한 칸이라서. #line:johan_talk_139
+<<endif>>
+johan: 약속 하나만 하자. 나는 이 메뉴 얘기를 쓸 수도 있고 안 쓸 수도 있어. 맛있으면 쓰고, 그저 그러면 안 쓰고. 그리고 쓰든 안 쓰든 다음 주에도 올 거야. 이건 서로 별개로 하자. #line:johan_talk_140
+-> 목요일 비워 둘게요. 새 메뉴의 첫 손님 자리는 이미 맡아 뒀어요. #line:johan_talk_141
+    <<aff johan 5>>
+    <<trust johan 1.5>>
+    <<flag johan_thursday_review>>
+    <<show_standing johan surprised>>
+    johan: …정했다고? 이렇게 단호하게? 심사위원 지명을 당하는 건 기분 좋은 일이네. #line:johan_talk_142
+    <<show_standing johan smile>>
+    johan: 알았어. 목요일 세 시. 시간은 내가 먼저 도착해서 지킬게. 약속은 두 번 말하면 약해지니까 한 번만. #line:johan_talk_143
+-> 그날 바빠지면 다른 손님이 먼저 먹게 될 수도 있어요. #line:johan_talk_144
+    <<aff johan -1>>
+    <<trust johan -1>>
+    <<show_standing johan neutral>>
+    johan: …그래, 장사가 먼저지. 맞는 말이야. #line:johan_talk_145
+    johan: 그래도 날짜를 정했으면 정한 거야. 안 지킬 거면 처음부터 안 정하는 게 서로 편해. 다음엔 그렇게 해 줘. #line:johan_talk_146
+-> 아직 레시피가 완성이 아니라서요. 완성되면 그때 알려 드릴게요. #line:johan_talk_147
+    johan: 알려 줘. 기다리는 건 잘하거든. 기다리는 동안 상상하는 맛이 현실보다 나을 때도 있고. #line:johan_talk_148
+johan: 그리고 한 가지 더. 나는 이용당한다는 말에 예민한 사람이야. 이용하는 쪽도 이용당하는 쪽도 내 안에는 둘 다 살아 있어서. …그러니까 혹시 내가 이상하게 굴면, 직접 물어봐 줘. 돌려서 말고. #line:johan_talk_149
+-> 물어볼게요. 대신 저한테 불편한 건 바로 말해 주기로 해요. #line:johan_talk_150
+    <<aff johan 5>>
+    <<trust johan 1.5>>
+    <<show_standing johan smile>>
+    johan: 쌍방 질문권. 마음에 드는 제도네. 계약서 쓸까? 농담이고, 악수로 하자. #line:johan_talk_151
+    <<show_standing johan shy>>
+    johan: …악수는 네가 원할 때만. 손은 내가 먼저 안 내밀게. #line:johan_talk_152
+-> 혹시 우리 가게를 글감으로만 보는 건 아니죠? #line:johan_talk_153
+    <<aff johan -1>>
+    <<trust johan -1>>
+    <<show_standing johan sad>>
+    johan: …물어봐 달라고 했으니까 대답해야 하는데, 오늘은 못 하겠다. 증명이 필요한 질문이라서. #line:johan_talk_154
+    johan: 아니, 화난 건 아니야. 물어본 건 잘한 거고. 대답은 시간이 걸릴 뿐이야. #line:johan_talk_155
+-> 그럼 이상하게 굴 때는 제가 먼저 차를 내려 줄게요. #line:johan_talk_156
+    johan: 차로 해결하겠다는 거네. 이 가게다운 대답이다. 좋아, 그것도 하나의 방법이지. #line:johan_talk_157
+<<if $aff_johan < 30>>
+    johan: 목요일에 뵐게요. 늦지 않게, 대신 너무 일찍도 오지 않게. #line:johan_talk_158
+<<elseif $aff_johan < 60>>
+    johan: 간다. 목요일에 와서 첫 숟가락은 신중하게 뜰게. 첫 숟가락은 한 번뿐이니까. #line:johan_talk_159
+<<else>>
+    johan: 목요일까지 기다리는 시간도 맛에 포함해서 평가할게. 지금 점수는 벌써 높아. #line:johan_talk_160
+<<endif>>
+<<show_standing johan smile>>
+===
+
+title: Johan_Talk_06
+tags: johan talk
+---
+<<bg cafe night>>
+<<show_standing johan neutral>>
+요한이 수첩 맨 뒷장을 펼쳐 놓고 만년필 뚜껑을 닫았다 열었다 한다. 평소와 달리 말이 늦게 나온다. #line:johan_talk_161
+<<if $aff_johan < 30>>
+    johan: 점주님, 칼럼에는 각주라는 게 있어요. 본문 아래 작은 글씨로 달리는 거. 알아요? #line:johan_talk_162
+    player: 알아요. 논문에 많이 붙잖아요. #line:johan_talk_163
+    johan: 내 칼럼에도 있어요. 아무도 안 읽는 각주. 오늘은 그 얘기를 해 볼까 하는데, 들어 줄래요? #line:johan_talk_164
+<<elseif $aff_johan < 60>>
+    johan: {calls_player("johan")}, 칼럼엔 각주가 있어. 본문은 맛 얘기를 하고, 각주는 진짜 얘기를 해. 지금까지 한 명도 안 읽었어. #line:johan_talk_165
+    player: {player_calls("johan")}, 그럼 오늘은 제가 첫 독자가 될게요. #line:johan_talk_166
+    johan: 첫 독자라는 말, 은근히 책임감 있는 직함이네. 괜찮겠어? #line:johan_talk_167
+<<else>>
+    johan: {calls_player("johan")}. 오늘은 각주 얘기를 하고 싶은데, 조금 떨리네. 이게 무슨 일이지. 문장 쓰는 사람이 말 한마디 하는 데 떨다니. #line:johan_talk_168
+    player: 천천히 해요. 기다릴게요. #line:johan_talk_169
+    johan: …그 말을 듣고 싶어서 떨었나 봐. 기다린다는 말. #line:johan_talk_170
+<<endif>>
+johan: 각주 예를 들면 이런 거야. "각주 3. 이 집 국물은 어머니 맛이 났다. 어머니 맛이 뭔지 나는 잘 모른다." …이런 걸 본문에 쓰면 칼럼이 아니라 일기가 되잖아. 그래서 각주로 보내. #line:johan_talk_171
+-> 저는 각주부터 읽는 사람이에요. 본문보다 거기가 진짜 같아서요. #line:johan_talk_172
+    <<aff johan 5>>
+    <<trust johan 1.5>>
+    <<flag johan_footnote_reader>>
+    <<show_standing johan surprised>>
+    johan: …각주부터. 그건 독자 유형 중에 가장 드물고 가장 위험한 유형인데. #line:johan_talk_173
+    <<show_standing johan smile>>
+    johan: 위험하다는 건 칭찬이야. 숨겨 놓은 보람이 있다는 뜻이거든. #line:johan_talk_174
+-> 각주가 많으면 읽기 힘들어요. 요점만 본문에 쓰세요. #line:johan_talk_175
+    <<aff johan -1>>
+    <<trust johan -1>>
+    <<show_standing johan neutral>>
+    johan: …맞는 편집 조언이야. 편집장도 그렇게 말해. #line:johan_talk_176
+    johan: 근데 나한테 요점은 늘 각주에 있어서 말이지. 괜찮아, 계속 고민해 볼게. #line:johan_talk_177
+-> 어떤 각주가 제일 마음에 들어요? #line:johan_talk_178
+    johan: 질문이 날카로운데. 제일 마음에 드는 건 아직 안 쓴 각주야. 쓰는 순간 줄어들거든. #line:johan_talk_179
+johan: 최근에 쓴 각주가 하나 있어. 번호는 17번. 어느 가게 얘기인데, 그 가게 카운터 앞에서는 이상하게 말이 줄어들고, 줄어든 말이 더 진짜 같아졌대. …이 정도만 말할래. #line:johan_talk_180
+-> 그 각주, 지금 소리 내서 읽어 줘요! #line:johan_talk_181
+    <<aff johan -1>>
+    <<trust johan -1>>
+    <<show_standing johan shy>>
+    johan: …각주는 읽는 사람이 찾아내야 각주야. 소리 내서 읽는 순간 그냥 본문이 돼. #line:johan_talk_182
+    johan: 미안, 오늘은 여기까지만. 다음에, 내가 읽어 주고 싶어질 때. #line:johan_talk_183
+-> 읽어 줘도 되겠다 싶을 때 읽어 줘요. 저는 기다릴게요. #line:johan_talk_184
+    <<aff johan 5>>
+    <<trust johan 1.5>>
+    <<flag johan_footnote_wait>>
+    <<show_standing johan smile>>
+    johan: …기다린다고 또 말했어. 오늘 두 번째야. 이러다 내가 기다림에 익숙해지겠네. #line:johan_talk_185
+    <<show_standing johan shy>>
+    johan: 익숙해져도 되는 거지? 이건 질문이야. 대답은 안 해도 돼. #line:johan_talk_186
+-> 어떤 가게인지는 안 물을게요. 그런데 17번은 마음에 들어요. #line:johan_talk_187
+    johan: 안 묻는 배려. 이건 정말 고급 서비스네. 점수를 안 줄 수가 없잖아. #line:johan_talk_188
+<<if $aff_johan < 30>>
+    johan: 오늘은 각주 하나만 읽은 걸로 하죠. 나머지는 연재로. #line:johan_talk_189
+<<elseif $aff_johan < 60>>
+    johan: 오늘은 본문보다 각주가 길어진 날이다. 이런 날은 칼럼이 안 써지고 대신 마음이 써져. #line:johan_talk_190
+<<else>>
+    johan: 17번 각주, 언젠가 꼭 읽어 줄게. 그때는 안경 올리고, 농담 없이. #line:johan_talk_191
+<<endif>>
+<<show_standing johan smile>>
+===
+
+title: Johan_Talk_07
+tags: johan talk
+---
+<<bg cafe day>>
+<<show_standing johan smile>>
+<<if $aff_johan < 30>>
+    요한이 계산대 앞에서 도장 적립 카드를 만지작거리고 있다. 열 칸 중 아홉 칸이 찍혀 있다. #line:johan_talk_192
+    johan: 점주님, 열 번째 칸이 차면 뭘 주는지는 말하지 말아요. 모르는 채로 오는 맛이 있거든요. #line:johan_talk_193
+    player: 비밀로 할게요. 대신 열 번째 방문은 꼭 오셔야 해요. #line:johan_talk_194
+<<elseif $aff_johan < 60>>
+    johan: {calls_player("johan")}, 이 카드 봤어? 내일이면 열 칸이 다 차. 내가 이 가게에 열 번 왔다는 증거가 종이 한 장으로 남는 거지. #line:johan_talk_195
+    player: {player_calls("johan")}, 열 번째 선물은 뭘 받고 싶으세요? #line:johan_talk_196
+    johan: 서프라이즈로 부탁해. 맞히는 재미까지 먹을 거니까. #line:johan_talk_197
+<<else>>
+    johan: {calls_player("johan")}. 다 찬 도장 카드, 버리는 사람이 많대. 난 못 버리겠더라. 서랍에 일곱 장째야. #line:johan_talk_198
+    player: 일곱 장이면 이 가게에 칠십 번 오신 거네요. #line:johan_talk_199
+    johan: 계산이 빨라서 큰일이야. 칠십 번 먹은 집은 한 줄로 못 줄여서, 이 가게 얘기는 칼럼에 못 쓰고 있어. #line:johan_talk_200
+<<endif>>
+johan: 단골의 조건이 뭔지 알아? 맛이 아니야. 맛은 한 번이면 알아. 단골은 "내가 안 가면 누가 알아채는 집"이야. #line:johan_talk_201
+johan: 요즘엔 반대가 걱정이거든. 내가 안 가도 아무도 모르는 집이 너무 많아졌어. 별점만 남기고 이름은 안 남기는 식사들. #line:johan_talk_202
+johan: 그래서 연습 중이야. 주문할 때 이름을 말하는 거. "요한이에요, 오늘도 그걸로 주세요." 쑥스러운 문장이지? #line:johan_talk_203
+-> 쑥스러워도 좋아요. 이름을 말해 주면 저는 기억할 수 있으니까요. #line:johan_talk_204
+    <<aff johan 5>>
+    <<trust johan 1.5>>
+    <<flag johan_talk07_name>>
+    <<show_standing johan surprised>>
+    johan: …이름을 기억해 준다는 말이 칼럼 백 편보다 크게 들리네. 이건 칼럼엔 안 쓸게. 내 거야. #line:johan_talk_205
+    <<show_standing johan smile>>
+    johan: 내일부터는 당당하게 말해 볼게. 요한이에요, 오늘도 그걸로 주세요. 연습 끝. #line:johan_talk_206
+-> 이름 대신 별명으로 불러 드릴까요? "별점 요정" 같은 걸로요. #line:johan_talk_207
+    <<aff johan -1>>
+    <<trust johan -1>>
+    <<show_standing johan neutral>>
+    johan: 별점 요정이라… 센스는 있는데, 그건 필명 뒤에 숨은 이름이잖아. #line:johan_talk_208
+-> 늘 드시던 걸로 말 없이 내어 드릴게요. #line:johan_talk_210
+    johan: 그것도 좋지. 말 안 해도 나오는 메뉴. 그게 단골의 최종 형태일지도. #line:johan_talk_211
+johan: 얼마 전에 단골 국숫집이 문을 닫았어. 주인 할머니 허리가 안 좋아져서. 마지막 날에 이름을 말했더니 "알아, 지난달에 열한 번 왔잖아" 하시더라. #line:johan_talk_212
+johan: 나는 별점을 쓰는데 할머니는 방문 횟수를 세고 있었던 거야. 누가 더 정확한 평가인지 모르겠어. #line:johan_talk_213
+-> 그 할머니께 인사는 제대로 드렸어요? 마지막 날이었다면요. #line:johan_talk_214
+    <<aff johan 5>>
+    <<trust johan 1.5>>
+    <<flag johan_talk07_thanks>>
+    <<show_standing johan shy>>
+    johan: …못 했어. "맛있었어요"만 하고 나왔어. "고마웠어요"는 목에서 안 나오더라. #line:johan_talk_215
+    johan: 다음 주에 가 보려고. 닫힌 문에 쪽지라도 붙이게. 진심도 폐업 뒤에 배달이 되려나. #line:johan_talk_216
+-> 그 국숫집, 칼럼에 쓰셨으면 손님이 늘어서 폐업을 막았을지도 몰라요. #line:johan_talk_217
+    <<aff johan -1>>
+    <<trust johan -1>>
+    <<show_standing johan neutral>>
+    johan: 막았을지도 모르지. 근데 줄 서는 가게는 할머니가 원한 가게가 아니었을 거야. #line:johan_talk_218
+    johan: …쓰지 못한 게 아니라 쓰지 않기로 한 거라고 하자. 그게 덜 아프네. #line:johan_talk_219
+-> 다른 단골집도 아직 많잖아요. #line:johan_talk_220
+    johan: 많긴 하지. 근데 그 집은 하나뿐이었다는 게 문제야. #line:johan_talk_221
+<<if $aff_johan < 30>>
+    johan: 오늘 얘기는 여기까지. 도장 카드는 내일 마저 채울게요. #line:johan_talk_222
+<<elseif $aff_johan < 60>>
+    johan: 오늘은 여기서 끊자. 내일 열 번째 도장 찍으러 올 이유가 생겼네. #line:johan_talk_223
+<<else>>
+    johan: 오늘 얘기는 각주 없이 끝. 이 가게는 내 단골집이고, 너는 그 가게의 이름이야. #line:johan_talk_224
+<<endif>>
+<<show_standing johan smile>>
+===
+
+title: Johan_Talk_08
+tags: johan talk
+---
+<<bg cafe night>>
+<<show_standing johan neutral>>
+<<if $aff_johan < 30>>
+    요한이 노트북을 펴 놓고 한 문장을 노려보고 있다. 커서만 깜빡인다. #line:johan_talk_225
+    johan: 점주님, 형용사 하나만 구해 줄래요? "맛있다"는 빼고요. 오늘은 금지어예요. #line:johan_talk_226
+    player: 금지어까지 정해 놓고 쓰세요? #line:johan_talk_227
+<<elseif $aff_johan < 60>>
+    johan: {calls_player("johan")}, 퇴고 중이야. 오늘의 원칙은 형용사 반으로 줄이기. 아직 하나도 못 줄였지만. #line:johan_talk_228
+    player: {player_calls("johan")}, 원칙이 벌써 무너졌네요. #line:johan_talk_229
+<<else>>
+    johan: {calls_player("johan")}. 방금 문단에서 형용사를 열두 개 지웠어. 남은 문장이 마음에 들어서 좀 무서워. #line:johan_talk_230
+    player: 마음에 들면 좋은 거 아닌가요? #line:johan_talk_231
+    johan: 마음에 드는 문장은 거짓말일 때가 많거든. 너무 매끈해서. #line:johan_talk_232
+<<endif>>
+johan: 퇴고하는 법을 알려 줄게. 초고는 내가 쓴 글이고, 퇴고는 독자가 읽을 글이야. 제일 먼저 지우는 건 "정말", "너무", "진짜". 힘주는 말이 많을수록 힘이 없거든. #line:johan_talk_233
+johan: 이상하지. 말할 땐 "진짜"를 입에 달고 살아. 글에서 지운 진짜가 다 입으로 도망쳐 온 것 같아. #line:johan_talk_234
+-> 입으로 도망쳐 온 진짜들, 저한테 말해 줘요. 그건 지울 필요 없잖아요. #line:johan_talk_235
+    <<aff johan 5>>
+    <<trust johan 1.5>>
+    <<flag johan_talk08_real>>
+    <<show_standing johan shy>>
+    johan: …지울 필요 없는 진짜라. 그 문장은 퇴고 없이 통과. #line:johan_talk_236
+    johan: 그럼 말해 볼게. 진짜 오늘 하루 중에 제일 좋았던 건, 문을 열었을 때 이 가게 불이 켜져 있었던 거야. #line:johan_talk_237
+-> 그럼 말도 퇴고해서 하세요. 훨씬 간결해질 거예요. #line:johan_talk_238
+    <<aff johan -1>>
+    <<trust johan -1>>
+    <<show_standing johan neutral>>
+    johan: …말은 퇴고가 안 돼. 한 번 나가면 끝이라서, 그래서 많이 하게 되는 건데. #line:johan_talk_239
+    johan: 아니, 알았어. 조금 줄여 볼게. 조금. #line:johan_talk_240
+-> 지운 문장이 나중에 아까울 때도 있죠. #line:johan_talk_241
+    johan: 있지. 그럴 땐 휴지통 폴더에 한 달 묵혀 둬. 한 달 뒤에도 보고 싶으면 살아남는 거야. #line:johan_talk_242
+johan: 마지막 문장은 늘 꾸미고 싶어져. 그럴 땐 마지막 문장을 지워 보래. 멋진 끝이 사라지고 나면 진짜 끝이 남는다고. #line:johan_talk_243
+johan: 오늘 칼럼의 끝이 이거였어. "그래서 이 집의 국물은 한 편의 시였다." 지웠더니 "그래서 또 갔다."만 남더라. #line:johan_talk_244
+-> 그 한 줄이 제일 좋아요. 시보다 솔직해서 오래 남아요. #line:johan_talk_245
+    <<aff johan 5>>
+    <<trust johan 1.5>>
+    <<flag johan_talk08_plain>>
+    <<show_standing johan smile>>
+    johan: 솔직해서 오래 남는다…. 그 평은 내가 받은 것 중에 제일 짧고 제일 비싸네. #line:johan_talk_246
+-> 시 같은 문장이 더 팔릴 것 같은데요. 다시 넣으세요. #line:johan_talk_247
+    <<aff johan -1>>
+    <<trust johan -1>>
+    <<show_standing johan neutral>>
+    johan: 팔리는 문장이랑 남는 문장은 다른 종목이야. …오늘은 남는 쪽으로 낼게. #line:johan_talk_248
+-> 그 칼럼은 언제 올라와요? #line:johan_talk_249
+    johan: 내일 아침. 오늘 밤에 한 번만 더 읽고, 읽고, 또 읽고. #line:johan_talk_250
+<<if $aff_johan < 30>>
+    johan: 형용사 구출 작전은 실패. 내일 다시 도전할게요. #line:johan_talk_251
+<<elseif $aff_johan < 60>>
+    johan: 오늘은 형용사 세 개 줄였으니 성공. 나머지는 내일의 나한테 맡긴다. #line:johan_talk_252
+<<else>>
+    johan: 오늘 문장 중에 제일 마음에 드는 건 네가 해 준 말이야. 퇴고 안 하고 그대로 둘게. #line:johan_talk_253
+<<endif>>
+<<show_standing johan smile>>
+===

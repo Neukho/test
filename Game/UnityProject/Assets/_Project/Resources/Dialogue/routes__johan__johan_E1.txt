@@ -1,0 +1,72 @@
+// 요한 개인 이벤트 1 「첫 리뷰」(2장, 첫 영업 대실패 직후). 진입 노드 Johan_E1
+// 비트: 마감 후 창가 자리 -> 발행 전에 리뷰를 읽어 줌(허락이 아니라 인사) -> 공정한 3점 -> 선택(반응) -> 구겨진 초고 -> 선택(초고) -> 초고를 안주머니에 -> 마감.
+// 플래그: johan_e1_honest(+3/+1) / johan_e1_oneline(+1) / johan_e1_plead(보너스 없음)
+//        johan_e1_draft_noticed(초고를 알아봄: 묻거나 묻지 않고 존중 — 트루 열쇠 ‘처음 쓴 리뷰 원고’의 숨은 조건) / johan_e1_draft_respected
+title: Johan_E1
+tags: johan event e1 chapter2
+---
+<<bg cafe night>>
+<<show_standing johan neutral>>
+첫 영업이 재료 낭비로 끝나고 닷새째. 마감한 홀에는 창가 두 번째 자리 하나에만 불이 켜져 있다. 요한이 두 시간째 앉아 있는 자리다. #line:johan_e1_001
+요한은 오늘 세 접시를 시켜 하나도 남기지 않고, 그 사이사이에 만년필로 무언가를 썼다 지우기를 반복했다. #line:johan_e1_002
+player: {player_calls("johan")}, 이제 마감인데… 아직 쓰고 계세요? #line:johan_e1_003
+johan: 마감은 점주님 쪽 사정이고, 나는 원고 마감이 있어. 두 마감이 한 테이블에서 만났네. 운명적이지 않아? #line:johan_e1_004
+johan: 앉아 봐. 읽어 줄 게 있어. 허락받으려는 게 아니야. 내일 아침 여덟 시에 나갈 글이니까, 나가기 전에 인사하는 거야. #line:johan_e1_005
+player: 인사요? 제 가게 얘기를 쓰시는 거니까 먼저 보여 주시는 거예요? #line:johan_e1_006
+johan: 검열은 안 받아. 그건 내 규칙이야. 대신 읽는 순간은 같이 책임지자는 거지. 내가 쓴 문장 앞에 혼자 서 있는 건 취향이 아니라서. #line:johan_e1_007
+<<show_cg JOHAN_E1>>
+테이블 위에는 만년필, 안경, 잉크가 마르지 않은 원고지, 그리고 옆에 구겨진 종이 한 장이 놓여 있다. 요한이 안경을 쓰고 원고지를 두 손으로 들어 올린다. #line:johan_e1_008
+johan: 「혀끝의 항구」, 이번 호. "달빛 모퉁이. 별 셋." #line:johan_e1_009
+johan: "수프는 간이 두 번 흔들렸고, 샌드위치는 빵이 먼저 식었다. 반면 의자는 앉는 순간 편했고, 카운터 안쪽에서 들려오는 '죄송합니다'는 세 번에 한 번꼴로 '다시 해 볼게요'로 바뀌었다." #line:johan_e1_010
+johan: "별 셋은 '별로'가 아니라 '다시 올 이유가 있다'는 뜻이다. 나는 이유를 찾았다. 그러므로 다시 간다." #line:johan_e1_011
+요한이 원고지를 내려놓는다. 입꼬리는 올라가 있는데 손끝이 조금 떨린다. #line:johan_e1_012
+johan: …어때. 혹평이야? 호평이야? 나도 모르겠어. 쓴 사람이 제일 모르는 법이거든. #line:johan_e1_013
+-> 별 셋, 정확하게 써 줘서 고마워요. 수프 간이 흔들린 거, 저도 알고 있었어요. #line:johan_e1_014
+    <<flag johan_e1_honest>>
+    <<aff johan 3>>
+    <<trust johan 1>>
+    <<show_standing johan surprised>>
+    johan: …알고 있었어? 알고 있으면서 그걸 활자로 받아들이는 사람은 드물어. 보통은 "알고 있었지만"으로 시작하는 변명이 먼저 나오는데. #line:johan_e1_015
+    <<show_standing johan smile>>
+    johan: 솔직한 별점은 애정이야. 거짓 5점은 구경이고. 구경하러 온 게 아니라서, 이 점수가 나한테는 제일 정직한 인사야. #line:johan_e1_016
+-> 마지막 문장이 제일 좋아요. "다시 올 이유가 있다"는 부분이요. #line:johan_e1_017
+    <<flag johan_e1_oneline>>
+    <<aff johan 1>>
+    <<show_standing johan shy>>
+    johan: 마지막 문장…. 칼럼은 마지막 줄에서 승부가 나는데, 그걸 짚어 주다니. 독자 중에 제일 좋은 독자다. #line:johan_e1_018
+    johan: 나 사실 그 문장 쓰고 나서 한참 울적했어. 쓰는 사이에 이미 다시 오기로 결정해 버린 걸 알아서. 원고가 나를 앞질렀지. #line:johan_e1_019
+-> 3점이요? 첫 영업이라서 그런데, 조금만 더 후하게 안 될까요? #line:johan_e1_020
+    <<flag johan_e1_plead>>
+    <<show_standing johan neutral>>
+    johan: …후하게는 안 돼. 후한 별점은 응원이 아니라 이별 선물 같은 거라서. #line:johan_e1_021
+    johan: 대신 이건 약속할 수 있어. 다음 호에 다시 와서, 오른 점수든 내린 점수든 같은 자로 잴게. 같은 자로 재는 것도 애정이야. #line:johan_e1_022
+johan: 그리고 하나 더. 이 글은 광고가 아니야. 내가 이 집에 별을 세 개 준 이유는, 이 집 사장이 누구든, 얼마나 친하든 똑같아. 친해지면 점수 올려 줄 사람이면 처음부터 안 친해졌을 거야. #line:johan_e1_023
+player: 알겠어요. 정직하게 쓴 글이니까 믿고 기다릴게요. #line:johan_e1_024
+요한이 원고지를 접어 봉투에 넣는다. 그 옆에 놓인 구겨진 종이는 만지지 않은 채 그대로다. #line:johan_e1_025
+-> 옆의 구겨진 종이는 뭐예요? 읽어 봐도 돼요? #line:johan_e1_026
+    <<flag johan_e1_draft_noticed>>
+    <<show_standing johan surprised>>
+    johan: 그건 초고야. 첫 번째 버전. 이걸 보여 주면 양념 안 한 재료를 접시에 올리는 셈이라서, 미안하지만 안 돼. #line:johan_e1_027
+    johan: 내용? …별이 다섯 개였어. 너무 상냥해서 공정하지 않더라. 그래서 구겨서 새로 썼어. #line:johan_e1_028
+-> 그 종이는 안 물어볼게요. 쓰고 싶어지면 나중에 말해 줘요. #line:johan_e1_029
+    <<flag johan_e1_draft_noticed>>
+    <<flag johan_e1_draft_respected>>
+    <<aff johan 1>>
+    <<show_standing johan shy>>
+    johan: …안 물어본다고? 눈치가 너무 좋은 건 반칙이야. 궁금한 사람 표정을 하고 있었으면서. #line:johan_e1_030
+    johan: 그래, 초고야. 별이 다섯 개였어. …이건 내가 말해 주고 싶어서 말한 거지, 물어봐서 말한 게 아니야. #line:johan_e1_031
+-> 마감 정리 도와드릴게요. 의자 올리는 건 제가 할게요. #line:johan_e1_032
+    johan: 의자를 올린다고? 손님의 마감 도움 같은 건 처음 받아 보는데. 이럴 때 뭐라고 해야 하지, 고맙다는 말은 한 번이면 되나? #line:johan_e1_033
+johan: 어쨌든 이건 버릴 거야. 초고는 초고의 역할이 있고, 끝나면 퇴장하는 거거든. #line:johan_e1_034
+<<hide_cg>>
+요한은 구겨진 종이를 집어 들더니 둘러보다가 쓰레기통을 찾는 시늉을 한다. 그러다 종이를 반으로 접어 코트 안주머니, 가슴 가까운 쪽에 넣는다. #line:johan_e1_035
+johan: …쓰레기통이 어디 있더라. 나가는 길에 찾을게. 아마 못 찾을 것 같지만. #line:johan_e1_036
+player: 저기 카운터 옆에 있어요. #line:johan_e1_037
+johan: 아, 보인다. 보이는데, 지금은 손이 말을 안 듣네. 신기한 현상이야. #line:johan_e1_038
+<<show_standing johan smile>>
+johan: 가 볼게. 내일 아침 여덟 시, 글이 나가. 나가기 전에 한 번 더 말해 두자면, 별 셋은 다시 올 이유가 있다는 뜻이야. #line:johan_e1_039
+player: 알겠어요. 다음 주에도 오세요. 의자는 비워 둘게요. #line:johan_e1_040
+johan: 다음 주에는 별 하나를 더 받을 수 있는 메뉴로 부탁해. 아니, 부탁 아니고 응원. 부탁은 안 하는 사람이라서. #line:johan_e1_041
+<<show_standing johan neutral>>
+<<end_event johan 1>>
+===

@@ -1,0 +1,166 @@
+// 하루 엔딩 3종. 호스트가 8장 종료 시 시작한다. 진입 노드: Haru_End_Normal / Haru_End_Good / Haru_End_True
+// 노멀(호감 60+ / 신뢰 20+ / 이벤트 3+): 곁에 남는 결말(고백은 하지 않고, 서로의 속도를 확인).
+// 굿(호감 85+ / 신뢰 40+ / 이벤트 5): E5 CG(HARU_E5) 겸용, 고백과 첫 입맞춤(동의 후), 하루의 성장이 가르치는 쪽으로.
+// 트루(호감 95+ / 신뢰 46+ / 이벤트 5 / ledger_truth / haru_key): CG HARU_E6. 조건 미충족 시 안전하게 굿으로 점프한다.
+// 하루는 논바이너리: 서술·타인 대사에서 성별 표현 없음. 주인공 호칭은 함수만 사용.
+title: Haru_End_Normal
+tags: haru ending normal
+---
+<<bg cafe morning>>
+<<show_standing haru neutral uniform>>
+체인점 일이 정리되고 한 달이 지났다. 아침의 가게는 이전과 같은 모습이었다. 오븐이 예열되고, 쇼케이스에 타르트와 마들렌이 한 줄씩 채워졌다. #line:haru_end_001
+하루는 앞치마 소매를 한 번, 두 번 접어 올리고 있었다. 접는 손길에 이제 망설임이 없었다. #line:haru_end_002
+haru: {calls_player("haru")}, 오셨네요. 오늘 첫 판 시간은 일곱 시 사십 분이에요. 오븐 앞쪽 온도는 어제보다 3도 올렸어요. #line:haru_end_003
+player: 하루 씨가 정한 시간이면 맞을 거예요. 타이머는 제가 맡을게요. #line:haru_end_004
+haru: 감사해요. …이게 아침마다 이어지는 게 신기해요. 두 달 전에는 오븐 문 여는 것도 겁이 났는데요. #line:haru_end_005
+<<if flag("haru_e4_declined")>>
+    haru: 블루하버 쪽에서 가끔 연락이 와요. 정중하게요. 저도 정중하게 거절하고 있고요. 그때마다 이 앞치마를 한 번 만져요. #line:haru_end_006
+<<else>>
+    haru: 일하다 보면 다른 길도 보여요. 그래도 이 주방이 제가 서 있는 자리라는 건 확실해요. #line:haru_end_007
+<<endif>>
+npc_florist: 하루 씨, 오늘도 우유차 마들렌 있어요? 지난번에 사 간 걸 우리 집에서 다 먹어 버렸거든요. #line:haru_end_094
+haru: 네, 있어요! 열두 개 구웠어요. 시럽은 반만 발라서 지난번보다 덜 달아요. 말씀해 주신 대로요. #line:haru_end_095
+npc_florist: 어머, 기억하고 있었네요. 그럼 두 개 주세요. 하나는 이따 가게 앞에서 먹고요. #line:haru_end_096
+<<show_standing haru smile>>
+하루가 쇼케이스에서 마들렌을 꺼내 포장지에 담았다. 손끝이 흔들리지 않았다. 한 달 전에는 포장지를 접다가 두 번 놓쳤던 손이었다. #line:haru_end_097
+<<show_standing haru neutral>>
+오븐이 달각 소리를 내며 예열을 알렸다. 하루는 틀 위에 반죽을 올리고 몇 번이고 모양을 다듬었다. #line:haru_end_008
+haru: 저, 하나 여쭤봐도 될까요. 제가 {calls_player("haru")}한테 어떤 사람인지, 요즘 자주 생각해요. #line:haru_end_009
+player: 하루 씨는 어떻게 생각해요? #line:haru_end_010
+haru: 같이 일하는 사람이고, 제 첫 레시피를 먹어 준 사람이고, 제가 틀렸을 때 숨기지 않아도 되는 사람이요. 그 이름을 아직 하나로 못 정했어요. #line:haru_end_011
+<<show_standing haru shy>>
+haru: 이름이 없는 채로 있는 게 불안하지는 않아요. 근데 말은 해 두고 싶었어요. 저는 이 거리가 좋아요. 이 거리 그대로 있고 싶고요. #line:haru_end_012
+-> 이름은 천천히 정해도 돼요. 저도 지금 이 거리가 좋아요. #line:haru_end_013
+    <<flag haru_end_normal_slow>>
+    <<show_standing haru smile>>
+    haru: 다행이에요. 서두르지 않아도 된다는 말, 제가 제일 좋아하는 말이에요. 그리고 계속 들을 수 있다는 것도요. #line:haru_end_014
+-> 조금 더 가까워지고 싶긴 해요. 하루 씨가 괜찮아지면요. #line:haru_end_015
+    <<flag haru_end_normal_closer>>
+    <<show_standing haru surprised>>
+    haru: …그 말, 오래 기억할게요. 저도 같은 쪽으로 가고 있어요. 다만 걸음이 느린 것뿐이에요. #line:haru_end_016
+    haru: 그때가 되면 제가 먼저 말할게요. 그 말도 연습해 둘게요. #line:haru_end_017
+-> 지금은 그냥 오븐 앞에서 같이 있는 게 좋아요. #line:haru_end_018
+    haru: 네, 저도요. 오븐 앞은 따뜻하니까요. 그리고 같이 있으면 시간도 정확해져요. #line:haru_end_019
+<<show_standing haru neutral>>
+오븐 문을 열자 첫 판의 타르트가 가지런히 놓여 있었다. 윗면은 균일하게 구워졌고, 가장자리는 어느 쪽도 짙지 않았다. #line:haru_end_020
+haru: …됐네요. 균일해요. 어제도 그제도 균일했는데, 매번 이 순간은 처음처럼 놀라워요. #line:haru_end_021
+player: 균일한 게 실력이잖아요. #line:haru_end_022
+haru: 네. 실력이라는 말도 이제는 제 입으로 말할 수 있어요. 한 달 전엔 못 했는데요. #line:haru_end_023
+손님들이 하나둘 들어오기 시작했다. 문의 종이 울렸고, 하루는 쇼케이스를 한 번 돌아보고 카운터 쪽으로 걸어갔다. #line:haru_end_024
+haru: 오늘도 잘 부탁드립니다. #line:haru_end_025
+player: 저야말로요. 오늘도 잘 부탁해요, 하루 씨. #line:haru_end_026
+haru: 네! …감사해요. 앞으로도 매일 새로 배우면서 해 볼게요. #line:haru_end_027
+하루는 나가기 전에 카운터 서랍에서 낡은 노트를 꺼내 오늘 날짜 옆에 한 줄을 적었다. ‘마들렌 두 개. 시럽 반. 손 안 떨림.’ #line:haru_end_098
+player: 오늘도 기록이 하나 늘었네요. #line:haru_end_099
+haru: 네. 기록이 늘어나는 걸 보면 지난 시간이 헛되지 않았다는 생각이 들어요. 그건 숫자가 아니라 느낌인데, 신기하게 믿어져요. #line:haru_end_100
+하루는 앞치마 끈을 다시 한 번 묶고 홀로 나갔다. 걸음은 아주 천천히, 그러나 멈추지 않고 이어졌다. #line:haru_end_028
+<<show_standing haru smile>>
+===
+
+title: Haru_End_Good
+tags: haru ending good
+---
+<<bg cafe morning>>
+<<show_standing haru smile uniform>>
+다음 해 봄. 달빛 모퉁이의 주방에는 새 오븐이 하나 더 들어왔고, 쇼케이스 맨 앞줄에는 이름표가 붙은 타르트가 놓여 있었다. ‘하루의 딸기 타르트’. #line:haru_end_029
+하루는 작업대 앞에서 작은 소리로 반죽 무게를 확인하고 있었다. 숫자를 읽는 목소리가 낮고 안정적이었다. #line:haru_end_030
+npc_trainee: 저, 하루 선배님. 앞치마 소매가 계속 흘러내려요. 어떻게 하죠? #line:haru_end_031
+haru: 아, 접어요. 접는 건 괜찮아요. 접을 때 안쪽으로 한 번, 바깥쪽으로 한 번이요. 그리고 오븐 앞에서는 한 번 더요. #line:haru_end_032
+npc_trainee: 한 번 더요? 왜요? #line:haru_end_033
+haru: 열기에 닿으면 위험하니까요. 저도 첫날에 누가 그렇게 알려 줬어요. 소매를 접는 건 부끄러운 일이 아니라 일하는 방법이라고요. #line:haru_end_034
+<<show_standing haru neutral>>
+신입은 소매를 접어 올리고 오븐 쪽으로 걸어갔다. 하루는 그 뒷모습을 잠깐 보다가, 시선을 돌려 이쪽을 향했다. 눈이 마주치자 귀가 천천히 붉어졌다. #line:haru_end_035
+칠판 쪽에서 곰석이 분필을 들어 ‘하루의 딸기 타르트’ 옆에 작은 별 하나를 그려 넣고 있었다. 하루가 그 모습을 보고 숨을 한 번 들이마셨다. #line:haru_end_101
+haru: 곰석 셰프님이 저 별을 그려 주신 건 처음이에요. 저는 아직 그만한 자격이 있는지 생각하다가, 생각하는 걸 그만두기로 했어요. 별은 받아 두기로 했고요. #line:haru_end_102
+haru: 제가 가르치는 쪽이 될 줄은 몰랐어요. 일 년 전에는 오븐 온도계 하나도 혼자 못 읽었는데요. #line:haru_end_036
+player: 하루 씨가 해낸 거예요. #line:haru_end_037
+haru: 네. …이제는 그 말이 맞다는 걸 알아요. 제가 한 거예요. 곁에 사람이 있었고요. #line:haru_end_038
+하루는 앞치마 주머니에서 낡은 노트를 꺼내려다가, 손을 멈추고 다시 넣었다. #line:haru_end_039
+haru: 오늘 일 끝나고 옥상에서 잠깐 봐요. 하고 싶은 말이 있어요. 연습은 많이 했는데, 막상 하려니까 아직도 떨려요. #line:haru_end_040
+<<bg rooftop night>>
+<<show_standing haru neutral casual>>
+옥상 정원의 민트에는 새 순이 가득 올라와 있었다. 하루는 화분 옆에 서서 한참 숨을 고르고 있었다. #line:haru_end_041
+haru: 저, 말할게요. 틀려도 다시 말하면 되니까, 일단 시작할게요. #line:haru_end_042
+haru: 저는 {name()} 씨를 좋아해요. 일하는 사람으로서도, 그냥 저로서도요. 제가 틀렸을 때 서두르지 않고 기다려 주는 사람이라서가 아니에요. 기다려 주는 동안 같이 서 있어 준 사람이라서요. #line:haru_end_043
+haru: 이 마음이 부담이 되지 않았으면 해요. 대답은 어느 쪽이든 괜찮아요. 저는 이 가게에 계속 있을 거고, 이 말도 후회하지 않아요. #line:haru_end_044
+-> 저도 하루 씨가 좋아요. 이 말을 하는 데 저도 한참 걸렸어요. #line:haru_end_045
+    <<flag haru_end_good_confess>>
+    <<show_standing haru surprised>>
+    haru: …정말요? 아, 정말이죠. 귀가 먼저 알아들었어요. 이렇게 빨개졌으니까요. #line:haru_end_046
+    haru: 지금 한 말, 노트에 적어도 될까요? 아니, 적지 않아도 기억할 수 있을 것 같아요. #line:haru_end_047
+-> 고마워요. 용기 내서 말해 준 거, 오래 기억할게요. #line:haru_end_048
+    <<flag haru_end_good_thanks>>
+    <<show_standing haru smile>>
+    haru: 용기라는 말을 들으니 이상하게 든든해요. 저는 용기 있는 사람이 아니라고 생각했는데요. #line:haru_end_049
+    haru: 대답은 천천히 주셔도 돼요. …아니, 이미 마음은 들은 것 같아요. 제가 느끼는 방식으로요. #line:haru_end_050
+<<show_cg HARU_E5>>
+달빛이 옥상 위로 길게 내려앉았다. 하루가 한 걸음 가까이 다가와 멈췄다. #line:haru_end_051
+haru: 안아 봐도 될까요? 싫으시면 말씀해 주세요. 괜찮아요. #line:haru_end_052
+player: 괜찮아요. 안아 주세요. #line:haru_end_053
+하루의 팔이 조심스럽게 감겨 왔다. 앞치마에서 버터와 우유차 향이 났다. 하루의 심장 소리가 가까이에서 들렸다. #line:haru_end_054
+haru: …심장이 이렇게 빨리 뛰는 줄 몰랐어요. 오븐 앞에서도 이렇게 뛴 적은 없는데요. #line:haru_end_055
+haru: 하나만 더 여쭤봐도 될까요. 입맞춤… 해도 될까요? #line:haru_end_056
+player: 네. 해도 돼요. #line:haru_end_057
+부드럽고 짧은 입맞춤이었다. 하루의 손이 잠시 떨리다가, 이내 가만히 놓였다. 멀리서 항구의 배가 한 번 낮게 울렸다. #line:haru_end_058
+<<hide_cg>>
+<<show_standing haru smile>>
+한참 뒤에야 하루가 팔을 풀었다. 얼굴은 여전히 붉었지만, 눈은 이쪽을 피하지 않았다. #line:haru_end_103
+haru: 앞으로도 실수할 거예요. 그런데 이제는 그 실수를 혼자 들고 있지 않아도 된다는 걸 알아요. 그게 저한테는 제일 큰 변화예요. #line:haru_end_104
+haru: 오늘은 노트에 적을 게 많겠어요. 첫 줄은 ‘다시 해 볼게요’ 대신 이렇게 쓸 거예요. ‘잘 해냈어요.’ #line:haru_end_059
+haru: 내일 아침에도 오븐 앞에서 봐요. 타이머는 부탁드릴게요. #line:haru_end_060
+player: 물론이죠. 첫 판 시간은 하루 씨가 정해요. #line:haru_end_061
+haru: 네. 저, 이제는 제가 정할 수 있어요. #line:haru_end_062
+===
+
+title: Haru_End_True
+tags: haru ending true
+---
+<<if not (flag("haru_key") and flag("ledger_truth"))>>
+    <<jump Haru_End_Good>>
+<<endif>>
+<<bg cafe night>>
+<<show_standing haru shy uniform>>
+달빛 모퉁이의 영업이 끝난 밤. 가게에는 이웃들이 모아 준 마음을 기록한 장부가 선반 한 칸을 차지하고 있었다. 하루는 그 장부 앞에 서서 한참 가만히 있었다. #line:haru_end_063
+haru: 삼촌의 장부 마지막 장에 ‘이웃에게 되돌려줄 것’이라고 쓰여 있었다고 들었어요. 저도 노트 마지막 장을 그렇게 쓰고 싶었어요. 받은 걸 되돌려주는 장으로요. #line:haru_end_064
+player: 지난번에 건네준 그 장 이야기죠? #line:haru_end_065
+haru: 네. 읽어 보셨어요? …아니, 아직 안 읽으셨죠. 혼자 있을 때 읽어 달라고 했으니까요. #line:haru_end_066
+player: 아직 안 읽었어요. 지금 같이 읽어도 될까요? #line:haru_end_067
+하루는 한참 망설이다가 고개를 끄덕였다. 앞치마 주머니에서 노트를 꺼내 카운터 위에 놓았다. 마지막 장이 펼쳐졌다. #line:haru_end_068
+<<show_cg HARU_E6>>
+노트의 마지막 장에는 또박또박한 손글씨로 레시피가 적혀 있었다. ‘밤에 가게 문을 닫고 나서 마시는 우유차.’ 우려내는 온도, 시간, 설탕 한 스푼 반이 차례로 적혀 있었고, 한쪽 구석에는 작은 우유 주전자 그림이 있었다. #line:haru_end_069
+레시피 맨 아래에는 한 줄이 더 있었다. ‘{name()} 씨에게. 실수해도 계속 서 있는 법을 알려 주셔서 고맙습니다. 저는 이 장을 쓰면서 처음으로, 틀린 곳이 없는지 세지 않았습니다.’ #line:haru_end_070
+하루는 카운터 가장자리를 두 손으로 붙잡고 있었다. 귀는 이미 한참 전부터 붉어져 있었다. #line:haru_end_071
+haru: …틀린 곳이 없는지 세지 않았다는 건 사실이에요. 한 번도 안 지웠어요. 지우개 가루가 하나도 없어요. #line:haru_end_072
+player: 이 레시피, 같이 만들어 봐도 될까요? #line:haru_end_073
+haru: 같이요? 네! 그럼 우유부터 데울게요. 불은 약하게요. 끓기 직전에서 멈추는 게 요령이에요. #line:haru_end_074
+<<show_standing haru smile>>
+작은 냄비에서 우유가 천천히 김을 올렸다. 하루가 홍차 잎을 넣었고, 가게 안에 따뜻한 향이 퍼졌다. #line:haru_end_075
+haru: 장부를 보고 나서 생각했어요. 이 가게는 받은 마음으로 서 있는데, 저는 뭘 돌려줄 수 있을까 하고요. 답은 하나였어요. 제가 잘하는 걸로, 제 속도로요. #line:haru_end_105
+haru: 다음 달 첫 일요일에 이웃분들께 작은 케이크를 하나씩 구워 드리고 싶어요. 장부에 이름 있는 분들 전부요. 그 아래에 이 레시피 카드도 붙이고요. #line:haru_end_106
+player: 그거 좋아요. 곰석 셰프님께도 말씀드려요. 오븐 자리는 제가 마련할게요. #line:haru_end_107
+haru: 감사해요. 만드는 건 제가 할게요. 자리만 부탁드릴게요. 구분이 아주 좋죠? #line:haru_end_108
+haru: 저는 이 장을 쓰기 전까지는 제가 누군가를 위한 레시피를 쓸 수 있는 사람인 줄 몰랐어요. 제 레시피는 늘 제가 틀리지 않기 위한 거였거든요. #line:haru_end_076
+haru: 근데 이건 다른 사람을 위해 쓴 거예요. 그 사람이 마시는 모습을 상상하면서요. 쓰면서 처음으로 손이 안 떨렸어요. #line:haru_end_077
+-> 하루 씨가 쓰는 동안 손이 안 떨렸다니, 제일 기뻐요. #line:haru_end_078
+    <<flag haru_end_true_hands>>
+    <<show_standing haru shy>>
+    haru: 저도요. 이 장은 평가를 받으려고 쓴 게 아니라서요. 주기만 하면 되는 글이라서 그랬나 봐요. #line:haru_end_079
+-> 이 레시피는 제가 지킬게요. 하루 씨의 방식 그대로요. #line:haru_end_080
+    <<flag haru_end_true_keep>>
+    <<show_standing haru smile>>
+    haru: 지켜 주신다는 말이 이제는 무섭지 않아요. 같이 계속 쓰자는 뜻으로 들려서요. #line:haru_end_081
+우유차가 완성되었다. 하루는 잔 두 개에 나눠 따랐다. 설탕 한 스푼 반을 넣고, 반 스푼은 따로 덜어 둔 숟가락 위에 올려 두었다. #line:haru_end_082
+haru: 이 반 스푼은 오늘 고생한 몫이에요. 오늘은 둘이 나눠서 넣어요. #line:haru_end_083
+두 사람의 잔에 반 스푼이 반의반씩 녹아 들어갔다. 한 모금 마시자 우유와 홍차의 부드러운 맛이 천천히 번졌다. #line:haru_end_084
+haru: 맛은 어때요? 솔직하게요. …아니, 솔직하게 안 말해도 돼요. 오늘은 그냥 마셔도 돼요. #line:haru_end_085
+player: 따뜻해요. 오늘 하루가 이 한 잔으로 정리되는 느낌이에요. #line:haru_end_086
+haru: …정리되는 느낌. 레시피에 적고 싶은 말이에요. 새 노트 첫 장에 적을게요. #line:haru_end_087
+하루는 카운터 위의 노트를 닫았다. 닫기 전에 마지막 장을 한 번 손바닥으로 쓸어 넘겼다. #line:haru_end_088
+haru: 마지막 장을 쓰면 다음이 없을 것 같아서 무서웠는데요, 지금은 반대예요. 마지막 장을 쓰고 나니까 다음 노트가 기다려져요. #line:haru_end_089
+haru: 새 노트의 첫 장은 같이 열어 주실래요? 첫 줄은 정해 뒀어요. ‘우리의 다시 해 볼게요.’ #line:haru_end_090
+player: 열어요. 같이. #line:haru_end_091
+하루가 가만히 손을 내밀었다. 손끝이 닿았다. 이번에는 떨리지 않았다. #line:haru_end_092
+<<show_standing haru smile>>
+<<hide_cg>>
+달빛 모퉁이의 불은 늦게까지 켜져 있었다. 선반 위에는 이웃들의 장부와 하루의 낡은 노트가 나란히 놓여 있었다. #line:haru_end_093
+===

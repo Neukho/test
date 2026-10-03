@@ -1,0 +1,90 @@
+// 하루 개인 이벤트 4 「무대 뒤의 사람」(7장, 호감 68 / 신뢰 25). 진입 노드 Haru_E4
+// 비트: 블루하버 카페 측 스카우트 제안 -> 하루가 주인공의 생각을 묻는다(선택1) -> 하루의 거절
+//       ('이 가게의 파티시에') -> 떨림이 가라앉은 뒤 하루의 물음(선택2).
+// 플래그: haru_e4_asked_will / haru_e4_pushed_away / haru_e4_clung(선택1), haru_e4_declined(항상),
+//        haru_e4_named_true / haru_e4_probation / haru_e4_control(선택2).
+// 의존: 블루하버 카페 개점(7장). 스카우트 담당자 화자 id npc_recruiter(성별 표현 없음). 하루는 제안을 진지하게 고민한다.
+title: Haru_E4
+tags: haru event e4 chapter7
+---
+<<bg cafe day>>
+<<show_standing haru neutral uniform>>
+블루하버 카페가 문을 연 지 사흘째. 오후의 한가한 시간에, 정장 차림의 방문객이 가게 문을 열고 들어왔다. #line:haru_e4_001
+npc_recruiter: 실례합니다. 블루하버 카페 기획팀에서 왔습니다. 하루 씨와 잠깐 이야기를 나눌 수 있을까요? #line:haru_e4_002
+하루가 주방 문 앞에서 멈췄다. 앞치마 끈을 쥔 손에 힘이 들어가는 게 보였다. #line:haru_e4_003
+haru: 저요…? 아, 네. 어디서 말씀하시면 될까요? #line:haru_e4_004
+npc_recruiter: 여기서 괜찮습니다. 보고 계신 분이 대표님이시니, 숨길 것도 없고요. #line:haru_e4_005
+npc_recruiter: 저희 쪽에서 하루 씨의 우유차 마들렌을 맛봤습니다. 정말 훌륭했습니다. 신메뉴 개발팀에 합류해 주시면 연봉은 지금의 두 배, 하루 씨 이름을 단 디저트 라인을 맡길 계획입니다. #line:haru_e4_006
+npc_recruiter: 하루 씨 이름이 메뉴에 적히게 됩니다. 전국 열두 개 지점에서요. #line:haru_e4_007
+하루는 한동안 아무 말도 하지 않았다. 주방 뒤쪽에서 오븐 타이머가 한 번 울렸고, 하루는 그 소리에도 움직이지 않았다. #line:haru_e4_008
+haru: …전국 열두 개요. 제 이름이요. #line:haru_e4_009
+npc_recruiter: 결정은 천천히 하셔도 됩니다. 오늘은 인사만 드리러 왔습니다. #line:haru_e4_010
+<<show_standing haru neutral>>
+하루가 시선을 천천히 돌려 이쪽을 보았다. 질문하는 눈이었지만, 부탁하는 눈은 아니었다. #line:haru_e4_011
+haru: {calls_player("haru")}, 제가 결정하기 전에 먼저 여쭙고 싶어요. 어떻게 생각하세요? 솔직하게요. #line:haru_e4_012
+-> 제가 붙잡을 수는 없어요. 하지만 하루 씨가 어떻게 하고 싶은지 먼저 듣고 싶어요. #line:haru_e4_013
+    <<flag haru_e4_asked_will>>
+    <<aff haru 5>>
+    <<trust haru 1.5>>
+    <<show_standing haru surprised>>
+    haru: …어떻게 하고 싶은지요. 사람들은 대개 어떻게 해야 하는지를 말해 줘서, 그게 먼저 나오는 질문인 줄 몰랐어요. #line:haru_e4_014
+    haru: 감사해요. 이제 제 마음을 들여다볼 시간을 얻었어요. 잠깐만요. #line:haru_e4_015
+-> 가세요. 조건이 정말 좋잖아요. 하루 씨한테는 기회예요. #line:haru_e4_016
+    <<flag haru_e4_pushed_away>>
+    <<aff haru -1>>
+    <<trust haru -1>>
+    <<show_standing haru sad>>
+    haru: …기회. 맞아요, 기회죠. #line:haru_e4_017
+    haru: 그런데 제 마음은 안 물어보셨네요. 가라는 말도 하나의 대답이지만, 저한테는 질문이었는데요. #line:haru_e4_018
+-> 가지 마세요. 하루 씨가 없으면 이 가게는 안 돼요. #line:haru_e4_019
+    <<flag haru_e4_clung>>
+    <<aff haru -1>>
+    <<trust haru -1>>
+    <<show_standing haru shy>>
+    haru: …제가 없으면 안 된다는 말은 제 마음을 무겁게 해요. 필요해 주시는 건 기쁜데요, 그게 이유가 되면 선택이 아니라 의무가 돼요. #line:haru_e4_020
+    haru: 일단 제 마음을 따로 보고 싶어요. 잠깐만요. #line:haru_e4_021
+<<show_standing haru neutral>>
+하루는 눈을 감고 숨을 길게 내쉬었다. 그리고 두 손으로 앞치마의 접힌 소매를 한 번 더 접어 올렸다. 오븐 앞에 설 때의 습관이었다. #line:haru_e4_022
+haru: …제안, 정말 감사합니다. 맛을 보시고 좋게 평가해 주신 것도요. 그건 진심으로 기뻐요. #line:haru_e4_023
+haru: 그런데 저는 이 가게의 파티시에예요. #line:haru_e4_024
+<<show_standing haru smile>>
+처음 듣는 문장이었다. 하루의 입에서, 하루의 목소리로, 한 번도 떨리지 않고 끝까지 나온 문장이었다. #line:haru_e4_025
+haru: 전국 열두 곳에서 읽히는 이름보다, 가게 문을 열면 ‘하루 씨’ 하고 불러 주는 이 골목 사람들이 저한테는 더 무거워요. #line:haru_e4_026
+haru: 그리고 이 가게에는 아직 제가 배울 것이 많아요. 곰석 셰프님께도, {calls_player("haru")}한테도요. 그걸 두고 떠날 수는 없어요. #line:haru_e4_027
+npc_recruiter: …알겠습니다. 이유가 분명하시군요. 마음이 바뀌시면 이 명함으로 연락 주세요. 오늘 맛 잘 봤습니다. #line:haru_e4_028
+방문객은 가볍게 목례하고 나갔다. 문의 종이 한 번 울렸고, 가게는 갑자기 조용해졌다. #line:haru_e4_029
+<<flag haru_e4_declined>>
+<<show_standing haru shy>>
+하루는 카운터를 짚고 천천히 의자에 앉았다. 앞치마를 쥔 두 손이 이제야 떨리기 시작했다. #line:haru_e4_030
+haru: …말하고 나서 다리가 풀렸어요. 말하는 동안에는 괜찮았는데, 끝나니까 아직도 떨려요. #line:haru_e4_031
+player: 여기 앉아 있어요. 따뜻한 우유차 한 잔 가져올게요. #line:haru_e4_032
+<<show_cg HARU_E4>>
+주방 불빛이 하루의 옆모습에 닿았다. 카운터 위에는 우유차 잔이 놓였고, 하루의 손이 잔을 두 손으로 감쌌다. 창밖으로는 건너편 블루하버 카페의 간판 불이 보였고, 하루는 그쪽이 아니라 잔 속의 김을 보고 있었다. #line:haru_e4_033
+haru: 따뜻해요. 손이 이제 조금 풀리네요. #line:haru_e4_034
+haru: 그런데요, {calls_player("haru")}. 방금 제가 한 말, 가게 입장에서 실례는 아니었을까요? 아직 계약서에는 수습이라고 적혀 있는데, 이 가게의 파티시에라고 해도 되는 건지… #line:haru_e4_035
+-> 하루 씨가 말하기 전부터 이 가게의 파티시에였어요. 오늘은 하루 씨가 직접 말했을 뿐이에요. #line:haru_e4_036
+    <<flag haru_e4_named_true>>
+    <<aff haru 5>>
+    <<trust haru 1.5>>
+    <<show_standing haru smile>>
+    haru: …제가 말하기 전부터였다는 거죠. 그 말을 들으니까 이 앞치마가 처음으로 딱 맞는 것 같아요. #line:haru_e4_037
+    haru: 소매는 아직 접어야 하지만요. #line:haru_e4_038
+-> 수습 기간 끝나면 정식으로 해요. 그때는 맞는 말이 되니까요. #line:haru_e4_039
+    <<flag haru_e4_probation>>
+    haru: 아, 네. 맞는 말이에요. 규칙은 규칙이니까요. 그래도 오늘은 먼저 말해 버렸네요. #line:haru_e4_040
+-> 다음에는 저한테 먼저 말해 줘요. 가게 입장도 있으니까요. #line:haru_e4_041
+    <<flag haru_e4_control>>
+    <<aff haru -1>>
+    <<trust haru -1>>
+    <<show_standing haru sad>>
+    haru: …네. 알겠어요. 다음엔 말씀드릴게요. #line:haru_e4_042
+    haru: 근데 오늘은 제 이름을 걸고 말하는 순간이었어서요. 먼저 허락받는 순서였다면, 아마 그 말이 안 나왔을 거예요. #line:haru_e4_043
+<<hide_cg>>
+<<show_standing haru neutral>>
+하루가 우유차를 한 모금 마시고 잔을 내려놓았다. 카운터 위에서 작은 소리가 났다. #line:haru_e4_044
+haru: 오늘 일은 노트에 적을게요. 제안받은 것도, 거절한 것도, 그때 다리가 풀린 것도요. #line:haru_e4_045
+haru: 몇 달 뒤에 읽으면 제가 이 순간을 어떻게 기억하는지 알 수 있을 거예요. 후회는 없을 것 같아요. #line:haru_e4_046
+player: 하루 씨가 정한 거니까요. #line:haru_e4_047
+haru: 네. 제가 정한 거예요. 이 문장, 앞으로 자주 써 볼게요. #line:haru_e4_048
+<<end_event haru 4>>
+===

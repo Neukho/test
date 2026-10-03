@@ -1,0 +1,33 @@
+// 범준 데이트 공통(특정 스팟 대사가 없을 때). 수치는 호스트가 적용. 진입 노드 Beomjun_Date_Generic
+title: Beomjun_Date_Generic
+tags: beomjun date
+---
+<<show_standing beomjun smile>>
+<<if $aff_beomjun < 30>>
+    beomjun: 어디든 좋아요! 걷다가 맛있는 냄새 나는 데로 들어가죠! 일단 먹고 생각하자고요! #line:beomjun_dg_001
+    player: 좋아요. 배고플 때 정하는 건 위험하다던데요. #line:beomjun_dg_002
+    beomjun: 위험할 게 뭐 있어요! 맛있는 걸 먹으면 돼요! 하하! #line:beomjun_dg_003
+<<elseif $aff_beomjun < 60>>
+    beomjun: 오늘은 네가 가고 싶은 데로 가자. 나는 따라가는 연습 중이거든! #line:beomjun_dg_004
+    player: 따라가는 연습이요? #line:beomjun_dg_005
+    beomjun: 응. 앞서가는 건 자신 있는데 옆에서 걷는 건 아직 서툴러서. #line:beomjun_dg_006
+<<else>>
+    beomjun: 오늘 일정은 뭐든 괜찮아. 네 옆이면 어디든 도장이야! #line:beomjun_dg_007
+    player: 도장은 벗어나기 힘든 곳이죠. #line:beomjun_dg_008
+    beomjun: 하하, 그럼 좋은 거 아냐? 안 벗어나도 되니까! #line:beomjun_dg_009
+<<endif>>
+한참을 걷다 보니 범준의 큰 보폭이 어느새 내 걸음에 맞춰져 있었다. 말을 하지 않아도 속도가 같았다. #line:beomjun_dg_010
+beomjun: 있잖아, 말을 안 하고 걸어도 불편하지 않은 사람이 있다는 걸 최근에 알았어. #line:beomjun_dg_011
+-> 저도 지금 그래요. 같이 걸으니까 편해요. #line:beomjun_dg_012
+    <<flag beomjun_generic_comfy>>
+    <<show_standing beomjun shy>>
+    beomjun: …그래? 하하, 그럼 내가 시끄럽게 안 해도 되는 날이 오긴 오네. #line:beomjun_dg_013
+-> 말하고 싶은 게 있으면 말해도 돼요. 들을게요. #line:beomjun_dg_014
+    <<flag beomjun_generic_ask>>
+    beomjun: 말하고 싶은 거…? 어, 어렵네. 일단 오늘은 맛있는 거 얘기부터 하자! #line:beomjun_dg_015
+-> 다음엔 제가 먹을 곳을 정해 볼게요. #line:beomjun_dg_016
+    beomjun: 좋아! 매운 국물이면 더 좋고! 기대한다! #line:beomjun_dg_017
+해가 기울 무렵, 범준은 차도 쪽으로 슬쩍 자리를 바꿔 걸었다. 생색은 한마디도 내지 않았다. #line:beomjun_dg_018
+beomjun: 오늘 즐거웠어! 이 말은 큰 목소리로 해도 되지? 아, 낮출게. 즐거웠어. #line:beomjun_dg_019
+<<show_standing beomjun smile>>
+===

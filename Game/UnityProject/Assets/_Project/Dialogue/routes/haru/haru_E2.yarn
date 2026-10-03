@@ -1,0 +1,93 @@
+// 하루 개인 이벤트 2 「무너진 케이크」(5장, 호감 30 / 신뢰 8). 진입 노드 Haru_E2
+// 비트: 공연 전날 밤 주문 케이크가 무너짐 -> 질책 대신 원인 점검(선택1) -> 하루가 자기 몫을 말함
+//       -> 첫 '다시 해 볼게요' -> 대신하지 않고 곁에 있기(선택2) -> 새벽에 새 케이크.
+// 플래그: haru_e2_checklist / haru_e2_rescue_first / haru_e2_blame(선택1), haru_e2_support / haru_e2_rescue / haru_e2_near(선택2),
+//        haru_e2_retry(항상: 하루의 첫 '다시 해 볼게요').
+// 의존: 주문자는 이웃(npc_florist). 5장 나비 공연 연계. 이벤트 보상은 호스트가 end_event 에서 적용.
+title: Haru_E2
+tags: haru event e2 chapter5
+---
+<<bg cafe night>>
+<<show_standing haru sad uniform>>
+공연 전날 밤. 내일 아침 꽃집 이웃이 찾아가기로 한 딸기 케이크가, 마감 후 냉장고 안에서 천천히 기울어지고 있었다. #line:haru_e2_001
+주방으로 내려가자 냉장고 문이 열린 채였고, 하루가 그 앞에 서 있었다. 손에는 아직 오프셋 스패츌러가 들려 있었다. #line:haru_e2_002
+haru: 죄송… 아니, 죄송하다는 말보다 먼저, 이걸 봐 주세요. 크림이 아래로 흘렀어요. 위 시트가 한쪽으로 기울었고요. #line:haru_e2_003
+케이크의 옆면에서 크림이 한 줄기 흘러내려 접시 위에 고여 있었다. 딸기는 반쯤 미끄러져 내려와 있었다. #line:haru_e2_004
+haru: 내일 아침 아홉 시에 찾으러 오신다고 했어요. 지금 열 시 반이니까 열 시간 반 남았어요. …시간만 계산하고 있어요. 손은 안 움직이는데요. #line:haru_e2_005
+<<show_standing haru neutral>>
+하루의 목소리는 낮았지만 흔들리지 않았다. 대신 스패츌러를 쥔 손의 마디가 하얗게 도드라져 있었다. #line:haru_e2_006
+-> 누구 탓인지 말고, 무엇이 원인이었는지 같이 적어 봐요. 재료, 순서, 도구, 시간으로 나눠서요. #line:haru_e2_007
+    <<flag haru_e2_checklist>>
+    <<aff haru 5>>
+    <<trust haru 1.5>>
+    <<show_standing haru surprised>>
+    haru: …원인이요. 제 잘못이냐 아니냐가 아니라요? #line:haru_e2_008
+    player: 둘 다 적어요. 하루 씨 몫이 있으면 그것도요. 숨기려는 게 아니라 다음에 안 무너지게 하려는 거예요. #line:haru_e2_009
+    <<show_standing haru neutral>>
+    haru: 네. 그럼… 종이 가져올게요. #line:haru_e2_010
+-> 괜찮아요. 제가 새로 만들게요. 하루 씨는 쉬고 계세요. #line:haru_e2_011
+    <<flag haru_e2_rescue_first>>
+    <<aff haru -1>>
+    <<trust haru -1>>
+    <<show_standing haru sad>>
+    haru: …아, 네. 알겠어요. #line:haru_e2_012
+    haru: 아니, 저, 괜찮아요. 제가 해야 하는 일이라서요. 제 케이크였으니까요. 같이는 괜찮은데, 대신하는 건 조금 다른 이야기라서요. #line:haru_e2_013
+    <<show_standing haru neutral>>
+    player: 그렇죠. 제가 앞서갔어요. 그럼 같이 원인부터 봐요. #line:haru_e2_014
+-> 이런 일 처음이 아니죠? 앞으로는 정말 조심하세요. #line:haru_e2_015
+    <<flag haru_e2_blame>>
+    <<aff haru -1>>
+    <<trust haru -1>>
+    <<show_standing haru sad>>
+    haru: …네. 조심할게요. #line:haru_e2_016
+    haru: 조심하겠다는 말밖에 못 하는 게 제일 싫어요. 뭘 조심해야 하는지 모르니까요. #line:haru_e2_017
+    player: …맞아요. 제 말이 막연했어요. 뭘 조심할지부터 같이 정해요. #line:haru_e2_018
+하루가 작업대 위에 종이를 펼쳤다. 위쪽에 네 칸을 그리고, 칸마다 한 단어를 적었다. 재료. 순서. 도구. 시간. #line:haru_e2_019
+haru: 재료부터요. 이번 주부터 생크림 납품처가 바뀌었어요. 유지방이 36퍼센트인데, 지난번엔 42퍼센트였어요. 휘핑이 불안정했을 수 있어요. #line:haru_e2_020
+haru: 순서는요, 시트를 완전히 식히고 올려야 하는데 십 분쯤 빨리 올렸어요. 시간이 없어서 줄인 건 제가 정했어요. #line:haru_e2_021
+haru: 도구는 냉장고요. 내일 공연 준비로 음료 박스가 가득 들어찼어요. 온도 표시는 4도인데 안쪽은 7도였어요. 문을 자주 열기도 했고요. #line:haru_e2_022
+<<show_standing haru shy>>
+haru: 시간은… 오늘 주문이 세 건 겹쳤는데 마감 시간이 같았어요. 그걸 제가 미리 말씀드리지 못했어요. 말하는 게 제일 무서웠거든요. #line:haru_e2_023
+player: 말해 줘서 고마워요. 제일 어려운 칸이었을 텐데. #line:haru_e2_024
+haru: 이 칸이 제일 길게 쓰였어요. 근데 쓰고 나니 이상하게 숨이 편해졌어요. #line:haru_e2_025
+player: 냉장고랑 주문 시간은 제 몫이에요. 가게 쪽 문제니까 제가 고칠게요. 시트 식히는 시간은 하루 씨가 정하고요. #line:haru_e2_026
+haru: 네. 저도 그렇게 나눠 가지면 덜 무거워요. 전부 제 것이라고 생각하면 숨이 막히고, 전부 남 탓이라고 생각하면 아무것도 못 배우니까요. #line:haru_e2_027
+하루가 종이를 한 번 내려다보고 천천히 고개를 들었다. 스패츌러를 작업대 위에 내려놓았다. #line:haru_e2_028
+<<show_standing haru neutral>>
+haru: …다시 해 볼게요. #line:haru_e2_029
+haru: 이 말, 처음 입 밖에 내 봤어요. 생각보다 목이 좀 타네요. #line:haru_e2_030
+<<flag haru_e2_retry>>
+haru: 시트는 지금 구우면 열두 시 반에 나와요. 완전히 식히려면 세 시간이니까 새벽 세 시 반이고요. 크림은 그때부터 다시 휘핑해서, 다섯 시에 올리면 돼요. #line:haru_e2_031
+-> 아침에 제가 손님께 시간을 조금 늦춰 달라고 여쭤볼게요. 케이크는 하루 씨 손으로 마무리하고요. 저는 옆에서 지켜볼게요. #line:haru_e2_032
+    <<flag haru_e2_support>>
+    <<aff haru 5>>
+    <<trust haru 1.5>>
+    <<show_standing haru smile>>
+    haru: 시간을 미뤄 주신다는 건 제가 못 하는 부분을 맡아 주시는 거고, 케이크는 제 몫이라는 거네요. 그 구분이 제가 원하던 거예요. #line:haru_e2_033
+    haru: 지켜봐 주신다는 말도 좋아요. 도와 달라는 게 아니라 거기 있어 달라는 거니까요. #line:haru_e2_034
+-> 이번 주문은 제가 마무리할게요. 하루 씨는 시트만 구워 주세요. #line:haru_e2_035
+    <<flag haru_e2_rescue>>
+    <<aff haru -1>>
+    <<trust haru -1>>
+    <<show_standing haru sad>>
+    haru: …시트만이요. 알겠어요. #line:haru_e2_036
+    haru: 그런데 그렇게 되면 이 케이크는 제 것이 아니게 돼요. 그러면 제가 다음에 뭘 배우게 될까요. #line:haru_e2_037
+    player: …네, 그 말이 맞아요. 제가 마무리하면 하루 씨 이야기가 안 남네요. 제가 빠질게요. #line:haru_e2_038
+-> 필요하면 말해요. 옆에 있을게요. #line:haru_e2_039
+    <<flag haru_e2_near>>
+    <<aff haru 2>>
+    haru: 네. 필요하면 말씀드릴게요. 정말로요. 말하는 연습도 해야 하니까요. #line:haru_e2_040
+<<show_standing haru neutral>>
+오븐이 달각 소리를 내며 예열을 마쳤다. 하루는 앞치마 끈을 다시 졸라매고 시트 반죽 볼 앞에 섰다. #line:haru_e2_041
+haru: 오븐 앞에서는 소매를 한 번 더 접어요. 첫날 말씀해 주셨잖아요. #line:haru_e2_042
+밤은 천천히 지나갔다. 시트가 부풀었고, 식는 동안 하루는 노트에 방금 적은 네 칸을 옮겨 적었다. 가끔 한 번씩 오븐 쪽을 돌아보다가 손으로 목덜미를 문질렀다. #line:haru_e2_043
+새벽 다섯 시. 하루는 새로 휘핑한 크림으로 마지막 딸기를 올렸다. #line:haru_e2_044
+<<show_cg HARU_E2>>
+작업대 위에는 새 케이크가 서 있었다. 옆면은 곧고 딸기는 가지런했다. 창문 틈으로 아주 옅은 푸른 빛이 들어오기 시작했고, 하루의 손등에는 크림이 조금 묻어 있었다. #line:haru_e2_045
+haru: 서 있어요. …서 있네요. #line:haru_e2_046
+haru: 아직 완벽한지는 모르겠어요. 손님께 드릴 때까지는요. 그래도 어젯밤의 저보다는 훨씬 잘했어요. #line:haru_e2_047
+<<hide_cg>>
+<<show_standing haru smile>>
+haru: {calls_player("haru")}, 곁에 있어 주셔서 고마워요. 구해 주셨다는 말이 아니에요. 같이 있어 주셨다는 말이에요. #line:haru_e2_048
+<<end_event haru 2>>
+===

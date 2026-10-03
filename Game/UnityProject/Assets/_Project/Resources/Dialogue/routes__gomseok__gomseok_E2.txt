@@ -1,0 +1,76 @@
+// 곰석 개인 이벤트 2 「레시피 노트」(3장, 호감 30/신뢰 8). 진입 노드 Gomseok_E2
+// 비트: 곰석이 노트를 가져옴 -> 삼촌의 메모들 -> 끈으로 묶인 마지막 장 -> 선택(마지막 장을 재촉/기다림) -> "너는 네 삼촌이 아니야" -> 마감.
+// 플래그: gomseok_e2_waited(마지막 장을 기다림 +3/+1, 트루 조건) / gomseok_e2_pressed(마지막 장을 졸랐음 -1/-1) / gomseok_e2_margin(여백에 내 글을 쓰겠다고 함 +1)
+//        gomseok_e2_mimic(삼촌처럼 해 보겠다고 함: 벌점 없음, 곰석의 분리 대사) / gomseok_e2_own(내 방식으로)
+title: Gomseok_E2
+tags: gomseok event e2 chapter3
+---
+<<bg cafe night>>
+<<show_standing gomseok neutral>>
+영업이 끝난 주방. 곰석이 말없이 선반 맨 위 칸에서 낡은 가죽 노트를 꺼내 작업대 위에 내려놓았다. #line:gomseok_e2_001
+gomseok: 보여 준다고 했었지. 오늘이 그날인 것 같아서. #line:gomseok_e2_002
+player: 이게… 삼촌의 레시피 노트예요? #line:gomseok_e2_003
+gomseok: 그려. 모서리가 다 닳았지? 소스 얼룩도 많고. 사람 손을 많이 탄 책이 다 그렇지. #line:gomseok_e2_004
+<<show_cg GOMSEOK_E2>>
+작업대 위에 노트가 펼쳐졌다. 삼촌의 삐뚤빼뚤한 글씨 옆에 곰석의 단정한 글씨가 작게 덧붙어 있다. 노트의 마지막 몇 장은 낡은 끈으로 묶여 있다. #line:gomseok_e2_005
+gomseok: 앞쪽은 삼촌이 쓴 거고, 중간부터는 내가 거들었지. 둘 다 주방에서 쓴 거라 글씨가 많이 번졌어. #line:gomseok_e2_006
+player: 이 여백에 적힌 건 곰석 씨 글씨죠? "소금은 늦게, 아주 늦게"라고요. #line:gomseok_e2_007
+gomseok: …허허, 눈이 좋구먼. 삼촌이랑 내가 이 문장으로 반년 싸웠어. #line:gomseok_e2_008
+player: 싸우셨어요? 두 분이요? #line:gomseok_e2_009
+gomseok: 싸웠지. 삼촌은 소금을 먼저 넣고 싶어 했고, 나는 끝에 넣고 싶어 했거든. 결국 이 가게 국은 내 방식이 됐지만, 삼촌은 끝까지 인정 안 했어. #line:gomseok_e2_010
+player: 그 얘기, 삼촌한테서는 한 번도 못 들었어요. #line:gomseok_e2_011
+gomseok: 그 양반 성격에 졌다는 말은 안 하지. 허허. #line:gomseok_e2_012
+노트를 한 장씩 넘길 때마다 가게의 시간이 하나씩 되살아난다. 단골 이름이 적힌 생일 메모, 비 오는 날 메뉴, 지워진 레시피 위에 다시 쓴 수정본. #line:gomseok_e2_013
+player: 이 마지막 장은 왜 묶여 있어요? 끈이 새것은 아닌데요. #line:gomseok_e2_014
+gomseok: …그건 말이여. 내가 묶은 건 아니고, 삼촌이 그렇게 해 놨어. 풀지 않고 두라는 뜻 같았지. #line:gomseok_e2_015
+gomseok: 열어 본 적은 없어. 내가 열 일이 아니라고 생각했거든. #line:gomseok_e2_016
+-> 그 장은 곰석 씨가 편해질 때까지 그대로 둬요. 궁금하지만 기다릴게요. #line:gomseok_e2_017
+    <<flag gomseok_e2_waited>>
+    <<aff gomseok 3>>
+    <<trust gomseok 1>>
+    <<show_standing gomseok smile>>
+    gomseok: …허허. 이런 말을 해 주는 사람이 있다니, 삼촌이 알았으면 놀랐겠구먼. #line:gomseok_e2_018
+    gomseok: 열 때가 되면 내가 먼저 알려 줄게. 그때는 같이 보자고. #line:gomseok_e2_019
+-> 열어 봐요. 삼촌이 남긴 건데 우리가 알아야 하지 않을까요? #line:gomseok_e2_020
+    <<flag gomseok_e2_pressed>>
+    <<aff gomseok -1>>
+    <<trust gomseok -1>>
+    <<show_standing gomseok sad>>
+    gomseok: …알아야 한다는 말이 맞을 수도 있지. 근데 나는 지금 열고 싶지 않아. #line:gomseok_e2_021
+    gomseok: 재촉하지는 말아 줘. 묶여 있는 데는 이유가 있는 법이여. 이건 나한테 어려운 부분이야. #line:gomseok_e2_022
+-> 곰석 씨가 읽은 적 없으면, 저도 읽지 않을게요. 노트는 곰석 씨가 보관하세요. #line:gomseok_e2_023
+    <<flag gomseok_e2_waited>>
+    <<aff gomseok 3>>
+    <<trust gomseok 1>>
+    <<show_standing gomseok shy>>
+    gomseok: 아니, 보관은 같이 하자고. 이 노트는 한 사람 거 아니니까. #line:gomseok_e2_024
+    gomseok: 그래도 그 마음은 고맙게 받을게. #line:gomseok_e2_025
+<<show_standing gomseok neutral>>
+곰석이 노트의 한 장을 가리킨다. 삼촌이 가장 아낀 스튜의 레시피다. 여백에 "곰석이 간 봐 줄 것"이라는 글씨가 작게 적혀 있다. #line:gomseok_e2_026
+player: 이 스튜, 제가 만들어 보고 싶어요. 삼촌이 하던 그대로요. #line:gomseok_e2_027
+gomseok: 그려, 그 마음은 알겠어. 한 가지만 말해 둘게. #line:gomseok_e2_028
+-> 삼촌처럼 해 보고 싶어요. 삼촌 방식 그대로 따라가면 가게를 지킬 수 있을 것 같아요. #line:gomseok_e2_029
+    <<flag gomseok_e2_mimic>>
+    <<show_standing gomseok neutral>>
+    gomseok: 그 마음은 알겠어. 근데 {name()}, 너는 네 삼촌이 아니야. #line:gomseok_e2_030
+    <<show_standing gomseok smile>>
+    gomseok: 그게 좋은 거야. 정말로. 삼촌이 하던 걸 똑같이 하는 사람이 필요했으면 노트만 있으면 되지. #line:gomseok_e2_031
+    gomseok: 네 손은 네 손이어서, 소금을 일찍 넣든 늦게 넣든 그게 이 가게의 다음 맛이 되는 거여. #line:gomseok_e2_032
+-> 노트는 참고만 하고, 저만의 스튜를 만들어 볼게요. 곰석 씨가 간 봐 주세요. #line:gomseok_e2_033
+    <<flag gomseok_e2_own>>
+    <<aff gomseok 1>>
+    <<show_standing gomseok smile>>
+    gomseok: 허허, 그러면 좋지. 간 봐 주는 건 내 전문이여. #line:gomseok_e2_034
+    gomseok: 그리고 말이여, 네가 네 삼촌이 아니라서 다행이다. 정말로. #line:gomseok_e2_035
+<<hide_cg>>
+<<show_standing gomseok neutral>>
+player: 이 여백, 저도 한 줄 적어도 될까요? 곰석 씨 글씨 옆에요. #line:gomseok_e2_036
+gomseok: 그려. 여백은 쓰라고 있는 거니까. 내 글씨보다 앞이든 뒤든 상관없어. #line:gomseok_e2_037
+<<flag gomseok_e2_margin>>
+player: 그럼 오늘 날짜로 적을게요. 삼촌 글씨, 곰석 씨 글씨, 그리고 제 글씨. #line:gomseok_e2_038
+gomseok: 세 사람 글씨가 한 노트에 있다니, 좋구먼. 이 노트가 오래 가겠어. #line:gomseok_e2_039
+<<show_standing gomseok smile>>
+gomseok: 오늘은 여기까지. 국물 한 잔 마시고 올라가. #line:gomseok_e2_040
+<<show_standing gomseok neutral>>
+<<end_event gomseok 2>>
+===

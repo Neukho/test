@@ -1,0 +1,24 @@
+# 하울 진입 노드
+Howl_Talk_01
+Howl_Talk_02
+Howl_Talk_03
+Howl_Talk_04
+Howl_Talk_05
+Howl_Talk_06
+Howl_Gift_Like
+Howl_Gift_Neutral
+Howl_Gift_Dislike
+Howl_Date_Lighthouse
+Howl_Date_FishMarket
+Howl_Date_Generic
+Howl_E1
+Howl_E2
+Howl_E3
+Howl_E4
+Howl_E4_Retry
+Howl_E5
+Howl_End_Normal
+Howl_End_Good
+Howl_End_True
+Howl_Harem_Consent
+Howl_Harem_Epilogue

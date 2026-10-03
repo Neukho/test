@@ -1,0 +1,387 @@
+// 공통 다자·커뮤니티 장면. 진입 노드: Harem_Table / Ending_Harem2 / Ending_Harem3 / Ending_Community
+// Harem_Table: 공동 루트 확정(2~3인) 직후 1회. 구성원은 route_locked("id"), 인원은 group_size() 로 판별(6명 중 임의의 2~3명 조합 모두 동작).
+//   구성원 사이의 관계(우정·존중)를 먼저 쌓고, 연애를 강요하지 않는다. 각 구성원의 키워드(신뢰/진심/의지/성장/유산/자유)를 그대로 유지한다.
+//   끝에서 호스트가 각 <Char>_Harem_Consent 를 이어 재생한다. 이 노드는 harem_ok_<char> 를 설정하지 않는다(동의 노드만 설정).
+// Ending_Harem2 / Ending_Harem3: 호스트가 EndingPlan 으로 시작(CG HAREM_E1). 끝난 뒤 호스트가 각 <Char>_Harem_Epilogue 를 붙인다.
+// Ending_Community: 루트 미확정·조건 미달·공동 부분 미달(group_unmet) 모두 이 노드. 연애 없음, 비난 없음, 나비는 복귀한 상태(Ch8_Outro 가 보장).
+// 플래그: harem_table_done / harem_table_individual|harem_table_slow / end_harem2 / end_harem3 / end_community
+title: Harem_Table
+tags: common harem table
+---
+<<bg cafe night>>
+<<flag harem_table_done>>
+마감한 홀 한가운데에 테이블이 하나 길게 놓였다. 의자는 정확히 사람 수만큼. 누구의 자리도 상석이 아니도록, 테이블은 둥글게 붙였다. #line:shr_001
+<<if group_size() >= 3>>
+    오늘 앉은 사람은 모두 세 명. 서로 다른 사정으로 이 가게에 온 사람들이 같은 식탁에 앉았다. #line:shr_002
+<<else>>
+    오늘 앉은 사람은 둘. 서로 다른 사정으로 이 가게에 온 두 사람이 같은 식탁에 마주 앉았다. #line:shr_003
+<<endif>>
+player: 모두 와 줘서 고마워요. 오늘은 제 입으로 다시 말하려고 해요. #line:shr_004
+player: 여기 계신 분들께는 이미 한 사람씩 따로 말씀드렸어요. 마음이 한 사람에게만 있지 않다는 걸요. 오늘은 모두가 같이 듣는 자리에서 한 번 더 말하고 싶었어요. #line:shr_005
+player: 아무도 모르는 사람이 없게 하고 싶어요. 그리고 누구든 불편하면 지금 말해 줘요. 한 사람이라도 아니라고 하면 이 얘기는 여기서 접어요. 그래도 이 식탁은 그대로고, 모두 이웃이에요. #line:shr_006
+<<if route_locked("howl")>>
+    <<show_standing howl neutral>>
+    howl: …앉았다. 이 자리에 모르는 사람이 없다는 건 확인했어. 그래서 앉은 거야. #line:shr_007
+<<endif>>
+<<if route_locked("johan")>>
+    <<show_standing johan neutral>>
+    johan: 안경은 올릴게. 진담이라는 신호. 끝날 때까지 안 내릴 거야. #line:shr_008
+<<endif>>
+<<if route_locked("beomjun")>>
+    <<show_standing beomjun neutral>>
+    beomjun: 진지한 얘기니까 목소리 낮출게! …낮췄지? 손바닥 신호 줘도 돼! #line:shr_009
+<<endif>>
+<<if route_locked("haru")>>
+    <<show_standing haru shy>>
+    haru: 저, 저는 끝까지 들을게요. 대답은 오늘 안 해도 된다고 하셨으니까요. 그것만 믿고 앉았어요. #line:shr_010
+<<endif>>
+<<if route_locked("gomseok")>>
+    <<show_standing gomseok neutral>>
+    gomseok: 허허, 이런 식탁은 처음이구먼. 국물은 못 가져왔는데 차는 내가 우릴게. #line:shr_011
+<<endif>>
+<<if route_locked("nabi")>>
+    <<show_standing nabi neutral>>
+    nabi: 나는 한 명씩 직접 물어볼 거야. 누가 대신 전해 준 말은 안 믿어. 괜찮지? #line:shr_012
+<<endif>>
+<<if route_locked("nabi") and route_locked("howl")>>
+    nabi: 하울. 이 자리, 괜찮아? 불편하면 일어나도 돼. #line:shr_013
+    howl: …괜찮다. 불편했으면 앉지 않았어. 나는 그런 걸 숨기는 쪽이 아니야. #line:shr_014
+<<endif>>
+<<if route_locked("nabi") and route_locked("johan")>>
+    nabi: 요한. 이 자리, 괜찮아? 농담으로 대답하지 말고. #line:shr_015
+    johan: 농담 없이 대답할게. 괜찮아. 그리고 무서워. 둘 다 진짜야. #line:shr_016
+<<endif>>
+<<if route_locked("nabi") and route_locked("beomjun")>>
+    nabi: 범준. 이 자리, 괜찮아? 센 척하지 말고. #line:shr_017
+    beomjun: 센 척 안 해! …솔직히 가슴이 좀 시끄러워. 그래도 앉아 있고 싶어서 앉은 거야. #line:shr_018
+<<endif>>
+<<if route_locked("nabi") and route_locked("haru")>>
+    nabi: 하루. 이 자리, 괜찮아? 천천히 말해도 돼. #line:shr_019
+    haru: 아, 네. 괜찮아요. 아직이라고 말하는 날이 오면 그때 말할게요. 그건 괜찮다는 대답이기도 해요. #line:shr_020
+<<endif>>
+<<if route_locked("nabi") and route_locked("gomseok")>>
+    nabi: 곰석. 이 자리, 괜찮아? 누구 대신으로 앉은 거면 말해. #line:shr_021
+    gomseok: 허허, 대신이면 앉지 않았어. 내 몫으로 앉았지. 물어봐 줘서 고맙구먼. #line:shr_022
+<<endif>>
+<<if route_locked("howl") and route_locked("johan")>>
+    howl: …요한은 시끄럽다. 그런데 시끄러운 것과 외로운 건 달라. 나는 그걸 구분하는 편이야. #line:shr_023
+    johan: 하울이 내 수다를 구분해 준다니. 오늘 칼럼 소재가 생겼네. …아니, 안 쓸게. 구분해 줘서 고마워. 이 말은 한 번만. #line:shr_024
+<<endif>>
+<<if route_locked("howl") and route_locked("beomjun")>>
+    beomjun: 하울, 내가 큰 소리 낼 때 귀 괜찮아? 불편하면 말해 줘! #line:shr_025
+    howl: …말해도 되면 말하지. 손바닥 신호면 충분하다. 물어봐 준 건 좋았어. #line:shr_026
+<<endif>>
+<<if route_locked("howl") and route_locked("haru")>>
+    haru: 하울 씨, 오븐 옆 배선 봐 주셔서 감사해요. 타이머 소리가 또렷해서 오히려 안심이 돼요. #line:shr_027
+    howl: …타이머 소리는 하루가 제일 먼저 듣더라. 일하는 귀야. 좋은 귀다. #line:shr_028
+<<endif>>
+<<if route_locked("howl") and route_locked("gomseok")>>
+    gomseok: 하울은 삼촌 밑에서 밤마다 불 켜던 사람이여. 내가 아침 불을 켜면 하울이 밤 불을 껐지. #line:shr_029
+    howl: …곰석 국물은 새벽에 마시는 게 제일이야. 아침 불이 있어서 밤 불도 끌 수 있었다. #line:shr_030
+<<endif>>
+<<if route_locked("johan") and route_locked("beomjun")>>
+    johan: 범준 씨, 건물주가 세입자 얘기를 쓰지 말라고 부탁한 적 없는 거, 기억하고 있어요. 그게 고마웠어요. #line:shr_031
+    beomjun: 하하! 부탁할 줄 몰라서 못 한 거야! …그래도 고맙다니 접수! 대신 일요일 교실에 한 번 와! #line:shr_032
+<<endif>>
+<<if route_locked("johan") and route_locked("haru")>>
+    haru: 요한 씨는 평가를 구체적으로 해 주셔서 좋아요. 막연한 칭찬은 불안한데, 요한 씨 말은 믿어져요. #line:shr_033
+    johan: …내 칭찬이 믿어진다고. 구체적이라는 건 별 다섯보다 비싼 칭찬이야. 오늘 제일 좋은 점수는 그쪽이 줬네. #line:shr_034
+<<endif>>
+<<if route_locked("johan") and route_locked("gomseok")>>
+    johan: 곰석 셰프님 국물에는 별점을 못 줘요. 점수가 국물을 못 따라가서요. #line:shr_035
+    gomseok: 허허, 점수를 안 줘서 좋구먼. 다시 와 주는 게 점수여. #line:shr_036
+<<endif>>
+<<if route_locked("beomjun") and route_locked("haru")>>
+    beomjun: 하루! 도장 애들한테 마들렌 한 판만 팔아 줘! 애들이 단 걸 좋아해! #line:shr_037
+    haru: 아, 네! 소리만 조금 낮추시면 열 개 더 구울게요. #line:shr_038
+    beomjun: 낮추는 중! 지금 낮추는 중이야! #line:shr_039
+<<endif>>
+<<if route_locked("beomjun") and route_locked("gomseok")>>
+    gomseok: 범준이 오는 날은 솥을 하나 더 올리지. 먹는 소리가 시원해서. #line:shr_040
+    beomjun: 곰석 셰프님 국물은 도장 애들 보약이야! 큰 몸이 둘이니까 가게가 든든하다고! 하하! #line:shr_041
+<<endif>>
+<<if route_locked("beomjun") and route_locked("nabi")>>
+    nabi: 범준은 무대 만들 때 말없이 못질해 줬어. 시끄럽지만 필요한 소리였어. #line:shr_042
+    beomjun: 필요한 소리라니, 현수막으로 걸자! …아니, 농담이야. 고맙다는 뜻으로 받을게. #line:shr_043
+<<endif>>
+<<if route_locked("haru") and route_locked("gomseok")>>
+    haru: 곰석 셰프님은 제 실수를 숫자로 바꿔 주세요. 그래서 무섭지 않아요. #line:shr_044
+    gomseok: 허허, 숫자는 안 아프거든. 하루 손은 이미 반죽을 알아. 내가 한 건 불을 줄여 준 것뿐이여. #line:shr_045
+<<endif>>
+<<if route_locked("haru") and route_locked("nabi")>>
+    nabi: 하루 마들렌 맛 좋았어. 공연 전날 케이크가 무너졌을 때도 끝까지 서 있었고. #line:shr_046
+    haru: 나비 씨…. 그 말, 노트에 적어 둘게요. 지우개 가루 없이요. #line:shr_047
+<<endif>>
+<<if route_locked("gomseok") and route_locked("nabi")>>
+    gomseok: 나비는 밤에 짭짤한 게 당길 때 주방 문 앞에 서 있지. 말 안 해도 불은 켜 둘게. #line:shr_048
+    nabi: …불만 켜 둬. 말은 안 해도 되니까. 그게 제일 좋은 안주야. #line:shr_049
+<<endif>>
+<<if route_locked("howl") and route_locked("nabi")>>
+    nabi: 하울은 불을 켜 두고, 나는 문을 열어 둬. 같은 말을 다르게 하는 거야. #line:shr_050
+    howl: …맞아. 문이 열려 있으면 불은 더 필요하지. #line:shr_051
+<<endif>>
+<<if route_locked("johan") and route_locked("nabi")>>
+    nabi: 요한은 내 노래에 별점을 안 매겨서 좋아. 박수만 쳐. #line:shr_052
+    johan: 나비 씨한테 별점은 모욕이지. 박수가 제일 정확한 평점이고, 박수 뒤의 침묵은 더 정확하고. #line:shr_053
+<<endif>>
+<<if route_locked("howl")>>
+    howl: 한 가지만. 이 얘기는 전원이 알고 있는 자리에서만 해. 모르는 사람이 있으면 그건 신뢰가 아니라 거래야. #line:shr_054
+<<endif>>
+<<if route_locked("johan")>>
+    johan: 진심은 서로 알 때만 진심이거든. 그래서 이 식탁이 필요한 거고. 누가 더 좋은지 점수표는 안 쓸게. 약속. #line:shr_055
+<<endif>>
+<<if route_locked("beomjun")>>
+    beomjun: 책임은 나눠서 져. 누구 한 명만 짊어지는 건 의지가 아니라 짐이거든. 불편한 사람 말부터 먼저 들을게! #line:shr_056
+<<endif>>
+<<if route_locked("haru")>>
+    haru: 저는 천천히 가요. 비교하지 않고, 제 속도를 기다려 주신다면 앉아 있을게요. 불편해지면 바로 말할 거예요. #line:shr_057
+<<endif>>
+<<if route_locked("gomseok")>>
+    gomseok: 나는 누구의 대신도, 두 번째 자리도 아니여. 내 몫으로 앉아 있을 거여. 그걸 알아주면 됐어. #line:shr_058
+<<endif>>
+<<if route_locked("nabi")>>
+    nabi: 자유는 이 식탁에서도 그대로야. 언제든 일어나서 나갈 수 있어. 돌아올 때만 알려 줘. 그 조건이면 앉아 있을게. #line:shr_059
+<<endif>>
+<<if group_size() >= 3>>
+    세 사람이 서로 눈을 맞췄다. 누군가는 웃었고, 누군가는 헛기침을 했다. 아무도 일어나지 않았다. #line:shr_060
+<<else>>
+    두 사람이 서로 눈을 맞췄다. 누군가는 웃었고, 누군가는 헛기침을 했다. 아무도 일어나지 않았다. #line:shr_061
+<<endif>>
+player: 서로를 비교하지 않고, 누구도 숨기지 않고, 힘들면 누구든 멈출 수 있게. 그 세 가지만은 제가 지킬게요. #line:shr_062
+player: 오늘 이 자리는 여러분이 서로를 알아 가는 자리이기도 해요. 연인이 되라는 얘기가 아니에요. 친구여도, 동료여도 좋아요. #line:shr_063
+-> 이제 한 사람씩 따로 이야기하는 시간을 가질게요. 대답은 직접 들을게요. #line:shr_064
+    <<flag harem_table_individual>>
+    player: 대답은 한 분 한 분에게 직접 들을게요. 예든 아니오든 아직이든, 다 똑같이 소중한 대답이에요. #line:shr_065
+-> 오늘은 얘기만 하고 마쳐요. 대답은 서두르지 말고 각자 편한 때에 해요. #line:shr_066
+    <<flag harem_table_slow>>
+    player: 대답은 서두르지 않아도 돼요. 아직이라는 말도 괜찮은 대답이에요. #line:shr_067
+창밖의 가로등이 하나둘 꺼질 무렵, 사람들은 의자에서 일어났다. 한 사람씩 나와 따로 이야기를 나눌 차례였다. #line:shr_068
+===
+title: Ending_Harem2
+tags: common ending harem2
+---
+<<flag end_harem2>>
+<<bg cafe dawn>>
+<<show_cg HAREM_E1>>
+체인점 위기가 지나고 첫 겨울이 왔다. 달빛 모퉁이의 창문에는 이른 아침마다 김이 서리고, 김 사이로 사람이 오가는 모양이 비친다. #line:shr_069
+홀 한가운데에는 둥근 식탁이 놓여 있다. 의자는 하나도 모자라지 않고, 하나도 남지 않는다. 오늘 아침 식탁에는 두 사람이 앉아 있다. #line:shr_070
+player: (두 사람 다, 서로를 알고 서로 괜찮다고 말한 사람들이야. 그게 이 식탁이 따뜻한 이유야.) #line:shr_071
+<<if route_locked("howl")>>
+    <<show_standing howl smile>>
+    howl: 불은 내가 켜 뒀다. 돌아올 사람이 여럿이면 조금 더 밝아야 하니까. #line:shr_072
+    howl: 숨기는 사람이 없다는 건 이렇게 마음이 편한 거였구나. 처음 알았다. #line:shr_073
+    howl: 얼음은 한 조각씩. 같이 마시자. #line:shr_074
+    player: 네, 같이요. 오늘도 불이 환하네요. #line:shr_075
+<<endif>>
+<<if route_locked("johan")>>
+    <<show_standing johan smile>>
+    johan: 오늘은 칼럼이 안 써져. 쓸 소재가 이렇게 많은데 쓰면 오늘이 닳을 것 같아서. #line:shr_076
+    johan: 진심은 나눈다고 줄지 않더라. 불처럼. 이 말은 내 문장 중에 제일 아끼는 한 줄이야. #line:shr_077
+    johan: 질투가 오면 수첩 말고 말로 할게. 그게 우리 약속이고. #line:shr_078
+    player: 말해 줘서 고마워요. 저는 늘 들을게요. #line:shr_079
+<<endif>>
+<<if route_locked("beomjun")>>
+    <<show_standing beomjun smile>>
+    beomjun: 하하! 의지할 사람이 이만큼 늘었네! 근데 이제는 나도 의지하는 쪽이야! #line:shr_080
+    beomjun: 책임은 나눠서 지는 거니까, 설거지도 나눠서! 네가 컵 닦으면 내가 헹굴게! #line:shr_081
+    beomjun: 큰 소리 날 땐 손바닥 신호! 아직 연습 중이야, 하하! #line:shr_082
+    player: 네, 신호 줄게요. 오늘은 같이 헹궈요. #line:shr_083
+<<endif>>
+<<if route_locked("haru")>>
+    <<show_standing haru smile>>
+    haru: 오늘 타르트는 두 사람 몫이 아니라 모두의 몫으로 구웠어요. 시간은 두 배 걸렸는데, 즐거웠어요. #line:shr_084
+    haru: 비교하지 않기로 한 약속, 지킬수록 쉬워져요. 제 속도도 아직 제 거고요. #line:shr_085
+    haru: 오늘 오븐은 일곱 시 사십 분에 열려요. 같이 서 줄 사람 있어요? #line:shr_086
+    player: 있어요. 오븐 앞에 같이 서요. #line:shr_087
+<<endif>>
+<<if route_locked("gomseok")>>
+    <<show_standing gomseok smile>>
+    gomseok: 솥을 하나 더 올렸어. 식구가 많으면 아침이 길어지거든. #line:shr_088
+    gomseok: 이 가게의 유산이란 건 결국 이런 아침일 거여. 여럿이 한 솥을 나눠 먹는 거. #line:shr_089
+    gomseok: 내 몫의 시간도, 네 사람들 몫의 시간도 챙겼어. 이상하게 마음이 편하구먼. #line:shr_090
+    player: 곰석 씨가 지켜 주는 방식이 제일 든든해요. #line:shr_091
+<<endif>>
+<<if route_locked("nabi")>>
+    <<show_standing nabi smile>>
+    nabi: 잠깐 바람 좀 쐬고 올게. 한 시간쯤. 혹은 두 시간. #line:shr_092
+    nabi: 아무도 어디 가냐고 안 묻네. 돌아오면 알아봐 주고. 이게 되는 집이라니. #line:shr_093
+    nabi: 칠판에 적어 놓고 갈게. 나비 외출 중. 지우는 건 내가 돌아와서. #line:shr_094
+    player: 다녀와요. 문은 열어 둘게요. #line:shr_095
+<<endif>>
+<<hide_cg>>
+npc_baker: 어머, 오늘은 식탁이 훈훈하네요. 두 분 다 표정이 좋아요. 갓 구운 호밀빵 두고 갈게요. #line:shr_164
+npc_florist: 첫 손님 자리 꽃은 제가 바꿔 놨어요. 올겨울에는 흰 동백이에요. 삼촌이 좋아하던 꽃이에요. #line:shr_165
+npc_fisher: 태풍 지난 뒤로 항구가 조용하오. 이 가게를 이제 뭐라고 부르는지 아시오? '식탁이 있는 집'이라고들 하오. #line:shr_166
+player: 식탁이 있는 집. 삼촌이 들으면 웃을 이름이네요. #line:shr_167
+오전 열 시. 문의 종이 쉬지 않고 울리고, 쇼케이스는 한 판 한 판 비워졌다. 점심 무렵에는 길 건너에서 온 손님도 줄에 섞여 있었다. #line:shr_168
+일요일마다 이어지는 낙법 교실, 달마다 이어지는 장부 모임, 가끔 들르는 항만 조합 사람들. 이 가게에 일정이 이렇게 많아질 줄은 몰랐다. #line:shr_169
+달빛 컴퍼니의 간판 아래에는 작은 글씨로 하나가 더 붙어 있다. '모레나의 안식처, 이웃과 함께.' 글씨는 이웃 한 사람이 직접 썼다. #line:shr_170
+player: (회사가 되어도, 가게는 가게였어. 이름이 늘었을 뿐이야.) #line:shr_171
+player: (그리고 이 두 사람은 서로를 알고, 나를 알고, 자기 의지로 여기 앉아 있어. 그게 제일 고마운 일이야.) #line:shr_172
+식탁 위로 아침 해가 천천히 올라왔다. 찻잔마다 김이 가늘게 일었다. 말이 없어도 편한 침묵이 한 번 지나갔다. #line:shr_173
+두 사람이 서로의 잔에 차를 따라 주는 소리가 들렸다. 누구도 서로를 비교하지 않았고, 누구도 서로를 숨기지 않았다. #line:shr_096
+player: 같이 하자고 한 건 저지만, 같이 해 보자고 대답해 준 건 두 사람 각자의 의지였어요. 그걸 매일 기억할게요. #line:shr_097
+카운터 서랍에는 장부가 있고, 장부 옆에는 이웃 명부가 있다. 달마다 말일에는 이웃들이 모여 그 두 권을 같이 읽는다. #line:shr_098
+<<if flag("ch6_fund_board")>>
+    달빛 컴퍼니의 이사회에는 이웃 이사 세 명이 앉는다. 분기마다 가장 먼저 나오는 안건은 늘 같다. 식탁에 자리가 모자라지 않는지. #line:shr_099
+<<else>>
+    이웃 모임의 장부는 투명하게 열려 있다. 쓰임새를 읽는 사람이 한 해에 한 명씩 늘었다. #line:shr_100
+<<endif>>
+창밖 길 건너에는 블루하버의 간판이 아직 그대로 서 있다. 이제는 서로 인사하는 사이가 되었다. #line:shr_101
+이른 아침 첫 손님이 문을 열자 종이 낮게 울렸다. 식탁 위의 불빛이 한 번 흔들렸다. #line:shr_102
+저녁에는 이웃 모임이 열렸다. 말일마다 읽는 장부 옆에, 올해부터는 식탁 사진이 한 장씩 꽂힌다. 이번 달 사진 속에는 우리가 있다. #line:shr_194
+npc_baker: 사진 잘 나왔네요. 표정이 편해 보여서 보는 사람 마음도 편해요. #line:shr_195
+player: 편한 표정이 어렵다는 건 그동안 알게 됐어요. 그래서 더 고마워요. #line:shr_196
+npc_florist: 삼촌 사진 옆에 이 사진을 같이 놓아도 될까요? 첫 손님 자리가 있는 벽에요. #line:shr_197
+player: 그럼요. 같은 벽에 나란히요. #line:shr_198
+벽에는 삼촌의 낡은 사진과 오늘의 식탁 사진이 나란히 걸렸다. 두 사진 속 사람들은 모두 봉투 대신 찻잔을 들고 있었다. #line:shr_199
+player: (삼촌, 이 가게는 이제 이런 식으로 이어지고 있어요.) #line:shr_200
+player: (이름은 늘었고 식탁은 길어졌고, 불은 여전히 켜져 있어요.) #line:shr_201
+이 가게의 이야기는 여기서 끝나지 않는다. 두 사람 각자의 식탁에서도 이어진다. #line:shr_103
+===
+title: Ending_Harem3
+tags: common ending harem3
+---
+<<flag end_harem3>>
+<<bg cafe night>>
+<<show_cg HAREM_E1>>
+체인점 위기가 지나고 해를 한 번 넘겼다. 달빛 모퉁이의 둥근 식탁에는 오늘 세 사람이 앉아 있다. 누군가는 일을 마치고 막 돌아왔고, 누군가는 아직 앞치마 차림이다. #line:shr_104
+식탁 위에는 세 사람 각자의 취향이 올라와 있다. 짠 안주와 단 과자, 오래 우린 차와 얼음 한 조각이 든 잔. 서로 다른 것이 한 상에 있는데 어색하지 않다. #line:shr_105
+player: (세 사람이 서로를 알게 되기까지 시간이 걸렸어. 비교하지 않고, 숨기지 않고, 힘들면 멈출 수 있게. 그 약속이 이 자리를 만들었어.) #line:shr_106
+<<if route_locked("howl")>>
+    <<show_standing howl smile>>
+    howl: 셋이 앉으니 불을 조금 더 켰다. 누가 어디 앉았는지 다 보이는 게 마음 편하더라. #line:shr_107
+    howl: 신뢰는 모르는 사람이 없는 자리에서만 자란다. 나는 그 말을 믿는다. #line:shr_108
+    howl: 얼음이 세 개 필요하겠네. 아니, 오늘은 한 잔에 같이. #line:shr_109
+    player: 같이 마셔요. 오늘도요. #line:shr_110
+<<endif>>
+<<if route_locked("johan")>>
+    <<show_standing johan smile>>
+    johan: 세 사람 몫의 식탁인데 의자가 하나도 안 모자랐어. 오늘 칼럼은 그 한 줄이면 돼. #line:shr_111
+    johan: 비교하는 직업이라 가끔 순위를 매기고 싶어지는데, 오늘은 점수표를 덮었어. 각자 다른 맛이니까. #line:shr_112
+    johan: 질투는 오면 말로 한다. 그게 우리 약속이야. 방금도 하나 왔다 갔고. #line:shr_113
+    player: 말해 줘서 고마워요. 우리 약속이 지켜지고 있네요. #line:shr_114
+<<endif>>
+<<if route_locked("beomjun")>>
+    <<show_standing beomjun smile>>
+    beomjun: 어깨가 열 개쯤 된 기분이야, 하하! 나도 이제 기대는 쪽이고! #line:shr_115
+    beomjun: 셋이 나눠 지니까 책임이 짐이 아니라 의지가 되네. 낙법은 이런 데서 배우는 거였어. #line:shr_116
+    beomjun: 오늘도 볼륨 조절! 손바닥 신호 받으면 바로 낮춘다! #line:shr_117
+    player: 신호 줄게요. 대신 오늘은 웃음소리까지는 안 낮춰도 돼요. #line:shr_118
+<<endif>>
+<<if route_locked("haru")>>
+    <<show_standing haru smile>>
+    haru: 타르트를 여러 사람 몫으로 굽는 데 이제 익숙해졌어요. 시간은 두 배인데 마음은 두 배로 가벼워요. #line:shr_119
+    haru: 제 속도를 기다려 주셔서 고마워요. 불편해지면 말하겠다는 약속도 한 번 썼는데, 바로 바꿔 주셔서 놀랐어요. #line:shr_120
+    haru: 노트 마지막 장 다음 장에는 오늘 먹은 저녁을 적을게요. #line:shr_121
+    player: 오늘 저녁 메뉴도 하루 씨 이름이 붙을까요? #line:shr_122
+<<endif>>
+<<if route_locked("gomseok")>>
+    <<show_standing gomseok smile>>
+    gomseok: 솥이 세 개여. 식구가 많아졌으니 당연하지. #line:shr_123
+    gomseok: 이 가게의 유산이 이웃의 장부에서 이 식탁으로 이어지는구먼. 내 몫도 내가 지키고, 남의 몫도 같이 지키고. #line:shr_124
+    gomseok: 누구의 대신이 아니라서 그릇을 받아도 편하다. 네 그릇이 첫 번째여. 다른 사람 그릇도 다 첫 번째고. #line:shr_125
+    player: 곰석 씨 국물이 제일 먼저 식어도 좋아요. 맛있으니까요. #line:shr_126
+<<endif>>
+<<if route_locked("nabi")>>
+    <<show_standing nabi smile>>
+    nabi: 문은 열려 있고 나는 앉아 있어. 이 두 개가 같이 되는 집이 있다는 게 아직도 신기해. #line:shr_127
+    nabi: 조건은 그대로야. 갈 땐 이유 안 말해도 되고, 어디냐고 안 묻고, 다 직접 확인하고, 언제든 철회. 이 네 개가 지켜지니까 자유가 맞아. #line:shr_128
+    nabi: 오늘은 한 곡 쓸 거야. 이름은 아직 없고. 쓰면 제일 먼저 들려줄게. #line:shr_129
+    player: 기다릴게요. 나비 씨가 쓰고 싶을 때요. #line:shr_130
+<<endif>>
+<<hide_cg>>
+npc_baker: 세 분이 같이 앉아 계시니 그림이 되네요. 저녁 빵이에요. 식기 전에 드세요. #line:shr_174
+npc_florist: 창가 꽃병에 동백을 세 송이 꽂았어요. 일부러 셋이에요. 제 마음대로요. #line:shr_175
+npc_fisher: 장부 모임이 요즘은 식탁 모임이 됐소. 읽는 사람보다 먹는 사람이 많아졌지. 나쁘지 않소. #line:shr_176
+player: 먹는 사람이 많은 장부 모임이면, 삼촌도 좋아했을 거예요. #line:shr_177
+저녁 영업이 끝난 뒤에도 가게의 불은 한참 꺼지지 않았다. 일요일 교실의 아이들 그림이 벽에 붙고, 블루하버 점원이 들고 온 작은 과일 바구니가 카운터 끝에 놓였다. #line:shr_178
+이 가게는 이제 하루에도 여러 번 다른 얼굴이 된다. 아침의 국물, 점심의 줄, 오후의 연습, 밤의 식탁. 그 모든 얼굴에 세 사람의 시간이 조금씩 스며 있었다. #line:shr_179
+달빛 컴퍼니의 회의록에는 이렇게 적혀 있다. '식탁은 세 사람의 것이 아니라, 앉고 싶은 모든 사람의 것.' 이웃 이사의 글씨였다. #line:shr_180
+player: (셋이라서 세 배로 복잡해질 줄 알았는데, 서로 존중하니까 세 배로 넓어졌어.) #line:shr_181
+player: (불편하면 말하고, 멈출 수 있고, 숨기지 않고. 이 세 가지가 이 식탁의 다리가 되어 줬어.) #line:shr_182
+식탁 아래에서 누군가의 발이 슬쩍 다른 사람의 발에 닿았다가 서로 웃으며 떨어졌다. 이제는 그것도 이 집의 일상이다. #line:shr_183
+세 사람이 같은 식탁에 앉아 서로의 잔에 차를 따랐다. 처음에는 어색해서 서로 말을 못 하던 사람들이었다. 이제는 서로의 하루를 묻는다. #line:shr_131
+player: 같이하자고 제안한 건 저지만, 같이 해 보자고 한 건 세 분 각자의 의지였어요. 그 의지를 존중하는 게 제 일이에요. #line:shr_132
+세 사람은 동시에 웃었다. 비교하지 않고, 숨기지 않고, 멈출 수 있는 사람들의 웃음이었다. #line:shr_133
+카운터 서랍에는 장부가 있고 이웃 명부가 있다. 달마다 말일에는 이웃들이 와서 그 두 권을 같이 읽는다. 식탁의 의자는 오늘도 사람 수만큼, 정확하게. #line:shr_134
+<<if flag("ch6_fund_board")>>
+    이사회 회의록의 오늘 안건은 짧다. 식탁에 자리가 모자라지 않을 것. 만장일치로 통과되었다. #line:shr_135
+<<else>>
+    게시판의 정산서 아래에는 누군가 연필로 적은 쪽지가 붙어 있다. '식탁이 점점 길어져서 좋아요.' #line:shr_136
+<<endif>>
+길 건너 블루하버의 간판 불빛은 이제 우리 가게의 창문과 같은 높이로 켜져 있다. #line:shr_137
+저녁에는 이웃 모임이 열렸다. 장부 옆에는 올해부터 식탁 사진이 한 장씩 꽂힌다. 이번 달 사진 속에는 세 사람과 내가 한 프레임 안에 있다. #line:shr_202
+npc_baker: 사진 잘 나왔네요. 서로 비교 안 하고 앉아 있는 얼굴들이라 보기 좋아요. #line:shr_203
+player: 비교하지 않는다는 약속이 사진에도 찍히나 봐요. #line:shr_204
+npc_florist: 삼촌 사진 옆에 이 사진을 같이 놓아도 될까요? 첫 손님 자리가 있는 벽에요. #line:shr_205
+player: 그럼요. 같은 벽에 나란히요. #line:shr_206
+벽에는 삼촌의 낡은 사진과 오늘의 식탁 사진이 나란히 걸렸다. 두 사진 속 사람들은 모두 봉투 대신 찻잔을 들고 있었다. #line:shr_207
+player: (삼촌, 이 가게는 이제 이런 식으로 이어지고 있어요.) #line:shr_208
+player: (이름은 늘었고 식탁은 길어졌고, 불은 여전히 켜져 있어요.) #line:shr_209
+이 가게의 이야기는 여기서 끝나지 않는다. 세 사람 각자의 식탁에서도 이어진다. #line:shr_138
+===
+title: Ending_Community
+tags: common ending community
+---
+<<flag end_community>>
+<<bg cafe morning>>
+위기가 지나고 첫 봄이 왔다. 달빛 모퉁이의 유리창은 아침마다 환하게 열린다. 창가 첫 손님 자리에는 오늘도 꽃이 놓여 있다. #line:shr_139
+<<if route_locked()>>
+    마음을 정해 둔 사람이 있었다. 하지만 서로의 속도가 같지 않았다. 아무도 잘못하지 않았다. 서두를 이유가 없었고, 그래서 이 아침은 모두의 것이다. #line:shr_140
+<<endif>>
+player: (연애가 아니어도, 이 가게 안에 있는 사람들은 나에게 가족 같은 이웃이야.) #line:shr_141
+<<show_standing gomseok smile>>
+gomseok: 허허, 오늘은 솥을 두 개 올렸어. 식구가 많은 날이면 솥이 모자라거든. #line:shr_142
+gomseok: 삼촌이 말한 유산이 뭔가 했더니, 이런 아침이었구먼. 여럿이 한 솥을 나눠 먹는 아침. #line:shr_143
+<<show_standing howl smile>>
+howl: 불은 내가 켜 뒀다. 돌아올 사람이 많아서 조금 더 환하게. #line:shr_144
+howl: 조용한 거랑 외로운 건 달라. 이 가게는 시끄러운 쪽인데, 괜찮다. #line:shr_145
+<<show_standing haru smile>>
+haru: 오늘 오븐은 일곱 시 사십 분에 열려요. 저는 이 가게의 파티시에니까, 시간표도 제가 정했어요. #line:shr_146
+haru: 타르트는 모두의 몫으로 구웠어요. 귀가 빨개져도 숨기지 않을게요. #line:shr_147
+<<show_standing johan smile>>
+<<if flag("johan_e4_column_published")>>
+    johan: 「다시 올 이유」를 읽고 온 손님이 아직도 오더라. 이 가게 얘기는 한 줄도 없는데. 독자는 제일 정확한 평론가야. #line:shr_148
+<<else>>
+    johan: 오늘은 쓸 게 많은데 쓰지 않을 거야. 허락받은 문장부터 하나씩. 순서가 중요해서. #line:shr_149
+<<endif>>
+johan: 별점은 가게 문 앞에서 매기고 나오는 길에는 접어 둬. 이 가게는 항상 다시 올 이유가 있는 곳이니까. #line:shr_150
+<<show_standing beomjun smile>>
+<<if flag("beomjun_dojo_open")>>
+    beomjun: 일요일 교실은 열한 명에서 서른 명이 됐어! 낙법만 가르치는데도 다들 웃어! 하하! #line:shr_151
+<<else>>
+    beomjun: 도장 지붕은 이번에 같이 고쳤어! 혼자 지던 짐을 이웃이랑 나누니까 가볍더라고! #line:shr_152
+<<endif>>
+beomjun: 의지할 사람이 있다는 게 이렇게 든든한 거였네. 이 가게가 내 도장 같아! #line:shr_153
+<<show_standing nabi smile>>
+nabi: 갈 곳은 많아. 돌아올 곳은 하나고. 그래서 자유라는 말이 쓸 만해졌어. #line:shr_154
+nabi: 오늘은 한 곡 부를게. 내 곡만. 박수는 받을 만큼만. 나머지는 가게에 두고 갈게. #line:shr_155
+npc_baker: 오늘 빵은 호밀이에요. 삼촌이 좋아하던 거. 아침마다 가져오는 건 여전한데, 이제는 봉투 말고 얘기도 같이 가져와요. #line:shr_184
+npc_florist: 첫 손님 자리 화분은 새로 갈았어요. 뿌리가 단단해서 올겨울은 넘길 것 같아요. #line:shr_185
+npc_fisher: 새벽 시장 사람들이 요즘은 이 가게를 한 번씩 거쳐 가오. 국물 한 그릇 마시고 가야 하루가 시작된다더군. #line:shr_186
+player: 이 가게가 이웃의 쉬어 갈 곳이라는 건 삼촌이 만든 거였어요. 저는 이어서 쓰는 거고요. #line:shr_187
+npc_baker: 이어서 쓴다는 말이 좋네요. 장부도 그렇게 쓰여 왔으니까요. #line:shr_188
+점심시간에는 길 건너 점원들과 이쪽 손님이 섞여 줄을 섰다. 쿠폰북은 어느새 서로의 냅킨 밑에 끼워져 있었다. #line:shr_189
+오후에는 일요일 교실에서 쓰던 매트를 홀 한쪽에 펴 놓고 아이들이 낙법 연습을 했다. 넘어질 때마다 어른들이 박수를 쳤다. #line:shr_190
+해 질 무렵에는 하루가 구운 마지막 한 판이 나왔고, 쇼케이스는 처음으로 완전히 비었다. 비어 있다는 말이 이렇게 기쁜 줄은 몰랐다. #line:shr_191
+player: (큰 계약도, 큰 승리도 없었어. 그냥 서로의 이름을 부르는 날들이 쌓였을 뿐이야.) #line:shr_192
+player: (그게 삼촌이 장부 맨 뒤에 남긴 말, 이어서 쓰라는 말의 뜻이었을지도 몰라.) #line:shr_193
+카운터 서랍에는 장부가 있고, 그 옆에는 서명으로 가득 찬 이웃 명부가 있다. 구청에서 온 확인서가 맨 위에 얹혀 있다. #line:shr_156
+<<if flag("ch6_fund_board")>>
+    달빛 컴퍼니의 이사회에는 이웃 이사가 앉아 있다. 회의록 마지막 줄은 늘 같다. 내일도 불을 켤 것. #line:shr_157
+<<elseif flag("ch6_fund_open")>>
+    말일의 장부 모임에는 거리까지 의자가 놓인다. 읽는 사람이 해마다 늘어나기 때문이다. #line:shr_158
+<<else>>
+    게시판의 정산서를 읽는 이웃이 늘었다. 읽기 쉬워졌다는 쪽지가 한 장 더 붙었다. #line:shr_159
+<<endif>>
+길 건너 블루하버의 점원이 아침 인사를 건넸다. 일요일 교실에서 낙법을 배운 사람이었다. #line:shr_160
+npc_baker: 이 가게는 이제 우리 동네 달력 같아요. 말일이면 장부, 일요일이면 교실, 비 오는 날이면 따뜻한 국물. #line:shr_210
+npc_fisher: 철거 얘기는 아직 끝난 건 아니오. 주민 제안 심의가 남았으니. 그래도 이름을 모은 사람들은 쉽게 흩어지지 않소. #line:shr_211
+player: 맞아요. 끝난 게 아니라 이어지는 거예요. 서로의 이름을 아는 한 계속될 거예요. #line:shr_212
+카운터 위의 칠판에는 오늘의 메뉴 옆에 작은 글씨가 하나 더 적혀 있다. '오는 사람도, 가는 사람도, 돌아오는 사람도.' #line:shr_213
+창밖 건너편에서 블루하버의 간판이 켜졌다. 이제는 서로를 적이 아니라 이웃이라고 부를 수 있다. #line:shr_214
+player: 여러분, 오늘도 와 줘서 고마워요. 이 가게는 여러분이 있어서 가게예요. #line:shr_161
+식탁 위 잔이 하나씩 채워졌다. 문의 종이 낮게 울리고, 첫 손님이 들어왔다. #line:shr_162
+달빛 모퉁이의 불은 오늘도 켜져 있다. 오는 사람도, 가는 사람도, 돌아오는 사람도 모두 이 불 아래에서 이웃이다. #line:shr_163
+===

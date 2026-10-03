@@ -1,0 +1,45 @@
+// 나비 데이트 「라이브 클럽」(5장 해금, 밤). 수치는 호스트가 적용. 진입 노드 Nabi_Date_LiveClub
+// 데이트 중 선택 기록 플래그(수치 없음): nabi_club_front / nabi_club_back / nabi_club_ask, nabi_date_live_club_done
+title: Nabi_Date_LiveClub
+tags: nabi date
+---
+<<bg live_club night>>
+<<show_standing nabi neutral>>
+<<if $aff_nabi < 30>>
+    비어 있는 작은 클럽. 나비가 무대 위 스툴을 발끝으로 밀어 보더니 마이크 높이를 맞춘다. #line:nabi_dlc_001
+    nabi: 여긴 내가 처음 무대에 선 곳이야. 조명이 너무 예쁘지 않아서 좋아. #line:nabi_dlc_002
+    player: 어두운 게 좋아요? #line:nabi_dlc_003
+    nabi: 어두우면 거짓말을 못 하거든. 보이는 만큼만 하면 돼. #line:nabi_dlc_004
+<<elseif $aff_nabi < 60>>
+    nabi: 와 줘서 고마워. 이 클럽은 아무도 내 이름을 안 불러서 좋아. 자리만 있으면 돼. #line:nabi_dlc_005
+    player: {player_calls("nabi")}, 오늘은 객석에서 얌전히 있을게요. #line:nabi_dlc_006
+    nabi: 얌전할 필요 없어. 앉고 싶은 데 앉아. #line:nabi_dlc_007
+<<else>>
+    nabi: {calls_player("nabi")}. 오늘은 관객이 한 명이야. 한 명이 제일 어렵거든. #line:nabi_dlc_008
+    player: 도망가고 싶으면 말해요. 제가 문 열어 줄게요. #line:nabi_dlc_009
+    nabi: 도망 안 가. 이 자리는 내가 고른 거니까. #line:nabi_dlc_010
+<<endif>>
+무대 가장자리에 앉은 나비가 기타를 조율한다. 줄을 한 번 튕길 때마다 빈 객석이 조금씩 따뜻해지는 것 같다. #line:nabi_dlc_011
+nabi: 어디서 들을래? 앞줄에서 들으면 내 손이 보이고, 뒷줄에서 들으면 소리가 보여. #line:nabi_dlc_012
+-> 앞줄에서 들을게요. 손이 보고 싶어요. #line:nabi_dlc_013
+    <<flag nabi_club_front>>
+    <<show_standing nabi smile>>
+    nabi: 손 보면 틀리는 게 다 보일 텐데. …그래, 틀려도 내 거니까. #line:nabi_dlc_014
+-> 뒷줄에서 들을게요. 소리가 보이는 쪽으로요. #line:nabi_dlc_015
+    <<flag nabi_club_back>>
+    <<show_standing nabi smile>>
+    nabi: 뒷줄이 제일 정직한 자리야. 소리가 거기까지 가야 진짜거든. #line:nabi_dlc_016
+-> 나비 씨가 정해 줘요. 어디든 좋아요. #line:nabi_dlc_017
+    <<flag nabi_club_ask>>
+    nabi: 고르는 건 내 일이 아니라 네 일이야. …근데 오늘은 중간에서 들어. 가장 어정쩡한 자리. #line:nabi_dlc_018
+    nabi: 어정쩡한 자리가 의외로 편해. 해 보면 알아. #line:nabi_dlc_019
+나비는 한 곡을 처음부터 끝까지 틀리지 않고 불렀다. 마지막 코드가 사라지는 동안 아무도 박수를 치지 않았고, 그게 오히려 좋았다. #line:nabi_dlc_020
+nabi: 박수 안 치길 잘했어. 박수는 노래 끝에 오는 거지, 노래 안에 오는 건 아니거든. #line:nabi_dlc_021
+player: 지금 같은 침묵이 좋았어요. #line:nabi_dlc_022
+nabi: 나도. 한 사람이 숨을 멈추는 소리, 크더라. #line:nabi_dlc_023
+nabi: 오늘 무대는 내가 줬어. 박수는 받을 만큼만 받을게. 나머진 클럽에 두고 갈래. #line:nabi_dlc_024
+<<show_standing nabi smile>>
+클럽 문을 나서자 밤공기가 시원했다. 나비가 케이스를 한쪽 어깨로 옮기며 나를 돌아봤다. #line:nabi_dlc_025
+nabi: 같이 걸어도 돼. 가고 싶은 데까지만. #line:nabi_dlc_026
+<<show_standing nabi neutral>>
+===

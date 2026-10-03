@@ -1,0 +1,55 @@
+// 범준 데이트: 합기도 도장(3장 해금, 낮). 수치는 호스트(RomanceService.Date)가 적용. 진입 노드 Beomjun_Date_Dojo
+// 주제: 균형과 ‘다치지 않게 넘어지는 법’. 접촉은 항상 먼저 묻고 동의 후.
+// 플래그: beomjun_dojo_fall / beomjun_dojo_stance / beomjun_dojo_tea, 재방문 beomjun_date_dojo_done
+title: Beomjun_Date_Dojo
+tags: beomjun date dojo
+---
+<<bg dojo day>>
+<<show_standing beomjun smile>>
+<<if flag("beomjun_date_dojo_done")>>
+    beomjun: 또 왔네! 매트가 기뻐하겠다. 어제 그 구석, 내가 따로 닦아 놨어! #line:beomjun_dd_001
+    player: 같은 자리에서 시작할까요? #line:beomjun_dd_002
+    beomjun: 좋지! 한 번 더 하면 몸이 기억하니까! #line:beomjun_dd_003
+<<else>>
+    beomjun: 여기가 우리 도장이야! 오늘은 구경하러 온 게 아니라 같이 움직이러 온 거지? #line:beomjun_dd_004
+    player: 처음이라 어디서부터 해야 할지 모르겠어요. #line:beomjun_dd_005
+    beomjun: 처음엔 다 그래! 제일 먼저 가르쳐 주는 거부터 갈게. #line:beomjun_dd_006
+<<endif>>
+<<if $aff_beomjun < 30>>
+    beomjun: 우선 거리부터 지키자고. 손을 잡아도 되는지 내가 먼저 물을 테니 편하게 대답해요! #line:beomjun_dd_007
+<<elseif $aff_beomjun < 60>>
+    beomjun: 손 잡아도 되는지 먼저 물어볼게. 싫으면 싫다고 해. 난 서운해도 괜찮아, 하하! #line:beomjun_dd_008
+<<else>>
+    beomjun: 손 잡을게. …아니, 먼저 물어야지. 잡아도 돼? 안 돼도 괜찮아. #line:beomjun_dd_009
+<<endif>>
+도장 바닥은 햇빛에 데워져 따뜻했다. 범준은 신발을 벗고 매트 가운데에 서서 발을 어깨너비로 벌렸다. #line:beomjun_dd_010
+beomjun: 합기도에서 제일 먼저 배우는 건 던지는 게 아니라 넘어지는 거야. 남을 안 다치게 하려면 나부터 안 다치게 넘어질 줄 알아야 하거든. #line:beomjun_dd_011
+-> 낙법부터 해 볼래요. 천천히 알려 주세요. #line:beomjun_dd_012
+    <<flag beomjun_dojo_fall>>
+    <<show_standing beomjun smile>>
+    beomjun: 좋아! 턱은 당기고, 손은 바닥을 치는 게 아니라 쓸어내려. 몸을 둥글게, 공처럼! #line:beomjun_dd_013
+    beomjun: 그래, 그거야! 처음치고 구르는 게 잘 어울리네! 하하! #line:beomjun_dd_014
+    beomjun: 넘어져도 괜찮아. 어떻게 넘어지느냐가 중요하지, 안 넘어지는 사람은 없거든. #line:beomjun_dd_015
+-> 서는 자세부터 따라 해 볼게요. 균형 잡는 법 알려 주세요. #line:beomjun_dd_016
+    <<flag beomjun_dojo_stance>>
+    <<show_standing beomjun smile>>
+    beomjun: 발바닥 전체로 서는 거야. 앞꿈치도 뒤꿈치도 아니고, 한가운데. #line:beomjun_dd_017
+    beomjun: 이렇게 살짝 밀어 볼게. 밀리는 느낌 오면 버티지 말고 한 걸음 옮겨! #line:beomjun_dd_018
+    beomjun: 오, 안 쓰러졌네! 버티지 않고 옮기는 게 균형이야. 사람 관계도 비슷하더라고. #line:beomjun_dd_019
+-> 오늘은 구경하면서 차 한 잔 마셔요. 쉬는 시간이 필요해요. #line:beomjun_dd_020
+    <<flag beomjun_dojo_tea>>
+    <<show_standing beomjun surprised>>
+    beomjun: 쉬는 시간! 그건 내가 자주 까먹는 거야. #line:beomjun_dd_021
+    beomjun: 좋아, 차 우리자. 도장 구석에 보리차 주전자가 있거든. #line:beomjun_dd_022
+한참 움직인 뒤, 둘은 매트 가장자리에 나란히 앉았다. 창으로 들어온 햇살이 먼지를 금빛으로 띄웠다. #line:beomjun_dd_023
+beomjun: 이렇게 누가 같이 앉아 있는 거, 오랜만이야. #line:beomjun_dd_024
+beomjun: 도장은 사람이 많을 때도 좋지만, 한 사람만 있어도 충분히 도장이 되네. #line:beomjun_dd_025
+-> 오늘은 제가 한 사람이 되어 드릴게요. #line:beomjun_dd_026
+    <<show_standing beomjun shy>>
+    beomjun: …그 말, 오늘 하루 종일 기억할 거야. #line:beomjun_dd_027
+-> 다음엔 아이들 수업도 구경하고 싶어요. #line:beomjun_dd_028
+    beomjun: 그래, 언젠가! 그날이 오면 제일 앞줄에 앉혀 줄게. #line:beomjun_dd_029
+<<flag beomjun_date_dojo_done>>
+<<show_standing beomjun smile>>
+beomjun: 오늘은 고마웠어. 나가는 길엔 신발 줄 맞추는 거 잊지 말고! 하하! #line:beomjun_dd_030
+===

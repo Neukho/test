@@ -1,0 +1,99 @@
+// 하루 개인 이벤트 5 「달빛 아래의 약속」(8장, 호감 84 / 신뢰 32). 굿 엔딩 CG 겸용. 진입 노드 Haru_E5
+// 비트: 칠판에 적힌 시그니처 메뉴(하루의 이름) -> 옥상 정원 -> 약속(선택1) -> 마지막 장(숨은 선택지, 선택2).
+// 플래그: haru_e5_promise / haru_e5_fix_all / haru_e5_together(선택1), haru_e5_hand / haru_e5_morning(선택2),
+//        haru_key(숨은 조건: flag haru_e3_blank_page 또는 haru_talk_blank_respect 필요, 트루 열쇠 '노트 마지막 장').
+// 의존: 8장 체인점 결판 이후. 스킨십은 동의 확인 후 손잡기·포옹까지(키스는 엔딩에서).
+title: Haru_E5
+tags: haru event e5 chapter8
+---
+<<bg cafe night>>
+<<show_standing haru shy uniform>>
+체인점과의 결판이 끝난 밤. 모두가 돌아간 가게에는 오븐의 여열과 설거지물 소리가 남아 있었다. #line:haru_e5_001
+하루가 카운터 뒤에서 나왔다. 앞치마는 평소와 같았지만, 한 손에는 분필이 들려 있었다. #line:haru_e5_002
+haru: {calls_player("haru")}, 잠깐만 이쪽으로 와 주실래요? 보여 드릴 게 있어요. #line:haru_e5_003
+메뉴 칠판 앞에서 하루가 한 걸음 비켜섰다. 새로 쓴 줄 하나가 칠판 맨 위에 자리 잡고 있었다. #line:haru_e5_004
+<<show_standing haru neutral>>
+‘하루의 딸기 타르트’. 글씨는 크지 않았고, 이름 위에 분필 가루가 아직 흩어져 있었다. #line:haru_e5_005
+player: 이거, 하루 씨 이름이네요. #line:haru_e5_006
+haru: 네. 시그니처 메뉴예요. 곰석 셰프님이 이 칸을 저한테 주셨어요. 이름은 제가 쓰라고요. #line:haru_e5_007
+haru: 쓰는 데 육 주 걸렸어요. 이 이름 쓰기까지요. 손이 떨려서 분필을 두 번 부러뜨렸고요. #line:haru_e5_008
+player: 딸기 타르트, 그때 그 케이크가 시작이었죠? #line:haru_e5_009
+haru: 맞아요. 그 케이크가 무너지지 않았다면 이 타르트는 못 만들었을 거예요. 그날 크림이 왜 흘렀는지 알아서, 이번엔 젤라틴 비율이랑 냉각 시간을 다 바꿨어요. #line:haru_e5_010
+-> 이름 쓸 때 어떤 마음이었어요? 지금도 궁금해요. #line:haru_e5_011
+    <<flag haru_e5_name_asked>>
+    <<aff haru 3>>
+    <<trust haru 1>>
+    <<show_standing haru smile>>
+    haru: …솔직하게요? 무서웠어요. 그런데 이름을 쓰고 나서 처음으로 ‘이게 내 것’이라는 생각이 들었어요. 무서운 것과 내 것이라는 느낌이 같이 있더라고요. #line:haru_e5_012
+-> 이름이 정말 잘 어울려요. 하루 씨의 타르트라서요. #line:haru_e5_013
+    haru: 감사해요. 이제는 칭찬이 와도 귀가 빨개지는 걸 그냥 두려고요. 숨기지 않고요. #line:haru_e5_014
+하루는 분필을 칠판 아래 선반에 내려놓았다. 접시 위에는 타르트 두 조각이 놓여 있었다. #line:haru_e5_015
+haru: 올라가서 먹을까요? 옥상 정원이요. 거기가 제일 조용하고, 밤하늘도 보여서요. #line:haru_e5_016
+<<bg rooftop night>>
+<<show_standing haru neutral casual>>
+옥상 정원에는 작은 화분이 줄지어 있었고, 가운데에 접이식 의자 두 개가 놓여 있었다. 하루가 아침에 먼저 올라와 정리해 둔 흔적이었다. #line:haru_e5_017
+하늘은 맑았고, 항구 쪽에서 불어오는 바람에 짠 내가 섞여 있었다. 멀리 블루하버 카페의 간판에는 이제 불이 꺼져 있었다. #line:haru_e5_018
+<<show_cg HARU_E5>>
+하루가 두 손을 앞치마 앞에 모으고 이쪽을 마주 보고 섰다. 의자 옆 작은 탁자 위에는 타르트 접시 두 개가 놓여 있었다. 달빛이 하루의 앞치마 끈과 접시 가장자리에 내려앉았다. 하루는 눈을 피하지 않고, 시선을 오래 유지했다. #line:haru_e5_019
+haru: 저는 앞으로도 실수할 거예요. 그때마다 도망치고 싶을 거고요. 그건 아마 바뀌지 않을 거예요. #line:haru_e5_020
+haru: 그래도 ‘다시 해 볼게요’라고 말할 거예요. 그 말을… 옆에서 들어 주실래요? #line:haru_e5_021
+haru: 구해 달라는 게 아니에요. 대신 해 달라는 것도 아니고요. 그냥 들어 주시는 거요. #line:haru_e5_022
+-> 들을게요. 구하러 달려가지는 않을 거예요. 하루 씨가 다시 일어서는 걸 옆에서 볼게요. #line:haru_e5_023
+    <<flag haru_e5_promise>>
+    <<aff haru 5>>
+    <<trust haru 1.5>>
+    <<show_standing haru smile>>
+    haru: 그 대답이 제가 원하던 거예요. 구하지 않고, 떠나지도 않는 거요. 그게 제일 어려운 약속인데요. #line:haru_e5_024
+-> 무슨 일이든 제가 다 해결할게요. 하루 씨는 걱정하지 마세요. #line:haru_e5_025
+    <<flag haru_e5_fix_all>>
+    <<aff haru -1>>
+    <<trust haru -1>>
+    <<show_standing haru sad>>
+    haru: …고마운 말씀이에요. 그런데 그건 제가 원하는 약속이 아니에요. #line:haru_e5_026
+    haru: 제가 해야 할 몫까지 해결해 주시면, 저는 앞으로 자라지 못해요. 그렇게 되면 제 이름이 적힌 이 타르트도 제 것이 아니게 되고요. #line:haru_e5_027
+    player: …맞아요. 제가 앞서갔어요. 하루 씨가 해결하는 걸 옆에서 지켜볼게요. #line:haru_e5_028
+    <<show_standing haru neutral>>
+-> 저도 실수할 거예요. 그땐 같이 다시 해 봐요. #line:haru_e5_029
+    <<flag haru_e5_together>>
+    <<aff haru 3>>
+    <<trust haru 1>>
+    <<show_standing haru smile>>
+    haru: 같이 다시요. …좋아요. 서로의 ‘다시’를 듣는 거네요. 그건 제가 전혀 생각 못 한 약속이에요. #line:haru_e5_030
+하루가 앞치마 주머니에서 낡은 노트를 꺼내 두 손으로 가슴 앞에 안았다. 겉표지에는 여러 겹의 테이프가 붙어 있었다. 손끝이 노트 뒷장 쪽에 머물렀다. #line:haru_e5_031
+haru: 이 노트요. 마지막 장은 아직 비어 있어요. 거기에 뭘 쓸지 오랫동안 생각했는데, 쓰기 전에 먼저 듣고 싶은 말이 있었어요. #line:haru_e5_032
+-> 손, 잡아도 될까요? #line:haru_e5_033
+    <<flag haru_e5_hand>>
+    <<aff haru 3>>
+    <<trust haru 1>>
+    <<show_standing haru surprised>>
+    haru: …네. 물어봐 주셔서 고마워요. 잡아도 돼요. #line:haru_e5_034
+    하루의 손은 따뜻했고, 살짝 떨렸다. 떨림은 곧 가라앉았다. #line:haru_e5_035
+    <<show_standing haru smile>>
+    haru: 제가 먼저 말하려고 했는데, 먼저 물어봐 주셨네요. 아직도 한 박자 느려요, 저는. #line:haru_e5_036
+-> 내일 아침에도 오븐 앞에서 봐요. 저는 타이머를 맡을게요. #line:haru_e5_037
+    <<flag haru_e5_morning>>
+    <<show_standing haru smile>>
+    haru: 내일 아침 오븐 앞에서요. …네. 타이머는 부탁드릴게요. 첫 판 시간은 제가 정할게요. #line:haru_e5_038
+-> 노트 마지막 장, 아직 비어 있죠? 채우고 싶어질 때까지 기다릴 수 있어요. #line:haru_e5_039 <<if flag("haru_e3_blank_page") or flag("haru_talk_blank_respect")>>
+    <<flag haru_key>>
+    <<aff haru 5>>
+    <<trust haru 2>>
+    <<show_standing haru surprised>>
+    haru: …기다리게 했나요. 사실은 어제 새벽에 이미 다 썼어요. 쓰고도 주머니에서 못 꺼내고 있었고요. #line:haru_e5_040
+    haru: 이건 제가 누군가를 위해 쓴 첫 레시피예요. 평가받으려고 쓴 게 아니라, 그냥 주려고 쓴 거요. #line:haru_e5_041
+    하루가 노트의 마지막 장을 펼쳐 두 손으로 내밀었다. 첫 줄에는 이렇게 적혀 있었다. ‘밤에 가게 문을 닫고 나서 마시는 우유차.’ #line:haru_e5_042
+    haru: 우유차예요. 우려내는 온도, 설탕은 한 스푼 반, 반 스푼은 오늘 고생한 몫이라고 적었어요. 그리고 맨 아래에는… 아직 읽지 마세요. 나중에, 혼자 있을 때요. #line:haru_e5_043
+    <<show_standing haru smile>>
+<<show_standing haru neutral>>
+<<hide_cg>>
+<<if flag("haru_key")>>
+    haru: 읽을 때 천천히 읽어 주세요. 쓸 때 오래 걸렸으니까요. #line:haru_e5_044
+<<else>>
+    haru: 마지막 장은… 언젠가 쓸게요. 그때가 되면 제일 먼저 보여 드릴게요. 기다려 주신다고 했으니까요. #line:haru_e5_045
+<<endif>>
+옥상 정원 위로 구름이 한 장 지나갔다가 다시 달이 드러났다. 타르트는 식어 있었지만, 두 사람 다 한 입씩 천천히 먹었다. #line:haru_e5_046
+haru: 타르트, 어때요? 평가해 주세요. 솔직하게요. 오늘은 꼭 듣고 싶어서요. #line:haru_e5_047
+player: 필링이 안정적이에요. 딸기가 올라간 순서도 좋고, 반죽이 눅눅하지 않아요. 달고 신 균형이 정확해요. #line:haru_e5_048
+haru: 정확해요, 라는 말…. 그 말을 들으려고 육 주 동안 오븐 앞에 있었나 봐요. #line:haru_e5_049
+<<end_event haru 5>>
+===

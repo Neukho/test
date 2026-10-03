@@ -1,0 +1,75 @@
+// 요한 개인 이벤트 3 「빈 좌석」(5장, 나비의 첫 정식 공연 날). 진입 노드 Johan_E3
+// 비트: 만석 속 비어 있는 이름표 자리 -> 뒷문 계단에 앉은 요한 -> 외로움의 밑바닥(‘빈 이유를 내가 정할 수 있다’) -> 선택1(곁에 가는 방식) -> 접촉은 동의 후(선택2) -> 함께 입장.
+// 플래그: johan_e3_together(+4/+1) / johan_e3_door(+3/+3, 신뢰 가중) / johan_e3_pushed(-1/-1, 곧 사과로 회복)
+//        johan_e3_hand / johan_e3_side(둘 다 +1, 접촉 방식은 주인공이 정함) / johan_seat_reserved(항상)
+title: Johan_E3
+tags: johan event e3 chapter5
+---
+<<bg cafe night>>
+<<show_standing johan neutral>>
+공연 시작 십 분 전. 홀은 처음으로 만석이다. 무대 위에서 나비가 기타 줄을 조율하는 소리가 간간이 들리고, 사람들은 숨죽여 자리를 찾는다. #line:johan_e3_001
+창가 두 번째 자리에는 아침에 내가 직접 올려 둔 작은 이름표가 있다. "요한 씨 자리". 의자는 비어 있다. #line:johan_e3_002
+<<flag johan_seat_reserved>>
+player: (시작 십 분 전인데… {player_calls("johan")}, 약속한 시간에는 늘 일찍 오던 사람이었는데.) #line:johan_e3_003
+무대 쪽에서 한 번, 또 한 번 조율하는 소리가 울린다. 나는 홀을 한 바퀴 둘러보고 주방을 지나 뒷문을 연다. #line:johan_e3_004
+<<show_cg JOHAN_E3>>
+골목 쪽으로 이어진 짧은 계단. 가로등 아래 요한이 앉아 있다. 안경은 벗어서 무릎 위에 놓았고, 수첩은 닫혀 있다. 문틈으로 새어 나온 무대 조명이 요한의 어깨 위에 가늘게 걸쳐 있다. #line:johan_e3_005
+johan: …아, 들켰다. 출석부에서 내 이름이 빠졌지? 사유서 낼게. 사유는, 음, 소화불량. 아니면 신발 끈. 아니, 신발 끈은 너무 진부한가. #line:johan_e3_006
+player: {player_calls("johan")}, 괜찮아요? 자리, 맡아 놨는데요. #line:johan_e3_007
+johan: …알아. 이름표 봤어. 창문으로 보이더라. 보고도 못 들어간 거야. 웃기지. #line:johan_e3_008
+요한은 웃으려다 웃음의 모양만 만들고 그만둔다. 평소에는 쉬지 않고 이어지던 말이, 한참 만에야 다음 문장을 찾는다. #line:johan_e3_009
+johan: 나비 씨 공연이 걱정되는 건 아니야. 걱정은 내 몫이 아니고. 걱정되는 건 저 안에 내가 앉아 있는 모습이야. #line:johan_e3_010
+johan: 공연은 사람들이 같은 곳을 같이 보는 시간이잖아. 나는 늘 '쓸 사람'이라서 같이 못 봐. 눈은 무대에 있는데 머리는 문장을 짓고 있고, 옆자리는 비어 있고. #line:johan_e3_011
+johan: 그리고 내가 자리를 비워 두면 비어 있는 이유를 내가 정할 수 있어. 아무도 안 와서가 아니라, 내가 안 앉아서. 그게 덜 아프거든. …이거 칼럼에 쓰면 안 되는 종류의 얘기야. #line:johan_e3_012
+johan: 농담은 빈자리에 깔아 두는 방석 같은 거라서 말이야. 오늘은 방석이 다 떨어졌어. 재고가 없어. #line:johan_e3_013
+무대 쪽에서 나비를 맞는 환영의 박수가 번진다. 요한의 귀가 그쪽으로 천천히 기운다. #line:johan_e3_039
+player: (데려가는 말 말고, 곁에 있는 말을 해야 해.) #line:johan_e3_040
+-> 이름표 붙여 놓은 자리가 있어요. 같이 들어가요. 싫으면 여기 같이 있어도 되고요. #line:johan_e3_014
+    <<flag johan_e3_together>>
+    <<aff johan 4>>
+    <<trust johan 1>>
+    <<show_standing johan surprised>>
+    johan: 싫으면, 이라고 해 줬네. 선택권을 같이 주는 초대는 처음이야. 보통은 "와야지"거나 "안 오면 서운해"인데. #line:johan_e3_015
+    <<show_standing johan shy>>
+    johan: …싫지 않아. 안 싫은 게 아니라, 들어가고 싶어. 이건 처음 해 보는 문장이라 어색하네. #line:johan_e3_016
+-> 저는 여기서 같이 들을게요. 문 열어 두고요. 소리는 여기까지 들리니까요. #line:johan_e3_017
+    <<flag johan_e3_door>>
+    <<aff johan 3>>
+    <<trust johan 3>>
+    <<show_standing johan smile>>
+    johan: 문을 열어 둔다. 이 계단에서 같이. 입장권도 이름표도 없이? #line:johan_e3_018
+    johan: …그건 반칙이야. 제일 좋은 자리를 이런 데 만들어 버리다니. 나는 이 자리에서 오래 앉아 있을 수 있겠다. #line:johan_e3_019
+-> 다들 기다려요. 그냥 들어가면 되는데 왜 그래요? #line:johan_e3_020
+    <<flag johan_e3_pushed>>
+    <<aff johan -1>>
+    <<trust johan -1>>
+    <<show_standing johan sad>>
+    johan: …그러게. 그냥 들어가면 되는데. 그게 안 되는 사람도 있어. #line:johan_e3_021
+    player: …미안해요. 방금 말은 쉬운 사람의 말이었어요. 같이 있을게요. #line:johan_e3_022
+    johan: 사과받으면 내가 더 말이 길어지는 거 알지? 알면서 해 줬으니까, 오늘은 짧게 넘어갈게. 받아들였어. #line:johan_e3_023
+무대 쪽에서 나비의 첫 소절이 흐릿하게 새어 나온다. 요한은 문틈을 한 번 돌아본다. 귀가 소리 쪽으로 천천히 기운다. #line:johan_e3_024
+johan: 있잖아, 이건 부탁인데. 부탁은 안 하는 사람인데도 하는 거야. 손, 잠깐 잡아도 돼? 싫으면 싫다고 해. 정말 괜찮아. #line:johan_e3_025
+-> 네, 잡아요. #line:johan_e3_026
+    <<flag johan_e3_hand>>
+    <<aff johan 1>>
+    요한은 두 손으로 조심스럽게 내 손을 감싼다. 안경 없이 내려다본 요한의 눈은, 평소보다 한참 어려 보인다. #line:johan_e3_027
+    johan: …따뜻하네. 이걸 어떻게 문장으로 쓰지. 못 쓰겠다. 쓰지 말자. #line:johan_e3_028
+-> 손 말고, 어깨를 나란히 하고 앉아요. #line:johan_e3_029
+    <<flag johan_e3_side>>
+    <<aff johan 1>>
+    요한이 한 칸 옆으로 비켜 앉는다. 어깨와 어깨 사이는 손가락 한 마디 정도. 닿을 듯 말 듯한 거리가 오히려 따뜻하다. #line:johan_e3_030
+    johan: 어깨 나란히. 좋은 거리야. 딱 이만큼이 내 속도에 맞아. 다음에 다른 속도가 필요하면 내가 말할게. #line:johan_e3_031
+johan: 첫 곡이 끝나면 들어갈게. 박수 소리에 묻어서 들어가는 게 제일 덜 쑥스러우니까. 그땐 이름표 자리까지 같이 가 줄래? #line:johan_e3_032
+player: 그럼요. 의자를 빼 놓고 기다릴게요. #line:johan_e3_033
+johan: 의자를 빼 놓고. 그 문장, 내 수첩에 적고 싶은데. 안 적을 거야. 외워 둘게. 외우는 건 적는 것보다 오래가니까. #line:johan_e3_034
+johan: 그리고 오늘 일은 칼럼에 안 쓸 거야. 이 계단은 취재 장소가 아니라 그냥 계단이니까. #line:johan_e3_041
+player: 알겠어요. 계단은 계단으로 둘게요. #line:johan_e3_042
+<<hide_cg>>
+첫 곡이 끝나고 박수가 쏟아진다. 요한은 안경을 다시 쓰고, 일어서면서 코트 자락을 한 번 털었다. #line:johan_e3_035
+<<show_standing johan smile>>
+johan: 방석 재고가 조금 들어왔다. 농담 하나 할게. 내가 지금 여기서 일어나는 이유는, 의자가 나를 기다리고 있어서야. 어때, 약했지? #line:johan_e3_036
+player: 약했어요. 그런데 좋았어요. #line:johan_e3_037
+johan: 약해도 좋았다는 건, 내 직업 인생 최고의 평가다. 가자. #line:johan_e3_038
+<<show_standing johan neutral>>
+<<end_event johan 3>>
+===

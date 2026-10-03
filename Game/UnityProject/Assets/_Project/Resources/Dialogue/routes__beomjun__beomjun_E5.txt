@@ -1,0 +1,76 @@
+// 범준 개인 이벤트 5 「달빛 아래의 약속」(8장). 굿 엔딩 CG 겸용. 진입 노드 Beomjun_E5
+// 비트: 결판 후 밤 -> 해변 -> ‘의지할 사람’ 고백(선택1) -> 기대어 앉음(CG) -> 파일철(선택2: 숨은 조건) -> 약속.
+// 플래그: beomjun_e5_offer(+4/+1) / beomjun_e5_mutual(+3/+2) / beomjun_e5_misstep(-1/-1)
+//        beomjun_e5_enough(보너스 없음) / beomjun_key(트루 열쇠: 특약, +3/+2) — 조건: flag(beomjun_e1_contract) 또는 flag(beomjun_e2_folder)
+// 의존: 8장 결판(공통 본문). ledger_truth 는 6장 공통 본문에서 설정.
+title: Beomjun_E5
+tags: beomjun event e5 chapter8
+---
+<<bg beach night>>
+<<show_standing beomjun neutral>>
+결판이 난 밤. 연합 영업이 끝난 뒤에도 골목에는 웃음소리가 남아 있었다. 범준이 말없이 해변 쪽을 가리켰다. 범준은 아무 말 없이 걸었다. 그게 낯설었다. #line:beomjun_e5_001
+파도가 낮게 들어왔다 나갔다. 달은 수평선 위에 커다란 접시처럼 걸려 있었다. #line:beomjun_e5_002
+beomjun: 오늘 도장에 학생이 열한 명 왔어. 단 과자가 모자라서 하루가 급하게 더 구웠대. 모자란다는 말, 몇 년 만에 들어 봤다. #line:beomjun_e5_003
+beomjun: 이 얘기 하려고 데려온 건 아닌데. 큰 소리로는 못 하겠어서 여기까지 왔어. #line:beomjun_e5_004
+<<show_standing beomjun shy>>
+beomjun: 사람들이 나더러 의지가 되는 사람이래. 사범님도, 도장 애들도, 상인회도. ‘범준이 있으면 든든하다’고. #line:beomjun_e5_005
+beomjun: 근데 의지가 강하다는 소리는 많이 들었어도, 내가 의지할 사람이 있었던 적은 없어. #line:beomjun_e5_006
+beomjun: 낙법을 가르치면서 정작 나는 한 번도 안 넘어졌어. 넘어지면 일으켜 줄 사람이 없을 것 같아서. #line:beomjun_e5_007
+beomjun: ‘내 어깨 빌려줄 테니 기대’ 하고 입버릇처럼 말했지. 그게 사실은 내가 듣고 싶은 말이었나 봐. #line:beomjun_e5_008
+beomjun: {name()}. …나도 기대도 돼? 서투르지만. #line:beomjun_e5_009
+-> 네. 언제든요. 이번엔 제 어깨가 비어 있어요. #line:beomjun_e5_010
+    <<flag beomjun_e5_offer>>
+    <<aff beomjun 4>>
+    <<trust beomjun 1>>
+    <<show_standing beomjun surprised>>
+    beomjun: …정말? 무겁다? 나 꽤 무거운데. #line:beomjun_e5_011
+    player: 알아요. 그래서 일찍 말해 줘서 고마워요. #line:beomjun_e5_012
+-> 기대 줘요. 대신 저도 기댈 거예요. 서로 의지하는 거예요. #line:beomjun_e5_013
+    <<flag beomjun_e5_mutual>>
+    <<aff beomjun 3>>
+    <<trust beomjun 2>>
+    <<show_standing beomjun surprised>>
+    beomjun: 서로…? 내가 기대는 것만 생각했는데, 네가 기대는 것도 있는 거구나. #line:beomjun_e5_014
+    beomjun: 받아 주는 사람이 기대는 일도 있다는 걸 몰랐어. 좋다. 그게 훨씬 낫네. #line:beomjun_e5_015
+-> 관장님이 약한 소리를 하다니 의외네요. #line:beomjun_e5_016
+    <<flag beomjun_e5_misstep>>
+    <<aff beomjun -1>>
+    <<trust beomjun -1>>
+    <<show_standing beomjun neutral>>
+    beomjun: 의외지? 나도 놀라. 도장에서 많이 듣는 말이기도 하고. #line:beomjun_e5_017
+    beomjun: 그래도 오늘은 의외인 채로 말할래. …기대 봐도 될까. #line:beomjun_e5_018
+    player: …네. 기대요. #line:beomjun_e5_019
+<<show_cg BEOMJUN_E5>>
+범준이 천천히 몸을 숙였다. 호랑이의 큰 머리가 어깨 위에 얹히자 생각보다 무겁지 않았다. 숨소리가 파도와 맞았다. #line:beomjun_e5_020
+beomjun: 이렇게 기대 보는 건 처음이다. 넘어지는 거랑 비슷한데, 안 아프네. #line:beomjun_e5_021
+beomjun: 낙법은 넘어지는 법이 아니라 믿는 법이었네. 바닥을 믿는 법. #line:beomjun_e5_022
+달빛이 둘의 그림자를 모래 위에 하나로 겹쳐 놓았다. #line:beomjun_e5_023
+<<hide_cg>>
+<<show_standing beomjun neutral>>
+beomjun: 하나 더 있어. 가방에 이게 들어 있어. 오늘 아침까지 보여 줄까 말까 고민했는데. #line:beomjun_e5_024
+범준이 낡은 파일철을 꺼냈다. 주황색 탭이 달빛에 반짝였다. #line:beomjun_e5_025
+-> 안 보여 줘도 돼요. 지금 이대로 충분해요. #line:beomjun_e5_026
+    <<flag beomjun_e5_enough>>
+    beomjun: …고맙다. 다음 기회가 있겠지. 서류는 도망 안 가니까. #line:beomjun_e5_027
+    beomjun: 그래도 이것만은 말해 둘게. 이 가게는 내가 지켜. 계약서에 있든 없든. #line:beomjun_e5_028
+-> 특약 9조요. 처음부터 읽고 싶었어요. 보여 줄래요? #line:beomjun_e5_029 <<if flag("beomjun_e1_contract") or flag("beomjun_e2_folder")>>
+    <<flag beomjun_key>>
+    <<aff beomjun 3>>
+    <<trust beomjun 2>>
+    <<show_standing beomjun shy>>
+    beomjun: …알고 있었구나. 내가 얼버무린 거, 다 눈치챘네. 눈치 없는 건 이제 졸업인가. #line:beomjun_e5_030
+    beomjun: 육 년 전에 이 건물이 내 이름으로 넘어왔을 때, 다른 건 하나도 안 바꾸고 이 계약서부터 새로 썼어. #line:beomjun_e5_031
+    beomjun: 이 가게가 이웃을 위해 열려 있는 한 임대료는 협의 없이 못 올리고, 건물을 팔게 되면 이 가게에 먼저 사겠냐고 물어야 한다는 조항. 처음부터 가게 편으로. #line:beomjun_e5_032
+    beomjun: 삼촌이 어릴 때 아무 말 없이 국물을 줬잖아. 그건 이자 대신이야. 갚는다고 하면 생색이 되니까, 말은 안 하고 조항으로만 남겼어. #line:beomjun_e5_033
+    beomjun: 그래서 네가 도장에 와서 통지서 얘기를 했을 때 속으로 뜨끔했어. 내가 쓴 조항을 내가 어길 뻔했거든. 철회한 건 너 때문이기도 하지만 내 글씨 앞에서 부끄러워서이기도 해. #line:beomjun_e5_034
+    player: 그 한 줄이 이 골목을 지켜 줬네요. 말하지 않아도요. #line:beomjun_e5_035
+    beomjun: …하하. 말 안 하고 지킨 게 하나쯤 있어도 되지? 이제는 말했으니까 반은 갚은 건가. #line:beomjun_e5_036
+beomjun: 약속 하나 하자. 앞으로는 큰 소리로 안 해도 되는 얘기는 작게, 작게 못 할 얘기는 둘이서 하기. #line:beomjun_e5_037
+beomjun: 가게 문 닫는 건 오늘부터 같이 하자. #line:beomjun_e5_038
+player: 약속해요. #line:beomjun_e5_039
+<<show_standing beomjun smile>>
+beomjun: 도장에서는 시작할 때랑 끝날 때 서로 절을 해. 오늘은 시작할 때 하자. #line:beomjun_e5_041
+범준이 모래 위에서 허리를 깊이 숙였다. 나도 따라 숙였다. 고개를 들었을 때 눈이 마주쳤고, 둘 다 동시에 웃음이 터졌다. #line:beomjun_e5_042
+beomjun: 약속! 도장 찍자. 아, 인감 말고 이 도장 말이야. 하하! #line:beomjun_e5_040
+<<end_event beomjun 5>>
+===

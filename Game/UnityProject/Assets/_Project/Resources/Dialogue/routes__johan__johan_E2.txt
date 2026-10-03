@@ -1,0 +1,77 @@
+// 요한 개인 이벤트 2 「취재 노트」(3장, 임대료 갈등 중). 진입 노드 Johan_E2
+// 비트: 통지서에 흔들리는 주인공 -> 요한이 펼쳐 둔 취재 노트의 헤드라인(쓸 수 있는 기사) -> 선택1(어떻게 묻는가) -> 쓰지 않는 이유를 돌려 말함 -> 선택2(캐묻기 vs 기다리기) -> 노트를 덮고 마감.
+// 플래그: johan_e2_asked_plain(+3/+1, 정직하게 묻기) / johan_e2_cleared(+0, 허락/면죄로 받음) / johan_e2_suspect(-1/-1, 이용 의심)
+//        johan_e2_waited(+3/+1) / johan_e2_pushed(-1/-1) / johan_notebook_closed(항상: 요한이 노트를 덮는 장면)
+title: Johan_E2
+tags: johan event e2 chapter3
+---
+<<bg cafe day>>
+<<show_standing johan neutral>>
+임대료 인상 통지서가 온 지 이틀째. 점심 영업이 끝나고 계산서를 맞추다가, 손님이 없는 홀 한가운데서 한숨을 쉬었다. #line:johan_e2_001
+창가 두 번째 자리에 요한이 앉아 있다. 오늘은 평소보다 조용하고, 수첩 위에 만년필을 가로로 눕혀 둔 채다. #line:johan_e2_002
+johan: 한숨이 세 번이었어. 세어 봤어. 직업병이야. 한숨은 칼럼 소재로 생각보다 쓸모가 없는데도 세게 돼. #line:johan_e2_003
+player: 들으셨어요? 죄송해요, 시끄러웠죠. #line:johan_e2_004
+johan: 시끄럽긴. 가게가 한숨 쉬는 소리는 원래 좋은 소리야. 주인이 이 가게를 신경 쓴다는 뜻이니까. #line:johan_e2_005
+johan: 삼촌 대부터 그랬어. 이 홀에서 한숨 쉬는 사람은 오래 서 있던 사람이라는 뜻이거든. #line:johan_e2_037
+player: 삼촌 때도 자주 오셨어요? #line:johan_e2_038
+johan: 몇 번. 점수 얘기를 꺼내면 삼촌은 "맛있으면 됐지"라고만 했어. 평가자 취급을 안 해 줘서 오히려 편했지. #line:johan_e2_039
+요한이 일어나 커피를 가지러 간 사이, 펼쳐진 수첩이 테이블에 남았다. 맨 위 줄에 굵은 글씨가 보인다. #line:johan_e2_006
+<<show_cg JOHAN_E2>>
+"모레나 골목의 마지막 카페, 임대료 인상에 휘청." 아래에는 날짜와 금액, 건물주의 이름 첫 글자가 적혀 있다. 이 글이 나가면 가게 이름은 하루 만에 도시 전체에 퍼질 것이다. #line:johan_e2_007
+요한이 돌아와 컵을 내려놓다가 수첩을 본 내 시선을 알아챈다. 안경 너머의 눈이 아주 잠깐 굳는다. #line:johan_e2_008
+johan: …아. 펼쳐 둔 채로 갔네. 내 실수야. 숨기려던 건 아닌데, 숨기지 않으려던 것도 아니고. #line:johan_e2_009
+-> 이 기사, 쓰실 거예요? 솔직하게 알려 주세요. 놀라지 않을게요. #line:johan_e2_010
+    <<flag johan_e2_asked_plain>>
+    <<aff johan 3>>
+    <<trust johan 1>>
+    <<show_standing johan surprised>>
+    johan: 솔직하게. 이 가게에서 가장 오랜만에 듣는 단어네. 대답할게. 쓸 수 있어. 쓰면 반응이 꽤 나올 거야. 사람들이 이런 얘기를 좋아하거든. 가난한 가게와 큰 건물주. #line:johan_e2_011
+    <<show_standing johan neutral>>
+    johan: 그래서 안 써. 쓸 수 있다는 것과 써도 된다는 건 달라서. #line:johan_e2_012
+-> 쓰고 싶으면 쓰세요. 허락할게요. 가게에도 도움이 되잖아요. #line:johan_e2_013
+    <<flag johan_e2_cleared>>
+    <<show_standing johan neutral>>
+    johan: 허락이라. 그건 고맙지만, 허락받고 쓰는 글은 취재가 아니라 광고야. 나는 광고는 안 써. #line:johan_e2_014
+    johan: 도움이 되는 글이면 더더욱. 도움을 받은 쪽이 내 글을 소비하게 되는 순간부터, 내 문장은 내 것이 아니게 되니까. #line:johan_e2_015
+-> 역시 우리 가게를 기삿거리로 보고 오신 거였네요. #line:johan_e2_016
+    <<flag johan_e2_suspect>>
+    <<aff johan -1>>
+    <<trust johan -1>>
+    <<show_standing johan sad>>
+    johan: …기삿거리. 그렇게 보였다면 내 탓이 커. 수첩을 펼쳐 둔 건 내 실수니까. #line:johan_e2_017
+    johan: 그래도 한 가지만 말해 둘게. 쓰고 싶었으면 벌써 썼을 거야. 어제 새벽에 이미 초안이 있었는데, 지금까지 안 나갔잖아. #line:johan_e2_018
+johan: 이유 말이지? 안 쓰는 이유. 어디 보자… 글쎄, 이유라. 칼로리 계산이 틀렸다거나, 마감이 겹쳤다거나, 건물주 이름 철자가 헷갈린다거나. 다 이유가 될 수 있겠지. #line:johan_e2_019
+player: 진짜 이유는요? #line:johan_e2_020
+johan: 진짜 이유? 진짜는 비싸. 비싸서 한 번에 못 내. 분할로 낼게. 오늘은 첫 회분. #line:johan_e2_021
+johan: 기사는 한 번 나가면 못 담아. 한 번 쏟은 커피 같은 거지. 그리고 이 가게는 지금 이 골목에서 제일 조용한 아지트야. 나는 그 조용함이 구경거리가 되는 걸 못 보겠어. #line:johan_e2_022
+johan: …아, 아니다. 이건 반쪽짜리 이유네. 나머지 반쪽은 내가 아직 정리를 못 했어. 정리되면 말할게. 정리가 안 되면 안 말할 수도 있고. #line:johan_e2_023
+-> 진짜 이유가 뭔지 마저 말해 줘요. 반쪽만 들으니까 신경 쓰여서요. #line:johan_e2_024
+    <<flag johan_e2_pushed>>
+    <<aff johan -1>>
+    <<trust johan -1>>
+    <<show_standing johan shy>>
+    johan: …신경 쓰이게 한 건 내 잘못이야. 그런데 지금 말하면 정리 안 된 채로 나올 거고, 그건 거짓말보다 더 서툰 말이 돼. #line:johan_e2_025
+    johan: 미안, 오늘은 여기까지만. 대신 도망가는 건 아니라는 건 알아 줘. #line:johan_e2_026
+-> 정리되면 말해 줘요. 안 해도 괜찮아요. 저는 기다릴게요. #line:johan_e2_027
+    <<flag johan_e2_waited>>
+    <<aff johan 3>>
+    <<trust johan 1>>
+    <<show_standing johan surprised>>
+    johan: …기다린다고? 이유도 모르는 채로? #line:johan_e2_028
+    <<show_standing johan smile>>
+    johan: 그건 칼럼에서 가장 어려운 장르야. 결말 없는 연재를 믿고 따라와 주는 독자. 나는 그런 독자를 가져 본 적이 없어서, 지금 좀 어쩔 줄 모르겠다. #line:johan_e2_029
+-> 저는 그 노트 안 읽었어요. 펼쳐져 있었지만 시선만 스쳤어요. #line:johan_e2_030
+    johan: 안 읽었다는 말, 믿을게. 시선이 스쳤다는 건 인정하는 말이고, 인정하는 사람은 거짓말을 덜 하니까. #line:johan_e2_031
+요한은 수첩을 두 손으로 덮는다. 고무줄을 한 바퀴 돌려 감고, 만년필 뚜껑을 닫는다. 그러고는 수첩을 내 쪽이 아니라 자기 가슴 쪽으로 끌어안는다. #line:johan_e2_032
+<<flag johan_notebook_closed>>
+<<hide_cg>>
+johan: 이 수첩에 있는 건 전부 내 혼자 생각일 뿐이야. 나가야 글이 되는데, 지금은 안 나갔으니 그냥 낙서지. 낙서에는 책임이 없고, 책임이 없는 건 마음이 편하지. #line:johan_e2_033
+johan: 하나 더. 이 얘기는 다른 데서 한 적 없어. 편집장한테도. 이름 첫 글자만 적은 건 습관이지 쓰려는 뜻이 아니었어. 습관이 흉하게 보였을 뿐이야. #line:johan_e2_040
+player: 습관이라고 믿을게요. 믿는 쪽이 저한테도 편해서요. #line:johan_e2_041
+<<show_standing johan smile>>
+johan: 임대료 얘기는 내 몫이 아니야. 대신 뭘 해야 할지 모르겠으면 와서 앉을게. 의자 한 개의 응원이라도 필요하면 말해. #line:johan_e2_034
+player: 고마워요. 거기 앉아 있어 주는 것만으로도 힘이 돼요. #line:johan_e2_035
+johan: 그 말은 내 입맛에 너무 달아서 오늘은 반만 삼킬게. 나머지는 내일 먹을게. 아껴 먹는 습관이라서. #line:johan_e2_036
+<<show_standing johan neutral>>
+<<end_event johan 2>>
+===

@@ -1,0 +1,43 @@
+// 하루 데이트 공통(특정 스팟 대사가 없을 때). 수치는 호스트가 적용. 진입 노드 Haru_Date_Generic
+title: Haru_Date_Generic
+tags: haru date
+---
+<<show_standing haru neutral casual>>
+<<if $aff_haru < 30>>
+    haru: 아, 저, 저기, 오늘은… 제가 길을 몰라서요. 어디로 갈지 정해 주셔도 괜찮고, 제가 따라가도 괜찮아요. #line:haru_dgn_001
+    player: 천천히 걸으면서 정해도 돼요. 급할 거 없어요. #line:haru_dgn_002
+    haru: 네. 그럼 걸으면서요. …걷다 보면 생각이 정리되는 편이라서요. #line:haru_dgn_003
+<<elseif $aff_haru < 60>>
+    haru: {calls_player("haru")}, 오늘은 제가 가고 싶은 데가 하나 있어요. 가게에서 멀지 않은 곳인데, 괜찮을까요? #line:haru_dgn_004
+    player: 좋아요. 하루 씨가 정한 곳이면 궁금하네요. #line:haru_dgn_005
+    haru: 특별한 곳은 아니에요. 그냥 제가 혼자 가서 쉬던 벤치요. 누구랑 같이 가는 건 처음이에요. #line:haru_dgn_006
+<<else>>
+    haru: {calls_player("haru")}, 오늘은 제가 정할게요. 어제부터 생각했어요. 틀리면 다시 정하면 되니까 부담은 없어요. #line:haru_dgn_007
+    player: 믿고 따라갈게요. 틀려도 같이 다시 정하죠. #line:haru_dgn_008
+    haru: 그 말씀이 있으니까 오히려 틀리고 싶지 않아졌어요. 이상하죠. 하지만 그게 제 방식인 것 같아요. #line:haru_dgn_009
+<<endif>>
+걷는 동안 하루는 가게 앞 가로수의 이름을 하나 알려 주었고, 길가의 빵집 쇼윈도 앞에서는 한참 서 있었다. #line:haru_dgn_010
+haru: 저 빵, 바닥이 잘 구워졌어요. 아래에서 갈색이 올라온 걸 보면 오븐 온도를 잘 맞췄다는 걸 알 수 있거든요. #line:haru_dgn_011
+-> 하루 씨는 쉬는 날에도 오븐 생각을 하네요. #line:haru_dgn_012
+    <<flag haru_generic_oven>>
+    <<show_standing haru shy>>
+    haru: 들켰어요. 쉬는 날이라는 건 머리가 쉬는 날이 아니라 몸이 쉬는 날이더라고요. #line:haru_dgn_013
+-> 가끔은 일 말고 다른 얘기도 듣고 싶어요. 하루 씨는 뭘 좋아해요? #line:haru_dgn_014
+    <<flag haru_generic_ask>>
+    <<show_standing haru surprised>>
+    haru: 좋아하는 것이요? …어, 저는 비 오는 날 오븐 앞에 서 있는 걸 좋아해요. 따뜻하니까요. 이것도 일 얘기네요. #line:haru_dgn_015
+-> 저 빵집 들어가서 한 개만 골라 볼래요? 각자 한 개씩요. #line:haru_dgn_016
+    <<flag haru_generic_bakery>>
+    haru: 좋아요. 대신 평가는 가게에 돌아가서 같이 해요. 가게 안에서 평가하면 불공평하니까요. #line:haru_dgn_017
+벤치에 도착했을 때, 해가 건물 사이로 천천히 기울고 있었다. #line:haru_dgn_018
+haru: 여기가 제가 쉬는 곳이에요. 그다지 예쁜 곳은 아니죠. 근데 아무도 저를 보지 않아서 마음이 놓여요. #line:haru_dgn_019
+-> 저는 지금 하루 씨랑 있는 게 좋아요. 아무도 안 봐서가 아니라요. #line:haru_dgn_020
+    <<flag haru_generic_here>>
+    <<show_standing haru smile>>
+    haru: …그 말씀, 저한테 오래 남을 것 같아요. 제 쪽에서도 같은 마음이에요. 말로 하니까 서툴지만요. #line:haru_dgn_021
+-> 다음엔 저도 쉬는 곳을 알려 줄게요. #line:haru_dgn_022
+    haru: 기대하고 있을게요. 약속은 노트에 적어 둘게요. #line:haru_dgn_023
+돌아오는 길에 하루가 반 걸음 뒤에서 걸었다. 앞서 걸으면 가끔 보폭이 맞지 않는다고 했다. #line:haru_dgn_024
+haru: 오늘 같이 있어서 좋았어요. 이 말은 제가 먼저 하고 싶었어요. #line:haru_dgn_025
+<<show_standing haru neutral>>
+===

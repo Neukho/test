@@ -1,0 +1,81 @@
+// 나비 개인 이벤트 2 「조건부 공연」(4장, 가게 홀). 진입 노드 Nabi_E2
+// 비트: 출연료 대신 조건을 내건 나비 -> 조건(자기 곡만, 영상은 허락 후, 날짜는 자기가 정함) -> 수락 방식 선택 -> 합의를 칠판에 적음(둘 다 지울 수 있음) -> 마감.
+// 플래그: nabi_e2_accepted / nabi_e2_fee / nabi_e2_haggle (조건에 대한 태도), nabi_e2_chalk / nabi_e2_exclusive / nabi_e2_verbal (합의 방식)
+// CG NABI_E2: 칠판에 조건을 적는 장면.
+// 모티프: '칠판의 약속'(둘 다 언제든 지울 수 있다). E4·E5·엔딩에서 회수된다.
+title: Nabi_E2
+tags: nabi event e2 chapter4
+---
+<<bg cafe day>>
+<<show_standing nabi neutral>>
+오후 세 시. 손님이 빠진 홀에서 나비가 테이블 위에 종이 한 장을 올려놓았다. 손으로 쓴 메모, 번호가 세 개. #line:nabi_e2_001
+nabi: 무대 얘기 들었어. 안에 설치한다는 거. …그래서 조건이 있어. #line:nabi_e2_002
+player: 출연료 먼저 얘기해야 하는 거 아니에요? #line:nabi_e2_003
+nabi: 돈은 나중에. 조건이 먼저야. 조건이 안 맞으면 돈이 얼마든 안 해. #line:nabi_e2_004
+nabi: 하나, 내 곡만 연주해. 남의 곡 신청은 안 받아. 둘, 영상은 내가 허락한 것만 올려. #line:nabi_e2_005
+nabi: 셋, 날짜는 내가 정해. 아프거나 마음이 안 내키면 안 나와. 사과는 해도 이유는 안 말해. #line:nabi_e2_006
+<<show_standing nabi shy>>
+nabi: 까다롭지. 알아. 근데 이건 부탁이 아니라 최소 조건이야. #line:nabi_e2_007
+player: 첫 번째 조건은 이유가 있어요? #line:nabi_e2_008
+nabi: 남의 곡을 부르면 사람들은 곡을 봐. 내 곡이면 틀려도 내 거거든. #line:nabi_e2_009
+nabi: 아직은 부를 수 있는 곡이 열 곡도 안 돼. 그게 내 전부야. 그래도 그게 내 거라서 괜찮아. #line:nabi_e2_010
+-> 전부 괜찮아요. 가게 칠판에 적어 두고 시작해요. #line:nabi_e2_011
+    <<flag nabi_e2_accepted>>
+    <<aff nabi 3>>
+    <<trust nabi 1>>
+    <<show_standing nabi surprised>>
+    nabi: 바로? 하나쯤 따져 볼 줄 알았는데. #line:nabi_e2_012
+    nabi: 따지는 게 정상이야. 근데 안 따져 주니까, 고맙다. #line:nabi_e2_013
+-> 조건은 받아들일게요. 출연료도 별도로 드릴게요. 그건 일이니까요. #line:nabi_e2_014
+    <<flag nabi_e2_fee>>
+    <<aff nabi 3>>
+    <<trust nabi 1>>
+    <<show_standing nabi smile>>
+    nabi: …출연료도? 그래, 받을게. 공짜로 하는 건 취미고 받으면 일이니까. #line:nabi_e2_015
+    nabi: 일이라고 인정해 주는 가게는 처음이야. #line:nabi_e2_016
+-> 신청곡이 많을 텐데, 한두 곡은 커버곡으로 가면 안 될까요? 손님 반응이 좋거든요. #line:nabi_e2_017
+    <<flag nabi_e2_haggle>>
+    <<aff nabi -1>>
+    <<trust nabi -1>>
+    <<show_standing nabi neutral>>
+    nabi: 그럼 안 해. …아니, 오늘은 안 하는 거야. #line:nabi_e2_018
+    nabi: 손님 반응 얘기는 이해해. 내 조건이 먼저인 건 안 바뀌어. #line:nabi_e2_019
+    <<show_standing nabi sad>>
+    nabi: 아, 미안. 목소리가 올라갔다. 네가 나쁜 질문을 한 건 아니야. #line:nabi_e2_020
+nabi: 이제 종이에 적자. 종이에 적어 두는 게 나는 싫긴 한데, 안 적으면 또 서운해질 것 같아서. #line:nabi_e2_021
+-> 종이 대신 가게 칠판에 적어요. 지울 때도 둘이 같이 지우는 걸로요. #line:nabi_e2_022
+    <<flag nabi_e2_chalk>>
+    <<aff nabi 5>>
+    <<trust nabi 1.5>>
+    <<show_standing nabi smile>>
+    nabi: 지울 수 있는 약속. 그거 좋다. 그게 약속일 수 있는지는 모르겠지만, 맘에 들어. #line:nabi_e2_023
+    nabi: 아니, 약속일 수 있어. 안 지켜도 되는 약속이 아니라, 지키고 싶을 때만 지키는 약속. #line:nabi_e2_024
+-> 정식으로 계약서를 쓰죠. 6개월 동안은 이 가게에서만 공연하는 걸로요. #line:nabi_e2_025
+    <<flag nabi_e2_exclusive>>
+    <<aff nabi -1>>
+    <<trust nabi -1>>
+    <<show_standing nabi angry>>
+    nabi: 전속이라고? #line:nabi_e2_026
+    <<show_standing nabi sad>>
+    nabi: …미안. 그 단어가 나오면 귀가 닫혀. 잠깐만. #line:nabi_e2_027
+    nabi: 네가 나쁜 뜻이 아닌 건 알아. 근데 나는 그 이름의 종이를 한 번 써 봤어. #line:nabi_e2_028
+-> 말로 하죠. 나비 씨를 믿으니까요. #line:nabi_e2_029
+    <<flag nabi_e2_verbal>>
+    nabi: 믿어 준다니 고마워. 근데 나는 적어 둬야 마음이 놓여. 이상한 사람이지. #line:nabi_e2_030
+    nabi: 말도 좋아. 대신 나중에 내가 적자고 하면 그때 적어 줘. #line:nabi_e2_031
+<<show_standing nabi neutral>>
+나비가 칠판 앞에 섰다. 분필 하나를 집고, 오늘 메뉴가 적힌 맨 아래 칸을 지웠다. #line:nabi_e2_032
+nabi: 이 칸, 써도 돼? #line:nabi_e2_033
+player: 써요. 지울 때도 불러 줘요. #line:nabi_e2_034
+<<show_cg NABI_E2>>
+나비는 분필로 삼 줄을 적었다. 내 곡만. 영상은 허락 후. 날짜는 나비가. 그 밑에 작은 글씨로 한 줄을 더 덧붙였다. #line:nabi_e2_035
+nabi: 이 약속은 둘 다 지울 수 있음. #line:nabi_e2_036
+nabi: 이렇게 적으니까 약속이 문처럼 보이네. 열고 닫을 수 있는 쪽. #line:nabi_e2_037
+<<hide_cg>>
+player: 첫 공연은 안쪽 무대 설치가 끝난 뒤쯤이에요. #line:nabi_e2_038
+nabi: 그래. 그 전에 한 곡은 더 써 놔야겠네. 후렴이 아직 없는 곡. #line:nabi_e2_039
+<<show_standing nabi smile>>
+nabi: 잘 부탁해. 아니, 서로 잘 부탁하자. 이 문장에 서명은 안 해도 되는 거지. #line:nabi_e2_040
+<<show_standing nabi neutral>>
+<<end_event nabi 2>>
+===

@@ -1,0 +1,81 @@
+// 범준 개인 이벤트 2 「도장의 밤」(4장). 진입 노드 Beomjun_E2
+// 비트: 하루의 심부름(단 과자 스무 개) -> 비어 있는 도장 -> 서툰 거짓말 -> 진실 -> 출석 -> 돌아가는 길의 파일철(복선).
+// 플래그: beomjun_e2_gentle(+3/+1) / beomjun_e2_ask(보너스 없음) / beomjun_e2_confront(-1/-1)
+//        beomjun_e2_attend(+3/+1) / beomjun_e2_folder(+1, E5 트루 열쇠 조건 중 하나)
+// 의존: 하루(haru) 대사는 GDD §2.4 말투(조심스러운 존댓말, 말끝 흐림). 하루는 호칭 ‘{name} 씨’.
+title: Beomjun_E2
+tags: beomjun event e2 chapter4
+---
+<<bg cafe day>>
+오븐 앞에서 하루가 귀를 쫑긋 세운 채 상자 매듭을 세 번째로 다시 묶고 있었다. #line:beomjun_e2_001
+haru: 아, 저기… {calls_player("haru")}, 지금 바쁘세요? 아, 바쁘시면 제가 어떻게든… #line:beomjun_e2_002
+player: 괜찮아요. 무슨 일인데요? #line:beomjun_e2_003
+haru: 범준 관장님이 매주 목요일마다 단 과자를 스무 개씩 주문하세요. 오늘은 제가 오븐 때문에 못 가서… 배달, 부탁드려도 될까요? #line:beomjun_e2_004
+haru: 죄송… 아니, 죄송하다는 말 말고… 고맙습니다! 잘 부탁드립니다! #line:beomjun_e2_005
+haru: 그런데 항상 ‘스무 개’래요. 학생분들이 다 드시나 봐요. 정말 많은가 봐요. #line:beomjun_e2_006
+<<bg dojo night>>
+<<show_standing beomjun surprised>>
+해가 진 뒤의 도장은 조명 하나만 켜져 있었다. 신발장에는 슬리퍼가 열 켤레 나란히 놓여 있었지만, 신고 온 신발은 한 켤레도 없었다. #line:beomjun_e2_007
+beomjun: 어, 가게 {calls_player("beomjun")}! 하하! 오늘은 학생들이 다 같이 소풍이라서 도장이 조용해! 단체로 소풍! #line:beomjun_e2_008
+player: 소풍이요. 하루 씨가 단 과자를 보내 왔어요. 스무 개요. #line:beomjun_e2_009
+beomjun: 아, 맞다, 목요일! 딱 맞네, 하하! #line:beomjun_e2_010
+범준은 상자를 받아 들더니 하나를 꺼내 아주 진지한 얼굴로 먹었다. 벽에는 열두 명의 이름표가 걸려 있었고, 아홉 개는 뒤집혀 있었다. #line:beomjun_e2_011
+-> 뭔가 알 것 같아요. 말하지 않아도 돼요. 그냥 같이 먹어요. #line:beomjun_e2_012
+    <<flag beomjun_e2_gentle>>
+    <<aff beomjun 3>>
+    <<trust beomjun 1>>
+    <<show_standing beomjun shy>>
+    beomjun: …눈치 없는 나도 알겠다. 들켰네. #line:beomjun_e2_013
+-> 학생들 어디 갔어요? 소풍이 진짜예요? #line:beomjun_e2_014
+    <<flag beomjun_e2_ask>>
+    <<show_standing beomjun shy>>
+    beomjun: …아니. 거짓말이야. 서툴지? #line:beomjun_e2_015
+-> 학생이 없는 거 다 알아요. 거짓말은 하지 마세요. #line:beomjun_e2_016
+    <<flag beomjun_e2_confront>>
+    <<aff beomjun -1>>
+    <<trust beomjun -1>>
+    <<show_standing beomjun sad>>
+    beomjun: …거짓말이라는 말은 아프네. 맞는 말이라서 더 아파. #line:beomjun_e2_017
+<<show_standing beomjun neutral>>
+beomjun: 세 명 남았어. 그것도 매주 나오는 애는 둘이고. #line:beomjun_e2_018
+beomjun: 작년에 어린애 하나가 매트에서 울었거든. 내가 ‘씩씩하게 해야지!’ 했어. 응원이라고 한 말이었는데. #line:beomjun_e2_019
+beomjun: 그 뒤로 몇 명이 그만뒀고, 학부모 모임에서 말이 돌았어. 나는 아직도 내가 뭘 잘못했는지 정확히는 모르겠어. #line:beomjun_e2_020
+beomjun: 단 과자를 줄이면 진짜로 없어진 것 같아서 스무 개 그대로 시켰어. 남는 건 내가 다 먹고, 하하. 살이 좀 쪘지. #line:beomjun_e2_021
+player: 가게 사람들한테는 말했어요? #line:beomjun_e2_022
+beomjun: 못 했어. 시끌벅적하다고 큰소리쳤으니까. 큰소리치다가 작은 소리를 못 내는 사람이 있더라고. 그게 나야. #line:beomjun_e2_023
+<<show_standing beomjun neutral>>
+범준은 한동안 말이 없었다. 그러더니 상자를 열고 단 과자를 하나씩 매트 위에 줄 맞춰 놓기 시작했다. 한 줄에 다섯 개씩, 네 줄. #line:beomjun_e2_024
+<<show_cg BEOMJUN_E2>>
+beomjun: 이게 출석부야. 매일 이렇게 놓고 이름을 불러. 민수, 지아, 도윤이… 열두 명 다. #line:beomjun_e2_025
+beomjun: 대답은 없지만 부르는 건 내 몫이니까. 오늘도 전원 출석이다. 먹는 입이 나 하나인 게 문제지. #line:beomjun_e2_026
+-> 저도 출석할게요. 제 이름도 불러 주실래요? #line:beomjun_e2_027
+    <<flag beomjun_e2_attend>>
+    <<aff beomjun 3>>
+    <<trust beomjun 1>>
+    <<show_standing beomjun surprised>>
+    beomjun: …{name()}. #line:beomjun_e2_028
+    player: 네, 여기 있어요. #line:beomjun_e2_029
+    <<show_standing beomjun smile>>
+    beomjun: 출석 확인. 오늘은 열세 명이네! 하하… 하하. #line:beomjun_e2_030
+-> 남은 건 가게에서 팔게요. ‘도장 학생 몫’이라고 써 붙여서요. #line:beomjun_e2_031
+    <<show_standing beomjun smile>>
+    beomjun: 도장 학생 몫? 하하, 그거 이름 좋네. 가게에서 팔면 다음 사람이 이름을 보고 찾아올지도 모르겠다. #line:beomjun_e2_032
+-> 오늘은 저 먼저 일어날게요. 늦었어요. #line:beomjun_e2_033
+    beomjun: 그래, 밤길 조심해! 문은 내가 잠글게. #line:beomjun_e2_034
+<<hide_cg>>
+<<show_standing beomjun neutral>>
+beomjun: …내일도 스무 개 시킬 거야. 누가 오면 줄 수 있잖아. #line:beomjun_e2_035
+beomjun: 그리고 이거 말했다고 나 안 불쌍하게 보지 마. 불쌍한 거 아니다? 그냥 도장이 조금 조용해서 그래. #line:beomjun_e2_036
+문가에서 신발을 신다가 신발장 위의 낯익은 주황색 탭 파일철이 눈에 들어왔다. #line:beomjun_e2_037
+-> 이 파일철, 가게 계약서죠? 여기도 갖고 계셨네요. #line:beomjun_e2_038
+    <<flag beomjun_e2_folder>>
+    <<aff beomjun 1>>
+    <<show_standing beomjun shy>>
+    beomjun: …매일 한 번씩 펴 봐. 이게 있어야 하루가 시작되는 느낌이라서. #line:beomjun_e2_039
+    beomjun: 이유는 나중에. 지금 말하면 너무 시끄러워질 것 같아서. #line:beomjun_e2_040
+-> 낡은 파일철이네요. 안녕히 계세요. #line:beomjun_e2_041
+    beomjun: 그래! 잘 가! 조심해서! #line:beomjun_e2_042
+<<show_standing beomjun smile>>
+beomjun: 와 줘서 고맙다. 오늘은 도장에서 처음으로 대답이 있었어. #line:beomjun_e2_043
+<<end_event beomjun 2>>
+===

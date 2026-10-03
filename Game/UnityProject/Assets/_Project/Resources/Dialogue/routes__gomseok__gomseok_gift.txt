@@ -1,0 +1,83 @@
+// 곰석 선물 반응. 호스트가 문자열 변수 $gift_name 을 설정한 뒤 진입한다.
+// 수치(+8/+3/-5)는 호스트(RomanceService.Gift)가 적용하므로 이 파일에서는 aff/trust 를 바꾸지 않는다.
+// 진입 노드: Gomseok_Gift_Like, Gomseok_Gift_Neutral, Gomseok_Gift_Dislike
+title: Gomseok_Gift_Like
+tags: gomseok gift
+---
+<<show_standing gomseok surprised>>
+player: {player_calls("gomseok")}, 이거 받아 주세요. {$gift_name}, 드리고 싶어서 골랐어요. #line:gomseok_gift_001
+gomseok: 나한테? 허허, 이게 무슨 일이여. #line:gomseok_gift_002
+<<if $aff_gomseok < 30>>
+    <<show_standing gomseok smile>>
+    gomseok: 이런 걸 받아도 되나 모르겠네요. 쓸 데가 정확히 있는 물건인데, 어떻게 아셨어요? #line:gomseok_gift_003
+    player: 주방에서 곰석 씨가 쓰는 걸 지켜봤거든요. #line:gomseok_gift_004
+    gomseok: 눈이 좋으시네. 소중하게 쓰겠습니다. #line:gomseok_gift_005
+<<elseif $aff_gomseok < 60>>
+    <<show_standing gomseok smile>>
+    gomseok: {$gift_name}이라니, 딱 이거 필요했는데 어떻게 알았어. 고마워, 정말로. #line:gomseok_gift_006
+    player: 필요할 때 쓰시라고요. 아끼느라 서랍에 넣어 두지는 말고요. #line:gomseok_gift_007
+    gomseok: 아껴 쓸 건 맞는데, 서랍엔 안 넣을게. 주방에 두고 쓸 거여. #line:gomseok_gift_008
+<<else>>
+    <<show_standing gomseok shy>>
+    gomseok: {calls_player("gomseok")}. 이건 오래 쓸 거여. 길들이는 시간까지 포함해서. #line:gomseok_gift_009
+    gomseok: 선물이란 게 말이지, 받는 사람이 잘 쓰는 걸 보면 주는 사람이 더 기뻐진다잖여. 그러니 내가 잘 써야지. #line:gomseok_gift_010
+    player: 잘 쓰시는 걸 보는 것만으로도 충분해요. #line:gomseok_gift_011
+    gomseok: 허허, 그 말에 귀까지 뜨거워졌구먼. #line:gomseok_gift_012
+<<endif>>
+<<show_standing gomseok neutral>>
+===
+
+title: Gomseok_Gift_Neutral
+tags: gomseok gift
+---
+<<show_standing gomseok neutral>>
+player: {player_calls("gomseok")}, 이거요. {$gift_name}. 별건 아니지만요. #line:gomseok_gift_013
+<<if $aff_gomseok < 30>>
+    gomseok: 마음 써 주셔서 고맙습니다. 쓸 데를 찾아볼게요. #line:gomseok_gift_014
+    gomseok: 이런 건 안 챙기셔도 되는데. 부담은 갖지 마세요. #line:gomseok_gift_015
+    player: 부담은 아니에요. 그냥 드리고 싶었어요. #line:gomseok_gift_016
+    gomseok: 그럼 감사히 받겠습니다. #line:gomseok_gift_017
+<<elseif $aff_gomseok < 60>>
+    <<show_standing gomseok smile>>
+    gomseok: {$gift_name}이라. 뭐든 쓰면 쓸 데가 생기는 법이지. 고마워. #line:gomseok_gift_018
+    gomseok: 정확히 내 취향은 아니지만, 챙겨 줬다는 게 중요한 거여. #line:gomseok_gift_019
+    player: 다음엔 더 잘 맞는 걸 찾아볼게요. #line:gomseok_gift_020
+    gomseok: 천천히 알아 가자고. 급할 거 없어. #line:gomseok_gift_021
+<<else>>
+    <<show_standing gomseok smile>>
+    gomseok: {calls_player("gomseok")}, 솔직히 말해도 되지? 내 취향은 아니여. 그래도 고맙게 받을게. #line:gomseok_gift_022
+    gomseok: 마음은 바로 먹을 수 있지만 물건은 길들여야 하잖여. #line:gomseok_gift_023
+    player: 솔직하게 말해 줘서 좋아요. 다음엔 더 잘 고를게요. #line:gomseok_gift_024
+    gomseok: 허허, 기대는 안 해. 아니, 조금 하지. #line:gomseok_gift_025
+<<endif>>
+<<show_standing gomseok neutral>>
+===
+
+title: Gomseok_Gift_Dislike
+tags: gomseok gift
+---
+<<show_standing gomseok neutral>>
+player: {player_calls("gomseok")}, 이거 받아 주세요. {$gift_name}, 드리고 싶어서 골랐어요. #line:gomseok_gift_026
+<<show_standing gomseok surprised>>
+<<if $aff_gomseok < 30>>
+    gomseok: 아… 이건 제가 받기 어렵겠네요. 마음은 알겠습니다만. #line:gomseok_gift_027
+    <<show_standing gomseok neutral>>
+    player: 제가 잘 몰랐어요. 곰석 씨는 어떤 걸 좋아하세요? #line:gomseok_gift_028
+    gomseok: 물어봐 주시니 다행이네요. 칼이나 책이나 먹는 거면 편하게 받습니다. #line:gomseok_gift_029
+<<elseif $aff_gomseok < 60>>
+    gomseok: {$gift_name}이라… 이건 좀 곤란하네. 화난 건 아니여. #line:gomseok_gift_030
+    <<show_standing gomseok sad>>
+    gomseok: 기념으로 간직할 물건은 나한텐 좀 어려워. 쓰지도 못하고 바라만 보게 되거든. #line:gomseok_gift_031
+    <<show_standing gomseok neutral>>
+    player: 죄송해요. 다음엔 쓰는 물건으로 고민해 볼게요. #line:gomseok_gift_032
+    gomseok: 그려, 그 말이면 됐어. 사과는 한 번이면 돼. #line:gomseok_gift_033
+<<else>>
+    <<show_standing gomseok sad>>
+    gomseok: {calls_player("gomseok")}. 이건 마음만 받을게. 물건은 어렵겠어. #line:gomseok_gift_034
+    gomseok: 누군가를 기리는 물건이거나 간직만 해야 하는 건, 나한텐 무거워. 쓰는 물건이 좋아. #line:gomseok_gift_035
+    <<show_standing gomseok neutral>>
+    player: 알겠어요. 쓰이는 걸로 다시 골라 볼게요. 마음만 받아 줘서 고마워요. #line:gomseok_gift_036
+    gomseok: 허허, 그 마음은 이미 잘 받았어. #line:gomseok_gift_037
+<<endif>>
+<<show_standing gomseok neutral>>
+===

@@ -1,0 +1,73 @@
+char,player_gender,band,calls_player_ko,player_calls_ko,calls_player_en,player_calls_en
+howl,male,stranger,{name} 씨,하울 씨,{name},Howl
+howl,male,friendly,{name} 씨,하울 씨,{name},Howl
+howl,male,close,{name},하울 형,{name},Howl
+howl,female,stranger,{name} 씨,하울 씨,{name},Howl
+howl,female,friendly,{name} 씨,하울 씨,{name},Howl
+howl,female,close,{name},하울,{name},Howl
+howl,nonbinary,stranger,{name} 씨,하울 씨,{name},Howl
+howl,nonbinary,friendly,{name} 씨,하울 씨,{name},Howl
+howl,nonbinary,close,{name},하울,{name},Howl
+howl,neutral,stranger,{name} 씨,하울 씨,{name},Howl
+howl,neutral,friendly,{name} 씨,하울 씨,{name},Howl
+howl,neutral,close,{name},하울,{name},Howl
+johan,male,stranger,{name} 씨,요한 씨,{name},Johan
+johan,male,friendly,{name} 사장님,요한 씨,Chef {name},Johan
+johan,male,close,{name},요한 형,{name},Johan
+johan,female,stranger,{name} 씨,요한 씨,{name},Johan
+johan,female,friendly,{name} 사장님,요한 씨,Chef {name},Johan
+johan,female,close,{name},요한,{name},Johan
+johan,nonbinary,stranger,{name} 씨,요한 씨,{name},Johan
+johan,nonbinary,friendly,{name} 사장님,요한 씨,Chef {name},Johan
+johan,nonbinary,close,{name},요한,{name},Johan
+johan,neutral,stranger,{name} 씨,요한 씨,{name},Johan
+johan,neutral,friendly,{name} 사장님,요한 씨,Chef {name},Johan
+johan,neutral,close,{name},요한,{name},Johan
+beomjun,male,stranger,{name} 씨,범준 씨,{name},Master Beomjun
+beomjun,male,friendly,{name} 사장,범준 관장님,{name},Master Beomjun
+beomjun,male,close,{name},범준 형,{name},Beomjun
+beomjun,female,stranger,{name} 씨,범준 씨,{name},Master Beomjun
+beomjun,female,friendly,{name} 사장,범준 관장님,{name},Master Beomjun
+beomjun,female,close,{name},범준 오빠,{name},Beomjun
+beomjun,nonbinary,stranger,{name} 씨,범준 씨,{name},Master Beomjun
+beomjun,nonbinary,friendly,{name} 사장,범준 관장님,{name},Master Beomjun
+beomjun,nonbinary,close,{name},범준,{name},Beomjun
+beomjun,neutral,stranger,{name} 씨,범준 씨,{name},Master Beomjun
+beomjun,neutral,friendly,{name} 사장,범준 관장님,{name},Master Beomjun
+beomjun,neutral,close,{name},범준,{name},Beomjun
+haru,male,stranger,{name} 님,하루 씨,{name},Haru
+haru,male,friendly,{name} 님,하루 씨,{name},Haru
+haru,male,close,{name} 씨,하루 씨,{name},Haru
+haru,female,stranger,{name} 님,하루 씨,{name},Haru
+haru,female,friendly,{name} 님,하루 씨,{name},Haru
+haru,female,close,{name} 씨,하루 씨,{name},Haru
+haru,nonbinary,stranger,{name} 님,하루 씨,{name},Haru
+haru,nonbinary,friendly,{name} 님,하루 씨,{name},Haru
+haru,nonbinary,close,{name} 씨,하루 씨,{name},Haru
+haru,neutral,stranger,{name} 님,하루 씨,{name},Haru
+haru,neutral,friendly,{name} 님,하루 씨,{name},Haru
+haru,neutral,close,{name} 씨,하루 씨,{name},Haru
+gomseok,male,stranger,{name} 씨,곰석 씨,{name},Chef Gomseok
+gomseok,male,friendly,{name} 사장,곰석 셰프님,{name},Chef Gomseok
+gomseok,male,close,{name},곰석 형님,{name},Gomseok
+gomseok,female,stranger,{name} 씨,곰석 씨,{name},Chef Gomseok
+gomseok,female,friendly,{name} 사장,곰석 셰프님,{name},Chef Gomseok
+gomseok,female,close,{name},곰석 셰프님,{name},Gomseok
+gomseok,nonbinary,stranger,{name} 씨,곰석 씨,{name},Chef Gomseok
+gomseok,nonbinary,friendly,{name} 사장,곰석 셰프님,{name},Chef Gomseok
+gomseok,nonbinary,close,{name},곰석 셰프님,{name},Gomseok
+gomseok,neutral,stranger,{name} 씨,곰석 씨,{name},Chef Gomseok
+gomseok,neutral,friendly,{name} 사장,곰석 셰프님,{name},Chef Gomseok
+gomseok,neutral,close,{name},곰석 셰프님,{name},Gomseok
+nabi,male,stranger,{name} 씨,나비 씨,{name},Nabi
+nabi,male,friendly,{name},나비 씨,{name},Nabi
+nabi,male,close,{name},나비,{name},Nabi
+nabi,female,stranger,{name} 씨,나비 씨,{name},Nabi
+nabi,female,friendly,{name},나비 씨,{name},Nabi
+nabi,female,close,{name},나비,{name},Nabi
+nabi,nonbinary,stranger,{name} 씨,나비 씨,{name},Nabi
+nabi,nonbinary,friendly,{name},나비 씨,{name},Nabi
+nabi,nonbinary,close,{name},나비,{name},Nabi
+nabi,neutral,stranger,{name} 씨,나비 씨,{name},Nabi
+nabi,neutral,friendly,{name},나비 씨,{name},Nabi
+nabi,neutral,close,{name},나비,{name},Nabi

@@ -1,0 +1,85 @@
+// 요한 선물 반응. 호스트가 문자열 변수 $gift_name 을 설정한 뒤 진입한다.
+// 수치(+8/+3/-5)는 호스트(RomanceService.Gift)가 적용하므로 이 파일에서는 aff/trust 를 바꾸지 않는다.
+// 호감 선물: 만년필·잉크, 향 차 세트, 오래된 요리책 / 싫어함: 홍보 쿠폰 묶음(‘사는’ 느낌 = 이용/거래의 상처)
+// 진입 노드: Johan_Gift_Like, Johan_Gift_Neutral, Johan_Gift_Dislike
+title: Johan_Gift_Like
+tags: johan gift
+---
+<<show_standing johan surprised>>
+player: {player_calls("johan")}, 이거 받아 주세요. {$gift_name}, 드리고 싶어서 골랐어요. #line:johan_gift_001
+johan: 나한테? 잠깐, 이건 물어봐야겠다. 혹시 이거 뭐 부탁하려고 주는 거야? 아니지? 아니라고 해 줘. 아니라고 하면 훨씬 맛있게 받을 수 있어. #line:johan_gift_002
+<<if $aff_johan < 30>>
+    player: 부탁 같은 건 없어요. 그냥 어울릴 것 같아서요. #line:johan_gift_003
+    <<show_standing johan shy>>
+    johan: …없다고요? 정말 없다고요? 아, 이런. 이럴 때 쓸 말을 아껴 두질 않았네. 평소엔 그렇게 많이 쓰면서. #line:johan_gift_004
+    johan: 고마워요. 이건 인사치레가 아니고, 칼럼에 쓰지도 않을 거예요. 진짜로. 서랍에 넣고 혼자 꺼내 볼 거야. #line:johan_gift_005
+<<elseif $aff_johan < 60>>
+    player: 부탁은 하나도 없어요. 좋아할 것 같아서 골랐어요. #line:johan_gift_006
+    <<show_standing johan smile>>
+    johan: 좋아할 것 같아서. …그 문장, 나는 쓰는 입장이라 알아. 그 문장이 제일 어려운 선물 이유야. #line:johan_gift_007
+    johan: 정확히 맞혔어. 취향을 어디서 훔쳐 갔는지는 안 물을게. 훔쳐 간 쪽도 훔쳐 가게 둔 쪽도 즐거웠으니까. #line:johan_gift_008
+<<else>>
+    player: 부탁은 없어요. 그냥 오늘 얼굴이 떠올라서요. #line:johan_gift_009
+    <<show_standing johan shy>>
+    johan: …얼굴이 떠올라서. 그 이유를 들으면 선물보다 이유를 포장해서 가져가고 싶어져. #line:johan_gift_010
+    johan: {calls_player("johan")}. 나 지금 말이 안 나와. 이럴 때를 위해서 안경이 있는 거야. 올려서 얼굴을 가리는 거. #line:johan_gift_011
+<<endif>>
+johan: {$gift_name}, 쓸 때마다 네 생각 할게. 쓸 때마다라고 했지만 사실 안 쓸 때도 하겠지만. #line:johan_gift_012
+<<show_standing johan smile>>
+===
+
+title: Johan_Gift_Neutral
+tags: johan gift
+---
+<<show_standing johan neutral>>
+player: {player_calls("johan")}, 이거요. {$gift_name}. 별건 아니지만요. #line:johan_gift_013
+<<if $aff_johan < 30>>
+    johan: 오, 선물이네요. 포장도 정성이 느껴지는데요. 내용물은 열어 보고 평가…는 안 할게요. 선물은 별점 대상이 아니니까. #line:johan_gift_014
+    johan: 고마워요. 취향 저격은 아니지만 마음 저격은 성공했어요. 약간 빗나가긴 했지만 과녁 안이에요. #line:johan_gift_015
+    player: 다음엔 더 잘 맞는 걸로 골라 볼게요. #line:johan_gift_016
+    johan: 힌트를 줄까요? 아니, 힌트 없이 맞히는 쪽이 더 재밌겠다. 기대할게요. #line:johan_gift_017
+<<elseif $aff_johan < 60>>
+    <<show_standing johan smile>>
+    johan: {$gift_name}, 이거. 솔직히 내 취향은 아니야. 솔직한 별점이 애정이라고 했으니까 솔직하게 말할게. #line:johan_gift_018
+    johan: 근데 네가 나를 떠올리며 골랐다는 사실이 이 선물의 진짜 맛이야. 겉포장보다 속이 좋은 경우. #line:johan_gift_019
+    player: 솔직해서 좋아요. 다음엔 취향 저격해 볼게요. #line:johan_gift_020
+    johan: 그래, 도전 수락. 단, 난 까다로운 심사위원이야. #line:johan_gift_021
+<<else>>
+    <<show_standing johan smile>>
+    johan: {calls_player("johan")}, 이거 내 취향은 아닌데, 아닌 걸 아는 사람한테 받는 거라서 이상하게 기분이 좋네. #line:johan_gift_022
+    johan: 내 책상 위에 올려 둘게. 취향이 아니어도, 책상에 있으면 내 취향이 되어 가거든. 매일 보면 정이 드는 식이야. #line:johan_gift_023
+    player: 책상에 둔다고요? 그럼 다음에 놀러 가면 볼 수 있겠네요. #line:johan_gift_024
+    johan: …놀러 온다는 말이 자연스럽게 나왔다. 그건 이 선물보다 더 큰 선물인데. 일단 책상은 치워 둘게. #line:johan_gift_025
+<<endif>>
+<<show_standing johan neutral>>
+===
+
+title: Johan_Gift_Dislike
+tags: johan gift
+---
+<<show_standing johan neutral>>
+player: {player_calls("johan")}, 이거 받아 주세요. {$gift_name}, 드리고 싶어서 골랐어요. #line:johan_gift_026
+<<show_standing johan surprised>>
+<<if $aff_johan < 30>>
+    johan: …{$gift_name}, 이거네요. 잠깐만요. 미안한데, 이건 선물이라기보다 거래 서류 느낌이라서 손이 못 나가요. #line:johan_gift_027
+    <<show_standing johan neutral>>
+    johan: 오해는 말아요. 주는 마음을 의심하는 게 아니라, 이런 물건이 나한테는 대개 "이거 줄 테니 저기 한 줄 써 주세요"로 번역돼서요. 직업병이에요. #line:johan_gift_028
+    player: 아니에요, 제가 잘 몰랐어요. 어떤 선물이 좋은지 알려 주시겠어요? #line:johan_gift_029
+    johan: 물어봐 줘서 고마워요. 그게 이 물건보다 훨씬 좋은 선물이에요. #line:johan_gift_030
+<<elseif $aff_johan < 60>>
+    johan: …{$gift_name}. 아. 이건… 미안, 표정 관리가 안 된다. #line:johan_gift_031
+    <<show_standing johan sad>>
+    johan: 화난 건 아니야. 이런 건 보면 내가 "사는 사람"이랑 "써 주는 사람"으로 나뉘는 것 같아서 가슴이 좀 서늘해져. 네가 그런 뜻으로 준 게 아니라는 건 알아. #line:johan_gift_032
+    <<show_standing johan neutral>>
+    player: 죄송해요. 다음엔 취향부터 물어볼게요. #line:johan_gift_033
+    johan: 물어봐 줘. 그게 훨씬 좋아. 사과는 이미 받았으니까 그만 풀어. 풀지 않으면 내가 오늘 밤 계속 미안해해야 하거든. #line:johan_gift_034
+<<else>>
+    <<show_standing johan sad>>
+    johan: {calls_player("johan")}. 이건 마음만 받을게. 물건은 못 받겠어. 구분해서 들어 줘. #line:johan_gift_035
+    johan: 이런 물건을 받으면 내가 가진 가장 쓸모없는 습관이 올라와. 값을 매기는 습관. 네 선물에는 값을 매기고 싶지 않아서, 처음부터 안 받는 쪽을 고른 거야. #line:johan_gift_036
+    <<show_standing johan neutral>>
+    player: 알겠어요. 마음만 받아 줘서 고마워요. 다음엔 꼭 맞는 걸로 찾아볼게요. #line:johan_gift_037
+    johan: 그 말이면 충분해. 정말로. 방금 건 내가 서툴렀어. 반응이 서툴렀지, 마음이 서툰 건 아니니까. #line:johan_gift_038
+<<endif>>
+<<show_standing johan neutral>>
+===

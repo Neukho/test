@@ -1,0 +1,23 @@
+# 나비 진입 노드
+Nabi_Talk_01
+Nabi_Talk_02
+Nabi_Talk_03
+Nabi_Talk_04
+Nabi_Talk_05
+Nabi_Talk_06
+Nabi_Gift_Like
+Nabi_Gift_Neutral
+Nabi_Gift_Dislike
+Nabi_Date_LiveClub
+Nabi_Date_Rooftop
+Nabi_Date_Generic
+Nabi_E1
+Nabi_E2
+Nabi_E3
+Nabi_E4
+Nabi_E5
+Nabi_End_Normal
+Nabi_End_Good
+Nabi_End_True
+Nabi_Harem_Consent
+Nabi_Harem_Epilogue

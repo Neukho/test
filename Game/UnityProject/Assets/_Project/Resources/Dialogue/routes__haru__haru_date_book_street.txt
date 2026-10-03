@@ -1,0 +1,53 @@
+// 하루 데이트: 헌책방 거리(낮). 수치는 호스트가 적용. 진입 노드 Haru_Date_BookStreet
+// 모티프: 남이 남긴 메모가 가득한 오래된 제과 교본, 자기 돈으로 사겠다는 독립심, 지켜보되 대신 정하지 않기.
+title: Haru_Date_BookStreet
+tags: haru date book_street
+---
+<<bg book_street day>>
+<<show_standing haru neutral casual>>
+좁은 골목 양쪽으로 책 더미가 어깨 높이까지 쌓여 있다. 종이 냄새와 오래된 풀 냄새가 섞여 났다. #line:haru_dbs_001
+<<if flag("haru_date_book_street_done")>>
+    haru: 또 오셨네요. 지난번에 못 산 책이 계속 생각나서요. 오늘은 사려고 마음먹고 왔어요. #line:haru_dbs_002
+    player: 그 책이 아직 있을까요? #line:haru_dbs_003
+    haru: 있길 바라고 있어요. 없으면… 없는 대로 다른 책을 보면 되고요. #line:haru_dbs_004
+<<else>>
+    haru: 헌책은 좋아요. 사람마다 밑줄 친 곳이 달라서, 읽다 보면 그 사람이 뭘 어려워했는지 알 수 있어요. #line:haru_dbs_005
+    player: 그런 걸 찾으러 오셨어요? #line:haru_dbs_006
+    haru: 네. 제과 교본 중에 낡은 걸로요. 새 책보다 틀린 부분이 고쳐져 있는 경우가 많아서요. #line:haru_dbs_007
+<<endif>>
+세 번째 가게의 맨 아래 선반에서 하루가 표지가 해진 책 한 권을 꺼냈다. 책장 사이사이에 연필 자국이 빼곡했다. #line:haru_dbs_008
+haru: 보세요. ‘이 반죽, 3분 더’. ‘우리 오븐은 10도 낮게’. 이 책 주인도 저처럼 계속 고치고 있었네요. #line:haru_dbs_009
+haru: 이 사람은 지금 어디서 뭘 만들고 있을까요. 그런 생각을 하면 혼자가 아닌 느낌이에요. #line:haru_dbs_010
+-> 그 메모 속 사람에게 하루 씨 노트도 언젠가 읽힐지도 몰라요. #line:haru_dbs_011
+    <<flag haru_bookstreet_notes>>
+    <<show_standing haru surprised>>
+    haru: 제 노트가요? …그런 생각은 한 번도 안 해 봤어요. 저는 제 노트가 부끄러운 쪽이라서요. #line:haru_dbs_012
+    haru: 그런데 이 메모들이 저한테 위로가 된 것처럼, 누군가에겐 제 취소선이 위로가 될 수도 있겠네요. #line:haru_dbs_013
+-> 이 책, 제가 사 드릴게요. 선물로요. #line:haru_dbs_014
+    <<flag haru_bookstreet_offer>>
+    <<show_standing haru shy>>
+    haru: 아, 마음은 정말 감사해요. 그런데 이건 제 돈으로 사고 싶어요. 제가 직접 고른 책으로요. #line:haru_dbs_015
+    haru: 대신 다음에 같이 와서 {calls_player("haru")}, 고르신 책 한 권은 제가 사 드릴게요. 그건 괜찮죠? #line:haru_dbs_016
+-> 사실 저는 제과 책은 잘 몰라요. 하루 씨가 알려 주세요. #line:haru_dbs_017
+    <<flag haru_bookstreet_teach>>
+    <<show_standing haru smile>>
+    haru: 제가요? 알려 드릴 수 있어요. 책 고르는 법이라면요. 목차를 먼저 보고, 마지막 장에 색인이 있는지 확인하고요. #line:haru_dbs_018
+하루는 계산대 앞에서 책값을 세어 한 장씩 내려놓았다. 점원이 거스름돈을 건네자 두 손으로 받았다. #line:haru_dbs_019
+haru: 오늘 산 책에 제 메모도 추가해 볼게요. ‘우리 오븐은 앞이 5도 낮음’. 어때요, 쓸모 있겠죠? #line:haru_dbs_020
+<<if $aff_haru >= 60>>
+    haru: 그리고 이 책은 다 읽으면 {calls_player("haru")}한테 먼저 빌려 드릴게요. 밑줄 친 곳에서 제 목소리를 찾아 보세요. #line:haru_dbs_021
+<<else>>
+    haru: 이 책은 다 읽으면 빌려 드릴게요. 밑줄 친 곳을 같이 보면 재미있을 거예요. #line:haru_dbs_022
+<<endif>>
+-> 그 약속 지킬게요. 밑줄은 하루 씨 방식대로 읽을게요. #line:haru_dbs_023
+    <<flag haru_bookstreet_promise>>
+    haru: 감사해요. 책에 밑줄을 긋는 건 저한테는 일기 같은 거라서, 빌려 드린다는 건 꽤 큰 마음이에요. #line:haru_dbs_024
+-> 이왕이면 하루 씨가 읽어 주는 걸로 듣고 싶어요. #line:haru_dbs_025
+    <<flag haru_bookstreet_read_aloud>>
+    <<show_standing haru shy>>
+    haru: 읽어 드린다고요…? 목소리가 작아서 재미없을 수도 있는데요. 그래도 한 번쯤은 해 볼게요. #line:haru_dbs_026
+골목을 나서자 낮은 햇빛이 책 표지 위에 길게 누웠다. #line:haru_dbs_027
+haru: 오늘은 책 한 권이 아니라 그 안의 사람들을 만나고 온 기분이에요. 같이 와 줘서 고마워요. #line:haru_dbs_028
+<<show_standing haru smile>>
+<<flag haru_date_book_street_done>>
+===

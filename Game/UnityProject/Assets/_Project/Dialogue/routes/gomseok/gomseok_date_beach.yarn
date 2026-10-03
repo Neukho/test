@@ -1,0 +1,53 @@
+// 곰석 데이트 「바닷가」. 수치는 호스트가 적용. 진입 노드 Gomseok_Date_Beach
+// 모티프: 소금(바다가 먼저 간을 맞춘다), 모래 위의 글씨(지워져도 다시 쓰기=이어 쓰기), 반반 계산.
+// 플래그: gomseok_beach_lunch / gomseok_beach_salt / gomseok_beach_walk, 재방문 gomseok_date_beach_done
+title: Gomseok_Date_Beach
+tags: gomseok date beach
+---
+<<bg beach day>>
+<<show_standing gomseok neutral>>
+<<if flag("gomseok_date_beach_done")>>
+    gomseok: 또 바다여. 이 사람아, 쉬는 날마다 오면 바다가 우릴 직원으로 쓰겠어. #line:gomseok_dbc_001
+    player: 보온병은 챙기셨죠? #line:gomseok_dbc_002
+    gomseok: 당연하지. 국물 없는 바다는 반쪽이여. #line:gomseok_dbc_003
+<<elseif $aff_gomseok < 30>>
+    넓은 모래사장에 파도 소리가 규칙적으로 밀려온다. 곰석은 커다란 보냉 가방을 어깨에 메고 있다. #line:gomseok_dbc_004
+    gomseok: 쉬는 날이니 바다나 보자고 하셔서 왔는데, 도시락을 싸 오고 말았습니다. 허허, 습관이에요. #line:gomseok_dbc_005
+    player: 좋은 습관이네요. 저도 점심이 기대됐어요. #line:gomseok_dbc_006
+<<elseif $aff_gomseok < 60>>
+    gomseok: 바다는 오랜만이여. 가게 안에선 소금을 한 숟갈씩 넣는데, 여긴 한 바다를 통째로 넣어 놨네. #line:gomseok_dbc_007
+    player: {player_calls("gomseok")}, 도시락도 싸 오셨죠? #line:gomseok_dbc_008
+    gomseok: 허허, 들켰구먼. 주먹밥이여. 거창한 건 아니고. #line:gomseok_dbc_009
+<<else>>
+    gomseok: {calls_player("gomseok")}, 오늘은 불도 칼도 없이 걷는 날이여. 도시락은 빼고. #line:gomseok_dbc_010
+    player: 도시락, 가방에서 냄새 나는데요. #line:gomseok_dbc_011
+    gomseok: …들켰네. 코가 너무 좋아서 탈이여. #line:gomseok_dbc_012
+<<endif>>
+파도가 밀려왔다 빠져나가면 젖은 모래에 얇은 거품이 남는다. 곰석은 모래 위에 보냉 가방을 내려놓고 뚜껑을 연다. #line:gomseok_dbc_013
+gomseok: 주먹밥하고 보온병 국물이여. 밥은 내가 쌌으니 마실 건 네가 사 오는 걸로 하자고. 반반이여. #line:gomseok_dbc_014
+-> 좋아요. 음료는 제가 사 올게요. 다 먹고 나서 맛 평가도 솔직하게 해 드릴게요. #line:gomseok_dbc_015
+    <<flag gomseok_beach_lunch>>
+    <<show_standing gomseok smile>>
+    gomseok: 허허, 솔직하게. 그게 제일 고마운 평이여. 짜면 짜다고, 싱거우면 싱겁다고 해 줘. #line:gomseok_dbc_016
+-> 소금은 어디서 왔는지 궁금해요. 바다 소금이랑 가게 소금이 같은 건가요? #line:gomseok_dbc_018
+    <<flag gomseok_beach_salt>>
+    <<show_standing gomseok smile>>
+    gomseok: 오, 그건 좋은 질문이여. 소금은 바다가 먼저 간을 맞춰 놓은 거여. 사람은 거기서 물만 빼는 거고. #line:gomseok_dbc_019
+    gomseok: 그래서 소금은 아끼는 게 아니라 늦게 넣는 거여. 바다는 서두르지 않았으니까. #line:gomseok_dbc_020
+-> 오늘은 요리 말고 그냥 걸어요. 신발 벗고 모래 밟아 볼까요? #line:gomseok_dbc_021
+    <<flag gomseok_beach_walk>>
+    <<show_standing gomseok surprised>>
+    gomseok: 신발을 벗어? 허허, 이 나이에… 그려, 좋지. 양말은 어디 놓고 가야 하나. #line:gomseok_dbc_022
+    gomseok: 모래가 따뜻하구먼. 발바닥이 이렇게 오래 쉰 게 언제였나 싶네. #line:gomseok_dbc_023
+주먹밥을 반쯤 먹은 뒤, 곰석은 젓가락 끝으로 젖은 모래에 글자를 쓴다. 파도가 한 번 밀려오자 글자가 흐려진다. #line:gomseok_dbc_024
+gomseok: 지워지지. 그래도 다시 쓰면 되니까. 장부도 요리책도 다 이렇게 이어 왔을 거여. #line:gomseok_dbc_025
+-> 지워진 자리에 제가 다음 글자를 써도 돼요? #line:gomseok_dbc_026
+    <<show_standing gomseok shy>>
+    gomseok: …그려. 먼저 쓰라고 하면 부담 줄 것 같아서, 네가 말해 줘서 고맙구먼. #line:gomseok_dbc_027
+-> 다음 파도 오기 전에 한 글자 더 써 보세요. 제가 지켜볼게요. #line:gomseok_dbc_028
+    gomseok: 그럼 한 글자만. 오늘 날짜는 안 쓸란다. 바다가 기억할 거니까. #line:gomseok_dbc_029
+해가 기울기 시작한다. 곰석은 보온병 뚜껑에 마지막 국물을 따라 두 사람 사이에 놓는다. #line:gomseok_dbc_030
+gomseok: 국물이 식어 가는 속도가 딱 좋구먼. 서두르지 않는 저녁이여. 오늘은 이대로 둘이 다 마시고 가자고. #line:gomseok_dbc_031
+<<flag gomseok_date_beach_done>>
+<<show_standing gomseok smile>>
+===

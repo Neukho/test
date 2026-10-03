@@ -1,0 +1,42 @@
+// 곰석 데이트 「헌책방 거리」. 수치는 호스트가 적용. 진입 노드 Gomseok_Date_BookStreet
+title: Gomseok_Date_BookStreet
+tags: gomseok date
+---
+<<bg book_street day>>
+<<show_standing gomseok neutral>>
+<<if $aff_gomseok < 30>>
+    헌책방 골목. 먼지와 종이 냄새가 오래된 햇살에 섞여 있다. #line:gomseok_dbs_001
+    gomseok: 이런 데는 오랜만이에요. 책을 사는 건 아니고 구경만 하려고요. #line:gomseok_dbs_002
+    player: 구경이라도 곰석 씨가 좋아하는 책 코너 안내해 주세요. #line:gomseok_dbs_003
+    gomseok: 허허, 그럼 요리책 칸으로 가죠. #line:gomseok_dbs_004
+<<elseif $aff_gomseok < 60>>
+    gomseok: 이 골목은 말이여, 책보다 책방 주인들 얘기가 더 재밌어. #line:gomseok_dbs_005
+    player: {player_calls("gomseok")}, 그럼 오늘은 그 얘기부터 듣고 싶어요. #line:gomseok_dbs_006
+    gomseok: 그러세. 저 파란 간판 집부터 가자고. #line:gomseok_dbs_007
+<<else>>
+    gomseok: {calls_player("gomseok")}, 이 골목 오면 말이 많아지는 거 알지? 못 들은 척해도 돼. #line:gomseok_dbs_008
+    player: 안 그럴게요. 오늘은 곰석 씨 얘기 다 들을 거예요. #line:gomseok_dbs_009
+    gomseok: 그럼 큰일났구먼. 한도 끝도 없을 텐데. #line:gomseok_dbs_010
+<<endif>>
+곰석이 책장 맨 아래 칸에서 누렇게 바랜 요리책을 한 권 꺼냈다. 표지 안쪽에 누군가의 이름이 지워진 자국이 있다. #line:gomseok_dbs_011
+gomseok: 이런 책이 좋아. 주인이 몇 번 바뀐 책. 누구 건지 모르는 메모가 남아 있어서. #line:gomseok_dbs_012
+gomseok: 이건 국 끓일 때 소금을 늦게 넣으라고 적어 놨네. 이름 모를 누군가가 나한테 한마디 해 주는 거여. #line:gomseok_dbs_013
+-> 이름 없는 사람의 조언이 곰석 씨한테는 유산 같은 거네요. #line:gomseok_dbs_014
+    <<flag gomseok_book_legacy>>
+    <<show_standing gomseok smile>>
+    gomseok: …유산이라. 그렇게 말하니 대단해 보이는구먼. 근데 맞아. 누가 남겼는지 몰라도 이어 가는 거니까. #line:gomseok_dbs_015
+-> 이 책은 제가 살게요. 오늘 선물이에요. #line:gomseok_dbs_016
+    <<flag gomseok_book_gift>>
+    <<show_standing gomseok shy>>
+    gomseok: 선물이라니, 아껴 둘 틈도 안 주는구먼. 그려, 고맙게 받을게. 다음 책은 내가 살 거여. #line:gomseok_dbs_017
+-> 이 메모 더 적을 수 있는 칸이 있나요? 저도 한 줄 남기고 싶어요. #line:gomseok_dbs_018
+    <<flag gomseok_book_margin>>
+    gomseok: 허허, 여백이야 늘 있지. 여기 아래쪽에 적어 봐. #line:gomseok_dbs_019
+책방 주인이 빙긋 웃으며 연필을 건넨다. 곰석은 연필을 받아 들고 한참 망설이다가 짧게 한 줄을 적었다. #line:gomseok_dbs_020
+gomseok: 보여 주기엔 부끄러운 글씨여. 오늘은 안 보여 줄래. #line:gomseok_dbs_021
+player: 보여 달라고 하지 않을게요. 대신 다음 사람이 읽겠죠. #line:gomseok_dbs_022
+gomseok: 그렇지. 다음 사람이 읽는 걸로 충분하지. #line:gomseok_dbs_023
+골목 끝, 오후 햇살이 책등 위로 늘어진다. 둘은 같은 책을 한 권씩 팔에 안고 나란히 걸었다. #line:gomseok_dbs_024
+gomseok: 나는 이름을 남기는 사람이 아니고 맛을 남기는 사람이었으면 했어. 오늘 보니 책이든 국이든 같은 거네. #line:gomseok_dbs_025
+<<show_standing gomseok neutral>>
+===

@@ -1,0 +1,85 @@
+// 나비 선물 반응. 호스트가 문자열 변수 $gift_name 을 설정한 뒤 진입한다.
+// 수치(+8/+3/-5)는 호스트(RomanceService.Gift)가 적용하므로 이 파일에서는 aff/trust 를 바꾸지 않는다.
+// 진입 노드: Nabi_Gift_Like, Nabi_Gift_Neutral, Nabi_Gift_Dislike
+title: Nabi_Gift_Like
+tags: nabi gift
+---
+<<show_standing nabi surprised>>
+player: {player_calls("nabi")}, 이거 받아 주세요. {$gift_name}, 드리고 싶어서 골랐어요. #line:nabi_gift_001
+nabi: 나한테? 이유는 안 묻기로 했지, 이런 건. #line:nabi_gift_002
+<<if $aff_nabi < 30>>
+    <<show_standing nabi shy>>
+    nabi: …취향을 어떻게 알았어. 말한 적 없는데. #line:nabi_gift_003
+    player: 연주하는 모습 보면서 짐작했어요. 틀렸으면 말해 줘요. #line:nabi_gift_004
+    nabi: 안 틀렸어. 아니, 너무 안 틀려서 좀 무서운데. 고마워. #line:nabi_gift_005
+<<elseif $aff_nabi < 60>>
+    <<show_standing nabi smile>>
+    nabi: {$gift_name}. 이거 맞아, 딱 이거야. #line:nabi_gift_006
+    nabi: 받아도 빚이 안 되는 선물은 오랜만이라 이상하게 편하네. #line:nabi_gift_007
+    player: 빚 아니에요. 그냥 선물이에요. #line:nabi_gift_008
+    nabi: 알아. 그래서 받는 거야. #line:nabi_gift_009
+<<else>>
+    <<show_standing nabi smile>>
+    nabi: {calls_player("nabi")}. 이건 가방에 안 넣고 주머니에 넣어 둘게. 자주 만지게. #line:nabi_gift_010
+    nabi: 이런 걸 받으면 노래가 한 줄 생겨. 방금 하나 생겼어. #line:nabi_gift_011
+    player: 들려줄 수 있으면 들려줘요. 아니어도 괜찮고요. #line:nabi_gift_012
+    nabi: 들려줄게. 오늘은 아니고. #line:nabi_gift_013
+<<endif>>
+<<show_standing nabi neutral>>
+===
+
+title: Nabi_Gift_Neutral
+tags: nabi gift
+---
+<<show_standing nabi neutral>>
+player: {player_calls("nabi")}, 이거요. {$gift_name}. 별건 아니지만요. #line:nabi_gift_014
+<<if $aff_nabi < 30>>
+    nabi: 받아 둘게. 고마워. 이런 건 안 해도 되는데. #line:nabi_gift_015
+    nabi: 부담 주려는 게 아닌 건 알아. 내가 부담을 잘 느끼는 쪽이라서. #line:nabi_gift_016
+    player: 부담이면 다시 가져갈게요. 괜찮아요. #line:nabi_gift_017
+    nabi: 아니, 둘게. 쓸 데 찾아볼게. #line:nabi_gift_018
+<<elseif $aff_nabi < 60>>
+    <<show_standing nabi smile>>
+    nabi: {$gift_name}, 쓸 데는 있겠네. 챙겨 줘서 고마워. #line:nabi_gift_019
+    nabi: 취향이랑 딱 맞진 않는데, 네가 나를 떠올렸다는 건 좋아. #line:nabi_gift_020
+    player: 다음엔 더 잘 맞는 걸 찾아볼게요. #line:nabi_gift_021
+    nabi: 천천히 해. 나도 내 취향을 아직 다 몰라. #line:nabi_gift_022
+<<else>>
+    <<show_standing nabi smile>>
+    nabi: {calls_player("nabi")}, 솔직히 말하면 내 취향은 아니야. #line:nabi_gift_023
+    nabi: 근데 이건 책상에 둘래. 보면 네가 생각나니까 그걸로 충분해. #line:nabi_gift_024
+    player: 솔직해서 좋아요. 다음엔 취향 저격해 볼게요. #line:nabi_gift_025
+    nabi: 기대는 안 할게. 아니, 조금은. #line:nabi_gift_026
+<<endif>>
+<<show_standing nabi neutral>>
+===
+
+title: Nabi_Gift_Dislike
+tags: nabi gift
+---
+<<show_standing nabi neutral>>
+player: {player_calls("nabi")}, 이거 받아 주세요. {$gift_name}, 드리고 싶어서 골랐어요. #line:nabi_gift_027
+<<show_standing nabi surprised>>
+<<if $aff_nabi < 30>>
+    nabi: 이건… #line:nabi_gift_028
+    nabi: 미안, 이건 못 받아. 내 이름이 붙은 물건을 파는 것 같아서, 몸이 먼저 거절해. #line:nabi_gift_029
+    <<show_standing nabi neutral>>
+    player: 제가 잘 몰랐어요. 어떤 건 불편한지 알려 줄래요? #line:nabi_gift_030
+    nabi: 알려 줄게. 그렇게 물어 주는 게 낫다. #line:nabi_gift_031
+<<elseif $aff_nabi < 60>>
+    nabi: {$gift_name}. 아, 이건 좀. 화난 건 아니야. #line:nabi_gift_032
+    <<show_standing nabi sad>>
+    nabi: 내 노래를 상품 목록에 올리는 건 못 해. 한 번 당해 봐서. #line:nabi_gift_033
+    <<show_standing nabi neutral>>
+    player: 죄송해요. 다음엔 먼저 물어볼게요. #line:nabi_gift_034
+    nabi: 그래 줘. 사과는 받았어. 이제 풀자. #line:nabi_gift_035
+<<else>>
+    <<show_standing nabi sad>>
+    nabi: {calls_player("nabi")}. 마음은 받았어. 물건은 못 받겠어. #line:nabi_gift_036
+    nabi: 이건 내가 무대에서 벗어나 있어도 나를 파는 것 같아서. 구분해서 들어 줘. #line:nabi_gift_037
+    <<show_standing nabi neutral>>
+    player: 알겠어요. 마음만 받아 줘서 고마워요. 다음엔 꼭 맞는 걸로 찾아볼게요. #line:nabi_gift_038
+    nabi: 그 말이면 충분해. #line:nabi_gift_039
+<<endif>>
+<<show_standing nabi neutral>>
+===

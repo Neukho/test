@@ -1,0 +1,60 @@
+// 하루 다자 조각. 진입 노드: Haru_Harem_Consent(동의 확인) / Haru_Harem_Epilogue(후일담)
+// 가드레일(docs/10_Route_Structure.md §3): 하루가 스스로 동의해야 flag harem_ok_haru 가 설정된다.
+// 동의가 없으면(재촉하는 선택지) 플래그 없이 <<stop>> 으로 끝난다. 호스트는 나중에 다시 진입시킬 수 있다.
+// 하루의 키워드 '성장': 비교당하지 않기, 자기 속도, 언제든 말하고 바꿀 수 있기가 조건이다.
+title: Haru_Harem_Consent
+tags: haru harem consent
+---
+<<bg rooftop night>>
+<<show_standing haru neutral casual>>
+옥상 정원의 밤. 하루는 접이식 의자에 앉아 무릎 위에 노트를 올려놓고 있다. 이 이야기를 하자고 먼저 청한 건 이쪽이었다. #line:haru_harem_001
+player: 오늘은 중요한 이야기를 하고 싶어요. 대답은 어느 쪽이든 괜찮고, 대답이 없어도 괜찮아요. #line:haru_harem_002
+player: 저는 하루 씨 말고 다른 분들과도 마음을 나누고 있고, 그분들도 이 사실을 알아요. 하루 씨도 알았으면 해서요. #line:haru_harem_003
+player: 그리고 물어보고 싶어요. 우리가 같이 사랑해도 되는지요. 하루 씨 생각이 궁금해요. #line:haru_harem_004
+haru: …이야기해 주셔서 고마워요. 숨기지 않고 먼저 말씀해 주신 게 제일 먼저 느껴져요. #line:haru_harem_005
+haru: 잠깐 생각할게요. 아니, 생각하면서 말해도 될까요? 정리가 안 된 채로 말하는 게 서툴러서요. #line:haru_harem_006
+haru: 그리고 하나 먼저요. 이 이야기를 일하는 시간이 아닌 이 자리에서 꺼내 주신 것도 고마워요. 일로 받아들이지 않아도 되니까요. #line:haru_harem_032
+player: 얼마든지요. 천천히 말해 줘요. #line:haru_harem_007
+player: 중간에 멈추고 싶으면 멈춰도 돼요. 오늘 끝까지 안 말해도 괜찮아요. #line:haru_harem_033
+haru: 처음에는 ‘내가 부족해서 나눠야 하는 걸까’ 하는 생각이 먼저 났어요. 저는 제 평가에 인색하니까요. #line:haru_harem_008
+haru: 근데 곰곰이 보니까 그건 제 평가 문제지, 이 마음의 크기와는 다른 얘기더라고요. 제 마음은 제가 알아요. 줄지 않았어요. #line:haru_harem_009
+haru: 그리고 이 마음의 속도는 저한테 중요해요. 저는 천천히 자라는 사람이라서, 마음도 천천히 자라야 제 것이거든요. #line:haru_harem_034
+haru: 저한테는 세 가지 조건이 있어요. 첫째, 다른 분들과 저를 비교하지 않아 주세요. 둘째, 제 속도로 가게 해 주세요. 셋째, 불편해지면 언제든 말하고, 말하면 같이 바꿔 주세요. #line:haru_harem_010
+-> 그 세 가지 모두 약속할게요. 저도 불편해지면 바로 말할게요. 그건 서로의 몫이에요. #line:haru_harem_011
+    <<show_standing haru surprised>>
+    haru: …서로의 몫이라고 말해 주시니까 제가 받는 쪽만이 아니라는 느낌이 들어요. 그게 중요한 것 같아요. #line:haru_harem_012
+    haru: 네. 저도 동의해요. 말로 하니까 심장이 좀 뛰네요. #line:haru_harem_013
+    <<show_standing haru smile>>
+    haru: 대신 하나만 더요. 제가 ‘아직이에요’라고 말하는 날이 오면, 그건 거절이 아니라 제 속도예요. 그때는 기다려 주세요. #line:haru_harem_014
+    player: 알겠어요. 그렇게 말해 줘서 고마워요. #line:haru_harem_015
+-> 다른 분들도 다 괜찮다고 했으니까, 하루 씨도 괜찮죠? #line:haru_harem_016
+    <<show_standing haru sad>>
+    haru: …‘다들’이 아니라, 제 대답을 들어 주세요. 저는 아직 대답하지 않았어요. #line:haru_harem_017
+    haru: 지금은 아직이에요. 이 말이 거절이 아니라는 건 알아 주세요. 그냥 아직이에요. #line:haru_harem_018
+    player: …네, 맞아요. 제가 재촉했어요. 하루 씨가 정할 때까지 기다릴게요. #line:haru_harem_019
+    haru: 감사해요. 정리되면 제가 먼저 말씀드릴게요. #line:haru_harem_020
+    <<stop>>
+-> 오늘 대답하지 않아도 돼요. 하루 씨가 정할 때까지 기다릴게요. #line:haru_harem_021
+    <<show_standing haru shy>>
+    haru: …그렇게 말씀해 주시니까 오히려 지금 말할 수 있을 것 같아요. 기다려 준다는 걸 아니까 서두르지 않아도 되네요. #line:haru_harem_022
+    haru: 저는 동의해요. 세 가지 조건을 지켜 주신다면요. 그리고 제가 ‘아직이에요’ 하는 날도 기다려 주신다면요. #line:haru_harem_023
+    player: 약속할게요. 그리고 하루 씨의 조건은 저도 지켜 갈게요. #line:haru_harem_024
+<<show_standing haru smile>>
+<<flag harem_ok_haru>>
+===
+
+title: Haru_Harem_Epilogue
+tags: haru harem epilogue
+---
+<<bg cafe morning>>
+<<show_standing haru smile uniform>>
+몇 달 뒤의 아침. 식탁에는 하루가 구운 타르트와 잔이 여러 개 놓여 있었다. 서로 다른 사람들의 아침이 같은 테이블 위에서 천천히 겹쳐졌다. #line:haru_harem_025
+haru: 타르트는 한 사람 몫이 아니라 여러 사람 몫으로 구웠어요. 그래서 오늘은 시간이 두 배 걸렸어요. 근데 즐거웠어요. #line:haru_harem_026
+haru: 비교하지 않기로 한 약속, 아직 잘 지켜지고 있어요. 신기하게도 지킬수록 더 쉬워져요. #line:haru_harem_027
+haru: 노트 마지막 장 다음 장은 이제 비어 있지 않아요. 새 장에는 오늘 먹은 아침을 적었어요. #line:haru_harem_035
+player: 하루 씨 속도는 어때요? #line:haru_harem_028
+haru: 느려요. 그래도 제 속도예요. 불편해지면 말하겠다고 했던 약속도 아직 한 번 썼어요. 말하니까 바로 바꿔 줘서 놀랐어요. #line:haru_harem_029
+haru: 오늘 오븐은 일곱 시 사십 분에 열려요. 같이 서 줄 사람 있나요? #line:haru_harem_030
+식탁 위의 잔이 하나씩 채워졌고, 문밖으로 첫 손님의 발소리가 들렸다. #line:haru_harem_031
+<<show_standing haru neutral>>
+===

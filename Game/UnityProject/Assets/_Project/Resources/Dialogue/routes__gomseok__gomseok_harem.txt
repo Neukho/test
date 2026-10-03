@@ -1,0 +1,63 @@
+// 곰석 다자 조각. 가드레일: docs/10_Route_Structure.md §3 (서로 동의, 독점 미화 금지, 키워드 '유산' 유지, 비밀 금지).
+// 진입 노드: Gomseok_Harem_Consent(끝에 harem_ok_gomseok 플래그), Gomseok_Harem_Epilogue
+// 의존: 호스트가 다자 루트 후보(2~3인)가 정해진 뒤 진입. 다른 구성원은 이름 없이 '다른 사람들'로만 지칭(구성원은 공통 Harem_Table 이 정함).
+title: Gomseok_Harem_Consent
+tags: gomseok harem consent
+---
+<<bg cafe night>>
+<<show_standing gomseok neutral>>
+마감 후의 주방. 곰석이 두 사람 몫의 차를 우려 내 작업대에 놓았다. 평소처럼 서두르지 않고, 김이 오르는 걸 한참 바라본다. #line:gomseok_h_001
+gomseok: 오늘은 네가 먼저 말을 꺼낼 거라 생각했는데, 내가 먼저 해도 되겠어? #line:gomseok_h_002
+player: 네. 곰석 씨 얘기 먼저 듣고 싶어요. #line:gomseok_h_003
+gomseok: 네가 나 말고 다른 사람들도 마음에 두고 있다는 거, 알고 있어. 그 사람들도 알고, 나도 아는 얘기여. #line:gomseok_h_004
+player: 숨기고 싶지 않았어요. 곰석 씨가 편하지 않다면 말해 줘요. #line:gomseok_h_005
+gomseok: 허허, 편하다고 하면 거짓이고, 불편하다고 하면 과장이여. 낯설다. 근데 낯선 거랑 싫은 건 다른 거니까. #line:gomseok_h_006
+gomseok: 먼저 하나만 확인할게. 네가 나한테 마음 둔 건 삼촌 때문이 아니지? 나는 어느 누구의 대신이 되기 싫어서. #line:gomseok_h_007
+-> 곰석 씨가 곰석 씨라서예요. 삼촌 얘기는 한 번도 이유가 된 적 없어요. #line:gomseok_h_008
+    <<show_standing gomseok smile>>
+    gomseok: 그려. 그 말이면 됐어. #line:gomseok_h_009
+-> 처음엔 삼촌 얘기로 가까워졌지만, 지금은 완전히 달라요. 지금의 곰석 씨가 좋아요. #line:gomseok_h_010
+    <<show_standing gomseok neutral>>
+    gomseok: 정직하구먼. 시작이 어디였든 지금이 중요한 거여. #line:gomseok_h_011
+gomseok: 그리고 두 번째. 나는 누구의 두 번째 자리도, 위로상도 아니고 싶어. 같이 사랑해도 좋다면 내가 내 몫으로 서 있고 싶어. #line:gomseok_h_012
+player: 곰석 씨는 곰석 씨 자리에 있어요. 비교하지도, 순서를 매기지도 않을 거예요. 그건 약속해요. #line:gomseok_h_013
+gomseok: 그려. 하나 더, 서로 숨기는 게 없어야 해. 나는 들키지 않으려고 노력하는 관계는 못 해. #line:gomseok_h_014
+player: 숨기지 않아요. 누구한테 무슨 일이 있었는지, 곰석 씨가 궁금할 때 물어볼 수 있게요. #line:gomseok_h_015
+gomseok: 그리고 이건 내 몫의 이야기여. 나는 주방을 지키는 사람이라 시간이 한정돼 있어. 내가 필요한 만큼의 시간은 같이 보내 줘. #line:gomseok_h_016
+-> 평일 마감 후와 쉬는 날 하루는 곰석 씨 시간으로 정해 둘게요. 같이 정해요. #line:gomseok_h_017
+    <<show_standing gomseok smile>>
+    gomseok: …허허. 정해 둔다는 말이 이렇게 든든할 줄이야. #line:gomseok_h_018
+-> 시간은 그때그때 서로 맞춰 가요. 곰석 씨가 힘들면 바로 말해 줘요. #line:gomseok_h_019
+    gomseok: 그것도 좋지. 대신 말하는 건 내 몫이니 잊지 않게 말할게. #line:gomseok_h_020
+gomseok: 질투가 아주 안 날 거라고는 말 못 해. 그래도 그게 올라오면 통제하거나 캐묻는 게 아니라 네게 말로 할게. 내 마음은 내가 다루는 거니까. #line:gomseok_h_021
+player: 그럼 저는 들을게요. 곰석 씨 마음도, 다른 사람들 마음도 존중하면서요. #line:gomseok_h_022
+gomseok: 마지막이여. 언제든 싫어지면 말해. 나도 그럴 수 있고, 너도 그럴 수 있어. 그때는 서로 탓하지 말고 천천히 풀자고. #line:gomseok_h_023
+gomseok: 하나만 더. 지금 이 대답은 네가 하고 싶어서 하는 거여야 해. 내가 불편해할까 봐, 분위기 때문에 하는 거면 안 돼. #line:gomseok_h_024
+-> 하고 싶어서 하는 대답이에요. 곰석 씨도, 다른 사람들도 제 마음이에요. 같이 사랑하고 싶어요. #line:gomseok_h_025
+    <<show_standing gomseok smile>>
+    gomseok: 그려, 그럼 나도 정했어. 같이 가자고. 내 몫은 내가 지키면서. #line:gomseok_h_026
+    <<flag harem_ok_gomseok>>
+-> 조금만 더 생각할 시간이 필요해요. 곰석 씨한테 급하게 대답하고 싶지 않아요. #line:gomseok_h_027
+    <<show_standing gomseok neutral>>
+    gomseok: 허허, 그 말이 더 믿음직스럽구먼. 시간은 얼마든지 써. 국물도 하룻밤 두면 더 깊어지잖여. #line:gomseok_h_028
+    <<stop>>
+gomseok: 고맙구먼. 십이 년 만에 이런 이야기를 하는데, 이상하게 속이 편하네. #line:gomseok_h_029
+gomseok: 이제 차 식겠어. 마시자고. 우리 둘 다 따뜻할 때. #line:gomseok_h_030
+<<show_standing gomseok neutral>>
+===
+
+title: Gomseok_Harem_Epilogue
+tags: gomseok harem epilogue
+---
+<<bg cafe morning>>
+<<show_standing gomseok smile>>
+새벽 주방. 곰석이 솥 앞에서 국물을 젓고, 홀 쪽에서는 사람들의 웃음소리가 들린다. #line:gomseok_h_031
+gomseok: 오늘은 식구가 많아서 솥을 하나 더 올렸어. 아침이 길어질 거여. #line:gomseok_h_032
+player: 곰석 씨, 이 아침은 어때요? 불편한 건 없어요? #line:gomseok_h_033
+gomseok: 시끄러운 건 맞는데 싫지는 않구먼. 가게는 원래 이래야지. #line:gomseok_h_034
+gomseok: 어젯밤에 말한 대로 내 몫의 시간도 챙겼고, 네 사람들 몫의 시간도 챙겼어. 그게 이상하게 마음이 편해. #line:gomseok_h_035
+player: 곰석 씨가 지켜 주는 방식이 제일 든든해요. #line:gomseok_h_036
+gomseok: 허허, 이 가게의 유산이란 게 결국 이런 아침일 거여. 여럿이 한 솥을 나눠 먹는 거. #line:gomseok_h_037
+<<show_standing gomseok shy>>
+gomseok: 자, 한 그릇 먼저 뜰게. 네 그릇이 제일 먼저여. 다른 사람들 그릇도 다 첫 번째이긴 하지만. #line:gomseok_h_038
+===

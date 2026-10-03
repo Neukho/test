@@ -1,0 +1,86 @@
+// 하울 선물 반응. 호스트가 문자열 변수 $gift_name 을 설정한 뒤 진입한다.
+// 수치(+8/+3/-5)는 호스트(RomanceService.Gift)가 적용하므로 이 파일에서는 aff/trust 를 바꾸지 않는다.
+// 진입 노드: Howl_Gift_Like, Howl_Gift_Neutral, Howl_Gift_Dislike
+title: Howl_Gift_Like
+tags: howl gift
+---
+<<show_standing howl surprised>>
+player: {player_calls("howl")}, 이거 받아 주세요. {$gift_name}, 드리고 싶어서 골랐어요. #line:howl_gift_001
+howl: …내게? #line:howl_gift_002
+<<if $aff_howl < 30>>
+    <<show_standing howl shy>>
+    howl: 받아도 되는 건가. …고맙다. 정말 쓸 만한 걸 골랐네. #line:howl_gift_003
+    howl: 취향을 어디서 알았지. 말한 적 없는데. #line:howl_gift_004
+    player: 가게에서 지켜본 것만으로도 조금은 알겠더라고요. #line:howl_gift_005
+    howl: …관찰력이 좋군. 소중히 쓸게. #line:howl_gift_006
+<<elseif $aff_howl < 60>>
+    <<show_standing howl smile>>
+    howl: …{$gift_name}. 이거, 마음에 든다. 정말로. #line:howl_gift_007
+    howl: 고맙다는 말은 한 번이면 된다고 했지만, 이건 한 번으론 모자라겠다. #line:howl_gift_008
+    player: 그럼 두 번 들을게요. 어색하지 않게요. #line:howl_gift_009
+    howl: …그래. 고맙다. 두 번째다. #line:howl_gift_010
+<<else>>
+    <<show_standing howl smile>>
+    howl: {calls_player("howl")}. 이건… 오래 쓸 거야. 아니, 아껴서 쓰게 될지도 모르겠다. #line:howl_gift_011
+    howl: 나를 이렇게 알아봐 주는 사람, 오랜만이라서. #line:howl_gift_012
+    player: 기뻐해 줘서 저도 좋아요. #line:howl_gift_013
+    howl: 기뻐하는 게 얼굴에 다 나오나. 귀가 먼저 알려 주겠군. #line:howl_gift_014
+<<endif>>
+<<show_standing howl neutral>>
+===
+
+title: Howl_Gift_Neutral
+tags: howl gift
+---
+<<show_standing howl neutral>>
+player: {player_calls("howl")}, 이거요. {$gift_name}. 별건 아니지만요. #line:howl_gift_015
+<<if $aff_howl < 30>>
+    howl: …받아 둘게. 신경 써 줘서 고맙다. #line:howl_gift_016
+    howl: 이런 건 안 해도 되는데. 부담 갖지 마. #line:howl_gift_017
+    player: 부담은 아니에요. 그냥 드리고 싶어서요. #line:howl_gift_018
+    howl: 그렇다면, 잘 쓰지. #line:howl_gift_019
+<<elseif $aff_howl < 60>>
+    <<show_standing howl smile>>
+    howl: {$gift_name}, 쓸 데가 있겠네. 챙겨 줘서 고맙다. #line:howl_gift_020
+    howl: 취향이랑 정확히 맞는 건 아니지만, 누가 나를 떠올렸다는 게 중요하지. #line:howl_gift_021
+    player: 다음엔 더 잘 맞는 걸로 찾아볼게요. #line:howl_gift_022
+    howl: 천천히 해. 서두를 필요 없어. #line:howl_gift_023
+<<else>>
+    <<show_standing howl smile>>
+    howl: {calls_player("howl")}, 고맙다. 솔직히 말하면 취향은 아니야. #line:howl_gift_024
+    howl: 그래도 이건 서랍에 넣어 둘 거야. 주는 사람의 마음이 거기 있으니까. #line:howl_gift_025
+    player: 솔직해서 좋아요. 다음엔 취향 저격해 볼게요. #line:howl_gift_026
+    howl: 기대는 하지 않을게. …아니, 조금은 할지도. #line:howl_gift_027
+<<endif>>
+<<show_standing howl neutral>>
+===
+
+title: Howl_Gift_Dislike
+tags: howl gift
+---
+<<show_standing howl neutral>>
+player: {player_calls("howl")}, 이거 받아 주세요. {$gift_name}, 드리고 싶어서 골랐어요. #line:howl_gift_028
+<<show_standing howl surprised>>
+<<if $aff_howl < 30>>
+    howl: …이걸? #line:howl_gift_029
+    howl: 미안, 이건 받기 곤란하다. 네 마음은 알겠는데, 내가 쓸 수가 없어. #line:howl_gift_030
+    <<show_standing howl neutral>>
+    player: 아니에요, 제가 잘 몰랐어요. 어떤 걸 싫어하시는지 알려 주실 수 있어요? #line:howl_gift_031
+    howl: …알려 줄게. 그렇게 물어 주는 쪽이 낫다. #line:howl_gift_032
+<<elseif $aff_howl < 60>>
+    howl: …{$gift_name}. 이건 좀. …아니, 화난 건 아니야. #line:howl_gift_033
+    <<show_standing howl sad>>
+    howl: 소란스럽거나, 과한 건 잘 못 다뤄. 그런 건 나한테 어려워. #line:howl_gift_034
+    <<show_standing howl neutral>>
+    player: 죄송해요. 다음엔 취향부터 물어볼게요. #line:howl_gift_035
+    howl: 물어봐 줘. 그게 훨씬 좋아. 사과는 이미 받았으니까, 그만 풀어. #line:howl_gift_036
+<<else>>
+    <<show_standing howl sad>>
+    howl: {calls_player("howl")}. 이건 내가 감당하기 어려운 종류야. #line:howl_gift_037
+    howl: 마음은 받았어. 물건은 못 받겠어. 구분해서 들어 줘. #line:howl_gift_038
+    <<show_standing howl neutral>>
+    player: 알겠어요. 마음만 받아 줘서 고마워요. 다음엔 꼭 맞는 걸로 찾아볼게요. #line:howl_gift_039
+    howl: …그 말이면 충분해. 정말로. #line:howl_gift_040
+<<endif>>
+<<show_standing howl neutral>>
+===

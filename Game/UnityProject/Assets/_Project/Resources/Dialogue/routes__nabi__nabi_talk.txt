@@ -1,0 +1,335 @@
+// 나비 일상 대화(밤 행동 '대화'). 호스트가 $aff_nabi(읽기 전용)를 제공한다.
+// 선택지 보상: 정답 aff +5 trust +1.5 / 오답 aff -1 trust -1 / 무난한 답은 변화 없음(balance/actions.csv).
+// 주제 순서(나비의 경계심이 생긴 이유를 조금씩 보여 준다): 1 문 옆자리 -> 2 뒤집어 둔 폰 -> 3 빠진 세 곡 -> 4 "어디 가?" -> 5 새벽 네 시 -> 6 가사 노트
+// 진입 노드: Nabi_Talk_01 ~ Nabi_Talk_06
+title: Nabi_Talk_01
+tags: nabi talk
+---
+<<bg cafe night>>
+<<show_standing nabi neutral>>
+<<if $aff_nabi < 30>>
+    마감 한 시간 전. 문 바로 옆자리에 나비가 앉아 있다. 기타 케이스는 무릎 위, 라테는 한 번도 입을 대지 않은 채다. #line:nabi_talk_001
+    nabi: 자리가 마음에 안 들면 말해. 바로 옮길 테니까. #line:nabi_talk_002
+    player: 아니에요, 편한 데 앉아요. 나비 씨 마음대로요. #line:nabi_talk_003
+    nabi: 마음대로, 라. 이 가게는 그 말이 쉽게 나오네. #line:nabi_talk_004
+<<elseif $aff_nabi < 60>>
+    nabi: 왔네. 이 자리, 오늘도 비어 있더라. #line:nabi_talk_005
+    player: 나비 씨 자리라고 적어 둘 뻔했어요. #line:nabi_talk_006
+    nabi: 적진 마. 적어 두면 비워 둬야 하는 자리가 되잖아. #line:nabi_talk_007
+<<else>>
+    nabi: {calls_player("nabi")}. 문 옆자리 비어 있길래 앉았어. 아니, 비어 있길 바랐나. #line:nabi_talk_008
+    player: 비워 뒀어요. 적진 않았고요. #line:nabi_talk_009
+    nabi: 그러니까 앉는 거야. #line:nabi_talk_010
+<<endif>>
+nabi: 문 옆이 좋아. 나가는 길이 보이면 오히려 오래 앉아 있게 되거든. 이상하지? #line:nabi_talk_011
+-> 이상하지 않아요. 어느 자리든 나비 씨 자리예요. #line:nabi_talk_012
+    <<aff nabi 5>>
+    <<trust nabi 1.5>>
+    <<show_standing nabi smile>>
+    nabi: 그 말, 공짜로 들으면 안 될 것 같은데. 일단 받아 둘게. #line:nabi_talk_013
+    nabi: 앞으론 눈치 안 보고 앉을래. #line:nabi_talk_014
+-> 문가는 바람이 들어와요. 안쪽 자리가 따뜻한데, 옮길래요? #line:nabi_talk_015
+    <<aff nabi -1>>
+    <<trust nabi -1>>
+    <<show_standing nabi neutral>>
+    nabi: 걱정해 주는 건 알겠어. 근데 자리는 내가 고를게. #line:nabi_talk_016
+    nabi: 따뜻한 데로 가라는 말은, 어디로 가라는 말이랑 한 끗 차이거든. #line:nabi_talk_017
+-> 라테, 식기 전에 드세요. #line:nabi_talk_018
+    nabi: 그래. 마실게. #line:nabi_talk_019
+    nabi: …계피 많이 넣었네. 아니, 딱 좋아. #line:nabi_talk_020
+nabi: 여기 또 와도 돼? 자주는 아니고. 오고 싶을 때만. #line:nabi_talk_021
+-> 오고 싶을 때 와요. 문은 늘 열려 있어요. #line:nabi_talk_022
+    <<aff nabi 5>>
+    <<trust nabi 1.5>>
+    <<show_standing nabi smile>>
+    nabi: 그 정도면 됐어. 아니, 꽤 좋은데. #line:nabi_talk_023
+-> 올 때 미리 알려 주면 자리 맡아 둘게요. #line:nabi_talk_024
+    <<aff nabi -1>>
+    <<trust nabi -1>>
+    <<show_standing nabi neutral>>
+    nabi: 미리 알리는 건 안 할래. 그건 보고 같아서. #line:nabi_talk_025
+    nabi: 자리는 안 맡아도 돼. 있으면 앉고 없으면 서 있을게. #line:nabi_talk_026
+-> 그럼 오는 날엔 라테를 준비해 둘게요. #line:nabi_talk_027
+    nabi: 라테는 올 때 시킬게. 준비는 안 해도 돼. #line:nabi_talk_028
+<<if $aff_nabi < 30>>
+    nabi: 오늘은 이만. 컵은 내가 갖다 놓을게. #line:nabi_talk_029
+<<elseif $aff_nabi < 60>>
+    nabi: 잘 마셨어. 다음엔 내가 먼저 인사할게. 아마. #line:nabi_talk_030
+<<else>>
+    nabi: 문 열어 줘서 고마워. 아니, 열려 있어서 고마워. #line:nabi_talk_031
+<<endif>>
+<<show_standing nabi neutral>>
+===
+
+title: Nabi_Talk_02
+tags: nabi talk
+---
+<<bg cafe night>>
+<<show_standing nabi neutral>>
+카운터 끝자리. 나비의 휴대폰이 테이블 위에서 한 번 울리고, 화면이 아래로 뒤집혀 있다. #line:nabi_talk_032
+<<if $aff_nabi < 30>>
+    nabi: 신경 쓰지 마. 모르는 번호야. #line:nabi_talk_033
+    player: 아무 말도 안 했는데요. #line:nabi_talk_034
+    nabi: 눈이 말했어. 걱정하는 눈. #line:nabi_talk_035
+<<elseif $aff_nabi < 60>>
+    nabi: 또 왔네, 모르는 번호. 질리지도 않나. #line:nabi_talk_036
+    player: {player_calls("nabi")}, 괜찮아요? 얼굴이 조금 굳었어요. #line:nabi_talk_037
+    nabi: 굳은 게 아니라 쉬는 거야. 쉼표 같은 거. #line:nabi_talk_038
+<<else>>
+    nabi: {calls_player("nabi")}, 이거 좀 뒤집어 놔 줘. 나는 못 하겠어서. #line:nabi_talk_039
+    player: 이렇게요? #line:nabi_talk_040
+    nabi: 응. 고마워. 이상하게 네가 하면 덜 무서워. #line:nabi_talk_041
+<<endif>>
+nabi: 한동안 매일 이 소리 들었거든. 받으면 첫마디가 늘 같았어. #line:nabi_talk_042
+-> 받아야 하는 전화 아니에요? 계속 오는데. #line:nabi_talk_043
+    <<aff nabi -1>>
+    <<trust nabi -1>>
+    <<show_standing nabi neutral>>
+    nabi: 받아야 하는 전화는 내가 정해. 오는 대로 다 받는 건 일이 아니라 줄이야. #line:nabi_talk_044
+    nabi: 미안, 날이 서 있었네. 네 잘못은 아니야. #line:nabi_talk_045
+-> 말하고 싶으면 말해요. 안 해도 괜찮고요. #line:nabi_talk_046
+    <<aff nabi 5>>
+    <<trust nabi 1.5>>
+    <<show_standing nabi smile>>
+    nabi: …그렇게 말해 주는 사람 처음이야. 대부분은 이유부터 묻거든. #line:nabi_talk_047
+    nabi: 언젠가 말할게. 오늘은 박자가 안 맞아. #line:nabi_talk_048
+-> 커피 더 드릴까요? 이번엔 에스프레소로요. #line:nabi_talk_049
+    nabi: 좋아. 진하게. #line:nabi_talk_050
+nabi: 아, 저번 공연 얘긴데. 네가 마음에 든다고 했던 곡. #line:nabi_talk_051
+nabi: 어느 부분이 좋았는지 말해 줘. 빈말 말고. 빈말은 박자가 티 나. #line:nabi_talk_052
+-> 두 번째 곡 브리지가 좀 길었어요. 그래도 거기서 숨을 멈췄어요. #line:nabi_talk_053
+    <<aff nabi 5>>
+    <<trust nabi 1.5>>
+    <<show_standing nabi smile>>
+    nabi: 길었다고? …맞아, 나도 알아. 근데 거기서 숨을 멈췄다는 건 기억해 둘게. #line:nabi_talk_054
+    nabi: 정직한 사람이 제일 믿을 만해. 귀찮긴 한데. #line:nabi_talk_055
+-> 전부 최고예요. 음반 내면 분명 대박 날 거예요. #line:nabi_talk_056
+    <<aff nabi -1>>
+    <<trust nabi -1>>
+    <<show_standing nabi neutral>>
+    nabi: 대박이라. 노래를 상품 이름처럼 부르는 건 좀. #line:nabi_talk_057
+    nabi: 칭찬은 알겠어. 근데 그건 내 노래한테 하는 말 같지가 않아. #line:nabi_talk_058
+-> 다음 곡도 기대할게요. #line:nabi_talk_059
+    nabi: 기대는 무게야. …가볍게만 해 줘. #line:nabi_talk_060
+<<show_standing nabi neutral>>
+<<if $aff_nabi >= 60>>
+    nabi: 폰은 그대로 둬. 오늘은 네 옆이라 안 뒤집어도 될 것 같아. #line:nabi_talk_061
+<<else>>
+    nabi: 폰은 그대로 둘래. 울리든 말든. #line:nabi_talk_062
+<<endif>>
+===
+
+title: Nabi_Talk_03
+tags: nabi talk
+---
+<<bg cafe night>>
+<<show_standing nabi neutral>>
+오늘 공연이 끝나고 한 손님이 나비에게 옛날 곡을 신청했다. 나비는 웃으며 고개를 저었고, 지금은 무대 옆에서 기타 줄을 닦고 있다. #line:nabi_talk_063
+<<if $aff_nabi < 30>>
+    nabi: 신청곡 안 받는다고 적어 둘걸. 괜히 분위기 식혔네. #line:nabi_talk_064
+    player: 분위기는 괜찮았어요. 손님도 웃고 갔고요. #line:nabi_talk_065
+    nabi: 웃어 줘서 다행이지. 내가 웃은 건 아니고. #line:nabi_talk_066
+<<elseif $aff_nabi < 60>>
+    nabi: 방금 그 신청곡, 거절하는 거 봤지. #line:nabi_talk_067
+    player: {player_calls("nabi")}, 뭔가 사정이 있는 곡 같았어요. #line:nabi_talk_068
+    nabi: 사정이라고 하면 좀 가볍고. 법적인 얘기에 가까워. #line:nabi_talk_069
+<<else>>
+    nabi: {calls_player("nabi")}, 아까 그 곡. 설명해 주고 싶어서 기다렸어. #line:nabi_talk_070
+    player: 설명 안 해도 돼요. 하고 싶을 때 해요. #line:nabi_talk_071
+    nabi: 하고 싶어. 이상하지, 이런 건 처음이야. #line:nabi_talk_072
+<<endif>>
+nabi: 내 세트리스트엔 세 곡이 비어 있어. 내가 쓴 곡인데, 내 이름으로는 못 불러. 계약서에 그렇게 돼 있거든. #line:nabi_talk_073
+nabi: 곡은 내 머릿속에 있는데, 소유는 다른 데 있다는 거야. 웃기지. #line:nabi_talk_074
+-> 그럼 새 곡으로 채워요. 저는 아직 못 들은 노래가 더 궁금해요. #line:nabi_talk_075
+    <<aff nabi 5>>
+    <<trust nabi 1.5>>
+    <<show_standing nabi smile>>
+    nabi: 새 곡이라. …그거 좋은 대답이야. 빈자리를 옛날 걸로 채우지 않아도 된다는 말이니까. #line:nabi_talk_076
+    nabi: 쓰는 중이야. 아직 후렴이 없어. 다 되면 네가 첫 번째 손님이야. 아마. #line:nabi_talk_077
+-> 어쩌다 그런 계약을 했어요? 누가 그렇게 하라고 했어요? #line:nabi_talk_078
+    <<aff nabi -1>>
+    <<trust nabi -1>>
+    <<show_standing nabi neutral>>
+    nabi: 취조는 아니겠지. 근데 질문이 칼 같아. #line:nabi_talk_079
+    nabi: 그건 내가 꺼낼 때 들어 줘. 억지로 열면 상처만 커져. #line:nabi_talk_080
+-> 알겠어요. 그 노래는 신청받지 않게 안내해 둘게요. #line:nabi_talk_081
+    nabi: 그건 도움이 돼. 고마워. 설명하는 건 내가 하긴 싫었거든. #line:nabi_talk_082
+nabi: 남의 곡을 대신 부르는 건 어때, 라는 말도 들었어. 무대를 비우는 것보단 낫다고. #line:nabi_talk_083
+-> 나비 씨 무대잖아요. 어떤 곡을 부를지는 나비 씨가 정해요. #line:nabi_talk_084
+    <<aff nabi 5>>
+    <<trust nabi 1.5>>
+    <<show_standing nabi smile>>
+    nabi: 그래. 그거야. 내 무대에 오르는 곡은 내가 정해. #line:nabi_talk_085
+    nabi: 그 문장 하나 얻으려고 꽤 멀리 왔어. #line:nabi_talk_086
+-> 손님들이 아는 노래도 한두 곡은 있으면 좋겠죠. 가게 입장에선요. #line:nabi_talk_087
+    <<aff nabi -1>>
+    <<trust nabi -1>>
+    <<show_standing nabi sad>>
+    nabi: …가게 입장, 이라. 맞는 말이야. 그래서 아프네. #line:nabi_talk_088
+    nabi: 괜찮아, 이해는 해. 그래도 내 무대에선 안 해. #line:nabi_talk_089
+-> 오늘 연주 좋았어요. 그 말만 하고 싶었어요. #line:nabi_talk_090
+    nabi: 그 말은 받을게. 한 번에 한 박자씩. #line:nabi_talk_091
+<<show_standing nabi neutral>>
+nabi: 오늘은 여기까지. 다음엔 후렴 한 줄 가져올게. #line:nabi_talk_092
+===
+
+title: Nabi_Talk_04
+tags: nabi talk
+---
+<<bg cafe night>>
+<<show_standing nabi neutral>>
+마감 직전. 나비가 케이스를 메고 코트를 입는다. 문 쪽으로 반 걸음 걸어가는 순간, 나는 입을 열어야 했다. #line:nabi_talk_093
+-> 어디 가요? #line:nabi_talk_094
+    <<aff nabi -1>>
+    <<trust nabi -1>>
+    <<show_standing nabi sad>>
+    nabi: …! #line:nabi_talk_095
+    nabi: 미안, 반사야. 그 말만 들으면 몸이 먼저 굳어. 네 탓 아니야. #line:nabi_talk_096
+    nabi: 어디 가는지 말하라는 질문은 아니었겠지. 알아. 아는데, 귀가 먼저 알아들어. #line:nabi_talk_097
+-> 조심히 가요. 내일 와도 되고 안 와도 돼요. #line:nabi_talk_098
+    <<aff nabi 5>>
+    <<trust nabi 1.5>>
+    <<show_standing nabi smile>>
+    nabi: …그 문장, 오래 기다렸나 봐. #line:nabi_talk_099
+    nabi: 가는 사람한테 해 주는 말 중에 제일 편한 말이야. #line:nabi_talk_100
+-> 잘 가요. #line:nabi_talk_101
+    nabi: 응. 잘 있어. 아니, 잘 있을게. #line:nabi_talk_102
+<<if $aff_nabi < 30>>
+    nabi: 설명은 짧게 할게. 전엔 하루에 세 번씩 받았거든. 어디야, 누구랑 있어, 몇 시에 와. #line:nabi_talk_103
+<<elseif $aff_nabi < 60>>
+    nabi: 전에 일하던 곳에선 하루에 세 번씩 받았어. 어디야, 누구랑 있어, 몇 시에 와. #line:nabi_talk_104
+<<else>>
+    nabi: {calls_player("nabi")}, 얘기해 줄게. 전에 일하던 곳에선 하루에 세 번씩 받았어. 어디야, 누구랑 있어, 몇 시에 와. #line:nabi_talk_105
+<<endif>>
+nabi: 걱정이라고 불렀어. 챙겨 주는 거라고. 거절하면 내가 배은망덕한 사람이 됐고. #line:nabi_talk_106
+nabi: 그래서 문 옆에 앉아. 열려 있는 걸 눈으로 확인하고 싶어서. #line:nabi_talk_107
+nabi: 근데 너는 가도 된다고 했잖아. 그런 말은 처음이라 어디다 둘지 모르겠어. #line:nabi_talk_108
+nabi: 하나 물어볼게. 너는 내가 뭘 해도 안 궁금해? #line:nabi_talk_109
+-> 궁금하긴 해요. 그래도 말해 줄 때까지 기다릴게요. #line:nabi_talk_110
+    <<aff nabi 5>>
+    <<trust nabi 1.5>>
+    <<show_standing nabi smile>>
+    nabi: 궁금한 걸 감추지 않는 건 괜찮아. 대답을 강요하지 않으면. #line:nabi_talk_111
+    nabi: 그게 구분이었어. 이제야 말로 나오네. #line:nabi_talk_112
+-> 신경 안 써요. 나비 씨 일은 나비 씨가 알아서 하는 거잖아요. #line:nabi_talk_113
+    <<aff nabi -1>>
+    <<trust nabi -1>>
+    <<show_standing nabi neutral>>
+    nabi: 그건 그것대로 서운한데. 자유라는 게 무관심이랑 같은 말은 아니거든. #line:nabi_talk_114
+    nabi: 괜찮아, 난 아직 이 둘 사이를 배우는 중이야. #line:nabi_talk_115
+-> 궁금한 건 물어볼 거예요. 대답은 안 해도 되고요. #line:nabi_talk_116
+    nabi: 그 방식이면 감당할 수 있어. 물어보고, 안 해도 되고. 연습해 볼게. #line:nabi_talk_117
+<<show_standing nabi neutral>>
+nabi: 내일 올지는 몰라. 그래도 오늘은 문이 열려 있어서 좋았어. #line:nabi_talk_118
+===
+
+title: Nabi_Talk_05
+tags: nabi talk
+---
+<<bg cafe night>>
+<<show_standing nabi neutral>>
+<<if $aff_nabi < 30>>
+    nabi: 이 시간에 불 켜진 가게는 오랜만이야. 잠깐 앉아 있어도 되지. #line:nabi_talk_119
+    player: 물론이죠. 따뜻한 거 드릴까요? #line:nabi_talk_120
+    nabi: 에스프레소. 진하게. 잠 안 오는 날이야. #line:nabi_talk_121
+<<elseif $aff_nabi < 60>>
+    nabi: 잠이 안 와서 왔어. 네 가게 불이 켜져 있길래. #line:nabi_talk_122
+    player: 불 켜 두길 잘했네요. {player_calls("nabi")}, 에스프레소 드릴게요. #line:nabi_talk_123
+    nabi: 응. 오늘은 얘기하고 싶은 날이야. #line:nabi_talk_124
+<<else>>
+    nabi: {calls_player("nabi")}, 새벽 네 시에 깨면 아직도 도망치는 꿈을 꿔. 그러면 여기부터 생각나. #line:nabi_talk_125
+    player: 여기가 먼저 생각났어요? #line:nabi_talk_126
+    nabi: 응. 이유는 모르겠고. 아니, 알 것 같고. #line:nabi_talk_127
+<<endif>>
+nabi: 그 계약, 나올 때 새벽 네 시였어. 기타 하나 메고, 아무한테도 말 안 하고. #line:nabi_talk_128
+nabi: 클럽 창고에서 사흘 잤어. 불 켜진 데가 없어서 화장실 불 켜 놓고. #line:nabi_talk_129
+nabi: 그때 처음 알았어. 아무도 내가 어디 있는지 모르는 게 이렇게 조용하다는 걸. #line:nabi_talk_130
+-> 도망친 게 아니라 나온 거예요. 그건 선택이에요. #line:nabi_talk_131
+    <<aff nabi 5>>
+    <<trust nabi 1.5>>
+    <<show_standing nabi smile>>
+    nabi: …선택. 그 단어로 말해 준 사람 처음이야. #line:nabi_talk_132
+    nabi: 도망은 돌아오지 않는 거고, 선택은 돌아와도 되는 거지. 그래서 난 그 단어가 좋아. #line:nabi_talk_133
+-> 이제 안전하니까 여기 있어요. 어디 가지 말고요. #line:nabi_talk_134
+    <<aff nabi -1>>
+    <<trust nabi -1>>
+    <<show_standing nabi sad>>
+    nabi: 고마운데. 있으라는 말도 갇히라는 말이랑 소리가 비슷해. #line:nabi_talk_135
+    nabi: 네 마음은 알아. 그래도 나는 있고 싶을 때 있을래. #line:nabi_talk_136
+-> 정말 힘들었겠어요. #line:nabi_talk_137
+    nabi: 응. 힘들었어. 근데 지금 이렇게 말하고 있으니까, 지나간 거야. #line:nabi_talk_138
+nabi: 자유라는 건 말이야, 돌아올 곳이 있어야 쓸 수 있는 단어야. 갈 곳만 있으면 그냥 떠도는 거고. #line:nabi_talk_139
+nabi: 오늘 생각난 한 줄이 있는데, 뒤가 안 나와. #line:nabi_talk_140
+-> 안 나오면 안 써도 돼요. 줄이 알아서 올 때 쓰면 되죠. #line:nabi_talk_141
+    <<aff nabi 5>>
+    <<trust nabi 1.5>>
+    <<show_standing nabi smile>>
+    nabi: 그래. 줄은 재촉하면 도망가. 노래도 사람도. #line:nabi_talk_142
+    nabi: 쓰고 싶어지면, 그때 말할게. #line:nabi_talk_143
+-> 빨리 완성해서 들려줘요. 저 기다릴게요. #line:nabi_talk_144
+    <<aff nabi -1>>
+    <<trust nabi -1>>
+    <<show_standing nabi neutral>>
+    nabi: 기다린다는 말이 마감처럼 들려. 부담 주려는 건 아닌 거 알지만. #line:nabi_talk_145
+    nabi: 천천히 쓸게. 천천히. #line:nabi_talk_146
+-> 어떤 줄인데요? 첫 마디만이라도요. #line:nabi_talk_147
+    nabi: 비밀. …아니, 반만. 문은 열려 있는데, 신발은 아직 신고 있어. #line:nabi_talk_148
+<<show_standing nabi neutral>>
+nabi: 에스프레소 잘 마셨어. 나갈 때 문 열어 둬. 닫는 건 내가 안 해도 되니까. #line:nabi_talk_149
+===
+
+title: Nabi_Talk_06
+tags: nabi talk
+---
+<<bg cafe night>>
+<<show_standing nabi neutral>>
+나비의 기타 케이스 옆 주머니에 검은 표지의 얇은 노트가 꽂혀 있다. 모서리는 닳았고 연필이 끼워져 있다. #line:nabi_talk_150
+<<if $aff_nabi < 30>>
+    nabi: 쳐다보는 거 알아. 이건 가사 노트야. 만지지만 마. #line:nabi_talk_151
+    player: 안 만져요. 눈만 한 번 지나간 거예요. #line:nabi_talk_152
+    nabi: 눈은 허락할게. #line:nabi_talk_153
+<<elseif $aff_nabi < 60>>
+    nabi: 이 노트 말인데. 가게에 와서 처음으로 한 장 채웠어. #line:nabi_talk_154
+    player: {player_calls("nabi")}, 가게에서요? #line:nabi_talk_155
+    nabi: 응. 마감 끝나고 불 꺼지는 순간을 쓰고 있어. #line:nabi_talk_156
+<<else>>
+    nabi: {calls_player("nabi")}, 이 노트는 아무한테도 안 보여 줘. 근데 네 앞에선 꺼내도 되더라. #line:nabi_talk_157
+    player: 꺼내 둔 건 나비 씨 마음이에요. 저는 보지 않을게요. #line:nabi_talk_158
+    nabi: 그래서 꺼내는 거야. #line:nabi_talk_159
+<<endif>>
+nabi: 노래 한 곡이 이 가게에서 생기고 있어. 완성될지는 몰라. #line:nabi_talk_160
+-> 다 쓰면 그때 들려줘요. 안 들려줘도 돼요. #line:nabi_talk_161
+    <<flag nabi_wait_song>>
+    <<aff nabi 5>>
+    <<trust nabi 1.5>>
+    <<show_standing nabi smile>>
+    nabi: 안 들려줘도 된다고? …그럼 들려주고 싶어질지도 모르겠네. #line:nabi_talk_162
+    nabi: 신기하다. 강요가 없으면 줄 마음이 생겨. #line:nabi_talk_163
+-> 한 줄만 보여 줘요. 제목만이라도요. #line:nabi_talk_164
+    <<aff nabi -1>>
+    <<trust nabi -1>>
+    <<show_standing nabi neutral>>
+    nabi: 제목도 아직 없어. 있어도 지금은 안 보여 줄래. #line:nabi_talk_165
+    nabi: 한 줄이 두 줄 되고, 세 줄 되고. 그런 식으로 열리는 게 싫어. #line:nabi_talk_166
+-> 펜이 필요하면 빌려줄 수 있어요. 가게에 많아요. #line:nabi_talk_167
+    nabi: 연필이 취향이야. 대신 지우개가 하나 필요해. 있으면 줘. #line:nabi_talk_168
+nabi: 아, 그리고 지난주 공연. 누가 영상 찍었더라. 올리고 싶대. #line:nabi_talk_169
+nabi: 네 가게 계정에 올리면 나도 이득이겠지. 근데 내가 내 얼굴을 허락한 적은 없거든. #line:nabi_talk_170
+-> 올리기 전에 나비 씨한테 먼저 물어볼게요. 싫다고 하면 안 올려요. #line:nabi_talk_171
+    <<flag nabi_ask_before_post>>
+    <<aff nabi 5>>
+    <<trust nabi 1.5>>
+    <<show_standing nabi smile>>
+    nabi: 먼저 묻는다는 거. 그게 다야. 어렵지 않은데 아무도 안 했어. #line:nabi_talk_172
+    nabi: 그럼 나도 생각해 볼게. 올려도 되는 장면과 안 되는 장면이 있어. #line:nabi_talk_173
+-> 홍보도 되고 좋은데 그냥 올리죠. 반응 좋을 텐데요. #line:nabi_talk_174
+    <<aff nabi -1>>
+    <<trust nabi -1>>
+    <<show_standing nabi sad>>
+    nabi: 반응이 좋을지는 모르겠고, 내 허락은 어디 갔어? #line:nabi_talk_175
+    nabi: 올리지 마. 올리려면 내 얼굴 말고 소리만. #line:nabi_talk_176
+-> 일단 보류해 둘게요. 정하면 말해 줘요. #line:nabi_talk_177
+    nabi: 보류 좋아. 시간이 필요한 일도 있어. #line:nabi_talk_178
+<<show_standing nabi neutral>>
+nabi: 가게 문 닫을 때 알려 줘. 마지막 한 줄을 마감 소리에 맞춰 써 보고 싶어. #line:nabi_talk_179
+===

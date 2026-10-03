@@ -1,0 +1,76 @@
+// 범준 개인 이벤트 1 「임대 통지서」(3장). 진입 노드 Beomjun_E1
+// 비트: 통지서의 차가움 -> 도장 방문 -> 담판(거래가 아닌 대화) -> 서류철(복선) -> 통지서 철회, 임대료 회의로.
+// 플래그: beomjun_e1_listen(+3/+1) / beomjun_e1_deal(보너스 없음) / beomjun_e1_clash(-1/-1)
+//        beomjun_e1_respect(+3/+1) / beomjun_e1_contract(+1, 서류 ‘특약’ 면을 봄 = E5 트루 열쇠 조건 중 하나)
+title: Beomjun_E1
+tags: beomjun event e1 chapter3
+---
+<<bg cafe morning>>
+임대료 인상 통지서는 카운터 위에 반으로 접힌 채 사흘째 놓여 있었다. #line:beomjun_e1_001
+‘월 임대료 18퍼센트 조정. 건물관리 규약 제14조에 의함.’ 규약이라는 글자가 이상하게 차갑다. #line:beomjun_e1_002
+player: (숫자는 이해가 돼. 그런데 이 종이에는 사람 얼굴이 하나도 없어.) #line:beomjun_e1_003
+건물주와는 계약할 때 한 번 인사한 게 전부다. 마음을 정하고, 합기도 도장의 문을 열었다. #line:beomjun_e1_004
+<<bg dojo day>>
+<<show_standing beomjun smile>>
+도장 안에서는 대걸레를 든 호랑이가 매트 위를 달리고 있었다. 발소리가 쿵쿵 울릴 때마다 먼지가 햇살 속에서 흔들렸다. #line:beomjun_e1_005
+beomjun: 하하! 어, 가게 {calls_player("beomjun")}! 마침 잘 왔다! 밥은 먹었어? #line:beomjun_e1_006
+player: 통지서 때문에 왔어요. 임대료 얘기를 직접 하고 싶어서요. #line:beomjun_e1_007
+<<show_standing beomjun surprised>>
+beomjun: 아, 그거! …그, 뭐냐, 사실 올리는 건 나도 마음이 불편해. 근데 규정이 말이지. #line:beomjun_e1_008
+beomjun: 관리사무소에서 삼 년마다 재산정하라는 규약이 있거든. 그래서 양식대로 보낸 거고… #line:beomjun_e1_009
+대걸레를 든 손이 어색하게 멈췄다. 범준은 말하는 내내 내 눈을 제대로 보지 못했다. #line:beomjun_e1_010
+-> 숫자 때문에 온 게 아니에요. 이 금액이 어떻게 나왔는지 처음부터 듣고 싶어서요. #line:beomjun_e1_011
+    <<flag beomjun_e1_listen>>
+    <<aff beomjun 3>>
+    <<trust beomjun 1>>
+    beomjun: 처음부터? …아무도 그렇게 안 물어봤는데. #line:beomjun_e1_012
+    beomjun: 좋아, 앉아. 이건 서서 할 얘기가 아니야. #line:beomjun_e1_013
+-> 깎아 주시면 가게에서 도장 홍보를 해 드릴게요. 서로 이익이잖아요. #line:beomjun_e1_014
+    <<flag beomjun_e1_deal>>
+    beomjun: 홍보? 고맙긴 한데 말이야, 그건 거래잖아. #line:beomjun_e1_015
+    beomjun: 난 장사꾼이 아니라 건물주고, 건물주이기 전에 이웃이야. 거래는 안 하고 대화는 하자. 앉아. #line:beomjun_e1_016
+-> 너무하시네요. 인정머리 없이 종이 한 장 던져 놓고요. #line:beomjun_e1_017
+    <<flag beomjun_e1_clash>>
+    <<aff beomjun -1>>
+    <<trust beomjun -1>>
+    <<show_standing beomjun sad>>
+    beomjun: …인정머리. 하하, 그 말 아프네. 근데 맞아. 종이 한 장 보낸 건 내 잘못이야. #line:beomjun_e1_018
+    beomjun: 화낼 자격은 네가 있어. 일단 앉아. #line:beomjun_e1_019
+<<show_standing beomjun neutral>>
+범준은 대걸레를 벽에 기대 세우고 매트 가장자리에 털썩 앉았다. 나도 맞은편에 앉았다. #line:beomjun_e1_020
+beomjun: 사실대로 말할게. 올려야 하는 이유는 있어. 지붕이 새고, 보일러는 이번 겨울을 못 넘기고, 건물 세금도 올랐어. #line:beomjun_e1_021
+beomjun: 도장 쪽도 좀 빠듯해서… 아니! 지붕 얘기야, 지붕! #line:beomjun_e1_022
+player: 지붕이요. (…‘도장 쪽도 빠듯하다’고 했는데.) #line:beomjun_e1_023
+beomjun: 하하, 그래, 지붕이야! 아무튼 올리긴 올려야 하는데 십팔 프로는 나도 세다 싶었어. 양식에 박힌 숫자를 눈으로 안 봤거든. #line:beomjun_e1_024
+beomjun: 내 사정 때문에 네 가게가 힘들어지면, 그건 의리가 아니라 구경이지. #line:beomjun_e1_025
+벽 선반 위에 낡은 파일철이 놓여 있었다. 책등에는 손으로 눌러쓴 ‘달빛 모퉁이 임대차’. 주황색 탭 하나가 삐죽 튀어나와 있다. #line:beomjun_e1_026
+beomjun: (시선을 따라오더니 목소리가 한 칸 커졌다) 아, 그거! 그건 그냥 서류야! 재미없어! 볼 것도 없고! #line:beomjun_e1_027
+-> 보여 주기 싫으면 안 봐도 돼요. 말하고 싶을 때 들을게요. #line:beomjun_e1_028
+    <<flag beomjun_e1_respect>>
+    <<aff beomjun 3>>
+    <<trust beomjun 1>>
+    <<show_standing beomjun shy>>
+    beomjun: …고맙다. 그런 말은 쉽게 안 나오는데. #line:beomjun_e1_029
+    beomjun: 언젠가 내가 먼저 보여 줄게. 그날이 오면. #line:beomjun_e1_030
+-> 잠깐만 봐도 될까요? 우리 가게 계약이니까 알고 싶어서요. #line:beomjun_e1_031
+    <<flag beomjun_e1_contract>>
+    <<aff beomjun 1>>
+    beomjun: 보, 봐도 돼! 원래 네 가게 계약서잖아! 근데 앞장만 봐, 뒷장은 재미없어! #line:beomjun_e1_032
+    파일철 가운데 장에 ‘특약’이라는 제목이 보였다. 범준이 손바닥으로 위쪽을 반쯤 가렸지만 날짜가 슬쩍 보였다. 가게가 지금 주인에게 넘어오기도 한참 전의 날짜였다. #line:beomjun_e1_033
+    beomjun: 자, 자, 이 정도면 됐지! 그건 나중에! 나중에 얘기해 줄게! #line:beomjun_e1_034
+    player: (삼촌이 가게를 하던 때 날짜인데. 왜 이렇게 서둘러 덮지?) #line:beomjun_e1_035
+-> 오늘은 임대료 얘기가 먼저죠. 서류는 다음에 볼게요. #line:beomjun_e1_036
+    beomjun: 그래, 우선순위 지키자! 서류는 도망 안 가! #line:beomjun_e1_037
+<<show_standing beomjun smile>>
+beomjun: 정했다. 그 통지서는 철회야. 숫자는 관리사무소 양식이 아니라 내가 직접 계산해서, 지붕값이랑 보일러값을 같이 펼쳐 놓고 보자. #line:beomjun_e1_038
+beomjun: 올릴 부분이 있으면 가게랑 같이 나눌 수 있는 쪽으로. 정식 임대료 회의를 열게. 종이 한 장 말고, 얼굴 보고. #line:beomjun_e1_039
+<<show_cg BEOMJUN_E1>>
+범준은 통지서를 매트 위에 펼치더니 굵은 펜으로 ‘18%’를 쭉 그어 버렸다. 그 옆에 커다란 글씨로 ‘같이 정한다’라고 쓰고, 마지막에 서명을 했다. 글씨가 너무 커서 종이 밖으로 반쯤 삐져나왔다. #line:beomjun_e1_040
+beomjun: 이러면 도장 찍은 거나 마찬가지지! …아, 이 도장은 인장 말고 도장 말이야. 방금 한 말, 우리 도장에서 한 말이니까! #line:beomjun_e1_041
+player: 알아들었어요. 이 종이는 제가 간직할게요. #line:beomjun_e1_042
+<<hide_cg>>
+<<show_standing beomjun smile>>
+beomjun: 간직해! 다음 회의 때 이 종이부터 꺼내 놓고 시작하자. #line:beomjun_e1_043
+beomjun: 아 참, 밥 먹었어? 일단 먹고 가! 단 과자 있는데! #line:beomjun_e1_044
+<<end_event beomjun 1>>
+===

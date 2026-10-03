@@ -1,0 +1,45 @@
+// 나비 데이트 「옥상 정원」(6장 해금, 밤, 가게 위층). 수치는 호스트가 적용. 진입 노드 Nabi_Date_Rooftop
+// 데이트 중 선택 기록 플래그(수치 없음): nabi_roof_listen / nabi_roof_quiet / nabi_roof_ask, nabi_date_rooftop_done
+title: Nabi_Date_Rooftop
+tags: nabi date
+---
+<<bg rooftop night>>
+<<show_standing nabi neutral>>
+<<if $aff_nabi < 30>>
+    가게 위 옥상. 나비가 난간에 팔을 걸치고 항구의 불빛을 내려다본다. 향초 하나가 바람에 흔들린다. #line:nabi_drt_001
+    nabi: 여기 올라와도 된다고 해서 올라왔어. 문이 있긴 한데, 열려 있더라. #line:nabi_drt_002
+    player: 늘 열려 있어요. 닫는 건 비 올 때만이에요. #line:nabi_drt_003
+    nabi: 좋네. 닫는 이유가 날씨뿐이라니. #line:nabi_drt_004
+<<elseif $aff_nabi < 60>>
+    nabi: 이 향초, 내가 좋아하는 거네. 알고 샀어? #line:nabi_drt_005
+    player: {player_calls("nabi")}, 우연이라고 하면 안 믿겠죠? #line:nabi_drt_006
+    nabi: 안 믿어. 그래도 믿고 싶어서 믿을게. #line:nabi_drt_007
+<<else>>
+    nabi: {calls_player("nabi")}. 이 옥상, 내 노래 제일 많이 나오는 곳이야. 아직 아무도 몰라. #line:nabi_drt_008
+    player: 저만 알게 된 거예요? #line:nabi_drt_009
+    nabi: 반만. 나머지 반은 바람이 들었어. #line:nabi_drt_010
+<<endif>>
+도시의 소리가 아래에서 작게 올라온다. 부두의 기적 소리, 누군가의 웃음, 가게 간판이 살짝 삐걱대는 소리. #line:nabi_drt_011
+nabi: 여기선 노래가 필요 없을 때가 있어. 소리가 이미 노래라서. #line:nabi_drt_012
+-> 가만히 듣고 있을게요. 아무 말 안 해도 돼요. #line:nabi_drt_013
+    <<flag nabi_roof_quiet>>
+    <<show_standing nabi smile>>
+    nabi: 침묵이 편한 사람이랑 있는 거, 생각보다 드물어. 좋다. #line:nabi_drt_014
+-> 하나 연주해 줘요. 안 내키면 안 해도 되고요. #line:nabi_drt_015
+    <<flag nabi_roof_listen>>
+    <<show_standing nabi smile>>
+    nabi: 안 내키면 안 해도 된다니. 그 단서가 있으니까 오히려 치고 싶어지네. #line:nabi_drt_016
+    nabi: 짧게 칠게. 가사는 없어. 코드만. #line:nabi_drt_017
+-> 여기서 노래 쓰는 거 맞죠? 어떻게 쓰는지 궁금해요. #line:nabi_drt_018
+    <<flag nabi_roof_ask>>
+    nabi: 알려 줄 수 있는 건 하나야. 막히면 아래 불빛을 봐. 불빛마다 이유가 있는 것처럼, 줄마다 이유가 있어. #line:nabi_drt_019
+    nabi: 이유를 모르겠으면 그냥 두는 거. 그게 다야. #line:nabi_drt_020
+바람이 바뀌었다. 나비가 코트 깃을 올리며 한 걸음 가까이 섰다. 거리는 팔 하나쯤. #line:nabi_drt_021
+nabi: 가까이 오지 마. 아니, 조금만. …그 정도면 됐어. #line:nabi_drt_022
+player: 이 정도예요? #line:nabi_drt_023
+nabi: 응. 이 거리에서는 숨이 편해. #line:nabi_drt_024
+nabi: 자유라는 말, 여기서 들으면 덜 외로워. 이상하지. #line:nabi_drt_025
+<<show_standing nabi smile>>
+nabi: 오늘 고마웠어. 내려갈 땐 문, 열어 두고 가자. #line:nabi_drt_026
+<<show_standing nabi neutral>>
+===

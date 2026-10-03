@@ -1,0 +1,58 @@
+// 범준 다자 조각. 가드레일: docs/10_Route_Structure.md §3(자발적 동의, 독점 미화 금지, 키워드 ‘의지’ 유지, 수위 암시까지).
+// 진입 노드: Beomjun_Harem_Consent, Beomjun_Harem_Epilogue. 동의가 끝나면 harem_ok_beomjun 설정.
+title: Beomjun_Harem_Consent
+tags: beomjun harem
+---
+<<bg dojo night>>
+<<show_standing beomjun neutral>>
+도장에는 우리 둘뿐이었다. 범준은 평소처럼 매트에 앉지 않고, 손님이라도 맞는 것처럼 정좌를 하고 있었다. #line:beomjun_harem_001
+beomjun: 오늘은 진지한 얘기야. 큰 소리로 안 할게. 대신 끝까지 들어 줘. #line:beomjun_harem_002
+beomjun: 네가 나 말고도 사랑하는 사람이 있다는 거, 알고 있어. 그리고 그 사람들과 다 같이 가는 길을 생각하고 있다는 것도. #line:beomjun_harem_003
+beomjun: 나는 한 번 정하면 끝까지 가는 사람이야. 그래서 이 대답은 쉽게 못 해. 쉽게 하면 의리가 아니라 구경이니까. #line:beomjun_harem_004
+beomjun: 먼저 말해 둘게. 이건 네가 원해서 하는 얘기라고 해서 내가 억지로 맞추는 게 아니야. 내 마음이 어디 있는지부터 얘기하는 거야. #line:beomjun_harem_032
+player: 알아요. 그래서 먼저 묻고 싶었어요. 정말 괜찮아요? 싫으면 싫다고 해요. #line:beomjun_harem_005
+-> 싫으면 지금 말해도 돼요. 그러면 저도 이 얘기는 여기서 접을게요. #line:beomjun_harem_006
+    <<flag beomjun_harem_noexit>>
+    <<show_standing beomjun smile>>
+    beomjun: 접는다고? 그 말이 이상하게 마음을 편하게 하네. 나갈 문이 열려 있다는 게. #line:beomjun_harem_007
+-> 강하니까 이해해 주겠죠? 믿고 있어요. #line:beomjun_harem_008
+    <<flag beomjun_harem_strong>>
+    <<show_standing beomjun sad>>
+    beomjun: 강하다고 안 아픈 건 아니야. 아픈 걸 말 안 하는 게 내 약점이고. #line:beomjun_harem_009
+    beomjun: 오늘은 말할게. 이해해 주는 척하는 건 안 하려고. #line:beomjun_harem_010
+    player: …미안해요. 강하니까 괜찮다고 한 건 제 잘못이에요. 다시 물어볼게요. 진짜 마음은 어때요? #line:beomjun_harem_011
+    <<show_standing beomjun neutral>>
+    beomjun: 고마워, 다시 물어봐 줘서. 진짜 마음을 말할게. #line:beomjun_harem_012
+beomjun: 솔직하게 말하면 질투는 해. 인정할게. 근데 질투는 내 몫이지 네 책임이 아니야. 그걸로 누구를 묶거나 소리 지르는 일은 없을 거야. #line:beomjun_harem_013
+beomjun: 질투가 올라오면 도장에서 낙법 천 번 하고 와서 말로 할게. 그게 내 방식이야. #line:beomjun_harem_014
+beomjun: 조건이 몇 가지 있어. 첫째, 다 같이 알아야 해. 숨기는 사람이 한 명이라도 있으면 안 해. #line:beomjun_harem_015
+beomjun: 둘째, 누구든 힘들면 멈출 수 있어야 해. 나도, 너도, 다른 사람도. 멈추는 건 실패가 아니야. #line:beomjun_harem_016
+beomjun: 셋째, 책임은 나눠서 져. 누구 한 명만 다 지는 건 의지가 아니라 짐이거든. #line:beomjun_harem_017
+player: 세 가지 다 약속할게요. 그리고 불편하면 그때 바로 말해 줘요. 눈치 못 채도 서운해하지 않을게요. #line:beomjun_harem_018
+<<show_standing beomjun smile>>
+beomjun: 하하, 눈치 없는 걸 미리 용서해 주다니. 대신 나는 물어볼게. 먼저, 자주. #line:beomjun_harem_019
+beomjun: 다른 사람들도 이 자리에 앉혀서 얘기하자. 불편하다는 사람이 있으면 그 사람 얘기부터 들을게. #line:beomjun_harem_020
+beomjun: 그럼 대답할게. 응. 같이 사랑해도 돼. 내 의지로, 내 입으로, 억지 없이. #line:beomjun_harem_021
+player: 고마워요. 저도 같은 마음이에요. #line:beomjun_harem_022
+<<flag harem_ok_beomjun>>
+beomjun: 그리고 이 약속은 너한테만 하는 게 아니야. 나중에 다른 사람들 앞에서도 똑같이 말할 거야. 같은 말, 같은 목소리로. #line:beomjun_harem_033
+beomjun: 도장에서 한 약속이니까 도장 찍은 거다. 인감 말고, 이 도장! #line:beomjun_harem_023
+범준이 두 팔을 벌려 천천히 안아도 되냐고 물었고, 나는 고개를 끄덕였다. 포옹은 오래도록 따뜻했다. #line:beomjun_harem_024
+===
+
+title: Beomjun_Harem_Epilogue
+tags: beomjun harem epilogue
+---
+<<bg cafe night>>
+<<show_standing beomjun smile>>
+일요일 저녁, 달빛 모퉁이의 큰 테이블에 식구들이 둘러앉았다. 범준의 자리는 가장 끝, 제일 큰 의자였다. #line:beomjun_harem_025
+beomjun: 의지할 사람이 이렇게 많아졌네. 어깨가 열 개쯤 된 기분이야, 하하! #line:beomjun_harem_026
+beomjun: 근데 나는 이제 어깨를 빌려주는 사람만이 아니라, 빌리는 사람이기도 하지. #line:beomjun_harem_027
+player: 오늘은 뭘 빌릴 거예요? #line:beomjun_harem_028
+beomjun: 오늘은 설거지! 네가 컵 닦으면 내가 헹굴게. 의지는 이런 데서 쓰는 거야! #line:beomjun_harem_029
+식탁 위로 웃음이 번졌다. 범준이 목소리를 줄이려다가 웃음 때문에 다시 커졌고, 누군가 손바닥 신호를 내리자 다 같이 폭소했다. #line:beomjun_harem_030
+beomjun: 알았어, 알았어! 볼륨! 맞출게! #line:beomjun_harem_031
+player: 그런데 귀가 예민한 분이 계셔서 소리를 낮춘 건 처음 아니에요? #line:beomjun_harem_034
+beomjun: 처음은 아냐. 이제 습관이 되는 중이야. 습관은 의지로 만드는 거니까. #line:beomjun_harem_035
+<<show_standing beomjun smile>>
+===

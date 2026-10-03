@@ -1,0 +1,86 @@
+// 나비 개인 이벤트 1 「첫 연주」(2장 말미, 가게 문 앞). 진입 노드 Nabi_E1
+// 비트: 마감 후 문 앞 계단의 기타 소리 -> 문을 활짝 열어 둠(허락을 묻지 않음) -> 즉흥 연주(가사 조각 A) -> 선택 2회 -> 마무리.
+// 플래그: nabi_e1_honest / nabi_e1_alone / nabi_e1_coin(문을 연 이유), nabi_e1_open / nabi_e1_stay / nabi_e1_steer(들어오라는 말에 대한 태도)
+// 의존: 공통 2장 비트 '나비가 가게 문 앞에서 연주'. 나비와 처음 말을 트는 장면이므로 이전 대면 없이도 읽히도록 썼다.
+title: Nabi_E1
+tags: nabi event e1 chapter2
+---
+<<bg cafe night>>
+<<show_standing nabi neutral>>
+마감을 마치고 간판 불을 끄려는데, 문 밖에서 기타 소리가 났다. 아주 작게, 튕기다 말다 하는 소리. #line:nabi_e1_001
+문을 반쯤 열자 계단 맨 위에 검은 고양이 한 명이 앉아 있었다. 무릎에는 기타, 발치에는 열린 케이스. #line:nabi_e1_002
+nabi: 가게 앞이라 미안. 간판 불이 켜져 있길래. 아니, 꺼지기 직전이라 앉은 건데. #line:nabi_e1_003
+player: 괜찮아요. 연주하던 거 계속해요. 저는 뒷정리만 할게요. #line:nabi_e1_004
+nabi: 연주라고 할 건 아니고. 줄 풀리는 소리야. 이게 튜닝이라고 하긴 좀 그래도. #line:nabi_e1_005
+나는 말없이 문을 안쪽으로 끝까지 밀고, 의자 하나를 문틈에 끼워 고정했다. 계단 위로 가게의 노란 불빛이 길게 번졌다. #line:nabi_e1_006
+nabi: …뭐 하는 거야. 닫아도 돼. 나 때문에 열 필요 없어. #line:nabi_e1_007
+player: 닫으면 소리가 안 들려서요. 그뿐이에요. #line:nabi_e1_008
+나비는 한동안 나를 쳐다봤다. 눈은 빛을 받아 반쯤 금색이었다. #line:nabi_e1_009
+nabi: 허락도 안 받고 그냥 여네. 보통은 ‘여기서 하면 안 돼요’부터 하거든. #line:nabi_e1_010
+nabi: 시끄러우면 말해. 바로 갈 테니까. 가야 하면 가는 사람이라서. #line:nabi_e1_011
+player: 시끄럽지 않아요. 계속해요. #line:nabi_e1_012
+나비는 숨을 한 번 내쉬고, 기타를 고쳐 안았다. 줄 위의 손가락이 한 번 움직이자 계단이 조용해졌다. #line:nabi_e1_013
+<<show_cg NABI_E1>>
+nabi: ♪ 문은 열려 있고 #line:nabi_e1_014
+nabi: ♪ 나는 아직 신발을 신고 있어 #line:nabi_e1_015
+nabi: ♪ 떠날 수 있다는 걸 알아서 #line:nabi_e1_016
+nabi: ♪ 오늘은 앉아 있는 거야 #line:nabi_e1_017
+노래는 거기서 끝났다. 코드가 길게 흩어지고, 열린 문 사이로 가게의 불빛과 밤공기가 천천히 섞였다. #line:nabi_e1_018
+nabi: …틀렸네. 마지막 줄 박자. #line:nabi_e1_019
+nabi: 이 문 왜 열었어? 그냥 닫아도 되잖아. #line:nabi_e1_020
+-> 닫혀 있으면 노래가 안 들려서요. 듣고 싶었어요. #line:nabi_e1_021
+    <<flag nabi_e1_honest>>
+    <<aff nabi 3>>
+    <<trust nabi 1>>
+    <<show_standing nabi shy>>
+    nabi: …이유가 그게 다야? 투명하네. #line:nabi_e1_022
+    nabi: 이유를 두세 개 기대했는데. 한 개면 믿을 만해. #line:nabi_e1_023
+-> 혼자 앉아 있는 걸 보니까 그냥 혼자 두기 싫어서요. #line:nabi_e1_024
+    <<flag nabi_e1_alone>>
+    <<show_standing nabi neutral>>
+    nabi: 혼자 있는 거 좋아하는데. …근데 그 말은 싫지 않네. #line:nabi_e1_025
+    nabi: 두고 보자. 혼자 두기 싫다는 사람이 나중에 어디까지 오는지. #line:nabi_e1_026
+-> 이 가게 손님이 될 수도 있잖아요. 연주 들려주면 좋은 일이니까요. #line:nabi_e1_027
+    <<flag nabi_e1_coin>>
+    <<aff nabi -1>>
+    <<trust nabi -1>>
+    <<show_standing nabi neutral>>
+    nabi: 손님. 그렇구나. 연주를 손님 끌어오는 걸로 쓰는 거네. #line:nabi_e1_028
+    nabi: 아니야, 장사 입장에선 맞는 말이야. 그냥 오늘은 그런 말이 듣고 싶진 않았어. #line:nabi_e1_029
+<<hide_cg>>
+<<show_standing nabi neutral>>
+나비가 케이스 뚜껑을 닫으려다 손을 멈췄다. 닫는 대신, 케이스 위에 기타를 올려놓는다. #line:nabi_e1_030
+nabi: 하나만 더 물어볼게. 들어와서 앉으라고 하면, 나는 안 들어갈 거야. #line:nabi_e1_031
+nabi: 들어오라는 말이 열쇠 같을 때가 있어서. 받는 순간 잠기거든. #line:nabi_e1_032
+-> 그럼 들어오라고 안 할게요. 문은 열어 둘 거예요. 오고 싶으면 와요. #line:nabi_e1_033
+    <<flag nabi_e1_open>>
+    <<aff nabi 3>>
+    <<trust nabi 1>>
+    <<show_standing nabi smile>>
+    nabi: …그래. 그거네. #line:nabi_e1_034
+    nabi: 오고 싶을 때 오는 것. 그게 제일 어려운 부탁이었어. #line:nabi_e1_035
+-> 한 곡만 더 해 줘요. 문 앞에서 듣고 있을게요. #line:nabi_e1_036
+    <<flag nabi_e1_stay>>
+    <<aff nabi 1>>
+    <<show_standing nabi smile>>
+    nabi: 한 곡이라. 좋아, 한 곡. 단, 앵콜이라고 하지 마. 앵콜은 갚아야 하는 빚 같아서. #line:nabi_e1_037
+-> 밤바람이 차요. 안으로 들어와서 연주해요. 뭐라도 마실 수 있게요. #line:nabi_e1_038
+    <<flag nabi_e1_steer>>
+    <<aff nabi -1>>
+    <<trust nabi -1>>
+    <<show_standing nabi sad>>
+    nabi: 그런 말, 많이 들었어. 걱정이 문장 앞에 붙어 있고, 끝엔 명령이 있는 말. #line:nabi_e1_039
+    nabi: 네가 그러려던 건 아닐 거야. 그래도 오늘은 밖이 좋아. #line:nabi_e1_040
+나비는 마지막으로 기타를 한 번 튕겼다. 코드가 열린 문 안쪽까지 흘러 들어갔다가 사라졌다. #line:nabi_e1_041
+nabi: 이 가게, 문이 열려 있는 날이 많아? #line:nabi_e1_042
+player: 영업할 때는 거의요. 오늘은 마감 후인데도 열어 뒀고요. #line:nabi_e1_043
+nabi: 알겠어. 그럼 다음에 지나갈 때, 불이 켜져 있으면 다시 앉을지도 몰라. 약속은 아니야. #line:nabi_e1_044
+nabi: 약속은 아니라는 거, 기억해 줘. 약속으로 들으면 부담이 될 테니까. #line:nabi_e1_045
+player: 기억할게요. 약속 아니에요. 그냥 문이에요. #line:nabi_e1_046
+nabi: …문. 그래, 그냥 문. #line:nabi_e1_047
+<<show_standing nabi smile>>
+nabi: 이름은 나비야. 이 정도만 알려 줄게. 나머지는 천천히. #line:nabi_e1_048
+nabi: 잘 들어가. 아니, 잘 닫아. 아니, 열어 두고 올라가. 어느 쪽이든 네 마음대로. #line:nabi_e1_049
+<<show_standing nabi neutral>>
+<<end_event nabi 1>>
+===

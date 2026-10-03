@@ -1,0 +1,26 @@
+# 요한 진입 노드
+Johan_Talk_01
+Johan_Talk_02
+Johan_Talk_03
+Johan_Talk_04
+Johan_Talk_05
+Johan_Talk_06
+Johan_Talk_07
+Johan_Talk_08
+Johan_Gift_Like
+Johan_Gift_Neutral
+Johan_Gift_Dislike
+Johan_Date_BookStreet
+Johan_Date_NightMarket
+Johan_Date_Greenhouse
+Johan_Date_Generic
+Johan_E1
+Johan_E2
+Johan_E3
+Johan_E4
+Johan_E5
+Johan_End_Normal
+Johan_End_Good
+Johan_End_True
+Johan_Harem_Consent
+Johan_Harem_Epilogue

@@ -1,0 +1,80 @@
+// 범준 개인 이벤트 3 「서툰 위로」(6장). 진입 노드 Beomjun_E3
+// 비트: 마감 후 방문 -> 서툰 위로의 경위(하울·나비) -> 조언(선택1) -> 위로 연습(선택2, 합기도의 ‘받아서 흘리기’) -> 다짐.
+// 플래그: beomjun_e3_ask(+4/+1) / beomjun_e3_gift(보너스 없음) / beomjun_e3_excuse(-1/-1)
+//        beomjun_e3_practice(+4/+1) / beomjun_e3_soft(보너스 없음) / beomjun_e3_harsh(-1/-1)
+// 의존: 하울·나비는 직접 등장하지 않고 범준의 전언으로만 언급한다(하울: 말없이 잔 닦기, 나비: 짧고 건조한 반말).
+title: Beomjun_E3
+tags: beomjun event e3 chapter6
+---
+<<bg cafe night>>
+<<show_standing beomjun neutral>>
+장부 소동이 한 번 휩쓸고 지나간 밤. 마감 후 홀의 불을 막 끄려는데 문이 천천히 열렸다. 종소리보다 먼저 들어오던 목소리가 오늘은 없다. #line:beomjun_e3_001
+beomjun: …{calls_player("beomjun")}. 마감인 거 알아. 달달한 라떼 한 잔만… 아니, 먼저 물어볼 게 있어서. #line:beomjun_e3_002
+작은 컵을 감싼 커다란 손이 평소보다 조심스러웠다. 귀는 한 뼘쯤 내려가 있었다. #line:beomjun_e3_003
+player: 무슨 일 있어요? #line:beomjun_e3_004
+beomjun: 사람 둘한테 상처를 줬어. 위로하려던 건데. #line:beomjun_e3_005
+beomjun: 공연 날 나는 위원회 점검 때문에 못 갔잖아. 하울이 큰 소리에 귀를 눌렀다는 얘길 듣고 이튿날 내가 ‘귀 아프면 뒤에 숨어 있어! 앞은 내가 설게!’ 했거든. #line:beomjun_e3_006
+beomjun: 하울은 말없이 잔만 닦더라. 화난 건지 아닌지도 모르겠고. #line:beomjun_e3_007
+beomjun: 나비는 공연 중에 기타 줄이 끊어졌다길래 ‘괜찮아, 줄 탓이야! 노래는 그만 정착해서 가게 전속으로 해! 안정적이잖아!’ 했더니 ‘…그렇게 말하는 거 아니야’ 하고 가 버렸어. #line:beomjun_e3_008
+beomjun: 위로에는 힘이 필요한 줄 알았어. 내가 나서서 해결해 주면 되는 줄. 근데 둘 다 표정이 닫혔어. #line:beomjun_e3_009
+<<show_standing beomjun sad>>
+beomjun: 뭘 잘못했는지 모르는 채로 있는 게 제일 싫어서 왔어. 알려 줘. 아니, 같이 알아봐 줘. #line:beomjun_e3_010
+-> 해결해 주기 전에 뭘 원하는지 먼저 물어봐 주세요. 위로는 상대가 정하는 거예요. #line:beomjun_e3_011
+    <<flag beomjun_e3_ask>>
+    <<aff beomjun 4>>
+    <<trust beomjun 1>>
+    <<show_standing beomjun surprised>>
+    beomjun: 물어본다… 원하는 걸? #line:beomjun_e3_012
+    beomjun: 내가 먼저 답을 정해 놓고 들이밀었네. 문제도 안 보고 정답부터 들고 갔구나. #line:beomjun_e3_013
+-> 사과 선물부터 보내요. 하울에겐 얼음틀, 나비에겐 기타 피크 같은 거요. #line:beomjun_e3_014
+    <<flag beomjun_e3_gift>>
+    <<show_standing beomjun neutral>>
+    beomjun: 선물! 좋은 생각이긴 한데, 선물이 말을 대신해 주진 않겠지? 말도 해야겠지. #line:beomjun_e3_015
+-> 둘 다 예민한 거예요. 마음에 두지 마세요. #line:beomjun_e3_016
+    <<flag beomjun_e3_excuse>>
+    <<aff beomjun -1>>
+    <<trust beomjun -1>>
+    beomjun: 아니, 예민한 게 아니야. 내가 둔한 거야. #line:beomjun_e3_017
+    beomjun: 남 탓을 하면 내가 편하긴 하겠지. 근데 그건 의리가 아니지. #line:beomjun_e3_018
+<<show_standing beomjun neutral>>
+beomjun: 물어보는 연습을 하고 싶은데, 연습할 상대가 필요해. 도장 애들은 내가 관장이라 뭐든 ‘네’ 하거든. #line:beomjun_e3_019
+player: 제가 힘든 날을 보내는 사람이라고 생각하고 해 봐요. #line:beomjun_e3_020
+beomjun: 좋아! 시작한다! 심호흡! #line:beomjun_e3_021
+<<show_standing beomjun smile>>
+beomjun: (아주 큰 소리로) 힘든 거야?! 걱정 마! 내가 다 해결해 줄게! 말만 해! #line:beomjun_e3_022
+빈 홀 유리창이 가볍게 떨렸다. 범준이 눈치를 보며 내 표정을 살폈다. #line:beomjun_e3_023
+beomjun: …방금 어땠어? 솔직하게. #line:beomjun_e3_024
+-> 마음은 정말 전해졌어요. 목소리만 한 칸 낮춰서 다시 해 봐요. 같이 연습해요. #line:beomjun_e3_025
+    <<flag beomjun_e3_practice>>
+    <<aff beomjun 4>>
+    <<trust beomjun 1>>
+    beomjun: 한 칸! 알았어. 다시. (목소리를 낮추고) 힘든 거야? …걱정은 되는데, 해결은 네가 정해. 난 옆에 있을게. #line:beomjun_e3_026
+    낮아진 목소리가 오히려 더 컸다. 이상한 일이다. 말이 단단해졌다. #line:beomjun_e3_027
+    beomjun: 어? 이거 훨씬 낫네. 소리를 줄였는데 마음이 더 들어가는 느낌이야. #line:beomjun_e3_028
+-> 한 번만 더 해 봐요. 이번엔 먼저 질문하고 기다려 보세요. #line:beomjun_e3_029
+    <<flag beomjun_e3_soft>>
+    beomjun: 질문하고 기다리기… 기다리는 건 서툰데. 해 볼게. (낮게) 어떻게 해 줄까? …기다리는 중. #line:beomjun_e3_030
+    beomjun: 오, 이 침묵이 생각보다 안 무서운데? 합기도의 호흡이랑 비슷하네. #line:beomjun_e3_031
+-> 솔직히 아직 많이 서툴러요. 이대로면 또 상처 줄 거예요. #line:beomjun_e3_032
+    <<flag beomjun_e3_harsh>>
+    <<aff beomjun -1>>
+    <<trust beomjun -1>>
+    <<show_standing beomjun sad>>
+    beomjun: …그렇지. 맞는 말이긴 한데 지금은 좀 세네. 심호흡 한 번만 하고. #line:beomjun_e3_033
+    beomjun: 괜찮아, 다시 하자. 서투른 걸 인정하는 게 시작이니까. #line:beomjun_e3_034
+<<show_standing beomjun neutral>>
+beomjun: 합기도도 그래. 상대 힘을 막으면 둘 다 넘어지는데, 받아서 흘려 주면 아무도 안 다쳐. 위로도 그거였는데 나는 막기만 했네. 밀어붙이면서. #line:beomjun_e3_035
+beomjun: 나는 늘 받쳐 주는 쪽이었어. 받치는 법은 아는데, 받는 법은 몰랐어. #line:beomjun_e3_036
+<<show_cg BEOMJUN_E3>>
+범준이 작은 컵을 들어 천천히 한 모금 마셨다. 내려갔던 귀가 아주 조금, 한 칸쯤 올라왔다. 접시를 밀자 큰 손이 단 과자 하나를 집었다. #line:beomjun_e3_037
+beomjun: {name()}, 너는 내가 한마디 했을 때 한 번도 해결하려 들지 않았어. 그냥 들었지. #line:beomjun_e3_038
+beomjun: 지금 어깨가 가벼워. 이게 위로였나 보다. #line:beomjun_e3_039
+<<hide_cg>>
+<<show_standing beomjun smile>>
+beomjun: 내일 새벽 어시장에 가서 하울을 기다릴게. 말은 이렇게 할 거야. ‘어제는 네가 원하는 걸 안 물어봤어. 지금 물어봐도 돼?’ 맞지? #line:beomjun_e3_040
+player: 맞아요. 대답이 늦어도 기다려 주세요. #line:beomjun_e3_041
+beomjun: 기다리기! 그래, 그게 숙제네. 나비한테는 노래 얘기를 하기 전에 ‘듣고 싶어’부터 말할 거야. #line:beomjun_e3_042
+beomjun: 고맙다. 그리고 부탁이 있는데, 내가 또 눈치 없는 소리를 하면 그 손바닥 신호를 줘. 알았지? 부탁이야. #line:beomjun_e3_043
+<<show_standing beomjun neutral>>
+<<end_event beomjun 3>>
+===

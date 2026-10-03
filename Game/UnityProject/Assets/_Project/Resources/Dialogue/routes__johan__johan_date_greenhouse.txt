@@ -1,0 +1,47 @@
+// 요한 데이트: 온실 식물원(낮). 수치는 호스트(RomanceService.Date)가 적용. 진입 노드 Johan_Date_Greenhouse
+// 모티프: 향(맛의 팔 할), 이름표, 조용함이 무섭지 않은 순간(냉장고 소리 -> 물방울 소리).
+// 플래그: johan_greenhouse_smell / johan_greenhouse_label / johan_greenhouse_wander, 재방문 johan_date_greenhouse_done
+title: Johan_Date_Greenhouse
+tags: johan date greenhouse
+---
+<<bg greenhouse day>>
+<<show_standing johan smile>>
+유리 지붕 아래의 공기는 따뜻하고 축축하다. 문을 열자 흙과 풀 냄새가 한꺼번에 밀려온다. #line:johan_dgh_001
+<<if flag("johan_date_greenhouse_done")>>
+    johan: 또 왔네. 이번엔 수첩 없이. 지난번에 맡았던 민트가 얼마나 컸는지 확인하러 온 거야. #line:johan_dgh_002
+    player: 민트 안부를 묻는 칼럼니스트라니, 새로운데요. #line:johan_dgh_003
+<<else>>
+    johan: 식물원 데이트라니, 의외지? 맛의 팔 할은 향이야. 그러니 여기는 말하자면 맛의 원산지고, 나는 원산지 탐방을 온 거지. #line:johan_dgh_004
+    player: 먹을 수 있는 것만 보러 온 건 아니죠? #line:johan_dgh_005
+    johan: 솔직히 말하면 먹을 수 있는 것부터 찾을 거야. 그래도 이름표는 읽을게. 약속. #line:johan_dgh_006
+<<endif>>
+<<if $aff_johan < 60>>
+    johan: 오늘은 말을 좀 줄여 볼게. 식물은 수다쟁이 옆에선 안 자란다고 하더라고. 확인된 건 아니지만. #line:johan_dgh_007
+<<else>>
+    johan: 네 옆에서는 말이 좀 줄어. 이유는 아직 조사 중이야. 결과는 나오는 대로 알려 줄게. #line:johan_dgh_008
+<<endif>>
+허브 구역 팻말에 "잎을 살짝 만져 보세요"라고 적혀 있다. 요한은 바질 앞에 쪼그려 앉는다. #line:johan_dgh_009
+-> 잎을 문질러서 향을 맡아 봐요. 눈 감고 어떤 맛이 떠오르는지 말해 줄래요? #line:johan_dgh_010
+    <<flag johan_greenhouse_smell>>
+    <<show_standing johan surprised>>
+    johan: 눈 감고 맛을 말하라니, 직업 시험 같네. …토마토. 그리고 여름 저녁. 엄마가 부엌에서 접시를 닦던 소리. #line:johan_dgh_011
+    johan: 어? 이건 칼럼에 못 쓰겠다. 너무 사적인데 너무 맞는 말이라서. #line:johan_dgh_012
+-> 이름표를 같이 읽어 봐요. 이름을 아는 식물이 더 맛있어 보이잖아요. #line:johan_dgh_013
+    <<flag johan_greenhouse_label>>
+    <<show_standing johan smile>>
+    johan: 이름 아는 식물이 더 맛있어 보인다. 그거 좋은 문장이다. 라벨 읽는 담당은 내가 할게. 로즈메리, 타임, 세이지… #line:johan_dgh_014
+    johan: 이름을 하나씩 부르니까 갑자기 이 온실이 동네 같네. 이웃이 많은 동네. #line:johan_dgh_015
+-> 정해진 길 말고 아무 쪽으로나 걸어 봐요. 길 잃는 것도 코스예요. #line:johan_dgh_016
+    <<flag johan_greenhouse_wander>>
+    <<show_standing johan neutral>>
+    johan: 길을 잃는 것도 코스. 좋아, 그럼 지도는 접는다. 나 방향 감각은 꽝이지만 후각은 믿어도 돼. #line:johan_dgh_017
+    johan: 레몬 향이 나는 쪽으로 가 보자. 레몬이 있는 곳엔 대체로 벤치가 있거든. #line:johan_dgh_018
+유리 천장 끝 레몬나무 아래에 낡은 벤치가 놓여 있다. 어딘가에서 물방울이 똑, 똑 떨어진다. #line:johan_dgh_019
+johan: 이 소리, 냉장고 소리랑 비슷한데 하나도 안 무섭네. 조용한 건 똑같은데 말이야. #line:johan_dgh_020
+player: 같은 조용함인데 뭐가 달라요? #line:johan_dgh_021
+johan: …옆에 사람이 있다는 거. 그리고 이쪽 조용함은 자라고 있는 소리라서. #line:johan_dgh_022
+요한이 레몬 잎 하나를 따지 않고 손끝으로만 쓸어 본다. #line:johan_dgh_023
+johan: 이 말은 한 번만. 오늘 고마웠어. 농담 없이, 안경도 안 올리고. #line:johan_dgh_024
+<<flag johan_date_greenhouse_done>>
+<<show_standing johan smile>>
+===

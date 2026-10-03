@@ -1,0 +1,50 @@
+// 나비 엔딩 「굿」(호감 85+ / 신뢰 40+ / 이벤트 5개). CG NABI_E5 겸용. 진입 노드 Nabi_End_Good
+// 이야기의 결: '돌아올 곳'을 가게로 정한 뒤의 일 년. 문 앞 첫 계단이 나비의 자리가 된다.
+title: Nabi_End_Good
+tags: nabi ending good
+---
+<<bg cafe night>>
+<<show_standing nabi neutral>>
+일 년 뒤 봄. 가게 문 앞 첫 계단에는 눈에 띄지 않는 작은 팻말이 하나 생겼다. 글씨는 연필로, 아주 작게. 나비의 자리. #line:nabi_eg_001
+nabi: 간판 달자는 건 아니었어. 그냥 앉는 자리가 있으면 좋겠다고 했을 뿐인데. #line:nabi_eg_002
+player: 눈에 띄지 않게 달았어요. 싫으면 떼요. #line:nabi_eg_003
+nabi: 안 떼. 떼도 되니까 안 떼는 거야. 이 차이, 이제 알겠지. #line:nabi_eg_004
+player: 알아요. 그게 이 팻말이 하는 말이에요. #line:nabi_eg_005
+<<show_cg NABI_E5>>
+달빛이 문턱을 넘고, 나비가 계단에 기타를 올려놓는다. 열린 문 안쪽으로 홀의 불빛이 따뜻하게 번져 있다. #line:nabi_eg_006
+nabi: 이번 겨울에 음반 냈잖아. 열 곡 중에 마지막 곡이 ‘마감 후’야. #line:nabi_eg_007
+nabi: 처음으로 내 이름 옆에 내 곡이 다 있어. 권리도 내 거야. 그 한 줄 얻으려고 많이 돌아왔다. #line:nabi_eg_008
+nabi: 그 세 곡, 한 곡은 합의로 돌려받았어. 두 곡은 아직이야. 그래도 한 곡이 돌아온 날 가게에서 제일 먼저 불렀어. #line:nabi_eg_033
+nabi: 칠판에 적을 때 손이 떨렸어. 내 곡만, 이라는 줄 옆에 이제 한 곡이 더 늘었잖아. #line:nabi_eg_034
+player: 그날 손님들이 다 일어나서 박수 쳤어요. 기억나요? #line:nabi_eg_035
+nabi: 기억나. 그때 처음으로 박수가 무겁지 않았어. #line:nabi_eg_036
+player: 투어는 어땠어요? 두 번이나 가게를 비웠죠. #line:nabi_eg_009
+nabi: 좋았어. 도시마다 다른 문이 있었어. 근데 이상하게 돌아올 때 이 문이 제일 가볍더라. #line:nabi_eg_010
+nabi: 칠판엔 외출 중이라고 적고 갔다가, 돌아와서 직접 지웠어. 지우는 맛이 좋아. 돌아왔다는 표시 같아서. #line:nabi_eg_011
+<<show_standing nabi smile>>
+nabi: 사람들이 물어봐. 안 답답하냐고. 한곳에 돌아오는 게. 나는 대답을 못 했어. 그 대신 노래했지. #line:nabi_eg_012
+nabi: ♪ 불 꺼진 가게에 #line:nabi_eg_013
+nabi: ♪ 의자 하나 남겨 둔 사람 #line:nabi_eg_014
+nabi: ♪ 나는 떠나도 되는 사람이라서 #line:nabi_eg_015
+nabi: ♪ 돌아오는 사람이 될래 #line:nabi_eg_016
+객석이 조용해졌다가 박수가 쏟아졌다. 박수는 받을 만큼만 받는다는 나비는, 오늘따라 조금 더 오래 박수를 들었다. #line:nabi_eg_017
+nabi: 박수 소리가 다르게 들려. 예전엔 무대 위의 나한테 오는 소리였는데, 지금은 이 가게한테 같이 가는 소리 같아. #line:nabi_eg_018
+player: 나비 씨랑 이 가게는 이제 서로 닮았어요. #line:nabi_eg_019
+nabi: 그건 좀 간지럽네. 근데 부정은 안 할래. #line:nabi_eg_020
+공연이 끝나고 손님들이 돌아간 뒤, 나비는 계단에 앉아 있었다. 나는 문가에 기대 섰다. #line:nabi_eg_021
+nabi: 하나 물어봐도 돼? 거절해도 돼. #line:nabi_eg_022
+player: 물어보세요. 거절할 일이 있으면 그렇게 할게요. #line:nabi_eg_023
+nabi: 이 계단, 오늘 밤은 내 옆에 앉아 줄래. 키스해도 돼? #line:nabi_eg_024
+player: 네. 좋아요. #line:nabi_eg_025
+<<show_standing nabi shy>>
+나비는 천천히 얼굴을 가까이 가져왔다. 눈을 감기 전에 문 쪽을 한 번 보았다. 열려 있는 걸 확인하고, 안심한 듯 숨을 내쉬었다. #line:nabi_eg_026
+짧은 입맞춤이었다. 기타 줄 냄새와 밤공기, 그리고 계피 향. 계단 위로 불빛이 천천히 밀려와 둘의 그림자를 하나로 이었다. #line:nabi_eg_027
+<<hide_cg>>
+<<show_standing nabi smile>>
+nabi: 이게 자유구나. 가고 싶으면 가고, 돌아오고 싶으면 돌아오고. 그리고 여기 있고 싶으면 있어도 되는. #line:nabi_eg_028
+nabi: 내일은 투어 준비. 모레도 비행기. 그래도 돌아올 거야. #line:nabi_eg_029
+player: 문은 열려 있을 거예요. 늘 그랬던 것처럼요. #line:nabi_eg_030
+nabi: 알아. 그걸 알아서 가는 거고, 그걸 알아서 돌아오는 거야. #line:nabi_eg_031
+<<show_standing nabi neutral>>
+불이 켜진 가게. 열린 문. 계단 위의 두 사람. 달빛이 오래 머물렀다. #line:nabi_eg_032
+===

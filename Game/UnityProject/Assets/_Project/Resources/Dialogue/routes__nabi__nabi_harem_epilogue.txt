@@ -1,0 +1,17 @@
+// 나비 다자 조각 「에필로그」(다자 엔딩 이후, 가게 홀). 진입 노드 Nabi_Harem_Epilogue
+// 나비의 조건(떠날 자유 / 어디냐고 묻지 않음 / 직접 확인 / 언제든 철회)이 일상에서 지켜지는 모습을 보여 준다.
+title: Nabi_Harem_Epilogue
+tags: nabi harem epilogue
+---
+<<bg cafe night>>
+<<show_standing nabi neutral>>
+일요일 저녁, 홀에는 소리가 가득했다. 부엌에서 웃음이 번지고, 카운터 쪽에서 잔 부딪히는 소리가 났다. 나비는 평소처럼 문 옆자리에 앉아 있었다. #line:nabi_he_001
+nabi: 잠깐 바람 좀 쐬고 올게. 한 시간쯤. 혹은 두 시간. #line:nabi_he_002
+아무도 어디 가느냐고 묻지 않았다. 대신 누군가 카운터 위의 라테 잔에 뚜껑을 덮어 건넸다. 계피가 많이 든 걸로. #line:nabi_he_003
+nabi: …고마워. 이거, 식으면 맛없는데. 그래서 서둘러 올 거야. #line:nabi_he_004
+player: 천천히 와요. 식으면 다시 만들면 되니까요. #line:nabi_he_005
+<<show_standing nabi smile>>
+nabi: 이게 된다니까. 어디 가냐고 안 묻는 집. 그런데 돌아오면 다들 알아봐 주는 집. #line:nabi_he_006
+nabi: 칠판에 적어 놓고 갈게. 나비 외출 중. 지우는 건 내가 돌아와서. #line:nabi_he_007
+문이 닫히지 않은 채로 나비의 발소리가 계단을 내려갔다. 한 시간 뒤, 같은 발소리가 같은 계단을 올라왔다. 문은 처음처럼 열려 있었다. #line:nabi_he_008
+===

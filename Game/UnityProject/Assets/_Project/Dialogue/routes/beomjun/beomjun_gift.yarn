@@ -1,0 +1,86 @@
+// 범준 선물 반응. 호스트가 문자열 변수 $gift_name 을 설정한 뒤 진입한다.
+// 수치(+8/+3/-5)는 호스트(RomanceService.Gift)가 적용하므로 이 파일에서는 aff/trust 를 바꾸지 않는다.
+// 진입 노드: Beomjun_Gift_Like, Beomjun_Gift_Neutral, Beomjun_Gift_Dislike
+title: Beomjun_Gift_Like
+tags: beomjun gift
+---
+<<show_standing beomjun surprised>>
+player: {player_calls("beomjun")}, 이거 받아 주세요. {$gift_name}, 보자마자 생각났어요. #line:beomjun_gift_001
+beomjun: 나를? 나 주는 거야? #line:beomjun_gift_002
+<<if $aff_beomjun < 30>>
+    <<show_standing beomjun smile>>
+    beomjun: 하하! 이거 진짜 마음에 드는데요! 이런 걸 어떻게 알았어요! #line:beomjun_gift_003
+    beomjun: 선물은 처음부터 이렇게 정확하면 반칙이에요. 일단 받겠습니다! #line:beomjun_gift_004
+    player: 마음에 드셨다니 다행이에요. #line:beomjun_gift_005
+    beomjun: 다행 정도가 아니에요! 오늘 밤에 도장 애들한테 자랑하러 가야겠다! #line:beomjun_gift_006
+<<elseif $aff_beomjun < 60>>
+    <<show_standing beomjun smile>>
+    beomjun: {$gift_name}! 이거, 갖고 싶었는데 말을 안 하고 있었거든. #line:beomjun_gift_007
+    beomjun: 말 안 해도 알아봐 주는 사람이 있다는 건, 하하, 생각보다 든든하네. #line:beomjun_gift_008
+    player: 눈여겨봤죠. 뭘 좋아하는지. #line:beomjun_gift_009
+    beomjun: 눈여겨봤다고? 나 모르게 관찰당했네! …기분 좋다. #line:beomjun_gift_010
+<<else>>
+    <<show_standing beomjun shy>>
+    beomjun: {calls_player("beomjun")}. 이건 말이야, 잠깐 말을 못 하겠다. #line:beomjun_gift_011
+    beomjun: 나는 주는 쪽이 익숙했거든. 받는 쪽이 이렇게 가슴이 뜨거운 줄 몰랐어. #line:beomjun_gift_012
+    player: 가끔은 받아 주세요. 제가 주고 싶으니까요. #line:beomjun_gift_013
+    beomjun: …그래. 받을게. 이건 평생 간직하는 쪽으로. #line:beomjun_gift_014
+<<endif>>
+<<show_standing beomjun smile>>
+===
+
+title: Beomjun_Gift_Neutral
+tags: beomjun gift
+---
+<<show_standing beomjun neutral>>
+player: {player_calls("beomjun")}, 이거요. {$gift_name}. 별건 아니지만요. #line:beomjun_gift_015
+<<if $aff_beomjun < 30>>
+    beomjun: 오, 선물이요? 고마워요! 이렇게 챙겨 주면 내가 오히려 미안하지! #line:beomjun_gift_016
+    beomjun: 쓰임새는 모르겠지만 일단 도장 책상 위에 올려 둘게요! #line:beomjun_gift_017
+    player: 쓰임새는 천천히 찾아도 돼요. #line:beomjun_gift_018
+    beomjun: 천천히 찾는 거 좋아해요. 하하! #line:beomjun_gift_019
+<<elseif $aff_beomjun < 60>>
+    <<show_standing beomjun smile>>
+    beomjun: {$gift_name}, 고맙다! 솔직히 내 취향은 아닌데, 마음은 제대로 받았어! #line:beomjun_gift_020
+    beomjun: 어디 한번 써 보지 뭐. 의외로 맞을 수도 있잖아! #line:beomjun_gift_021
+    player: 안 맞으면 말해 줘요. 다음엔 더 잘 고를게요. #line:beomjun_gift_022
+    beomjun: 말해 줄게! 근데 일단 오늘은 기쁘게 받는다! #line:beomjun_gift_023
+<<else>>
+    <<show_standing beomjun smile>>
+    beomjun: {calls_player("beomjun")}, 고마워. 솔직히 쓸지는 모르겠어. 근데 네가 골랐다는 게 중요하지. #line:beomjun_gift_024
+    beomjun: 서랍에 넣어 둘게. 도장 서랍은 내가 제일 아끼는 물건들만 들어가는 곳이야. #line:beomjun_gift_025
+    player: 안 맞는 걸 넣어도 되는 서랍이에요? #line:beomjun_gift_026
+    beomjun: 그럼! 이제 자리를 정했으니 맞는 쪽으로 내가 맞춰 볼게! #line:beomjun_gift_027
+<<endif>>
+<<show_standing beomjun neutral>>
+===
+
+title: Beomjun_Gift_Dislike
+tags: beomjun gift
+---
+<<show_standing beomjun neutral>>
+player: {player_calls("beomjun")}, 이거 받아 주세요. {$gift_name}, 드리고 싶어서 골랐어요. #line:beomjun_gift_028
+<<show_standing beomjun surprised>>
+<<if $aff_beomjun < 30>>
+    beomjun: …{$gift_name}? 어, 고맙긴 한데. #line:beomjun_gift_029
+    beomjun: 혹시 내가 모르는 사이에 뭘 실수한 건가? 선물에 뜻이 있나 해서! #line:beomjun_gift_030
+    <<show_standing beomjun shy>>
+    player: 아니에요. 그냥 도움이 될까 해서 골랐어요. #line:beomjun_gift_031
+    beomjun: 아, 그렇구나! 나는 또 눈치 없이 놓친 줄 알았지. 마음은 고마워요! #line:beomjun_gift_032
+<<elseif $aff_beomjun < 60>>
+    <<show_standing beomjun sad>>
+    beomjun: …{$gift_name}. 이건 내가 쓰기엔 좀 어려운데. 아니, 화난 건 아냐. #line:beomjun_gift_033
+    beomjun: 혹시 내가 뭘 놓친 거면 말해 줘. 뜻이 있는 선물이면 더 모르겠거든. #line:beomjun_gift_034
+    <<show_standing beomjun neutral>>
+    player: 놓친 건 없어요. 제가 취향을 잘 몰랐어요. #line:beomjun_gift_035
+    beomjun: 그럼 됐어. 다음엔 내가 먼저 취향부터 말해 줄게. 단 거, 큰 거, 움직이는 거! #line:beomjun_gift_036
+<<else>>
+    <<show_standing beomjun sad>>
+    beomjun: {calls_player("beomjun")}. 이건 마음만 받을게. 물건은 못 받겠어. #line:beomjun_gift_037
+    beomjun: 그리고 혹시 이게 나한테 하는 말이면, 돌려 말하지 말고 그냥 말해 줘. 난 돌려 말하면 못 알아들어서. #line:beomjun_gift_038
+    <<show_standing beomjun neutral>>
+    player: 돌려 말한 거 아니에요. 정말로 몰랐어요. #line:beomjun_gift_039
+    beomjun: 그럼 됐다! 괜히 심각해졌네. 마음은 제대로 받았어. #line:beomjun_gift_040
+<<endif>>
+<<show_standing beomjun neutral>>
+===

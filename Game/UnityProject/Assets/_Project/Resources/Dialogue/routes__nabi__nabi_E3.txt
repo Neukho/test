@@ -1,0 +1,97 @@
+// 나비 개인 이벤트 3 「무대 위의 침묵」(5장, 첫 정식 공연 밤). 진입 노드 Nabi_E3
+// 비트: 공연 중 기타 줄이 끊김 -> 침묵 -> 주인공의 한마디(선택) -> 다섯 줄로 마저 부름(가사 조각 B) -> 무대 뒤에서 떨어진 가사 노트(선택).
+// 플래그: nabi_e3_yours(선택권을 돌려줌) / nabi_e3_exit(내려와도 된다) / nabi_e3_pressed(계속하라고 재촉),
+//        nabi_notebook_respected(노트를 읽지 않고 돌려줌 = E5 열쇠 선택지의 숨은 조건) / nabi_e3_peeked(한 줄 읽음)
+// 순서: 권장은 Nabi_E3 -> Ch5_Show_After(docs/12 §5-1). 반대로 Show_After 를 먼저 봤다면 ch5_snap_told 가 서 있어 첫머리가 회상 문장이 된다(줄 끊김 서술이 새 사건처럼 중복되지 않게).
+// 의존: 5장 무대 설치. 같은 밤 다른 이벤트(요한의 빈 좌석, 하울의 소음)와 모순되지 않도록 다른 인물은 이름만 스치듯 언급한다.
+title: Nabi_E3
+tags: nabi event e3 chapter5
+---
+<<bg cafe night>>
+<<show_standing nabi neutral>>
+<<if flag("ch5_snap_told")>>
+    홀에는 한 번의 소리로 지나간 두 번째 곡의 몇 초를, 나는 무대 가까이에서 이렇게 기억한다. #line:nabi_e3_051
+<<endif>>
+가게 안쪽에 새로 놓인 작은 무대. 조명은 낮고, 홀은 사람들로 가득했다. 나비는 스툴에 앉아 두 번째 곡을 시작했다. #line:nabi_e3_001
+나는 무대 옆 계단 아래에서 음료 쟁반을 든 채로 서 있었다. 평소처럼 서빙을 하려던 건데, 발이 움직이지 않았다. #line:nabi_e3_002
+나비의 목소리는 낮았고, 기타는 한 줄 한 줄 정확하게 울렸다. 후렴 직전, 손가락이 가장 높은 줄 위로 올라갔다. #line:nabi_e3_003
+탕. #line:nabi_e3_004
+기타 줄이 끊어지는 소리가 홀 전체에 울렸다. 사람들의 숨이 한꺼번에 멈췄다. 가장 뒤쪽 테이블에서 누군가 귀를 감싸 쥐었다. #line:nabi_e3_005
+<<show_cg NABI_E3>>
+나비는 움직이지 않았다. 끊어진 줄이 조명 아래서 가늘게 흔들렸다. 입은 열려 있었지만 소리는 나오지 않았다. #line:nabi_e3_006
+몇 초가 한 시간처럼 느껴졌다. 마이크에서 숨소리만 아주 작게 들렸다. #line:nabi_e3_007
+player: (표정이 완전히 굳었어. 지금 이 침묵을 누가 채워야 하나.) #line:nabi_e3_008
+나비의 시선이 객석을 지나 무대 아래의 나를 찾았다. 아주 짧게, 구조 신호처럼. #line:nabi_e3_009
+나는 쟁반을 내려놓고 입 모양으로 말을 건넸다. 소리가 닿지 않아도 되는 거리였다. #line:nabi_e3_010
+-> 계속해도 되고 멈춰도 돼요. 어느 쪽이든 나비 씨 무대예요. #line:nabi_e3_011
+    <<flag nabi_e3_yours>>
+    <<aff nabi 4>>
+    <<trust nabi 2>>
+    <<show_standing nabi surprised>>
+    nabi: (…어느 쪽이든.) #line:nabi_e3_012
+    <<show_standing nabi neutral>>
+    나비가 처음으로 눈을 감았다가 떴다. 숨이 길게 내려갔다. #line:nabi_e3_013
+-> 내려와도 돼요. 오늘은 여기까지 해도 괜찮아요. #line:nabi_e3_014
+    <<flag nabi_e3_exit>>
+    <<aff nabi 2>>
+    <<trust nabi 1>>
+    <<show_standing nabi sad>>
+    nabi: (내려와도 된다. 그래, 된다는 건 알아.) #line:nabi_e3_015
+    <<show_standing nabi neutral>>
+    나비는 고개를 한 번 저었다. 거절이 아니라, 선택을 되찾는 동작이었다. #line:nabi_e3_016
+-> 손님들이 기다려요. 어서 이어서 해요! #line:nabi_e3_017
+    <<flag nabi_e3_pressed>>
+    <<aff nabi -1>>
+    <<trust nabi -1>>
+    <<show_standing nabi angry>>
+    nabi: (기다린다고. 또 그 말이야.) #line:nabi_e3_018
+    <<show_standing nabi sad>>
+    나비의 손이 잠깐 떨렸다. 그리고 떨림을 억지로 누르듯 어깨가 한 번 내려갔다. #line:nabi_e3_019
+나비가 기타를 고쳐 안았다. 끊어진 줄은 그대로 두었다. #line:nabi_e3_020
+nabi: 줄이 끊어졌어. 미안. 오늘은 다섯 줄이야. #line:nabi_e3_021
+nabi: 여섯 줄로 하려던 곡인데, 다섯 줄이어도 노래는 남아 있네. 들어 줘. #line:nabi_e3_022
+손가락이 줄 위에 내려앉았다. 코드는 평소보다 단순했고, 대신 소리 하나하나가 더 멀리 갔다. #line:nabi_e3_023
+nabi: ♪ 끊어진 줄 하나쯤 #line:nabi_e3_024
+nabi: ♪ 소리 없이 걸어 두고 #line:nabi_e3_025
+nabi: ♪ 다섯 줄로 마저 부를게 #line:nabi_e3_026
+nabi: ♪ 목소리는 아직 내 거야 #line:nabi_e3_027
+마지막 마디가 사라진 뒤, 아주 잠깐 아무 소리도 없었다. 그리고 홀 한구석에서 느리게 박수가 시작됐다. #line:nabi_e3_028
+<<hide_cg>>
+<<show_standing nabi neutral>>
+박수는 금방 홀 전체로 번졌다. 나비는 고개를 한 번 숙이고, 곧바로 스툴에서 일어나 무대 뒤로 걸어갔다. #line:nabi_e3_029
+무대 뒤 좁은 복도. 나비가 벽에 등을 대고 천천히 숨을 고르고 있었다. 기타를 쥔 손가락 마디가 하얗게 질려 있다. #line:nabi_e3_030
+nabi: 아까 내가 얼어붙었을 때, 뭐라고 했어? 입 모양만 봤어. #line:nabi_e3_031
+player: 계속해도 되고 멈춰도 된다고요. 나비 씨가 정하는 거니까요. #line:nabi_e3_032
+nabi: 그렇게 안 말한 사람도 있었어. 어떤 무대에서는 끊어진 줄을 들고도 끝까지 부르라는 말을 들었거든. #line:nabi_e3_033
+nabi: 그날 이후로 줄 끊어지는 소리가 무서웠어. 오늘 처음으로 소리가 소리일 뿐이더라. #line:nabi_e3_034
+복도 바닥에 얇은 검은 표지의 노트가 떨어져 있었다. 기타 케이스 옆 주머니에서 빠진 것 같다. 한 장이 펼쳐진 채로. #line:nabi_e3_035
+나비는 아직 눈을 감고 있어서 노트를 보지 못했다. 나는 천천히 몸을 숙였다. #line:nabi_e3_036
+-> 펼쳐진 쪽을 보지 않고 덮어서 그대로 건넨다. #line:nabi_e3_037
+    <<flag nabi_notebook_respected>>
+    <<aff nabi 4>>
+    <<trust nabi 2>>
+    <<show_standing nabi surprised>>
+    player: 떨어졌어요. 제대로 덮어 놨어요. #line:nabi_e3_038
+    nabi: …안 봤어? 펼쳐져 있었을 텐데. #line:nabi_e3_039
+    player: 나비 씨 건 나비 씨가 펼칠 때만 봐요. #line:nabi_e3_040
+    <<show_standing nabi shy>>
+    nabi: 그 말, 오늘 받은 것 중에 제일 좋은 선물이야. #line:nabi_e3_041
+-> 펼쳐진 쪽을 한 줄만 슬쩍 읽는다. #line:nabi_e3_042
+    <<flag nabi_e3_peeked>>
+    <<aff nabi -1>>
+    <<trust nabi -1>>
+    <<show_standing nabi neutral>>
+    nabi: …봤어? 한 줄이라도? #line:nabi_e3_043
+    <<show_standing nabi sad>>
+    nabi: 솔직히 말해 줘서 고맙다고 해야 하나. 근데 아직 그 줄은 노래가 아니라 속말이야. #line:nabi_e3_044
+    nabi: 다음엔 물어봐 줘. 물어보면 보여 줄지도 모르니까. #line:nabi_e3_045
+<<show_standing nabi neutral>>
+nabi: 오늘 다섯 줄로 부른 건, 줄이 끊어진 덕분에 알았어. 여섯 줄 아니어도 된다는 걸. #line:nabi_e3_046
+nabi: 줄은 내일 바꿀게. 내일은 내가 정해서 바꿀 거야. #line:nabi_e3_047
+player: 필요하면 가게 비품 지출로 처리해도 돼요. 새 줄이요. #line:nabi_e3_048
+nabi: 그건 받을게. 일 하는 사람의 필요경비니까. #line:nabi_e3_049
+<<show_standing nabi smile>>
+nabi: 오늘은 무서웠는데, 무서운 만큼 오래 기억에 남을 것 같아. 고마워. 한 번만 할게, 이 말. #line:nabi_e3_050
+<<show_standing nabi neutral>>
+<<end_event nabi 3>>
+===

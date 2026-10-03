@@ -1,0 +1,87 @@
+// 곰석 개인 이벤트 4 「장부의 무게」(6장, 호감 68/신뢰 25). 진입 노드 Gomseok_E4
+// 비트: 곰석이 삼촌의 장부를 꺼냄 -> 가게가 이웃들의 '공동 기금'(모레나의 안식처)으로 지탱돼 왔음 -> 곰석의 침묵의 이유 -> 선택 2회 -> 마감.
+// 공유 플래그: ledger_truth (장부 열람 시 이 노드가 세팅. 공통 챕터 본문이 따로 세팅해도 무해)
+// 개인 플래그: gomseok_e4_together(함께 읽음 +3/+1, 트루 조건) / gomseok_e4_blamed(왜 이제야 -1/-1) / gomseok_e4_neighbors(이웃과 함께 정하자)
+//             gomseok_e4_share(곰석의 몫도 장부에 올리자고 함)
+title: Gomseok_E4
+tags: gomseok event e4 chapter6
+---
+<<bg cafe night>>
+<<show_standing gomseok neutral>>
+낡은 사진을 본 날 이후로 곰석은 말수가 줄었다. 마감 후 홀의 불을 반만 켠 채, 곰석이 카운터 아래 서랍에서 천으로 감싼 두꺼운 장부를 꺼냈다. #line:gomseok_e4_001
+gomseok: 장부여. 삼촌이 이십 년 넘게 쓴 거고. #line:gomseok_e4_002
+player: 가게 매출 장부인가요? 세무 서류는 이미 정리돼 있던데요. #line:gomseok_e4_003
+gomseok: 그건 겉장부고, 이건 속장부여. 혼자 볼 용기가 안 나서 이제야 가져왔어. #line:gomseok_e4_004
+<<show_standing gomseok sad>>
+gomseok: 같이 봐 줄래? 혼자 읽으면 너무 무거워서. #line:gomseok_e4_005
+-> 같이 읽어요. 곰석 씨 옆에서 한 장씩 넘길게요. #line:gomseok_e4_006
+    <<flag gomseok_e4_together>>
+    <<aff gomseok 3>>
+    <<trust gomseok 1>>
+    <<show_standing gomseok smile>>
+    gomseok: …고맙구먼. 그럼 첫 장부터 가자고. #line:gomseok_e4_007
+-> 장부 먼저 훑어볼게요. 곰석 씨는 쉬고 계세요. #line:gomseok_e4_008
+    <<show_standing gomseok neutral>>
+    gomseok: 아니여, 같이 보는 거야. 내가 설명할 부분도 있고. #line:gomseok_e4_009
+-> 왜 지금까지 숨기고 있었어요? #line:gomseok_e4_010
+    <<flag gomseok_e4_blamed>>
+    <<aff gomseok -1>>
+    <<trust gomseok -1>>
+    <<show_standing gomseok sad>>
+    gomseok: …숨겼다기엔 변명이 필요하겠구먼. 일단 읽자고. 이유는 읽다 보면 알게 될 거여. #line:gomseok_e4_011
+<<show_cg GOMSEOK_E4>>
+카운터 위 램프 아래에 장부가 펼쳐졌다. 매달 같은 날짜에 같은 필체로 적힌 작은 금액들. 제빵사, 어부, 꽃집, 이발소. 그 옆에는 봉투 크기만큼의 메모가 붙어 있다. #line:gomseok_e4_012
+<<if not flag("ledger_truth")>>
+    player: "모레나의 안식처 기금"… 이게 뭐예요? 이 가게 이름이 아닌데요. #line:gomseok_e4_013
+    gomseok: 이웃들이 달마다 조금씩 낸 돈이여. 많아야 한 사람이 만 원, 적으면 천 원. 삼촌은 그걸 모아서 월세랑 재료비에 보탰어. #line:gomseok_e4_014
+    gomseok: 이 가게가 이십 년 넘게 버틴 건 매출 덕이 아니라 이웃들 덕이었던 거지. 이 골목에서 쉬어 갈 곳이 필요한 사람들이 만든 안식처였어. #line:gomseok_e4_015
+    player: 그럼 이 가게는… 삼촌 개인 가게가 아니라 이웃 모두의 가게였던 거네요. #line:gomseok_e4_016
+<<else>>
+    player: 그때 본 기금 장부가 이 속장부와 이어지는 거였군요. 곰석 씨는 처음부터 다 알고 계셨고요. #line:gomseok_e4_101
+    gomseok: 그려. 겉으로 본 건 절반이여. 달마다 누가 얼마를 냈는지, 그 뒤에 삼촌이 뭘 적어 뒀는지는 이 장부에만 있어. #line:gomseok_e4_102
+    gomseok: 이 가게가 이십 년 넘게 버틴 건 매출 덕이 아니라 이웃들 덕이었다는 거, 너도 이미 알지. 오늘은 그 안쪽을 같이 보자는 거여. #line:gomseok_e4_103
+<<endif>>
+<<flag ledger_truth>>
+gomseok: 그러니 이 가게를 어떻게 이어 갈지는 네 마음대로 정할 일이 아니고, 내 마음대로 정할 일도 아니여. #line:gomseok_e4_036
+player: 그래서 곰석 씨가 가게를 팔자는 말에도, 키우자는 말에도 늘 조용했던 거군요. #line:gomseok_e4_037
+gomseok: 그려. 어느 쪽이든 이웃들 몫을 내 입으로 정할 수는 없었거든. #line:gomseok_e4_038
+gomseok: 그렇지. 삼촌은 그걸 한 번도 생색내지 않았어. 장부 맨 뒤에 이렇게 적어 놨더라고. "받은 건 갚지 말고 이어서 쓸 것." #line:gomseok_e4_017
+장부의 마지막 장 가까이, 곰석 본인의 이름 옆에는 금액란이 공백인 줄이 있다. 줄마다 "급여 일부 기탁"이라는 작은 글씨가 적혀 있었다. #line:gomseok_e4_018
+player: 여기 곰석 씨 이름이 있어요. 금액이 비어 있는데요. #line:gomseok_e4_019
+gomseok: …들켰구먼. 월급에서 조금씩 뗐지. 얼마인지는 적지 말라고 했어. 내가 낸 줄 알면 부담이 될까 봐. #line:gomseok_e4_020
+gomseok: 내가 침묵한 이유는 두 가지여. 하나는 삼촌이 네가 스스로 남겠다고 정하기 전엔 알리지 말라고 했어. 이 가게가 빚처럼 보이면 네가 도망갈까 봐. #line:gomseok_e4_021
+gomseok: 다른 하나는… 나는 그 돈이 쌓이는 걸 옆에서 다 봤으면서 아무것도 못 했거든. 삼촌이 아플 때도, 가게가 힘들 때도. #line:gomseok_e4_022
+-> 곰석 씨는 이미 충분히 하셨어요. 기금에 몫을 낸 것도, 가게를 지킨 것도요. #line:gomseok_e4_023
+    <<aff gomseok 3>>
+    <<trust gomseok 1>>
+    <<show_standing gomseok smile>>
+    gomseok: …허허, 그 말 하나로 십이 년이 정리되는 기분이구먼. #line:gomseok_e4_024
+-> 이제 제 몫도 같은 줄에 올릴게요. 이웃 한 사람으로요. #line:gomseok_e4_025
+    <<flag gomseok_e4_share>>
+    <<aff gomseok 1>>
+    <<show_standing gomseok surprised>>
+    gomseok: 사장이 이웃 줄에 서겠다고? 허허, 그러면 정말 같이 지키는 거네. #line:gomseok_e4_026
+-> 이건 저 혼자 결정할 문제가 아니네요. 이웃분들과 같이 이야기해 봐야겠어요. #line:gomseok_e4_027
+    <<flag gomseok_e4_neighbors>>
+    <<aff gomseok 1>>
+    <<show_standing gomseok smile>>
+    gomseok: 그려. 가게는 우리 둘이 정하는 게 아니라 다 같이 정하는 거여. 옳은 방향이구먼. #line:gomseok_e4_028
+<<hide_cg>>
+<<show_standing gomseok neutral>>
+곰석이 장부를 천천히 덮었다. 표지 위에 놓인 손이 처음으로 떨리지 않았다. #line:gomseok_e4_029
+gomseok: 나는 그 침묵이 삼촌을 위한 건 줄 알았는데, 사실은 나를 위한 거였는지도 모르겠어. 내가 이 가게에서 빌린 사람이 아니라는 걸 확인하려고. #line:gomseok_e4_030
+player: 곰석 씨는 빌린 사람이 아니에요. 이 가게의 주방은 곰석 씨 이름이잖아요. #line:gomseok_e4_031
+gomseok: …그 말, 오래 기억할 거여. #line:gomseok_e4_032
+player: 제빵사 아주머니가 매일 아침 빵을 두고 가시던 이유를 이제 알겠어요. 월세가 아니라 인사였던 거네요. #line:gomseok_e4_039
+gomseok: 그려. 받으면서 갚는 방식이 다 달랐어. 누구는 돈으로, 누구는 빵으로, 누구는 안부로. #line:gomseok_e4_040
+player: 이 가게의 진짜 메뉴는 서로 안부를 묻는 시간이었나 봐요. #line:gomseok_e4_041
+gomseok: 허허, 메뉴판에는 없는데 제일 많이 팔렸지. #line:gomseok_e4_042
+gomseok: 장부는 네가 보관해. 삼촌이 그리 원했을 거고, 나도 그게 편하구먼. #line:gomseok_e4_033
+player: 저 혼자 보관하지 않을게요. 장부는 이 카운터 서랍에 두고, 둘이 같이 열어요. #line:gomseok_e4_034
+<<show_standing gomseok smile>>
+gomseok: 그려. 열쇠는 둘이 하나씩 갖자고. #line:gomseok_e4_035
+player: 오늘 이걸 보여 줘서 고마워요. 혼자 지고 있던 걸 같이 들 수 있게 해 줘서요. #line:gomseok_e4_043
+gomseok: 허허, 무게는 나누면 반이 되는 게 아니라 들 만해지는 거더구먼. #line:gomseok_e4_044
+<<show_standing gomseok neutral>>
+<<end_event gomseok 4>>
+===
