@@ -1,0 +1,31 @@
+char,step,chapter_min,chapter_max,note
+howl,1,1,99,1장 개업 전날 밤 (스크립트 howl_E1)
+howl,2,3,99,3장 임대료 갈등 중 (howl_E2)
+howl,3,5,99,5장 공연 날 밤 (howl_E3)
+howl,4,7,99,7장 폭풍 전날 (howl_E4) events.csv 는 6
+howl,5,8,99,8장 결판 이후 (howl_E5)
+johan,1,2,99,2장 첫 영업 직후 (johan_E1) events.csv 는 1
+johan,2,3,99,3장 임대료 갈등 중 (johan_E2)
+johan,3,5,99,5장 공연 날 밤 (johan_E3)
+johan,4,7,99,7장 블루하버 개점 후 (johan_E4) events.csv 는 6
+johan,5,8,99,8장 결판 이후 (johan_E5)
+beomjun,1,3,99,3장 임대 통지서 (beomjun_E1) events.csv 는 1
+beomjun,2,4,99,4장 도장의 밤 (beomjun_E2) events.csv 는 3
+beomjun,3,6,99,6장 서툰 위로 (beomjun_E3)
+beomjun,4,7,99,7장 개업 연습생 (beomjun_E4) events.csv 는 6
+beomjun,5,8,99,8장 달빛 아래의 약속 (beomjun_E5)
+haru,1,4,99,4장 첫 출근 (haru_E1) 하루는 4장 합류. events.csv 는 1
+haru,2,5,99,5장 무너진 케이크 (haru_E2) events.csv 는 3
+haru,3,6,99,6장 나의 레시피 (haru_E3)
+haru,4,7,99,7장 무대 뒤의 사람 (haru_E4) events.csv 는 6
+haru,5,8,99,8장 달빛 아래의 약속 (haru_E5)
+gomseok,1,1,99,1장 개업 전 (gomseok_E1)
+gomseok,2,3,99,3장 레시피 노트 (gomseok_E2)
+gomseok,3,5,99,5장 호텔의 이유 (gomseok_E3)
+gomseok,4,6,99,6장 장부의 무게 (gomseok_E4)
+gomseok,5,8,99,8장 달빛 아래의 약속 (gomseok_E5)
+nabi,1,2,99,2장 말미 첫 연주 (nabi_E1) events.csv 는 1
+nabi,2,4,99,4장 조건부 공연 (nabi_E2) events.csv 는 3
+nabi,3,5,99,5장 첫 정식 공연 (nabi_E3)
+nabi,4,7,99,7장 떠날 이유 (nabi_E4) events.csv 는 6
+nabi,5,8,99,8장 달빛 아래의 약속 (nabi_E5)

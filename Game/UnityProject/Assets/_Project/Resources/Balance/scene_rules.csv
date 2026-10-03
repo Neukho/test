@@ -1,0 +1,51 @@
+node,kind,chapter,slot,auto_play,trigger_day_min,trigger_day_max,min_day_in_chapter,requires_flags,forbids_flags,after_node,before_node,note
+Ch1_Intro,chapter,1,morning,0,0,0,0,,,,,챕터 흐름(ChapterFlow)이 1일차 아침에 재생
+Ch2_Intro,chapter,2,morning,0,0,0,1,,,,,
+Ch3_Intro,chapter,3,morning,0,0,0,1,,,,,
+Ch4_Intro,chapter,4,morning,0,0,0,1,,,,,
+Ch5_Intro,chapter,5,morning,0,0,0,1,,,,,
+Ch6_Intro,chapter,6,morning,0,0,0,1,,,,,
+Ch7_Intro,chapter,7,morning,0,0,0,1,,,,,끝에 route_choice 1회. 이후 CE07 과 각 E4 가 열린다
+Ch8_Intro,chapter,8,morning,0,0,0,1,,,,,
+Ch2_Outro,chapter,3,morning,0,0,0,1,,,,,Nabi_E1 전후 어느 쪽이든 가능(3줄)
+Ch3_Outro,chapter,4,morning,0,0,0,1,,,,,
+Ch4_Outro,chapter,5,morning,0,0,0,1,,,,,
+Ch5_Outro,chapter,6,morning,0,0,0,1,,,,,
+Ch6_Outro,chapter,7,morning,0,0,0,1,,,,,drawer_key_clue 재도전 선택지가 있어 Howl_E4 보다 먼저
+Ch7_Outro,chapter,8,morning,0,0,0,1,,,,,
+CE01_FirstGuest,common,1,morning,1,5,5,0,,,Ch1_Intro,,개업 이틀 전 오전(1장 6일 중 5일차)
+CE02_Tasting,common,2,morning,1,6,8,6,,,~Johan_E1,,6일차 이후이며 Johan_E1 이후(8일차에는 Johan_E1 없이도 재생: 메뉴 튜토리얼 보장)
+CE03_RentMeeting,common,3,morning,1,4,6,0,,,Ch3_Intro;~Beomjun_E1;~Howl_E2,,4~6일차 Beomjun_E1 Howl_E2 이후 권장(6일차에는 없이도 재생)
+CE04_StaffWelcome,common,4,night,1,5,8,0,,,Ch4_Intro;~Haru_E1,,하루 첫 출근 이후 마감 뒤(8일차에는 없이도 재생)
+CE05_FestivalPrep,common,5,morning,1,3,5,0,,,Ch5_Intro,Ch5_Show,4일차 전후 낮
+Ch5_Show,common,5,night,1,7,7,7,,,CE05_FestivalPrep,Ch5_Show_After,등불제 전날 저녁. 밤 시작에 재생하고 이어서 Johan_E3 Nabi_E3
+Ch5_Show_After,common,5,night_end,1,7,7,7,,,Ch5_Show,Howl_E3,공연 날 밤의 행동이 끝난 뒤 재생. Howl_E3 는 그 다음 밤
+CE06_OldPhoto,common,6,morning,1,2,4,0,,,Ch6_Intro,Ch6_LedgerTruth,뒷방 정리. Gomseok_E4 와 Howl_E4/E5 의 전제
+Ch6_LedgerTruth,common,6,night,1,10,10,10,,,CE06_OldPhoto,Ch6_Outro,6장 말일 밤(10일차)
+CE07_BlueHarborOpening,common,7,morning,1,1,2,0,,,Ch7_Intro,,개점식 1~2일차. 각 E4 압박을 심는다
+CE08_TableTogether,common,8,morning,1,3,5,0,,,Ch8_Intro,,연합 영업과 결판. 각 E5 의 전제(chain_crisis_resolved)
+Johan_E1,event,2,,0,0,0,5,,,Ch2_Intro,,첫 영업 5일 뒤
+Nabi_E1,event,2,,0,0,0,6,,,Ch2_Intro,,2장 말미
+Johan_E2,event,3,,0,0,0,2,,,Ch3_Intro,,통지서 도착 다음 날
+Howl_E2,event,3,,0,0,0,3,,,Ch3_Intro,,3일차 새벽 배선 수리
+Beomjun_E1,event,3,,0,0,0,3,,,Ch3_Intro,,3일차 아침
+Haru_E1,event,4,,0,0,0,4,,,Ch4_Intro,,면접 사흘 뒤 첫 출근
+Beomjun_E2,event,4,,0,0,0,0,,,CE04_StaffWelcome,,CE04 주문 카드(목요일 20개)가 복선
+Nabi_E2,event,4,,0,0,0,0,,,Ch4_Intro,,Ch4_Intro 가 안쪽 무대 소문을 깐다
+Haru_E2,event,5,,0,0,0,6,,,Ch5_Intro,,공연 전날 밤(6일차 이후). 만료는 없음
+Johan_E3,event,5,,0,0,0,7,,,Ch5_Show,,Ch5_Show 이후 첫 곡
+Nabi_E3,event,5,,0,0,0,7,,,Ch5_Show,,Ch5_Show 이후 두 번째 곡
+Howl_E3,event,5,,0,0,0,8,,,Ch5_Show_After,,공연 다음 날 밤(한 시간 뒤를 밤 행동 한 번 뒤로)
+Haru_E3,event,6,,0,0,0,0,,,Ch6_LedgerTruth,,장부 이야기를 들은 뒤(Ch6_Ledger_Roles 의 청자)
+Gomseok_E4,event,6,,0,0,0,0,,,CE06_OldPhoto,,낡은 사진을 본 날 이후
+Howl_E4,event,7,,0,0,0,3,,,CE06_OldPhoto;Ch6_Outro;CE07_BlueHarborOpening,,서랍 열쇠 단서(drawer_key_clue)와 개점식 이후
+Johan_E4,event,7,,0,0,0,3,,,CE07_BlueHarborOpening,,npc_marketing 명함 이후
+Beomjun_E4,event,7,,0,0,0,3,,,CE07_BlueHarborOpening,,npc_chain_rep 서 팀장 이후
+Haru_E4,event,7,,0,0,0,3,,,CE07_BlueHarborOpening,,npc_recruiter 시식 이후
+Nabi_E4,event,7,,0,0,0,3,,,CE07_BlueHarborOpening,,음반사 명함 이후
+Howl_E5,event,8,,0,0,0,0,,,Ch8_Intro;CE08_TableTogether,,drawer_key_clue 와 결판 이후
+Johan_E5,event,8,,0,0,0,0,,,Ch8_Intro;CE08_TableTogether,,결판 이후
+Beomjun_E5,event,8,,0,0,0,0,,,Ch8_Intro;CE08_TableTogether,,결판 이후
+Haru_E5,event,8,,0,0,0,0,,,Ch8_Intro;CE08_TableTogether,,체인점 결판 이후
+Gomseok_E5,event,8,,0,0,0,0,,,Ch8_Intro;CE08_TableTogether,,체인점 위기가 지나간 밤(CE08 이 chain_crisis_resolved 설정)
+Nabi_E5,event,8,,0,0,0,0,,,Ch8_Intro;CE08_TableTogether,,나비 복귀(Ch8_Outro 보충과 중복 방지)

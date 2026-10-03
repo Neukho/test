@@ -1,0 +1,7 @@
+id,name_ko,species,age,gender,role,staff_join_chapter,first_chapter,gain_mult,keyword
+howl,하울,gray_wolf,31,male,night_bartender,1,1,1.0,trust
+johan,요한,silver_fox,28,male,food_columnist,0,2,1.1,sincerity
+beomjun,범준,tiger,34,male,landlord_dojo_master,0,3,1.1,will
+haru,하루,white_rabbit,25,nonbinary,junior_patissier,4,4,1.2,growth
+gomseok,곰석,brown_bear,38,male,head_chef,1,1,1.0,legacy
+nabi,나비,black_cat,29,female,indie_musician,5,2,1.0,freedom

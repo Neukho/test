@@ -1,0 +1,10 @@
+id,name_ko,unlock_chapter,period
+lighthouse,등대 언덕,1,dusk
+fish_market,새벽 어시장,1,dawn
+beach,해변 산책로,1,day
+night_market,야시장 부두,2,night
+book_street,헌책방 거리,3,day
+dojo,합기도 도장,3,day
+greenhouse,온실 식물원,4,day
+live_club,라이브 클럽,5,night
+rooftop,옥상 정원(밤),6,night

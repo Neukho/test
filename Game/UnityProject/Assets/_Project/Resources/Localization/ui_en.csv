@@ -1,0 +1,294 @@
+key,text
+Title,Moonlit Corner Beastfolk
+Subtitle,Working title · Prototype v0.1
+NewGame,New Game
+Continue,Continue
+DevAutoPlay,Auto-play check (dev)
+Quit,Quit
+Back,Back
+Settings,Settings
+Close,Close
+Cancel,Cancel
+ChooseDifficulty,Choose a difficulty
+DifficultyStory,"Story - relaxed, story-focused"
+DifficultyNormal,Normal - recommended balance
+DifficultyHard,"Hard - business pressure, relationships cool slowly"
+Morning,Morning
+Business,Business
+Night,Night
+Settlement,Settlement
+StartBusiness,Open for business
+UpgradeShop,Expand shop
+UpgradeShopCap,Expand shop (chapter limit reached)
+Save,Save (slot 1)
+ToTitle,To title
+Saved,Saved.
+SaveFailed,Saving failed.
+Rest,Rest (fatigue -25)
+Research,Menu research (+3pp satisfaction tomorrow)
+FinishNight,End the night -> settlement
+ToNight,To the night
+NextDay,Next day
+Fast,2x speed
+Normal,1x speed
+EndTitle,End of prototype
+LoadNotFound,No save data to load.
+LoadTampered,The save file is damaged or was modified and cannot be loaded.
+LoadCorrupt,The save file could not be read.
+LoadRestored,A damaged save was restored from backup.
+CreateTitle,Create your character
+CreateName,Name (up to 12 characters)
+CreateNameHint,Enter a name
+CreateGender,Gender
+CreateSpecies,Species (placeholder choices)
+CreateAppearance,Appearance preset
+CreatePreviewTitle,How NPCs address you
+CreateConfirm,Start as this character
+NightTalk,Talk (with whom)
+NightGift,Gift (to whom)
+NightDate,Date (with whom)
+NightEvent,Personal event
+NightRouteLock,Lock route
+PickWho,With whom?
+PickGift,Which gift?
+PickSpot,Where to?
+PickEvent,Personal events (star = available)
+PrevPage,Previous
+NextPage,Next
+RouteLockTitle,Lock route
+RouteLockWarn,"Once you choose one person's path it cannot be undone, and your relationships with others will no longer change."
+RouteLockConfirm,Lock it in
+RouteLockLater,Not yet
+VnAuto,Auto
+VnSkip,Skip
+SettingsTitle,Settings
+SettingsTextSpeed,Text speed
+SettingsVolume,Master volume
+SettingsLocale,Language
+SettingsInstant,Instant
+RouteSelectTitle,Route selection
+RouteSelectConfirm,Confirm this choice
+RouteSelectCommunity,Continue without choosing (Community ending)
+RouteSelectHold,Not yet (back)
+RouteSelectLater,Decide later
+RoutePromptBody,Someone is ready to have a route locked. Decide now?
+OpenRouteSelect,Open route selection
+ExtraScenes,Follow-up scenes
+EndScreenTitle,Ending
+Gallery,Ending gallery
+GalleryTitle,Ending gallery (endings reached)
+HowlLine,...You came? I wiped down the chair.
+PauseTitle,Paused
+Resume,Resume
+PauseSave,Save (mornings only)
+PauseSaveMorningOnly,You can only save in the morning. Please save next morning.
+ReturnToTitle,Return to title
+ReturnConfirmTitle,Return to the title screen?
+ReturnConfirmBody,Unsaved progress will be lost. Your last morning autosave is kept.
+ReturnConfirmYes,Return
+SettingsBgm,Music volume
+SettingsSe,Sound effects volume
+SettingsAutoSpeed,Auto-advance speed
+SettingsUiScale,UI size
+SettingsFullscreen,Fullscreen
+SettingsOn,On
+SettingsOff,Off
+SettingsCharsPerSec,{0} chars/s
+SettingsSeconds,{0}s
+SettingsPercent,{0}%
+SettingsUiScaleUnavailable,That size is not available on this screen.
+SettingsDialogueNote,Dialogue text is Korean only for now. An English translation is in progress.
+TitleEndingsReached,Endings reached: {0} / {1}
+PauseButton,Menu
+hud_day,Ch. {0} {1}  ·  Day {2} ({3}/{4})
+hud_stats,{0} G   Rep. {1}   Lv {2}   Fatigue {3}
+day_phase_title,Day {0} · {1}
+morning_info,Today: {0} menu items · {1} seats · {2} staff
+morning_fatigue,Fatigue {0}
+morning_overwork, (Overworked: 1 night action)
+upgrade_shop_btn,{0}: Lv{1} → Lv{2} ({3} G)
+chapter_title,Chapter {0}  {1}
+chapter_goal,Daily revenue goal this chapter: {0} → {1} G
+chapter_unlocks_line,Unlocks: {0}
+start_button,Start
+biz_running,Open for business…
+biz_running_guests,Open for business… {0} guests
+biz_customers,Customers: {0}  (capacity {1} / demand {2})
+biz_price,Avg. spend {0} G · Satisfaction {1}%
+biz_revenue,"Revenue {0} G  (ingredients -{1}, upkeep -{2})"
+biz_net,Net profit {0} G · Reputation {1}
+biz_event,Event: {0}
+night_info,Actions left: {0} · Fatigue {1} · {2} G
+event_label,Personal event E{0}
+reason_cooldown,Cooldown
+reason_no_gold,Not enough gold
+reason_no_actions,No actions left
+gift_label,{0}   (tier {1})
+gift_info,To {0} · Gift cost {1} G (independent of owned items)
+spot_label_locked,{0}   (unlocks in ch. {1})
+date_info,With {0} · Date cost {1} G
+settle_net,Net profit today {0} G → balance {1} G
+settle_stats,Reputation {0} · Fatigue {1}
+end_card_days,You ran the cafe for {0} days and completed all 8 chapters.
+end_final_stats,Final gold {0} G · Shop level {1} · Reputation {2}
+end_card_time,Play time: {0} min
+biz_result,Business results
+relation_heading,Relationships
+relation_frozen,  (frozen)
+relation_route,  (route)
+aff_trust,Affection {0} · Trust {1}
+band_close,Close
+band_friendly,Friendly
+band_stranger,Distant
+route_confirm_title,Lock in this route?
+route_selected_n,[Pick {0}]
+route_unavailable,Unavailable — {0}
+route_consent_done, · Consent given
+route_available,Available
+route_single_suffix, (solo route)
+route_group_suffix," (shared route, {0})"
+route_commit_single,Lock in the solo route with {0}.
+route_commit_group,Lock in the shared route with {0}.
+route_community_toast,Continuing without choosing a route. You can choose again from the night menu at any time.
+extra_howl_rematch,Face Howl again
+route_mode_single,"Solo route: the story continues with the one person you choose. It has Normal, Good and True endings."
+route_mode_undecided,"Pick one person for a solo route, or two or three for a shared route. You can pick up to {0}."
+route_group_head,"Shared route ({0}): depicted only as a relationship everyone knows about and agrees to, and every member must agree in their own consent scene. "
+route_group_need_generic,Every member must meet the ending conditions. 
+route_group_need,Ending conditions (everyone): affection {0} · trust {1} · personal event stage {2} or higher. 
+route_group_tail,"If even one member falls short or does not consent, the story leads to the Community ending."
+route_lock_warning,"This cannot be undone, and relationships with the people you did not choose will no longer change (growth stops)."
+route_ready_ok,Meets shared-route criteria
+route_ready_short,Below shared-route criteria (affection {0} · trust {1})
+gallery_slot_title,{0} {1} ending
+ending_kind_normal,Normal
+ending_kind_good,Good
+ending_kind_true,True
+choice_locked_hint, (requirements not met)
+preview_close_call,"  (when closer: ""{0}…"")"
+ending_title_true,True Ending
+ending_title_good,Good Ending
+ending_title_normal,Normal Ending
+ending_title_duo,Ending Together with Two
+ending_title_trio,Ending Together with Three
+ending_title_community,Moonlit Corner
+ending_fallback_single,(The ending scenario with {0} is in preparation.) The lights of Moonlit Corner are warm again tonight.
+ending_fallback_group,(The ending scenario together with {0} is in preparation.) The night passes after hearts have been confirmed.
+ending_fallback_community,(The common ending scenario is in preparation.) Laughter never fades at Moonlit Corner where everyone gathers.
+ending_fallback_epilogue,(The epilogue scenario for {0} is in preparation.) A morning together dawns.
+end_sub_single,The story with {0}
+end_sub_group,Together with {0}
+end_sub_community,"Moonlit Corner, together with everyone"
+end_days_chapters,You ran the cafe for {0} days and completed {1} chapters.
+end_play_time,Play time {0}
+end_cg_seen,CGs seen this run: {0}
+end_cg_total, ({0} total)
+end_reached,Endings reached: {0} / {1}
+playtime_hm,{0} h {1} min
+playtime_m,{0} min
+gender_male,Male
+gender_female,Female
+gender_nonbinary,Non-binary
+gender_neutral,Unspecified
+species_human,Human
+species_wolf,Wolf
+species_fox,Fox
+species_tiger,Tiger
+species_rabbit,Rabbit
+species_bear,Bear
+species_cat,Cat
+profile_err_name_empty,Please enter a name.
+profile_err_name_chars,The name contains characters that are not allowed. (< > { } \)
+profile_err_gender,Please choose a gender.
+profile_err_species,Please choose a species.
+profile_err_look,Please choose an appearance.
+create_appearance_n,Look {0}
+speaker_player,Protagonist
+dev_autoplay_row,{0} days · Lv {1} · daily revenue 
+demo_end_title,End of the demo
+demo_end_thanks,Thank you for playing!
+demo_end_cta,The full game has all 8 chapters and every character's endings. Please add it to your wishlist on the store page!
+demo_end_wishlist,Wishlist on the store
+demo_end_save_note,This save can be continued as-is in the full version.
+demo_stat_days,"You ran the cafe for {0} days, up to chapter {1}."
+demo_stat_cg,CGs seen this run: {0}
+chapter_name_1,Inheritance
+chapter_unlocks_1,Tutorial;Howl and Gomseok join
+chapter_name_2,Reopening
+chapter_unlocks_2,Menu development;Johan's review;Reputation system
+chapter_name_3,The Rent
+chapter_unlocks_3,Shop expansion;Beomjun's rent event
+chapter_name_4,New Hire
+chapter_unlocks_4,Staff assignment;Haru joins
+chapter_name_5,The Stage
+chapter_unlocks_5,Event business (festival);Nabi's performance
+chapter_name_6,Uncle's Ledger
+chapter_unlocks_6,Secret ledger;Some stage 4-5 events open for all romance targets
+chapter_name_7,Crisis
+chapter_unlocks_7,Route lock branch;Chain-store competition
+chapter_name_8,Moonlit Corner
+chapter_unlocks_8,Final branch;Three endings
+char_name_howl,Howl
+char_name_johan,Johan
+char_name_beomjun,Beomjun
+char_name_haru,Haru
+char_name_gomseok,Gomseok
+char_name_nabi,Nabi
+gift_name_leather_wristguard,Leather wrist guard
+gift_name_harbor_photobook,Old harbor photo book
+gift_name_whisky_ice_mold,Quality whisky ice mold
+gift_name_warm_scarf,Warm scarf
+gift_name_fountain_pen_ink,Fountain pen & ink
+gift_name_scented_tea_set,Lightly scented tea set
+gift_name_old_cookbook,Old cookbook
+gift_name_premium_belt,Premium dojo belt
+gift_name_sweet_snack,Sweet snack
+gift_name_sports_gear,Sports gear
+gift_name_dojo_signboard_frame,Frame for the dojo signboard
+gift_name_baking_tools,Baking tools (spatula & molds)
+gift_name_small_plant,Small plant
+gift_name_handwritten_recipe_note,Handwritten recipe notebook
+gift_name_knife_whetstone,Fine knife whetstone
+gift_name_homemade_jam,Homemade jam
+gift_name_guitar_picks,Guitar picks
+gift_name_vintage_record,Vintage record
+gift_name_scented_candle,Scented candle
+gift_name_party_horn_set,Party noisemaker set
+gift_name_promo_voucher_bundle,Promo coupon bundle
+gift_name_etiquette_manual,Etiquette manual
+gift_name_performance_scorecard,Blunder scorecard
+gift_name_uncle_portrait_frame,Uncle's portrait frame
+gift_name_performance_merch_set,Performance merch sale set
+spot_name_lighthouse,Lighthouse Hill
+spot_name_fish_market,Dawn Fish Market
+spot_name_beach,Beach Promenade
+spot_name_night_market,Night Market Pier
+spot_name_book_street,Used Bookstore Street
+spot_name_dojo,Aikido Dojo
+spot_name_greenhouse,Greenhouse Garden
+spot_name_live_club,Live Club
+spot_name_rooftop,Rooftop Garden (night)
+biz_event_1,A regular brought a friend along.
+biz_event_2,"It rained, and the window seats stayed quiet."
+biz_event_3,Wholesale ingredient prices went up a little.
+biz_event_4,You politely calmed a difficult customer.
+biz_event_5,Bad rumors spread and your reputation dropped sharply.
+biz_event_6,A review went viral and your reputation rose sharply.
+msg_01,The route has already been locked in.
+msg_02,Please choose who to share the route with.
+msg_03,You cannot choose the same person twice.
+msg_04,Unknown character.
+msg_05,The route cannot be locked in.
+msg_06,You cannot act any more tonight.
+msg_07,Still on cooldown.
+msg_08,Not enough gold.
+msg_09,This place is not unlocked yet.
+msg_10,There is no event to see right now.
+msg_11,You cannot do that right now.
+msg_12,Could not load gift and date data.
+msg_13,Closed by the route lock
+msg_14,All events complete
+msg_15,Not yet
+msg_16,You have not met them yet.
+rest_free,"Rest (free, uses no action)"
+relation_not_met,Not met yet

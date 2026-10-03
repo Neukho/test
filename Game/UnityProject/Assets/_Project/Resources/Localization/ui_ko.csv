@@ -1,0 +1,294 @@
+key,text
+Title,달빛 모퉁이의 수인들
+Subtitle,가칭 · 프로토타입 v0.1
+NewGame,새 게임
+Continue,이어하기
+DevAutoPlay,자동 플레이 검증 (개발용)
+Quit,종료
+Back,뒤로
+Settings,설정
+Close,닫기
+Cancel,취소
+ChooseDifficulty,난이도를 선택하세요
+DifficultyStory,스토리 — 느긋하게 이야기 중심으로
+DifficultyNormal,노멀 — 권장 밸런스
+DifficultyHard,"하드 — 경영 압박, 관계도 쉽게 식지 않음"
+Morning,아침
+Business,영업
+Night,밤
+Settlement,정산
+StartBusiness,영업 시작
+UpgradeShop,가게 확장
+UpgradeShopCap,가게 확장 (이번 챕터 상한 도달)
+Save,저장 (슬롯 1)
+ToTitle,타이틀로
+Saved,저장했습니다.
+SaveFailed,저장에 실패했습니다.
+Rest,휴식 (피로 -25)
+Research,메뉴 연구 (내일 만족도 +3%p)
+FinishNight,밤 마무리 → 정산
+ToNight,밤으로
+NextDay,다음 날
+Fast,2배속
+Normal,1배속
+EndTitle,프로토타입 종료
+LoadNotFound,불러올 저장 데이터가 없습니다.
+LoadTampered,저장 파일이 손상되었거나 변경되어 불러올 수 없습니다.
+LoadCorrupt,저장 파일을 읽을 수 없습니다.
+LoadRestored,손상된 저장을 백업에서 복구했습니다.
+CreateTitle,주인공 만들기
+CreateName,이름 (최대 12자)
+CreateNameHint,이름을 입력하세요
+CreateGender,성별
+CreateSpecies,종 (임시 선택지)
+CreateAppearance,외형 프리셋
+CreatePreviewTitle,NPC 가 나를 부르는 말
+CreateConfirm,이 모습으로 시작
+NightTalk,대화 (누구와)
+NightGift,선물 (누구에게)
+NightDate,데이트 (누구와)
+NightEvent,개인 이벤트
+NightRouteLock,루트 확정
+PickWho,누구와 할까요?
+PickGift,어떤 선물을 줄까요?
+PickSpot,어디로 갈까요?
+PickEvent,개인 이벤트 (★ = 볼 수 있음)
+PrevPage,이전
+NextPage,다음
+RouteLockTitle,루트 확정
+RouteLockWarn,"한 사람과의 길을 선택하면 되돌릴 수 없고, 다른 인물과의 관계는 더 이상 변하지 않습니다."
+RouteLockConfirm,확정한다
+RouteLockLater,보류
+VnAuto,자동
+VnSkip,스킵
+SettingsTitle,설정
+SettingsTextSpeed,텍스트 속도
+SettingsVolume,마스터 볼륨
+SettingsLocale,언어
+SettingsInstant,즉시
+RouteSelectTitle,루트 선택
+RouteSelectConfirm,이 선택으로 확정
+RouteSelectCommunity,정하지 않고 계속 (커뮤니티 엔딩)
+RouteSelectHold,보류 (뒤로)
+RouteSelectLater,나중에 정하기
+RoutePromptBody,루트를 확정할 수 있는 인물이 있습니다. 지금 정할까요?
+OpenRouteSelect,루트 선택 화면 열기
+ExtraScenes,이어지는 장면
+EndScreenTitle,엔딩
+Gallery,엔딩 갤러리
+GalleryTitle,엔딩 갤러리 (도달한 엔딩)
+HowlLine,"…왔어? 의자, 닦아놨다."
+PauseTitle,일시정지
+Resume,계속하기
+PauseSave,저장하기 (아침에만)
+PauseSaveMorningOnly,저장은 아침에만 할 수 있어요. 다음 아침에 저장해 주세요.
+ReturnToTitle,타이틀로 돌아가기
+ReturnConfirmTitle,타이틀로 돌아갈까요?
+ReturnConfirmBody,저장하지 않은 진행은 사라집니다. 마지막 아침 자동 저장은 남아 있습니다.
+ReturnConfirmYes,돌아간다
+SettingsBgm,BGM 볼륨
+SettingsSe,효과음 볼륨
+SettingsAutoSpeed,자동 진행 속도
+SettingsUiScale,UI 크기
+SettingsFullscreen,전체 화면
+SettingsOn,켜짐
+SettingsOff,꺼짐
+SettingsCharsPerSec,{0}자/초
+SettingsSeconds,{0}초
+SettingsPercent,{0}%
+SettingsUiScaleUnavailable,이 화면 크기에서는 선택할 수 없는 크기예요.
+SettingsDialogueNote,대사 본문은 아직 한국어만 제공됩니다. 영어 번역은 준비 중입니다.
+TitleEndingsReached,도달한 엔딩 {0} / {1}
+PauseButton,메뉴
+hud_day,제{0}장 {1}  ·  {2}일차 ({3}/{4})
+hud_stats,{0} G   평판 {1}   Lv {2}   피로 {3}
+day_phase_title,{0}일차 · {1}
+morning_info,오늘의 메뉴 {0}종 · 좌석 {1}석 · 직원 {2}명
+morning_fatigue,피로도 {0}
+morning_overwork, (과로: 밤 행동 1회)
+upgrade_shop_btn,{0}  Lv{1} → Lv{2}  ({3} G)
+chapter_title,제{0}장  {1}
+chapter_goal,이번 챕터의 목표 일 매출 {0} → {1} G
+chapter_unlocks_line,해금: {0}
+start_button,시작
+biz_running,영업 중…
+biz_running_guests,영업 중… 손님 {0}명
+biz_customers,방문 고객 {0}명  (수용 {1} / 수요 {2})
+biz_price,평균 객단가 {0} G · 만족도 {1}%
+biz_revenue,"매출 {0} G  (재료비 -{1}, 유지비 -{2})"
+biz_net,순수익 {0} G · 평판 {1}
+biz_event,이벤트: {0}
+night_info,남은 행동 {0}회 · 피로 {1} · {2} G
+event_label,개인 이벤트 E{0}
+reason_cooldown,쿨다운
+reason_no_gold,골드 부족
+reason_no_actions,행동 없음
+gift_label,{0}   (등급 {1})
+gift_info,{0}에게 · 선물 비용 {1} G (보유 아이템과 무관)
+spot_label_locked,{0}   ({1}장 해금)
+date_info,{0}와(과) · 데이트 비용 {1} G
+settle_net,오늘 순수익 {0} G → 보유 {1} G
+settle_stats,평판 {0} · 피로 {1}
+end_card_days,{0}일을 달려 8챕터를 완주했습니다.
+end_final_stats,최종 골드 {0} G · 가게 레벨 {1} · 평판 {2}
+end_card_time,플레이 시간 {0}분
+biz_result,영업 결과
+relation_heading,관계
+relation_frozen,  (고정)
+relation_route,  (루트)
+aff_trust,호감 {0} · 신뢰 {1}
+band_close,가까움
+band_friendly,친밀
+band_stranger,낯섦
+route_confirm_title,정말 확정할까요?
+route_selected_n,[선택 {0}]
+route_unavailable,선택 불가 — {0}
+route_consent_done, · 동의 완료
+route_available,선택 가능
+route_single_suffix, (단독 루트)
+route_group_suffix, (공동 {0}명)
+route_commit_single,{0}과(와)의 단독 루트로 확정합니다.
+route_commit_group,{0}과(와) 함께하는 공동 루트로 확정합니다.
+route_community_toast,루트를 정하지 않고 계속합니다. 밤 메뉴에서 언제든 다시 정할 수 있습니다.
+extra_howl_rematch,하울과 다시 마주하기
+route_mode_single,단독 루트: 선택한 한 사람과의 이야기가 이어집니다. 노멀 · 굿 · 트루 엔딩이 있습니다.
+route_mode_undecided,"한 명을 고르면 단독 루트, 두세 명을 고르면 공동 루트입니다. 최대 {0}명까지 고를 수 있습니다."
+route_group_head,"공동 루트({0}명): 모든 구성원이 서로 알고 동의하는 관계로만 그려지며, 구성원 전원이 각자 동의 장면에서 동의해야 합니다. "
+route_group_need_generic,엔딩 조건은 구성원 전원이 충족해야 합니다. 
+route_group_need,엔딩 조건(전원): 호감 {0} · 신뢰 {1} · 개인 이벤트 {2}단계 이상. 
+route_group_tail,한 명이라도 부족하거나 동의하지 않으면 커뮤니티 엔딩으로 이어집니다.
+route_lock_warning,"확정하면 되돌릴 수 없고, 선택하지 않은 인물과의 관계는 더 이상 변하지 않습니다(성장 정지)."
+route_ready_ok,공동 기준 충족
+route_ready_short,공동 기준 미달(호감 {0} · 신뢰 {1})
+gallery_slot_title,{0} {1} 엔딩
+ending_kind_normal,노멀
+ending_kind_good,굿
+ending_kind_true,트루
+choice_locked_hint, (조건 미충족)
+preview_close_call,"  (가까워지면 ""{0}…"")"
+ending_title_true,트루 엔딩
+ending_title_good,굿 엔딩
+ending_title_normal,노멀 엔딩
+ending_title_duo,두 사람과 함께하는 엔딩
+ending_title_trio,세 사람과 함께하는 엔딩
+ending_title_community,달빛 모퉁이
+ending_fallback_single,({0}과(와)의 엔딩 시나리오는 준비 중입니다.) 달빛 모퉁이의 불빛은 오늘도 따뜻하다.
+ending_fallback_group,({0}과(와) 함께하는 엔딩 시나리오는 준비 중입니다.) 서로의 마음을 확인한 밤이 지나간다.
+ending_fallback_community,(공통 엔딩 시나리오는 준비 중입니다.) 모두가 모인 달빛 모퉁이에는 오늘도 웃음이 끊이지 않는다.
+ending_fallback_epilogue,({0}의 에필로그 시나리오는 준비 중입니다.) 함께하는 아침이 밝아 온다.
+end_sub_single,{0}과(와)의 이야기
+end_sub_group,{0}과(와) 함께
+end_sub_community,모두와 함께하는 달빛 모퉁이
+end_days_chapters,{0}일을 달려 {1}챕터를 완주했습니다.
+end_play_time,플레이 시간 {0}
+end_cg_seen,이번에 본 CG {0}장
+end_cg_total, (누적 {0}장)
+end_reached,도달한 엔딩 {0} / {1}
+playtime_hm,{0}시간 {1}분
+playtime_m,{0}분
+gender_male,남성
+gender_female,여성
+gender_nonbinary,논바이너리
+gender_neutral,지정 안 함
+species_human,인간
+species_wolf,늑대
+species_fox,여우
+species_tiger,호랑이
+species_rabbit,토끼
+species_bear,곰
+species_cat,고양이
+profile_err_name_empty,이름을 입력해 주세요.
+profile_err_name_chars,이름에 사용할 수 없는 문자가 있습니다. (< > { } \)
+profile_err_gender,성별을 선택해 주세요.
+profile_err_species,종을 선택해 주세요.
+profile_err_look,외형을 선택해 주세요.
+create_appearance_n,외형 {0}
+speaker_player,주인공
+dev_autoplay_row,{0}일 · Lv {1} · 일 매출 
+demo_end_title,데모는 여기까지예요
+demo_end_thanks,플레이해 주셔서 감사합니다!
+demo_end_cta,정식 버전에서는 8개 챕터 전체와 모든 인물의 엔딩을 만날 수 있어요. 스토어 페이지에서 위시리스트에 담아 주세요!
+demo_end_wishlist,스토어에서 위시리스트에 담기
+demo_end_save_note,이 저장 데이터는 정식 버전에서도 그대로 이어서 할 수 있어요.
+demo_stat_days,{0}일 동안 {1}챕터까지 달렸습니다.
+demo_stat_cg,이번에 본 CG {0}장
+chapter_name_1,상속
+chapter_unlocks_1,튜토리얼;하울·곰석 합류
+chapter_name_2,재개장
+chapter_unlocks_2,메뉴 개발;요한 리뷰;평판 시스템
+chapter_name_3,임대료
+chapter_unlocks_3,가게 확장;범준 임대 이벤트
+chapter_name_4,신입
+chapter_unlocks_4,직원 배치;하루 입사
+chapter_name_5,무대
+chapter_unlocks_5,이벤트 영업(축제);나비 공연
+chapter_name_6,삼촌의 장부
+chapter_unlocks_6,비밀 장부;전 공략 대상 4~5단계 일부 개방
+chapter_name_7,위기
+chapter_unlocks_7,루트 확정 분기;체인점 경쟁
+chapter_name_8,달빛 모퉁이
+chapter_unlocks_8,최종 분기;엔딩 3종
+char_name_howl,하울
+char_name_johan,요한
+char_name_beomjun,범준
+char_name_haru,하루
+char_name_gomseok,곰석
+char_name_nabi,나비
+gift_name_leather_wristguard,가죽 손목 보호대
+gift_name_harbor_photobook,오래된 항구 사진집
+gift_name_whisky_ice_mold,질 좋은 위스키 얼음틀
+gift_name_warm_scarf,따뜻한 목도리
+gift_name_fountain_pen_ink,만년필·잉크
+gift_name_scented_tea_set,향이 은은한 차 세트
+gift_name_old_cookbook,오래된 요리책
+gift_name_premium_belt,고급 도복 띠
+gift_name_sweet_snack,단 과자
+gift_name_sports_gear,스포츠 용품
+gift_name_dojo_signboard_frame,도장 간판용 액자
+gift_name_baking_tools,제과 도구(주걱·틀)
+gift_name_small_plant,작은 식물
+gift_name_handwritten_recipe_note,손글씨 레시피 노트
+gift_name_knife_whetstone,좋은 칼 갈이돌
+gift_name_homemade_jam,수제 잼
+gift_name_guitar_picks,기타 피크
+gift_name_vintage_record,빈티지 레코드
+gift_name_scented_candle,향초
+gift_name_party_horn_set,파티 소음 세트
+gift_name_promo_voucher_bundle,홍보 쿠폰 묶음
+gift_name_etiquette_manual,눈치 교본
+gift_name_performance_scorecard,실수 점수표
+gift_name_uncle_portrait_frame,삼촌 초상 액자
+gift_name_performance_merch_set,공연 굿즈 판매 세트
+spot_name_lighthouse,등대 언덕
+spot_name_fish_market,새벽 어시장
+spot_name_beach,해변 산책로
+spot_name_night_market,야시장 부두
+spot_name_book_street,헌책방 거리
+spot_name_dojo,합기도 도장
+spot_name_greenhouse,온실 식물원
+spot_name_live_club,라이브 클럽
+spot_name_rooftop,옥상 정원(밤)
+biz_event_1,단골 손님이 지인을 데려왔다.
+biz_event_2,비가 와서 창가 자리가 한산했다.
+biz_event_3,재료 도매가가 살짝 올랐다.
+biz_event_4,진상 손님을 정중하게 달랬다.
+biz_event_5,나쁜 소문이 돌아 평판이 크게 떨어졌다.
+biz_event_6,리뷰가 화제가 되어 평판이 크게 올랐다.
+msg_01,이미 루트가 확정되었습니다.
+msg_02,함께할 인물을 선택해 주세요.
+msg_03,같은 인물을 두 번 선택할 수 없습니다.
+msg_04,알 수 없는 인물입니다.
+msg_05,루트를 확정할 수 없습니다.
+msg_06,오늘 밤은 더 이상 행동할 수 없습니다.
+msg_07,아직 쿨다운 중입니다.
+msg_08,골드가 부족합니다.
+msg_09,아직 해금되지 않은 장소입니다.
+msg_10,지금은 볼 수 있는 이벤트가 없습니다.
+msg_11,지금은 할 수 없는 행동입니다.
+msg_12,선물·데이트 데이터를 불러오지 못했습니다.
+msg_13,루트 확정으로 닫힘
+msg_14,모든 이벤트 완료
+msg_15,아직 때가 아니다
+msg_16,아직 만나지 못한 인물입니다.
+rest_free,"휴식 (무료, 행동 소모 없음)"
+relation_not_met,아직 만나지 못했다

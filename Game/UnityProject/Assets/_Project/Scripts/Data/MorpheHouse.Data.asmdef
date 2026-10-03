@@ -1,0 +1,14 @@
+{
+  "name": "MorpheHouse.Data",
+  "rootNamespace": "MorpheHouse.Data",
+  "references": ["MorpheHouse.Core"],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": true
+}

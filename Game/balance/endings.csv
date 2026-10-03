@@ -1,0 +1,7 @@
+ending,route,aff_min,trust_min,required_events,required_flags,note
+normal,locked,60,20,3,route_locked,루트 확정 후 호감 60 이상: 곁에 남는 결말
+good,locked,85,40,5,route_locked,본 기획 굿 조건
+true,locked,95,46,5,route_locked;ledger_truth;key_flag,6장 장부 진실 + 캐릭터 고유 열쇠 플래그
+community,none,0,0,0,route_unlocked,루트 미확정: 모두와 함께하는 달빛 모퉁이 엔딩
+harem_duo,group2,72,24,3,group_locked;harem_consent,2인 공동 루트: 구성원 전원이 조건 충족
+harem_trio,group3,65,14,2,group_locked;harem_consent,3인 공동 루트: 구성원 전원이 조건 충족(의도적으로 어려움)

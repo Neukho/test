@@ -1,0 +1,14 @@
+{
+  "name": "MorpheHouse.Game",
+  "rootNamespace": "MorpheHouse.GameFlow",
+  "references": ["MorpheHouse.Core", "MorpheHouse.Data", "MorpheHouse.Dialogue", "MorpheHouse.Romance", "MorpheHouse.ArtPipeline"],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": true
+}

@@ -1,0 +1,54 @@
+key,value,note
+start_gold,5000,시작 자금
+choice_success_prob,0.7,숙련 플레이어 정답률(파이썬 --skill params 전용)
+actions_per_night,2,밤 행동 횟수
+fatigue_limit,80,이 이상이면 행동 1회
+fatigue_daily_recover,30,하루 시작 시 회복
+fatigue_business_base,22,영업 피로
+fatigue_per_staff,2,직원 1명당 영업 피로 감소
+min_prep,0.8,아침 준비(분)
+min_business,1.0,낮 영업 자동 진행 + 가속 시청(분)
+min_settle,0.5,정산(분)
+random_event_prob,0.35,하루 랜덤 이벤트 확률
+random_event_min,0.7,랜덤 이벤트 1건 처리 시간(분)
+menu_dev_min,1.2,신규 메뉴 개발 미니게임(분)
+common_event_min,4.0,공통 이벤트 1건(분)
+ingredient_cost_rate,0.38,매출 대비 재료비
+upkeep_per_level,120,일 유지비(레벨당)
+seat_base,6,
+seat_per_level,3,
+turns_base,1.45,기본 회전수(레벨1)
+turns_per_level,0.105,레벨당 회전수 증가
+price_base,30,
+price_per_menu,2.0,메뉴 1종당 평균 객단가 증가
+demand_base,25,
+demand_per_level,8,
+demand_per_rep,0.6,
+sat_base,0.72,
+prep_bonus,0.08,
+sat_noise,0.06,
+rep_event_prob,0.08,
+rep_event_amp,10,
+level_cost_base,1200,
+level_cost_growth,1.5,
+gift_cost_base,100,
+gift_cost_per_chapter,60,
+date_cost_base,200,
+date_cost_per_chapter,50,
+chain_demand_penalty,0.18,7장 체인 진출 수요 감소(평판 60 미만 시 전체 적용)
+helper_bonus,0.10,7장 루트 확정 후에만 적용되는 수용량 보너스(도움 인물)
+soft_diminish,0.6,호감도 증가량 감쇠 계수(1 - k*aff/100)
+decay_grace_days,6,접촉 없이 이 일수가 지나면 감쇠 시작
+decay_per_day,1.0,일 호감도 감쇠
+rev_mult,1.0,매출 배율(난이도에서 덮어씀)
+rep_sat_center,0.82,평판이 변하지 않는 만족도(이보다 높으면 평판 상승)
+talk_choice_points,2,대화 노드 1개의 선택지 수(qa_hunt gain 실측; 파이썬 전용)
+talk_right_prob,0.36,무작위 선택 시 정답(+5/+1.5) 확률(실측; 파이썬 전용)
+talk_wrong_prob,0.31,무작위 선택 시 오답(-1/-1) 확률(나머지는 무난 0; 파이썬 전용)
+key_flag_prob,0.25,무작위 선택 봇이 고유 열쇠 플래그를 얻는 비율(실측 평균; 파이썬 전용)
+ledger_truth_prob,1.0,Ch6_LedgerTruth 공통 장면이 장부 진실 플래그를 설정(실측 30/30; 파이썬 전용)
+romance_gain_mult,1.0,양수 호감·신뢰 증가분 배율(난이도에서 덮어씀)
+group_lock_min_aff,50,공동(2~3명) 루트 확정에 필요한 호감(단독은 60 고정)
+group_lock_min_trust,7,공동(2~3명) 루트 확정에 필요한 신뢰(단독은 20 고정)
+group_gain_mult_2,1.0,공동 루트(2인) 확정 뒤 구성원의 양수 증가 배율
+group_gain_mult_3,1.7,공동 루트(3인) 확정 뒤 구성원의 양수 증가 배율

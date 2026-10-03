@@ -1,0 +1,27 @@
+id,kind,path,loop,default_volume,notes
+title,bgm,Audio/BGM/bgm_title,1,0.80,"달빛 아래 항구 마을의 조용한 밤, 약간 쓸쓸하지만 따뜻한 기대 / 90~120초 루프"
+cafe_day,bgm,Audio/BGM/bgm_cafe_day,1,0.70,카페 아침·낮의 포근하고 가벼운 일상 / 2~3분 루프
+cafe_night,bgm,Audio/BGM/bgm_cafe_night,1,0.65,"영업을 마친 밤의 나른하고 다정한 분위기, 대화·선물·데이트 메뉴 배경 / 2~3분 루프"
+business,bgm,Audio/BGM/bgm_business,1,0.70,손님이 오가는 영업 시간의 경쾌한 활기(과하지 않게) / 2분 루프
+settlement,bgm,Audio/BGM/bgm_settlement,1,0.65,하루를 정리하는 차분한 저녁 / 60~90초 루프
+event_warm,bgm,Audio/BGM/bgm_event_warm,1,0.75,마음이 가까워지는 순간의 다정함 / 90초 루프
+event_tense,bgm,Audio/BGM/bgm_event_tense,1,0.70,"갈등·결정 앞의 긴장, 낮게 깔리는 불안 / 90초 루프"
+event_sad,bgm,Audio/BGM/bgm_event_sad,1,0.70,이별·상실·미안함의 조용한 슬픔 / 90초 루프
+ending_normal,bgm,Audio/BGM/bgm_ending_normal,1,0.75,담담하게 마무리되는 여운 / 2~3분(루프 가능)
+ending_good,bgm,Audio/BGM/bgm_ending_good,1,0.80,따뜻하고 안정된 행복 / 2~3분(루프 가능)
+ending_true,bgm,Audio/BGM/bgm_ending_true,1,0.85,오래 쌓아 온 마음이 닿는 가장 큰 감동 / 3~4분(루프 가능)
+ending_harem,bgm,Audio/BGM/bgm_ending_harem,1,0.80,여럿이 함께하는 시끌벅적하고 다정한 행복 / 2~3분(루프 가능)
+ending_community,bgm,Audio/BGM/bgm_ending_community,1,0.75,가게와 동네 사람들이 함께 만든 소박한 따뜻함 / 2~3분(루프 가능)
+ui_click,se,Audio/SE/se_ui_click,0,0.80,부드럽고 짧은 나무 두드림 / 0.05~0.12초
+ui_confirm,se,Audio/SE/se_ui_confirm,0,0.85,확정·시작의 긍정적인 두 음 / 0.3초
+ui_back,se,Audio/SE/se_ui_back,0,0.80,뒤로·닫기·취소의 부드럽게 내려가는 소리 / 0.2초
+typewriter,se,Audio/SE/se_typewriter,0,0.35,대사 글자가 나오는 아주 작은 틱 / 0.02~0.04초
+coin,se,Audio/SE/se_coin,0,0.85,동전이 쌓이는 맑은 소리 / 0.4~0.6초
+level_up,se,Audio/SE/se_level_up,0,0.90,가게가 성장하는 작은 팡파르 / 1~1.5초
+gift,se,Audio/SE/se_gift,0,0.85,선물을 건네는 포장지·리본 느낌의 반짝임 / 0.6~1초
+door_bell,se,Audio/SE/se_door_bell,0,0.85,카페 문에 달린 종소리 / 0.8~1.2초
+chapter_start,se,Audio/SE/se_chapter_start,0,0.85,새 챕터의 시작을 알리는 짧은 전환음 / 2~3초
+save_done,se,Audio/SE/se_save_done,0,0.80,저장 완료의 작은 확인음 / 0.4~0.6초
+error,se,Audio/SE/se_error,0,0.75,안내용 낮은 알림(거슬리지 않게) / 0.25~0.4초
+cg_reveal,se,Audio/SE/se_cg_reveal,0,0.85,특별한 장면이 열리는 반짝임 / 1~1.5초
+date_start,se,Audio/SE/se_date_start,0,0.80,데이트 장면 시작의 설레는 짧은 음 / 1~1.5초

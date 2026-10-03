@@ -1,0 +1,27 @@
+{
+  "name": "MorpheHouse.Editor",
+  "rootNamespace": "MorpheHouse.EditorTools",
+  "references": [
+    "MorpheHouse.Core",
+    "MorpheHouse.Data",
+    "MorpheHouse.Tycoon",
+    "MorpheHouse.Save",
+    "MorpheHouse.ArtPipeline",
+    "MorpheHouse.UI",
+    "MorpheHouse.Boot",
+    "MorpheHouse.Romance",
+    "MorpheHouse.Dialogue",
+    "MorpheHouse.Game"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

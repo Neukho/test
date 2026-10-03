@@ -1,0 +1,31 @@
+{
+  "name": "MorpheHouse.Tests.EditMode",
+  "rootNamespace": "MorpheHouse.Tests",
+  "references": [
+    "MorpheHouse.Core",
+    "MorpheHouse.Data",
+    "MorpheHouse.Tycoon",
+    "MorpheHouse.Save",
+    "UnityEngine.TestRunner",
+    "UnityEditor.TestRunner",
+    "MorpheHouse.Romance",
+    "MorpheHouse.Dialogue",
+    "MorpheHouse.Game",
+    "MorpheHouse.ArtPipeline"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": true,
+  "precompiledReferences": [
+    "nunit.framework.dll"
+  ],
+  "autoReferenced": false,
+  "defineConstraints": [
+    "UNITY_INCLUDE_TESTS"
+  ],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

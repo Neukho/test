@@ -1,0 +1,26 @@
+{
+  "name": "MorpheHouse.UI",
+  "rootNamespace": "MorpheHouse.UI",
+  "references": [
+    "MorpheHouse.Core",
+    "MorpheHouse.Data",
+    "MorpheHouse.Tycoon",
+    "MorpheHouse.Save",
+    "MorpheHouse.ArtPipeline",
+    "UnityEngine.UI",
+    "Unity.TextMeshPro",
+    "Unity.InputSystem",
+    "MorpheHouse.Romance",
+    "MorpheHouse.Dialogue",
+    "MorpheHouse.Game"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}
