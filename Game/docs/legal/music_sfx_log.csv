@@ -1,0 +1,3 @@
+asset_id,title,creator,source_url,license_name,license_url,commercial_use_ok,attribution_required,attribution_text,date_checked_utc,file_in_project,used_in,notes
+# 한 행 = 음악/효과음 파일 하나. 이 줄은 무시됩니다. 라이선스를 확인한 날짜와 URL 을 반드시 남기세요(약관은 바뀝니다).
+# commercial_use_ok / attribution_required 는 yes|no|unknown. unknown 이 남아 있으면 릴리스 게이트 실패(docs/17).

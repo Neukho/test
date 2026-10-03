@@ -1,0 +1,8 @@
+title: Pronouns
+---
+{cap(pronoun_subj())} 는 가게 문을 열었다. #line:pr001
+손님이 {pronoun_obj()} 를 불렀다. #line:pr002
+그건 {pronoun_poss()} 앞치마였다. #line:pr003
+안녕하세요, {honorific()}. 환영합니다 {name}. #line:pr004
+bare - {pronoun_subj} / {name} #line:pr005
+===

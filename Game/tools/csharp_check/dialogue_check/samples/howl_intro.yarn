@@ -1,0 +1,15 @@
+title: HowlIntro
+---
+howl: ...왔어? #line:hi001
+player: 네, 저예요. #line:hi002
+howl: 오늘은 {calls_player("howl")} 한테 부탁할 게 있어. #line:hi003
+-> 호감 올리기 #line:hi004
+    <<aff howl 5>>
+    <<trust howl 2>>
+    player: {player_calls("howl")}, 도와드릴게요. #line:hi005
+-> 거절 #line:hi006
+    player: 오늘은 어려워요. #line:hi007
+<<route_lock howl>>
+<<end_event howl 1>>
+howl: 그럼. #line:hi008
+===

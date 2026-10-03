@@ -1,0 +1,2 @@
+font_name,version,source_url,license_name,license_url,commercial_use_ok,embedding_allowed,modification_allowed,reserved_font_name,date_checked_utc,file_in_project,notes
+# 한 행 = 폰트 파일 하나. 이 줄은 무시됩니다. 예(확인 후 채울 것): Noto Sans KR,[TODO],[TODO],SIL Open Font License 1.1,[TODO],yes,yes,[확인],[확인],[TODO],Resources/Fonts/...,

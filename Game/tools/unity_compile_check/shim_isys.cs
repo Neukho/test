@@ -1,0 +1,1 @@
+namespace UnityEngine.InputSystem { internal static class ClampHolder2 { public static float Clamp(float v, float a, float b) { return v < a ? a : (v > b ? b : v); } public static int Clamp(int v, int a, int b) { return v < a ? a : (v > b ? b : v); } public static double Clamp(double v, double a, double b) { return v < a ? a : (v > b ? b : v); } } }

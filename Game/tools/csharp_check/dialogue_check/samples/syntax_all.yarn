@@ -1,0 +1,53 @@
+// 모든 문법 기능을 한 번씩 사용하는 샘플 (주석은 무시된다)
+title: Start
+tags: intro demo
+position: 10,20
+---
+<<declare $gold = 0>>
+<<set $gold to 120>>
+<<set $greeted to false>>
+narration line without speaker #line:a001 #mood:calm
+howl: 어서 와, {name}. #line:a002 #mood:soft
+player: 골드는 {$gold} 이네요. // 끝 주석
+howl: 계산: {$gold + 30 * 2} 그리고 {$gold / 4}. #line:a003
+howl: 이름은 {name}, 호칭은 {calls_player("howl")}. #line:a004
+<<if $gold >= 100 and not $greeted>>
+    howl: 부자네. #line:a005
+<<elseif $gold gt 50>>
+    howl: 그럭저럭. #line:a006
+<<else>>
+    howl: 가난하군. #line:a007
+<<endif>>
+-> 고맙다고 말한다 #line:a008
+    player: 고마워요. #line:a009
+    <<aff howl 5>>
+    -> 한 번 더 #line:a010
+        player: 정말로요. #line:a011
+        <<flag thanked_twice>>
+    -> 비밀 선택지 <<if $gold > 1000>> #line:a012
+        player: 안 보인다. #line:a013
+-> 말없이 지나간다 <<if $gold > 0>> #line:a014
+    <<show_standing howl smile casual>>
+-> 잠긴 선택지 <<if false>> #line:a015
+    player: 이건 못 고른다. #line:a016
+howl: 끝으로. #line:a017
+<<bg lighthouse night>>
+<<show_cg HOWL_E1>>
+<<custom "two words" {$gold} x{$gold}y>>
+<<jump Second>>
+===
+
+title: Second
+---
+nar: 짧은 화자 id 도 허용. #line:b001
+12:30 도착. #line:b003
+http://example.com/a 주소 // 주석
+brace \{escaped\} text. #line:b004
+<<set $gold += 10>>
+<<set $gold -= 5>>
+<<set $gold *= 2>>
+<<set $gold /= 5>>
+howl: gold now {$gold} #line:b005
+<<stop>>
+howl: 도달하지 않음 #line:b006
+===

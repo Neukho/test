@@ -1,0 +1,20 @@
+// 린트가 모두 잡아야 하는 의도적으로 깨진 스크립트
+title: Entry
+---
+시작 #line:x001
+아이디 없는 줄
+-> 선택지 아이디 없음
+    안쪽 #line:x001
+<<jump Nowhere>>
+===
+
+title: Entry
+---
+중복 제목 노드 #line:x010
+===
+
+title: Orphan
+---
+아무도 점프하지 않는 노드 #line:x020
+<<jump Entry>>
+===

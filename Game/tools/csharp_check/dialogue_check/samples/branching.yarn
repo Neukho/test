@@ -1,0 +1,28 @@
+title: Hub
+---
+허브. #line:h001
+-> 도서관 #line:h002
+    <<jump Library>>
+-> 항구 <<if visited("Library")>> #line:h003
+    <<jump Harbor>>
+-> 떠난다 #line:h004
+    안녕. #line:h005
+허브 끝. #line:h006
+===
+
+title: Library
+---
+조용한 도서관. #line:l001
+<<jump Hub>>
+===
+
+title: Harbor
+---
+항구. #line:p001
+<<if visited("Library") and visited("Harbor")>>
+    둘 다 방문. #line:p002
+<<endif>>
+<<if visited_count("Hub") >= 2>>
+    허브 재방문. #line:p003
+<<endif>>
+===

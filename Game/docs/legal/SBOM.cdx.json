@@ -1,0 +1,259 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:f243191e-2115-550c-8379-7b7a2015fbed",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-03T06:16:10Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "tools/generate_sbom.py",
+          "version": "1"
+        }
+      ]
+    },
+    "component": {
+      "bom-ref": "app-moon-corner-house",
+      "type": "application",
+      "name": "MoonCornerHouse (Moon Corner House)",
+      "version": "unspecified",
+      "description": "Korean furry cafe-tycoon + romance visual novel (Unity 6)."
+    },
+    "properties": [
+      {
+        "name": "morphehouse:status",
+        "value": "DRAFT - versions marked 'unspecified' must be filled in before release; not a legal document"
+      }
+    ]
+  },
+  "components": [
+    {
+      "bom-ref": "unity-engine",
+      "type": "platform",
+      "name": "Unity Engine",
+      "version": "6000.x (exact editor version: unspecified)",
+      "scope": "required",
+      "licenses": [
+        {
+          "license": {
+            "name": "Unity Software proprietary terms (depends on your Unity plan; verify)"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "morphehouse:note",
+          "value": "Runtime is built into the player. Record the exact editor version from ProjectSettings/ProjectVersion.txt at release."
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg-ugui",
+      "type": "library",
+      "name": "com.unity.ugui (uGUI + TextMesh Pro)",
+      "version": "2.0.0",
+      "scope": "required",
+      "licenses": [
+        {
+          "license": {
+            "name": "Unity Companion License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "morphehouse:note",
+          "value": "TextMesh Pro is merged into com.unity.ugui in Unity 6. tools/unity_compile_check compiles the GitHub 6000.0 branch of uGUI; the exact version the editor resolves is unspecified until the project is opened."
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg-inputsystem",
+      "type": "library",
+      "name": "com.unity.inputsystem",
+      "version": "unspecified",
+      "scope": "required",
+      "licenses": [
+        {
+          "license": {
+            "name": "Unity Companion License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "morphehouse:note",
+          "value": "Constraint: 1.x. tools/unity_compile_check clones the upstream default branch (not pinned); 1.20.1 was observed in one local run. Pin it in Packages/manifest.json."
+        }
+      ]
+    },
+    {
+      "bom-ref": "font-noto-sans-kr",
+      "type": "data",
+      "name": "Noto Sans KR (PLANNED - not yet bundled)",
+      "version": "unspecified",
+      "scope": "optional",
+      "licenses": [
+        {
+          "license": {
+            "id": "OFL-1.1"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "morphehouse:note",
+          "value": "Placeholder entry. Resources/Fonts/MainFont does not exist yet; FontProvider falls back to OS fonts. Remove or confirm after the font is chosen (see docs/legal/THIRD_PARTY_NOTICES.md)."
+        }
+      ]
+    },
+    {
+      "bom-ref": "tool-unityengine-modules",
+      "type": "library",
+      "name": "UnityEngine.Modules (NuGet reference assemblies, compile check only)",
+      "version": "2021.3.33",
+      "scope": "excluded",
+      "licenses": [
+        {
+          "license": {
+            "name": "unspecified - verify on nuget.org"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "morphehouse:note",
+          "value": "Used only by tools/unity_compile_check. Not shipped."
+        }
+      ],
+      "purl": "pkg:nuget/UnityEngine.Modules@2021.3.33"
+    },
+    {
+      "bom-ref": "tool-nunit",
+      "type": "library",
+      "name": "NUnit",
+      "version": "3.14.0",
+      "scope": "excluded",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "morphehouse:note",
+          "value": "Test framework referenced by the compile check of Tests/EditMode. Not shipped."
+        }
+      ],
+      "purl": "pkg:nuget/NUnit@3.14.0"
+    },
+    {
+      "bom-ref": "tool-system-memory",
+      "type": "library",
+      "name": "System.Memory (NuGet)",
+      "version": "4.5.5",
+      "scope": "excluded",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "morphehouse:note",
+          "value": "Needed to compile Input System sources in the compile check. Not shipped."
+        }
+      ],
+      "purl": "pkg:nuget/System.Memory@4.5.5"
+    },
+    {
+      "bom-ref": "tool-dotnet-sdk",
+      "type": "application",
+      "name": ".NET SDK",
+      "version": "8.0",
+      "scope": "excluded",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "morphehouse:note",
+          "value": "Used by tools/unity_compile_check/run.sh (dotnet build)."
+        }
+      ]
+    },
+    {
+      "bom-ref": "tool-mono-mcs",
+      "type": "application",
+      "name": "Mono C# compiler (mcs) and runtime",
+      "version": "unspecified",
+      "scope": "excluded",
+      "licenses": [
+        {
+          "license": {
+            "name": "unspecified - see upstream Mono licensing"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "morphehouse:note",
+          "value": "Used by tools/csharp_check/*/run.sh pure-logic harnesses."
+        }
+      ]
+    },
+    {
+      "bom-ref": "tool-python",
+      "type": "application",
+      "name": "Python 3 (standard library only)",
+      "version": "3.x",
+      "scope": "excluded",
+      "licenses": [
+        {
+          "license": {
+            "name": "Python Software Foundation License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "morphehouse:note",
+          "value": "tools/*.py"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "app-moon-corner-house",
+      "dependsOn": [
+        "unity-engine",
+        "pkg-ugui",
+        "pkg-inputsystem",
+        "font-noto-sans-kr"
+      ]
+    },
+    {
+      "ref": "unity-engine"
+    },
+    {
+      "ref": "pkg-ugui"
+    },
+    {
+      "ref": "pkg-inputsystem"
+    },
+    {
+      "ref": "font-noto-sans-kr"
+    }
+  ]
+}

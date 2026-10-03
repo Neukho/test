@@ -1,0 +1,5 @@
+asset_id,date_utc,creator,tool_and_version,model_or_brush_or_source,license_or_rights_basis,prompt,negative,seed,params,refs,postproc,ai_assisted,reviewer_date
+# 위 열은 docs/02_Art_Plan.md §8.4 (asset_id,date,tool,model,prompt,negative,seed,params,refs,postproc,reviewer) 를 확장한 것입니다. 이 줄(#으로 시작)은 무시됩니다.
+# 직접 그린 그림은 prompt/negative/seed/params 를 비우고 ai_assisted=no, tool_and_version 에 사용 소프트웨어(예: Clip Studio Paint x.y)를 적습니다.
+# AI 를 일부라도 썼다면 ai_assisted=yes 로 하고 모델 이름·해시·라이선스·확인한 날짜를 model_or_brush_or_source / license_or_rights_basis 에 적습니다.
+# 예) CG_Howl_E1,2026-10-03T12:00:00Z,me,Clip Studio Paint x.y,hand-drawn,own work,,,,,,,no,2026-10-04 me

@@ -1,0 +1,32 @@
+# 의상 정책 사례표(C# OutfitPolicy 와 tools/art_checklist.py resolve_outfit 이 같은 결과를 내야 한다).
+# 형식: node|place|time|char|explicit|expected      (explicit 가 비어 있으면 스크립트가 의상을 지정하지 않은 것)
+Ch1_Intro|Cafe_Interior|Day|howl||Uniform
+Ch1_Intro|Cafe_Interior|Day|gomseok||Uniform
+Ch1_Intro|Cafe_Exterior|Day|haru||Uniform
+Ch1_Intro|Cafe_Exterior|Day|nabi||Uniform
+Ch1_Intro|Cafe_Interior|Day|johan||Casual
+Ch1_Intro|Cafe_Interior|Day|beomjun||Casual
+Ch1_Intro|Cafe_Interior|Night|howl||Casual
+Ch1_Intro|Cafe_Interior|Evening|nabi||Casual
+Ch1_Intro|Street|Day|nabi||Casual
+Ch1_Intro|Lighthouse|Day|howl||Casual
+Ch1_Intro|cafe_interior|day|haru||Uniform
+Ch1_Intro||Day|howl||Casual
+Ch1_Intro|Cafe_Interior||howl||Casual
+|Cafe_Interior|Day|howl||Uniform
+Howl_Date_Lighthouse|Lighthouse|Night|howl||Date
+Johan_Date_Generic|Street|Day|johan||Date
+Howl_Date_Lighthouse|Cafe_Interior|Day|howl||Date
+howl_date_generic|Cafe_Interior|Day|haru||Date
+Howl_Date|Street|Day|howl||Casual
+Howl_Update|Cafe_Interior|Night|howl||Casual
+Howl_Talk_01|Cafe_Interior|Day|howl|Casual|Casual
+Howl_Talk_01|Cafe_Interior|Day|howl|casual|Casual
+Ch1_Intro|Cafe_Interior|Day|johan|Uniform|Uniform
+Ch1_Intro|Cafe_Interior|Day|johan|uniform|Uniform
+Howl_Date_Lighthouse|Lighthouse|Night|howl|Uniform|Uniform
+Howl_Date_Lighthouse|Lighthouse|Night|howl|Date|Date
+Howl_Talk_01|Cafe_Interior|Night|howl|Date|Date
+Ch1_Intro|Cafe_Interior|Day|howl|Tuxedo|Uniform
+Howl_Date_Lighthouse|Lighthouse|Night|howl|Tuxedo|Date
+Howl_Talk_01|Cafe_Interior|Night|nabi|Tuxedo|Casual
